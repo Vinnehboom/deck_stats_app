@@ -2,9 +2,13 @@
 
 #import <React/RCTBundleURLProvider.h>
 
-@implementation AppDelegate
+@implementation AppDelegategem
 
 #import <Firebase.h>
+@import FirebaseCore;
+@import FirebaseFirestore;
+@import FirebaseAuth;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
