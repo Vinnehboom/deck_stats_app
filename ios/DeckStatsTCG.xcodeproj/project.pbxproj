@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* DeckStatsTCGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* DeckStatsTCGTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-DeckStatsTCG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-DeckStatsTCG.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-DeckStatsTCG-DeckStatsTCGTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-DeckStatsTCG-DeckStatsTCGTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D0407F5D66022B1548B937E0 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA831DF0E55630E426B11A2 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */; };
+		EE5465112A90F68F003B4BC3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EE5465102A90F68F003B4BC3 /* FirebaseAnalytics */; };
+		EE5465132A90F68F003B4BC3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EE5465122A90F68F003B4BC3 /* FirebaseDatabase */; };
+		EE5465152A90F68F003B4BC3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EE5465142A90F68F003B4BC3 /* FirebaseFirestore */; };
+		EE5465172A90F68F003B4BC3 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = EE5465162A90F68F003B4BC3 /* FirebaseFunctions */; };
+		EE5465192A90F68F003B4BC3 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = EE5465182A90F68F003B4BC3 /* FirebaseInAppMessaging-Beta */; };
+		EE54651B2A90F68F003B4BC3 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = EE54651A2A90F68F003B4BC3 /* FirebaseMessaging */; };
+		EE54651D2A90F68F003B4BC3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EE54651C2A90F68F003B4BC3 /* FirebaseStorage */; };
+		FE408B9855B22FF72335E773 /* Pods_DeckStatsTCG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF411AD85065CA19C7E8E2DC /* Pods_DeckStatsTCG.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +43,14 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = DeckStatsTCG/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DeckStatsTCG/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = DeckStatsTCG/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-DeckStatsTCG-DeckStatsTCGTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DeckStatsTCG-DeckStatsTCGTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-DeckStatsTCG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG.debug.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG.debug.xcconfig"; sourceTree = "<group>"; };
+		4CA831DF0E55630E426B11A2 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG_DeckStatsTCGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5709B34CF0A7D63546082F79 /* Pods-DeckStatsTCG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG.release.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-DeckStatsTCG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DeckStatsTCG.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DeckStatsTCG/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EF411AD85065CA19C7E8E2DC /* Pods_DeckStatsTCG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-DeckStatsTCG-DeckStatsTCGTests.a in Frameworks */,
+				D0407F5D66022B1548B937E0 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +66,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-DeckStatsTCG.a in Frameworks */,
+				EE5465132A90F68F003B4BC3 /* FirebaseDatabase in Frameworks */,
+				EE5465152A90F68F003B4BC3 /* FirebaseFirestore in Frameworks */,
+				EE54651B2A90F68F003B4BC3 /* FirebaseMessaging in Frameworks */,
+				EE5465172A90F68F003B4BC3 /* FirebaseFunctions in Frameworks */,
+				EE5465112A90F68F003B4BC3 /* FirebaseAnalytics in Frameworks */,
+				EE54651D2A90F68F003B4BC3 /* FirebaseStorage in Frameworks */,
+				EE5465192A90F68F003B4BC3 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				FE408B9855B22FF72335E773 /* Pods_DeckStatsTCG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-DeckStatsTCG.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-DeckStatsTCG-DeckStatsTCGTests.a */,
+				EF411AD85065CA19C7E8E2DC /* Pods_DeckStatsTCG.framework */,
+				4CA831DF0E55630E426B11A2 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,6 +204,15 @@
 			dependencies = (
 			);
 			name = DeckStatsTCG;
+			packageProductDependencies = (
+				EE5465102A90F68F003B4BC3 /* FirebaseAnalytics */,
+				EE5465122A90F68F003B4BC3 /* FirebaseDatabase */,
+				EE5465142A90F68F003B4BC3 /* FirebaseFirestore */,
+				EE5465162A90F68F003B4BC3 /* FirebaseFunctions */,
+				EE5465182A90F68F003B4BC3 /* FirebaseInAppMessaging-Beta */,
+				EE54651A2A90F68F003B4BC3 /* FirebaseMessaging */,
+				EE54651C2A90F68F003B4BC3 /* FirebaseStorage */,
+			);
 			productName = DeckStatsTCG;
 			productReference = 13B07F961A680F5B00A75B9A /* DeckStatsTCG.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +243,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				EE54650F2A90F68F003B4BC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -486,6 +512,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HL5QP24CVY;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = DeckStatsTCG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -499,6 +526,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = VinnieSchelfhaut.DeckStatsTCG;
 				PRODUCT_NAME = DeckStatsTCG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -513,6 +541,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HL5QP24CVY;
 				INFOPLIST_FILE = DeckStatsTCG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -525,6 +554,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = VinnieSchelfhaut.DeckStatsTCG;
 				PRODUCT_NAME = DeckStatsTCG;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -699,6 +729,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE54650F2A90F68F003B4BC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE5465102A90F68F003B4BC3 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE54650F2A90F68F003B4BC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		EE5465122A90F68F003B4BC3 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE54650F2A90F68F003B4BC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		EE5465142A90F68F003B4BC3 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE54650F2A90F68F003B4BC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		EE5465162A90F68F003B4BC3 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE54650F2A90F68F003B4BC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		EE5465182A90F68F003B4BC3 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE54650F2A90F68F003B4BC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		EE54651A2A90F68F003B4BC3 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE54650F2A90F68F003B4BC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		EE54651C2A90F68F003B4BC3 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE54650F2A90F68F003B4BC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
