@@ -11,10 +11,6 @@
 @import FirebaseAuth;
 
 
-@import FirebaseCore;
-@import FirebaseFirestore;
-@import FirebaseAuth;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [FIRApp configure];
