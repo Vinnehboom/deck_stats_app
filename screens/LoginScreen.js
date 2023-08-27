@@ -41,7 +41,7 @@ const LoginScreen = () => {
       .signInWithEmailAndPassword(email, password)
       .then(userCredentials => {})
       .catch(error => alert(error.message));
-  }
+  };
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
