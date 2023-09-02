@@ -655,6 +655,9 @@ PODS:
   - Firebase/Database (10.12.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 10.12.0)
+  - Firebase/Firestore (10.12.0):
+    - Firebase/CoreOnly
+    - FirebaseFirestore (~> 10.12.0)
   - FirebaseAnalytics (10.12.0):
     - FirebaseAnalytics/AdIdSupport (= 10.12.0)
     - FirebaseCore (~> 10.0)
@@ -689,7 +692,7 @@ PODS:
   - FirebaseDatabase (10.12.0):
     - FirebaseCore (~> 10.0)
     - leveldb-library (~> 1.22)
-  - FirebaseFirestore (10.13.0):
+  - FirebaseFirestore (10.12.0):
     - abseil/algorithm (~> 1.20220623.0)
     - abseil/base (~> 1.20220623.0)
     - abseil/container/flat_hash_map (~> 1.20220623.0)
@@ -1072,7 +1075,7 @@ PODS:
   - React-jsinspector (0.71.7)
   - React-logger (0.71.7):
     - glog
-  - react-native-safe-area-context (4.7.1):
+  - react-native-safe-area-context (4.7.2):
     - React-Core
   - React-perflogger (0.71.7)
   - React-RCTActionSheet (0.71.7):
@@ -1161,11 +1164,16 @@ PODS:
   - RNFBApp (18.3.0):
     - Firebase/CoreOnly (= 10.12.0)
     - React-Core
-  - RNFBAuth (18.3.0):
+  - RNFBAuth (18.3.2):
     - Firebase/Auth (= 10.12.0)
     - React-Core
     - RNFBApp
-  - RNScreens (3.24.0):
+  - RNFBFirestore (18.3.2):
+    - Firebase/Firestore (= 10.12.0)
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+    - React-Core
+    - RNFBApp
+  - RNScreens (3.25.0):
     - React-Core
     - React-RCTImage
   - Yoga (1.14.0)
@@ -1213,6 +1221,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
+  - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -1313,6 +1322,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/app"
   RNFBAuth:
     :path: "../node_modules/@react-native-firebase/auth"
+  RNFBFirestore:
+    :path: "../node_modules/@react-native-firebase/firestore"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   Yoga:
@@ -1332,7 +1343,7 @@ SPEC CHECKSUMS:
   FirebaseCore: f86a1394906b97ac445ae49c92552a9425831bed
   FirebaseCoreInternal: b342e37cd4f5b4454ec34308f073420e7920858e
   FirebaseDatabase: 6d998d7ef2c1723b3e798a85e61a7dc0504b1ea0
-  FirebaseFirestore: 97102936578f2e07fa11455fef9ae979084f4673
+  FirebaseFirestore: f94c9541515fa4a49af52269bbc50349009424b4
   FirebaseInstallations: b28af1b9f997f1a799efe818c94695a3728c352f
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
@@ -1360,7 +1371,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: eaa5f71eb8f6861cf0e57f1a0f52aeb020d9e18e
   React-jsinspector: 9885f6f94d231b95a739ef7bb50536fb87ce7539
   React-logger: 3f8ebad1be1bf3299d1ab6d7f971802d7395c7ef
-  react-native-safe-area-context: 6b96402d0550d0109942d3fffbc14b5933c7bdc7
+  react-native-safe-area-context: 7aa8e6d9d0f3100a820efb1a98af68aa747f9284
   React-perflogger: 2d505bbe298e3b7bacdd9e542b15535be07220f6
   React-RCTActionSheet: 0e96e4560bd733c9b37efbf68f5b1a47615892fb
   React-RCTAnimation: fd138e26f120371c87e406745a27535e2c8a04ef
@@ -1375,8 +1386,9 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: c5c89f8f543842dd864b63ded1b0bbb9c9445328
   ReactCommon: 5307873a227ee34ddd3e7f2ec1086ebbfccc7618
   RNFBApp: f0b5cf917b0b91a0ae890fbbaec0fb5d3285ea46
-  RNFBAuth: e3f51b2e4acc39e4664b24117f9106af493b2dd3
-  RNScreens: b21dc57dfa2b710c30ec600786a3fc223b1b92e7
+  RNFBAuth: 59f68fa2be3ef84fd6baa393a800c695e064e9c1
+  RNFBFirestore: 67f9f0405bcf5511dcd78230ef03b2780118bca9
+  RNScreens: 85d3880b52d34db7b8eeebe2f1a0e807c05e69fa
   Yoga: d56980c8914db0b51692f55533409e844b66133c
 
 PODFILE CHECKSUM: 59837beb2d32ebed8757b538e14bd021835a3763
