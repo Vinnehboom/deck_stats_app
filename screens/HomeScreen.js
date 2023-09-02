@@ -3,7 +3,12 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { colors } from "../utils/colors";
 import auth from '@react-native-firebase/auth';
 import { useNavigation } from "@react-navigation/core";
+import DecklistScreen from "./DecklistScreen";
+import LandingScreen from "./LandingScreen";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import FlashMessage from "react-native-flash-message";
 
+const Tab = createBottomTabNavigator();
 const HomeScreen = () => {
 
   const user = auth().currentUser;
@@ -17,13 +22,14 @@ const HomeScreen = () => {
   };
 
   return(
-    <View style={styles.container}>
-      <Text> Email: {user.email } </Text>
+    <>
+      <FlashMessage position="top" />
+      <Tab.Navigator initialRouteName="Home" screenOptions={ { headerShown: false} }>
+        <Tab.Screen name="Landing" component={LandingScreen} />
+        <Tab.Screen name="Decklist" component={DecklistScreen} />
+      </Tab.Navigator>
+    </>
 
-      <TouchableOpacity onPress={handleSignOut} style={[styles.button]}>
-        <Text style={[styles.buttonText]}> Sign out </Text>
-      </TouchableOpacity>
-    </View>
   );
 };
 
@@ -33,7 +39,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   buttonText: {
     color: 'white',
