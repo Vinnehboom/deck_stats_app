@@ -1,6 +1,5 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
-import { Header } from './components/Header';
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
@@ -71,20 +70,6 @@ function App(): JSX.Element {
     </NavigationContainer>
   );
 }
-
-// <SafeAreaView style={backgroundStyle}>
-//       <StatusBar
-//         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-//         backgroundColor={backgroundStyle.backgroundColor}
-//       />
-//       <ScrollView
-//         contentInsetAdjustmentBehavior="automatic"
-//         style={backgroundStyle}>
-//         <View>
-//           <Header/>
-//         </View>
-//       </ScrollView>
-//     </SafeAreaView>
 
 const styles = StyleSheet.create({
   sectionContainer: {
