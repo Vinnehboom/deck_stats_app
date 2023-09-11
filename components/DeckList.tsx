@@ -1,12 +1,19 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import {colors} from '../utils/colors';
+import { useNavigation } from "@react-navigation/core";
 
 export const DeckList = ({deck}) => {
+  const navigation = useNavigation();
+
+  const showPage = () => {
+    navigation.navigate('DecklistHome', { deck: deck });
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}> { deck.name }</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={showPage}>
         <Text>Show</Text>
       </TouchableOpacity>
     </View>
