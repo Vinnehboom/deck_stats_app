@@ -2,6 +2,7 @@ import React from 'react';
 import type {PropsWithChildren} from 'react';
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
+import DecklistHome from './screens/decklists/decklist/DecklistHome';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -66,6 +67,9 @@ function App(): JSX.Element {
       <Stack.Navigator>
         <Stack.Screen options={{ headerShown: false}} name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="DecklistHome">
+          {(props) => <DecklistHome {...props} /> }
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

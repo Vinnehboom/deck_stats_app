@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { colors } from "../utils/colors";
 import auth from '@react-native-firebase/auth';
 import { useNavigation } from "@react-navigation/core";
-import DecklistScreen from "./DecklistScreen";
+import DecklistScreen from "./decklists/DecklistScreen";
 import LandingScreen from "./LandingScreen";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FlashMessage from "react-native-flash-message";

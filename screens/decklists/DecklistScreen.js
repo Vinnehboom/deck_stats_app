@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { colors } from "../utils/colors";
+import { colors } from "../../utils/colors";
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import { DeckList } from "../components/DeckList";
-import { Spinner } from "../components/Spinner";
+import { DeckList } from "../../components/DeckList";
+import { Spinner } from "../../components/Spinner";
+import { DecklistDetails } from "./DecklistDetails";
 import { showMessage, hideMessage } from "react-native-flash-message";
 import 'react-native-get-random-values';
 import {v4 as uuidv4} from 'uuid';
-import { get } from "react-native/Libraries/TurboModule/TurboModuleRegistry";
+import { useNavigation } from "@react-navigation/core";
 
 const DecklistScreen = () => {
   const [deckName, setDeckName] = useState('');
@@ -22,7 +23,7 @@ const DecklistScreen = () => {
 
   const getLists = async () => {
     setLoading(true);
-    let snapshot = await firestore().collection('Decklists').get();
+    let snapshot = await firestore().collection('Decks').get();
     let data = snapshot.docs.map((doc) => doc.data());
     setDecklists(data);
     setLoading(false);
@@ -30,7 +31,7 @@ const DecklistScreen = () => {
 
   const displayLists = () => {
     if(deckLists.length > 0) {
-      let items = deckLists.map(deck => <DeckList key={deck.id} deck={deck} />);
+      let items = deckLists.map(deck => <DeckList key={deck.documentId} deck={deck} />);
       return items;
     }
   };
@@ -39,7 +40,7 @@ const DecklistScreen = () => {
     if(deckName.length > 0) {
       let myuuid = uuidv4();
       firestore()
-        .collection('Decklists')
+        .collection('Decks')
         .add({
           id: myuuid,
           name: deckName,
