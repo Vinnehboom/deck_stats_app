@@ -1,13 +1,11 @@
 import React from "react"
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
-import { colors } from "../utils/colors"
 import auth from "@react-native-firebase/auth"
 import { useNavigation } from "@react-navigation/core"
 import DecklistScreen from "./decklists/DecklistScreen"
 import LandingScreen from "./LandingScreen"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import FlashMessage from "react-native-flash-message"
 import AuthContext from "../contexts/AuthContext"
+import { showMessage } from "react-native-flash-message"
 
 const Tab = createBottomTabNavigator()
 const HomeScreen = () => {
@@ -19,7 +17,12 @@ const HomeScreen = () => {
       .then(() => {
         navigation.replace("Login")
       })
-      .catch(error => alert(error.message))
+      .catch(error => {
+        showMessage({
+          message: `${error.message}`,
+          type: "warning",
+        })
+      })
   }
 
   const authProviderValue = {
@@ -40,24 +43,3 @@ const HomeScreen = () => {
 }
 
 export default HomeScreen
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  buttonText: {
-    color: "white",
-    fontWeight: "700",
-    fontSize: 16,
-  },
-  button: {
-    marginTop: 40,
-    backgroundColor: colors.darkBlue,
-    width: "60%",
-    padding: 15,
-    alignItems: "center",
-    borderRadius: 10,
-  },
-})

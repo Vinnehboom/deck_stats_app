@@ -2,7 +2,6 @@ import React, { useContext } from "react"
 import AuthContext from "../contexts/AuthContext"
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { colors } from "../utils/colors"
-import { useNavigation } from "@react-navigation/core"
 
 const LandingScreen = () => {
   const { user, handleSignOut } = useContext(AuthContext)

@@ -1,5 +1,5 @@
 import React from "react"
-import { ActivityIndicator, Text, View, StyleSheet } from "react-native"
+import { ActivityIndicator, View, StyleSheet } from "react-native"
 import { colors } from "../utils/colors"
 
 export const Spinner = () => {

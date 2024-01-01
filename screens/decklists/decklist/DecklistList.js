@@ -19,23 +19,23 @@ const DecklistList = () => {
   const [listString, setListString] = useState("")
   const [loading, setLoading] = useState(false)
 
-  const getLists = async () => {
-    let snapshot = await firestore()
-      .collection("Lists")
-      .where("deckId", "==", deck.id)
-      .get()
-    let data = snapshot.docs.map(doc => doc.data())
-    setLists(data)
-  }
-
   useEffect(() => {
+    const getLists = async () => {
+      let snapshot = await firestore()
+        .collection("Lists")
+        .where("deckId", "==", deck.id)
+        .get()
+      let data = snapshot.docs.map(doc => doc.data())
+      setLists(data)
+    }
+
     setLoading(true)
     getLists()
     setLoading(false)
-  }, [])
+  }, [deck])
 
   const representLists = () => {
-    if (Object.keys(lists)[0] != "") {
+    if (Object.keys(lists)[0] !== "") {
       let items = lists.map((list, index) => <Text key={index}>list</Text>)
       return items
     }

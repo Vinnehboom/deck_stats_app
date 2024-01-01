@@ -6,7 +6,7 @@ const transformList = listString => {
   let totalCount = 0
   let cardListHash = splitArray.reduce((acc, cardString) => {
     const cardItems = cardString.split(" ")
-    const count = parseInt(cardItems.shift())
+    const count = parseInt(cardItems.shift(), 10)
     if (!count) {
       return { ...acc }
     } else {
@@ -18,7 +18,7 @@ const transformList = listString => {
       const [setCode, setNumber] = cardItems.splice(-2)
       cardCode = `${setCode} ${setNumber}`
       cardName = cardItems.join(" ")
-      setId = setCode == "Energy" ? "sve" : Sets[setCode] || ""
+      setId = setCode === "Energy" ? "sve" : Sets[setCode] || ""
       return {
         ...acc,
         [cardCode]: { setId: setId, name: cardName, count: count },

@@ -11,11 +11,9 @@ import auth from "@react-native-firebase/auth"
 import firestore from "@react-native-firebase/firestore"
 import { DeckList } from "../../components/DeckList"
 import { Spinner } from "../../components/Spinner"
-import { DecklistDetails } from "./DecklistDetails"
-import { showMessage, hideMessage } from "react-native-flash-message"
+import { showMessage } from "react-native-flash-message"
 import "react-native-get-random-values"
 import { v4 as uuidv4 } from "uuid"
-import { useNavigation } from "@react-navigation/core"
 
 const DecklistScreen = () => {
   const [deckName, setDeckName] = useState("")

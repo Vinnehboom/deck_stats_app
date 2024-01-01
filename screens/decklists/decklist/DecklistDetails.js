@@ -1,6 +1,5 @@
 import React, { useContext } from "react"
-import { Text, View, StyleSheet } from "react-native"
-import { colors } from "../../utils/colors"
+import { Text, View } from "react-native"
 import DeckContext from "../../../contexts/DeckContext"
 
 const DecklistDetails = () => {
@@ -13,5 +12,3 @@ const DecklistDetails = () => {
 }
 
 export default DecklistDetails
-
-const styles = StyleSheet.create({})

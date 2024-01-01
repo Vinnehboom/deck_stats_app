@@ -10,6 +10,7 @@ import {
 import { colors } from "../utils/colors"
 import auth from "@react-native-firebase/auth"
 import { useNavigation } from "@react-navigation/core"
+import { showMessage } from "react-native-flash-message"
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("")
@@ -24,22 +25,30 @@ const LoginScreen = () => {
     })
 
     return unsubscribe
-  }, [])
+  }, [navigation])
 
   const handleSignUp = () => {
     auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(userCredentials => {
-        const user = userCredentials.user
+      .then()
+      .catch(error => {
+        showMessage({
+          message: `${error.message}`,
+          type: "warning",
+        })
       })
-      .catch(error => alert(error.message))
   }
 
   const handleLogin = () => {
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(userCredentials => {})
-      .catch(error => alert(error.message))
+      .catch(error => {
+        showMessage({
+          message: `${error.message}`,
+          type: "warning",
+        })
+      })
   }
 
   return (
