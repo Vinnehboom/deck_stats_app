@@ -1,19 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AuthContext from "../contexts/AuthContext";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { colors } from "../utils/colors";
-import auth from '@react-native-firebase/auth';
 import { useNavigation } from "@react-navigation/core";
 
 const LandingScreen = () => {
-  const user = auth().currentUser;
-
-  const navigation = useNavigation();
-  const handleSignOut = () => {
-    auth()
-      .signOut()
-      .then(() => {navigation.replace('Login');})
-      .catch(error => alert(error.message));
-  };
+  const { user, handleSignOut } = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
