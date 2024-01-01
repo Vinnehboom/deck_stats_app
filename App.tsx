@@ -22,6 +22,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import FlashMessage from "react-native-flash-message";
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -71,6 +72,7 @@ function App(): JSX.Element {
           {(props) => <DecklistHome {...props} /> }
         </Stack.Screen>
       </Stack.Navigator>
+      <FlashMessage position="top" />
     </NavigationContainer>
   );
 }

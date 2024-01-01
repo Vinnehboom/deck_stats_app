@@ -7,12 +7,12 @@ import DecklistScreen from "./decklists/DecklistScreen";
 import LandingScreen from "./LandingScreen";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FlashMessage from "react-native-flash-message";
+import AuthContext from "../contexts/AuthContext";
 
 const Tab = createBottomTabNavigator();
 const HomeScreen = () => {
 
   const user = auth().currentUser;
-
   const navigation = useNavigation();
   const handleSignOut = () => {
     auth()
@@ -21,15 +21,18 @@ const HomeScreen = () => {
       .catch(error => alert(error.message));
   };
 
+  const authProviderValue = {
+    user: user,
+    signOut: handleSignOut,
+  };
+
   return(
-    <>
-      <FlashMessage position="top" />
+    <AuthContext.Provider value={authProviderValue}>
       <Tab.Navigator initialRouteName="Home" screenOptions={ { headerShown: false} }>
         <Tab.Screen name="Landing" component={LandingScreen} />
         <Tab.Screen name="Decklist" component={DecklistScreen} />
       </Tab.Navigator>
-    </>
-
+    </AuthContext.Provider>
   );
 };
 

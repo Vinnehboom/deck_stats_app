@@ -1,9 +1,8 @@
-import React from 'react';
-import { Text, View, StyleSheet, TextInput } from "react-native";
-import {colors} from '../../../utils/colors';
+import React, { useContext } from "react";
+import DeckContext from "../../../contexts/DeckContext";
 
 const DecklistMatchups = () => {
-
+  const { deck } = useContext(DeckContext);
 };
 
 export default DecklistMatchups;

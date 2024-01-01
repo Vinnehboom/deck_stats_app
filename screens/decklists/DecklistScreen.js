@@ -31,7 +31,7 @@ const DecklistScreen = () => {
 
   const displayLists = () => {
     if(deckLists.length > 0) {
-      let items = deckLists.map(deck => <DeckList key={deck.documentId} deck={deck} />);
+      let items = deckLists.map((deck, index) => <DeckList key={index+1} deck={deck} />);
       return items;
     }
   };
