@@ -1,80 +1,78 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react"
 import {
   Text,
   View,
   StyleSheet,
   TextInput,
   TouchableOpacity,
-} from 'react-native';
-import {colors} from '../../../utils/colors';
-import {transformList} from "../../../helpers/decklists";
-import firestore from '@react-native-firebase/firestore';
-import {showMessage} from 'react-native-flash-message';
-import {Spinner} from '../../../components/Spinner';
-import DeckContext from "../../../contexts/DeckContext";
+} from "react-native"
+import { colors } from "../../../utils/colors"
+import { transformList } from "../../../helpers/decklists"
+import firestore from "@react-native-firebase/firestore"
+import { showMessage } from "react-native-flash-message"
+import { Spinner } from "../../../components/Spinner"
+import DeckContext from "../../../contexts/DeckContext"
 
 const DecklistList = () => {
-  const { deck } = useContext(DeckContext);
-  const [lists, setLists] = useState([]);
-  const [listString, setListString] = useState('');
-  const [loading, setLoading] = useState(false);
+  const { deck } = useContext(DeckContext)
+  const [lists, setLists] = useState([])
+  const [listString, setListString] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const getLists = async () => {
     let snapshot = await firestore()
-      .collection('Lists')
-      .where('deckId', '==', deck.id)
-      .get();
-    let data = snapshot.docs.map(doc => doc.data());
-    setLists(data);
-  };
+      .collection("Lists")
+      .where("deckId", "==", deck.id)
+      .get()
+    let data = snapshot.docs.map(doc => doc.data())
+    setLists(data)
+  }
 
   useEffect(() => {
-    setLoading(true);
-    getLists();
-    setLoading(false);
-  }, []);
+    setLoading(true)
+    getLists()
+    setLoading(false)
+  }, [])
 
   const representLists = () => {
-    if (Object.keys(lists)[0] != '') {
-      let items = lists.map((list, index) => (
-        <Text key={index}>list</Text>
-      ));
-      return items;
+    if (Object.keys(lists)[0] != "") {
+      let items = lists.map((list, index) => <Text key={index}>list</Text>)
+      return items
     }
-  };
+  }
 
   const handleListSubmission = () => {
-    const [listObject, errors] = transformList(listString);
+    const [listObject, errors] = transformList(listString)
     if (errors.length > 0) {
-      const errorString = errors.join(', ');
+      const errorString = errors.join(", ")
       showMessage({
         message: `Some errors were encountered during list submission: ${errorString}`,
-        type: 'warning',
-      });
+        type: "warning",
+      })
     } else {
-        firestore()
-          .collection('Lists')
-          .add({
-            deckId: deck.id,
-            list: listObject,
+      firestore()
+        .collection("Lists")
+        .add({
+          deckId: deck.id,
+          list: listObject,
+        })
+        .then(() => {
+          showMessage({
+            message: "List added!",
+            type: "info",
           })
-          .then(() => {
-            showMessage({
-              message: 'List added!',
-              type: 'info',
-            });
-          })
-          .catch(e => console.log(e));
-        setListString('');
-      }
-    };
+        })
+        .catch(e => console.log(e))
+      setListString("")
+    }
+  }
 
   if (loading) {
     return (
       <>
         <Spinner />
       </>
-    );
+    )
   } else {
     return (
       <View>
@@ -96,52 +94,52 @@ const DecklistList = () => {
         </View>
         <View>{representLists()}</View>
       </View>
-    );
+    )
   }
-};
+}
 
-export default DecklistList;
+export default DecklistList
 
 const styles = StyleSheet.create({
   title: {
     fontSize: 24,
-    textAlign: 'center',
-    fontWeight: '600',
+    textAlign: "center",
+    fontWeight: "600",
     marginVertical: 5,
   },
   subTitle: {
     fontSize: 18,
-    textAlign: 'center',
+    textAlign: "center",
   },
   listForm: {
-    width: '100%',
-    alignItems: 'center',
+    width: "100%",
+    alignItems: "center",
     formField: {
-      backgroundColor: 'white',
+      backgroundColor: "white",
       paddingHorizontal: 5,
       paddingVertical: 5,
       borderRadius: 5,
       fontSize: 14,
-      height: '60%',
-      marginRight: '5%',
-      width: '80%',
+      height: "60%",
+      marginRight: "5%",
+      width: "80%",
     },
   },
   container: {
     padding: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   buttonText: {
-    color: 'white',
-    fontWeight: '700',
+    color: "white",
+    fontWeight: "700",
     fontSize: 14,
   },
   button: {
     backgroundColor: colors.darkBlue,
-    width: 'auto',
+    width: "auto",
     padding: 10,
-    alignItems: 'center',
+    alignItems: "center",
     borderRadius: 10,
   },
-});
+})

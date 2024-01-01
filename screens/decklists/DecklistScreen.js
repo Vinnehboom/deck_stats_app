@@ -1,46 +1,54 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { colors } from "../../utils/colors";
-import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
-import { DeckList } from "../../components/DeckList";
-import { Spinner } from "../../components/Spinner";
-import { DecklistDetails } from "./DecklistDetails";
-import { showMessage, hideMessage } from "react-native-flash-message";
-import 'react-native-get-random-values';
-import {v4 as uuidv4} from 'uuid';
-import { useNavigation } from "@react-navigation/core";
+import React, { useEffect, useState } from "react"
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native"
+import { colors } from "../../utils/colors"
+import auth from "@react-native-firebase/auth"
+import firestore from "@react-native-firebase/firestore"
+import { DeckList } from "../../components/DeckList"
+import { Spinner } from "../../components/Spinner"
+import { DecklistDetails } from "./DecklistDetails"
+import { showMessage, hideMessage } from "react-native-flash-message"
+import "react-native-get-random-values"
+import { v4 as uuidv4 } from "uuid"
+import { useNavigation } from "@react-navigation/core"
 
 const DecklistScreen = () => {
-  const [deckName, setDeckName] = useState('');
-  const [deckLists, setDecklists] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const user = auth().currentUser;
+  const [deckName, setDeckName] = useState("")
+  const [deckLists, setDecklists] = useState([])
+  const [loading, setLoading] = useState(false)
+  const user = auth().currentUser
 
-  useEffect(() =>{
-    getLists();
-  }, []);
+  useEffect(() => {
+    getLists()
+  }, [])
 
   const getLists = async () => {
-    setLoading(true);
-    let snapshot = await firestore().collection('Decks').get();
-    let data = snapshot.docs.map((doc) => doc.data());
-    setDecklists(data);
-    setLoading(false);
-  };
+    setLoading(true)
+    let snapshot = await firestore().collection("Decks").get()
+    let data = snapshot.docs.map(doc => doc.data())
+    setDecklists(data)
+    setLoading(false)
+  }
 
   const displayLists = () => {
-    if(deckLists.length > 0) {
-      let items = deckLists.map((deck, index) => <DeckList key={index+1} deck={deck} />);
-      return items;
+    if (deckLists.length > 0) {
+      let items = deckLists.map((deck, index) => (
+        <DeckList key={index + 1} deck={deck} />
+      ))
+      return items
     }
-  };
+  }
 
   const handleDeckCreation = () => {
-    if(deckName.length > 0) {
-      let myuuid = uuidv4();
+    if (deckName.length > 0) {
+      let myuuid = uuidv4()
       firestore()
-        .collection('Decks')
+        .collection("Decks")
         .add({
           id: myuuid,
           name: deckName,
@@ -50,23 +58,24 @@ const DecklistScreen = () => {
           showMessage({
             message: "Deck added!",
             type: "info",
-          });
-        });
+          })
+        })
     } else {
       showMessage({
         message: "Please add a deck name",
         type: "warning",
-      });
+      })
     }
-  };
+  }
 
-  if(loading) {
-    return(
+  if (loading) {
+    return (
       <>
         <Spinner />
-      </>)
+      </>
+    )
   } else {
-    return(
+    return (
       <View style={styles.container}>
         <Text style={styles.title}> Decklists </Text>
         <View>
@@ -78,22 +87,23 @@ const DecklistScreen = () => {
               onChangeText={text => setDeckName(text)}
               style={styles.deckForm.formField}
             />
-            <TouchableOpacity onPress={handleDeckCreation} style={[styles.button]}>
+            <TouchableOpacity
+              onPress={handleDeckCreation}
+              style={[styles.button]}>
               <Text style={[styles.buttonText]}> Add deck </Text>
             </TouchableOpacity>
           </View>
 
           <Text>Decks</Text>
 
-          <View>{ displayLists() }</View>
+          <View>{displayLists()}</View>
         </View>
-
       </View>
-    );
+    )
   }
-};
+}
 
-export default DecklistScreen;
+export default DecklistScreen
 
 const styles = StyleSheet.create({
   title: {
@@ -109,7 +119,7 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     formField: {
-      backgroundColor: 'white',
+      backgroundColor: "white",
       paddingHorizontal: 5,
       paddingVertical: 5,
       borderRadius: 5,
@@ -121,19 +131,19 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   buttonText: {
-    color: 'white',
-    fontWeight: '700',
+    color: "white",
+    fontWeight: "700",
     fontSize: 14,
   },
   button: {
     backgroundColor: colors.darkBlue,
-    width: 'auto',
+    width: "auto",
     padding: 10,
-    alignItems: 'center',
+    alignItems: "center",
     borderRadius: 10,
   },
-});
+})

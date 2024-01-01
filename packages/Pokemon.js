@@ -1,5 +1,5 @@
-import pokemon from 'pokemontcgsdk';
+import pokemon from "pokemontcgsdk"
 
-pokemon.configure({apiKey: '***REMOVED***'});
+pokemon.configure({ apiKey: "***REMOVED***" })
 
-export default pokemon;
+export default pokemon

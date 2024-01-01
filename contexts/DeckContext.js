@@ -1,7 +1,7 @@
-import {createContext} from 'react';
+import { createContext } from "react"
 
 const DeckContext = createContext({
   deck: undefined,
-});
+})
 
 export default DeckContext
