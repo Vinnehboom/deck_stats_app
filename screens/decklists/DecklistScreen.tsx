@@ -19,12 +19,13 @@ import { Deck } from "../../types"
 const DecklistScreen = () => {
   const [deckName, setDeckName] = useState<string>("")
   const [decks, setDecks] = useState<Deck[] | []>([])
+  const [createdDecks, setCreatedDecks] = useState<Deck[]>()
   const [loading, setLoading] = useState<boolean>(false)
   const user = auth().currentUser
 
   useEffect(() => {
     getDecks()
-  }, [])
+  }, [createdDecks])
 
   const getDecks = async () => {
     setLoading(true)
@@ -59,6 +60,8 @@ const DecklistScreen = () => {
             message: "Deck added!",
             type: "info",
           })
+          setCreatedDecks([deck])
+          setDeckName()
         })
     } else {
       showMessage({
@@ -94,7 +97,7 @@ const DecklistScreen = () => {
             </TouchableOpacity>
           </View>
 
-          <Text>Decks</Text>
+          <Text style={styles.subTitle}>Decks</Text>
 
           <View>{displayDecks()}</View>
         </View>
@@ -111,6 +114,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   subTitle: {
+    paddingVertical: 24,
     fontSize: 18,
     textAlign: "center",
   },
@@ -131,6 +135,7 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 12,
+    paddingTop: 64,
     justifyContent: "center",
     alignItems: "center",
   },
