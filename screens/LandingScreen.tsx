@@ -1,15 +1,15 @@
-import React, { useContext } from "react"
-import AuthContext from "../contexts/AuthContext"
+import React from "react"
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { colors } from "../utils/colors"
+import { useAuthContext } from "../contexts/useAuthContext"
 
 const LandingScreen = () => {
-  const { user, handleSignOut } = useContext(AuthContext)
+  const { user, signOut } = useAuthContext()
 
   return (
     <View style={styles.container}>
       <Text> Email: {user.email} </Text>
-      <TouchableOpacity onPress={handleSignOut} style={[styles.button]}>
+      <TouchableOpacity onPress={signOut} style={[styles.button]}>
         <Text style={[styles.buttonText]}> Sign out </Text>
       </TouchableOpacity>
     </View>

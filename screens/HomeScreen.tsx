@@ -6,16 +6,18 @@ import LandingScreen from "./LandingScreen"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import AuthContext from "../contexts/AuthContext"
 import { showMessage } from "react-native-flash-message"
+import { MainTabParamList, RootStackParamList } from "../types/RouteParams"
+import { StackNavigationProp } from "@react-navigation/stack"
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator<MainTabParamList>()
 const HomeScreen = () => {
   const user = auth().currentUser
-  const navigation = useNavigation()
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
   const handleSignOut = () => {
     auth()
       .signOut()
       .then(() => {
-        navigation.replace("Login")
+        navigation.replace("Login", undefined)
       })
       .catch(error => {
         showMessage({
@@ -33,7 +35,7 @@ const HomeScreen = () => {
   return (
     <AuthContext.Provider value={authProviderValue}>
       <Tab.Navigator
-        initialRouteName="Home"
+        initialRouteName="Decklist"
         screenOptions={{ headerShown: false }}>
         <Tab.Screen name="Landing" component={LandingScreen} />
         <Tab.Screen name="Decklist" component={DecklistScreen} />

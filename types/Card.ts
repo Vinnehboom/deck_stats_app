@@ -1,9 +1,8 @@
-type Card = {
-  deckId: string
+export type Card = {
   identifier: string
-  name: string
   setId: string
+  setNumber: string
+  name: string
+  apiSetId: string
   imageApiSlug?: string
 }
-
-export default Card

@@ -1,7 +1,11 @@
-import Card from "./Card"
+import { Card } from "./Card"
+
+type CardList = { [count: number]: Card }[]
+
 type List = {
-  userId: string
-  cards: Card[]
+  id: string
+  deckId: string
+  cards: CardList
 }
 
-export default List
+export type { List, CardList }

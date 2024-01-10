@@ -1,15 +1,17 @@
-const setTranslations = {
+const setTranslations: { [key: string]: string } = {
   AOR: "xy7",
   AQ: "ecard2",
   AR: "pl4",
-  ASR: "swsh10tg",
+  ASR: "swsh10",
+  "ASR-TG": "swsh10tg",
   B2: "base4",
   BCR: "bw7",
   BKP: "xy9",
   BKT: "xy8",
   BLW: "bw1",
   BP: "bp",
-  BRS: "swsh9tg",
+  BRS: "swsh9",
+  "BRS-TG": "swsh9tg",
   BS: "base1",
   BST: "swsh5",
   BUS: "sm3",
@@ -22,6 +24,7 @@ const setTranslations = {
   CPA: "swsh35",
   CRE: "swsh6",
   CRZ: "swsh12pt5",
+  "CRZ-GG": "swsh12pt5gg",
   DAA: "swsh3",
   DCR: "dc1",
   DET: "det1",
@@ -61,6 +64,7 @@ const setTranslations = {
   LC: "base6",
   LM: "ex12",
   LOR: "swsh11",
+  "LOR-TG": "swsh11tg",
   LOT: "sm8",
   LTR: "bw11",
   MA: "ex4",
@@ -99,7 +103,8 @@ const setTranslations = {
   RS: "ex1",
   SF: "dp7",
   SHF: "swsh45",
-  SIT: "swsh12tg",
+  SIT: "swsh12",
+  "SIT-TG": "swsh12tg",
   SK: "ecard3",
   SLG: "sm35",
   SS: "ex2",
@@ -123,4 +128,4 @@ const setTranslations = {
   XY: "xy1",
 }
 
-export default setTranslations
+export { setTranslations }

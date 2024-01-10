@@ -1,13 +1,14 @@
 import React from "react"
 import LoginScreen from "./screens/LoginScreen"
 import HomeScreen from "./screens/HomeScreen"
-import DecklistHome from "./screens/decklists/decklist/DecklistHome"
+import { DecklistHome } from "./screens/decklists/decklist/DecklistHome"
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { RootStackParamList } from "./types/RouteParams"
 
 import FlashMessage from "react-native-flash-message"
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator<RootStackParamList>()
 
 function App(): JSX.Element {
   return (
@@ -18,10 +19,12 @@ function App(): JSX.Element {
           name="Login"
           component={LoginScreen}
         />
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="DecklistHome">
-          {props => <DecklistHome {...props} />}
-        </Stack.Screen>
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Home"
+          component={HomeScreen}
+        />
+        <Stack.Screen name="DecklistHome" component={DecklistHome} />
       </Stack.Navigator>
       <FlashMessage position="top" />
     </NavigationContainer>

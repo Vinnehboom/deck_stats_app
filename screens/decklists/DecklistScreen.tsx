@@ -14,28 +14,29 @@ import { Spinner } from "../../components/Spinner"
 import { showMessage } from "react-native-flash-message"
 import "react-native-get-random-values"
 import { v4 as uuidv4 } from "uuid"
+import { Deck } from "../../types"
 
 const DecklistScreen = () => {
-  const [deckName, setDeckName] = useState("")
-  const [deckLists, setDecklists] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [deckName, setDeckName] = useState<string>("")
+  const [decks, setDecks] = useState<Deck[] | []>([])
+  const [loading, setLoading] = useState<boolean>(false)
   const user = auth().currentUser
 
   useEffect(() => {
-    getLists()
+    getDecks()
   }, [])
 
-  const getLists = async () => {
+  const getDecks = async () => {
     setLoading(true)
     let snapshot = await firestore().collection("Decks").get()
-    let data = snapshot.docs.map(doc => doc.data())
-    setDecklists(data)
+    let data = snapshot.docs.map(doc => doc.data()) as Deck[]
+    setDecks(data)
     setLoading(false)
   }
 
-  const displayLists = () => {
-    if (deckLists.length > 0) {
-      let items = deckLists.map((deck, index) => (
+  const displayDecks = () => {
+    if (decks.length > 0) {
+      let items = decks.map((deck, index) => (
         <DeckList key={index + 1} deck={deck} />
       ))
       return items
@@ -45,13 +46,14 @@ const DecklistScreen = () => {
   const handleDeckCreation = () => {
     if (deckName.length > 0) {
       let myuuid = uuidv4()
+      const deck: Deck = {
+        id: myuuid,
+        name: deckName,
+        userId: user!.uid,
+      }
       firestore()
         .collection("Decks")
-        .add({
-          id: myuuid,
-          name: deckName,
-          userId: user.uid,
-        })
+        .add(deck)
         .then(() => {
           showMessage({
             message: "Deck added!",
@@ -94,7 +96,7 @@ const DecklistScreen = () => {
 
           <Text>Decks</Text>
 
-          <View>{displayLists()}</View>
+          <View>{displayDecks()}</View>
         </View>
       </View>
     )

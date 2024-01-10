@@ -1,13 +1,20 @@
 import React from "react"
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native"
+import { Deck } from "../types"
 import { colors } from "../utils/colors"
 import { useNavigation } from "@react-navigation/core"
+import { StackNavigationProp } from "@react-navigation/stack"
+import { RootStackParamList } from "../types/RouteParams"
 
-export const DeckList = ({ deck }) => {
-  const navigation = useNavigation()
+type DeckListPropTypes = {
+  deck: Deck
+}
+
+export const DeckList = ({ deck }: DeckListPropTypes) => {
+  const { replace } = useNavigation<StackNavigationProp<RootStackParamList>>()
 
   const showPage = () => {
-    navigation.navigate("DecklistHome", { deck: deck })
+    replace("DecklistHome", { deck: deck })
   }
 
   return (

@@ -1,7 +1,11 @@
-type Deck = {
+import { List } from "./List"
+
+export type Deck = {
   id: string
   name: string
   userId: string
 }
 
-export default Deck
+export type DeckWithLists = Deck & {
+  lists: [] | List[]
+}

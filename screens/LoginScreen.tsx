@@ -11,16 +11,18 @@ import { colors } from "../utils/colors"
 import auth from "@react-native-firebase/auth"
 import { useNavigation } from "@react-navigation/core"
 import { showMessage } from "react-native-flash-message"
+import { StackNavigationProp } from "@react-navigation/stack"
+import { RootStackParamList } from "../types/RouteParams"
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const navigation = useNavigation()
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
 
   useEffect(() => {
     const unsubscribe = auth().onAuthStateChanged(user => {
       if (user) {
-        navigation.navigate("Home")
+        navigation.replace("Home", undefined)
       }
     })
 
@@ -42,7 +44,7 @@ const LoginScreen = () => {
   const handleLogin = () => {
     auth()
       .signInWithEmailAndPassword(email, password)
-      .then(userCredentials => {})
+      .then()
       .catch(error => {
         showMessage({
           message: `${error.message}`,

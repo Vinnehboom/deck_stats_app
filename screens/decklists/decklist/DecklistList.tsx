@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect } from "react"
 import {
   Text,
   View,
@@ -11,11 +11,15 @@ import { transformList } from "../../../helpers/decklists"
 import firestore from "@react-native-firebase/firestore"
 import { showMessage } from "react-native-flash-message"
 import { Spinner } from "../../../components/Spinner"
-import DeckContext from "../../../contexts/DeckContext"
+import { List } from "../../../types"
+import { RouteProp, useRoute } from "@react-navigation/native"
+import { DeckListTabParamsType } from "../../../types/RouteParams"
+import { v4 as uuidv4 } from "uuid"
 
 const DecklistList = () => {
-  const { deck } = useContext(DeckContext)
-  const [lists, setLists] = useState([])
+  const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>()
+  const { deck } = params
+  const [lists, setLists] = useState<List[]>([])
   const [listString, setListString] = useState("")
   const [loading, setLoading] = useState(false)
 
@@ -25,7 +29,7 @@ const DecklistList = () => {
         .collection("Lists")
         .where("deckId", "==", deck.id)
         .get()
-      let data = snapshot.docs.map(doc => doc.data())
+      let data = snapshot.docs.map(doc => doc.data()) as List[]
       setLists(data)
     }
 
@@ -42,7 +46,12 @@ const DecklistList = () => {
   }
 
   const handleListSubmission = () => {
-    const [listObject, errors] = transformList(listString)
+    const [cardList, errors] = transformList(listString)
+    const list: List = {
+      id: uuidv4(),
+      deckId: deck.id,
+      cards: cardList,
+    }
     if (errors.length > 0) {
       const errorString = errors.join(", ")
       showMessage({
@@ -52,10 +61,7 @@ const DecklistList = () => {
     } else {
       firestore()
         .collection("Lists")
-        .add({
-          deckId: deck.id,
-          list: listObject,
-        })
+        .add(list)
         .then(() => {
           showMessage({
             message: "List added!",

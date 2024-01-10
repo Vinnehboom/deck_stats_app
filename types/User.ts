@@ -1,6 +1,3 @@
-type User = {
-  email: string
-  uid: string
-}
+import { FirebaseAuthTypes } from "@react-native-firebase/auth"
 
-export default User
+export type User = FirebaseAuthTypes.User
