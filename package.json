@@ -22,13 +22,15 @@
     "@react-navigation/native-stack": "^6.9.13",
     "@react-navigation/stack": "^6.3.20",
     "@types/react-router-dom": "^5.3.3",
+    "native-base": "^3.4.28",
     "pokemontcgsdk": "^2.0.0",
     "react": "18.2.0",
     "react-native": "0.71.7",
     "react-native-flash-message": "^0.4.2",
     "react-native-get-random-values": "^1.9.0",
-    "react-native-safe-area-context": "^4.7.1",
+    "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.24.0",
+    "react-native-svg": "^12.1.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

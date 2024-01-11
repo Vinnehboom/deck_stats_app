@@ -8,6 +8,7 @@ import AuthContext from "../contexts/AuthContext"
 import { showMessage } from "react-native-flash-message"
 import { MainTabParamList, RootStackParamList } from "../types/RouteParams"
 import { StackNavigationProp } from "@react-navigation/stack"
+import { colors } from "../utils/colors"
 
 const Tab = createBottomTabNavigator<MainTabParamList>()
 const HomeScreen = () => {
@@ -35,10 +36,22 @@ const HomeScreen = () => {
   return (
     <AuthContext.Provider value={authProviderValue}>
       <Tab.Navigator
-        initialRouteName="Decklist"
-        screenOptions={{ headerShown: false }}>
+        initialRouteName="Decks"
+        screenOptions={{
+          headerTitle: "VS. Recorder",
+          headerStyle: { backgroundColor: colors["primary-dark"] },
+          headerTitleStyle: {
+            color: colors.white,
+            fontSize: 24,
+            fontWeight: "bold",
+          },
+        }}>
         <Tab.Screen name="Landing" component={LandingScreen} />
-        <Tab.Screen name="Decklist" component={DecklistScreen} />
+        <Tab.Screen
+          name="Decks"
+          options={{ animation: "fade" }}
+          component={DecklistScreen}
+        />
       </Tab.Navigator>
     </AuthContext.Provider>
   )

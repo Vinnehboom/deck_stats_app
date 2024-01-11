@@ -1,5 +1,6 @@
 import React from "react"
-import { Text, View } from "react-native"
+import { Text } from "react-native"
+import { Container } from "native-base"
 import { RouteProp, useRoute } from "@react-navigation/native"
 import { DeckListTabParamsType } from "../../../types/RouteParams"
 
@@ -8,9 +9,9 @@ const DecklistDetails = () => {
   const { deck } = params
 
   return (
-    <View>
+    <Container safeAreaTop>
       <Text>{deck.name}</Text>
-    </View>
+    </Container>
   )
 }
 

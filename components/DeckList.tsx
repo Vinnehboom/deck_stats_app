@@ -4,17 +4,17 @@ import { Deck } from "../types"
 import { colors } from "../utils/colors"
 import { useNavigation } from "@react-navigation/core"
 import { StackNavigationProp } from "@react-navigation/stack"
-import { RootStackParamList } from "../types/RouteParams"
+import { DecksStackParamList } from "../types/RouteParams"
 
 type DeckListPropTypes = {
   deck: Deck
 }
 
 export const DeckList = ({ deck }: DeckListPropTypes) => {
-  const { replace } = useNavigation<StackNavigationProp<RootStackParamList>>()
+  const { push } = useNavigation<StackNavigationProp<DecksStackParamList>>()
 
   const showPage = () => {
-    replace("DecklistHome", { deck: deck })
+    push("DecklistHome", { deck: deck })
   }
 
   return (

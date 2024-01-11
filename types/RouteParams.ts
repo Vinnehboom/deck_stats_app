@@ -5,7 +5,7 @@ import { BottomTabScreenProps } from "@react-navigation/bottom-tabs"
 
 export type MainTabParamList = {
   Landing: undefined
-  Decklist: undefined
+  Decks: undefined
 }
 
 export type RootStackParamList = {
