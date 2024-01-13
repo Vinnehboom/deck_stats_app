@@ -1,5 +1,6 @@
 import { setTranslations } from "../packages/pokemon/Sets"
 import { Card, CardList } from "../types"
+
 const transformList = (listString: string): [CardList, string[]] => {
   let splitArray = listString.replace(/\r/g, "").split(/\n/)
   let listErrors = []
@@ -15,20 +16,20 @@ const transformList = (listString: string): [CardList, string[]] => {
       if (cardItems.slice(-1)[0] === "PH") {
         cardItems.splice(-1)
       } // silly reverse indication from Live
-      let [cardCode, cardName, apiSetId] = Array(3).fill("")
+      let [cardName, apiSetId] = Array(3).fill("")
       const [setCode, setNumber] = cardItems.splice(-2)
-      cardCode = `${setCode} ${setNumber}`
       cardName = cardItems.join(" ")
       apiSetId = setCode === "Energy" ? "sve" : setTranslations[setCode] || ""
       const card: Card = {
-        identifier: cardCode,
         setNumber: setNumber,
         setId: setCode,
         name: cardName,
         apiSetId: apiSetId,
-        imageApiSlug: `${apiSetId}-${setNumber}`,
       }
-      cardListHash.push({ [count]: card })
+      cardListHash.push({
+        count: count,
+        card: card,
+      })
     }
   })
   if (!(totalCount === 60)) {

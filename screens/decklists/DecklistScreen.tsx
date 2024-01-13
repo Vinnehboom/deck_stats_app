@@ -9,7 +9,7 @@ import {
 import { colors } from "../../utils/colors"
 import auth from "@react-native-firebase/auth"
 import firestore from "@react-native-firebase/firestore"
-import { DeckList } from "../../components/DeckList"
+import { DeckItem } from "../../components/DeckItem"
 import { Spinner } from "../../components/Spinner"
 import { showMessage } from "react-native-flash-message"
 import "react-native-get-random-values"
@@ -37,10 +37,9 @@ const DecklistScreen = () => {
 
   const displayDecks = () => {
     if (decks.length > 0) {
-      let items = decks.map((deck, index) => (
-        <DeckList key={index + 1} deck={deck} />
+      return decks.map((deck, index) => (
+        <DeckItem key={index + 1} deck={deck} />
       ))
-      return items
     }
   }
 
@@ -61,7 +60,7 @@ const DecklistScreen = () => {
             type: "info",
           })
           setCreatedDecks([deck])
-          setDeckName()
+          setDeckName("")
         })
     } else {
       showMessage({

@@ -4,14 +4,14 @@ import { Deck } from "../types"
 import { colors } from "../utils/colors"
 import { useNavigation } from "@react-navigation/core"
 import { StackNavigationProp } from "@react-navigation/stack"
-import { DecksStackParamList } from "../types/RouteParams"
+import { RootStackParamList } from "../types/RouteParams"
 
 type DeckListPropTypes = {
   deck: Deck
 }
 
-export const DeckList = ({ deck }: DeckListPropTypes) => {
-  const { push } = useNavigation<StackNavigationProp<DecksStackParamList>>()
+export const DeckItem = ({ deck }: DeckListPropTypes) => {
+  const { push } = useNavigation<StackNavigationProp<RootStackParamList>>()
 
   const showPage = () => {
     push("DecklistHome", { deck: deck })

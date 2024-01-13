@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  ScrollView,
 } from "react-native"
 import { colors } from "../../../utils/colors"
 import { transformList } from "../../../helpers/decklists"
@@ -15,6 +16,8 @@ import { List } from "../../../types"
 import { RouteProp, useRoute } from "@react-navigation/native"
 import { DeckListTabParamsType } from "../../../types/RouteParams"
 import { v4 as uuidv4 } from "uuid"
+import { Container } from "native-base"
+import { ListItem } from "../../../components/ListItem"
 
 const DecklistList = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>()
@@ -39,10 +42,7 @@ const DecklistList = () => {
   }, [deck])
 
   const representLists = () => {
-    if (Object.keys(lists)[0] !== "") {
-      let items = lists.map((list, index) => <Text key={index}>list</Text>)
-      return items
-    }
+    return lists.map((list: List) => <ListItem list={list} />)
   }
 
   const handleListSubmission = () => {
@@ -81,25 +81,30 @@ const DecklistList = () => {
     )
   } else {
     return (
-      <View>
-        <View style={styles.container}>
-          <Text style={styles.title}> Import form</Text>
-          <TextInput
-            editable
-            multiline
-            placeholder="import"
-            value={listString}
-            onChangeText={text => setListString(text)}
-            style={styles.listForm.formField}
-          />
-          <TouchableOpacity
-            style={styles.button}
-            onPress={handleListSubmission}>
-            <Text style={styles.buttonText}>Submit list</Text>
-          </TouchableOpacity>
+      <Container style={styles.container}>
+        <View style={styles.scrollContainer}>
+          <ScrollView>
+            <View style={styles.listForm}>
+              <Text style={styles.title}> Import form</Text>
+              <TextInput
+                editable
+                multiline
+                placeholder="import"
+                value={listString}
+                onChangeText={text => setListString(text)}
+                style={styles.listForm.formField}
+              />
+              <TouchableOpacity
+                style={styles.button}
+                onPress={handleListSubmission}>
+                <Text style={styles.buttonText}>Submit list</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.listsContainer}>{representLists()}</View>
+            <View />
+          </ScrollView>
         </View>
-        <View>{representLists()}</View>
-      </View>
+      </Container>
     )
   }
 }
@@ -107,6 +112,8 @@ const DecklistList = () => {
 export default DecklistList
 
 const styles = StyleSheet.create({
+  scrollContainer: { flexShrink: 1 },
+  listsContainer: { width: "80%" },
   title: {
     fontSize: 24,
     textAlign: "center",
@@ -118,23 +125,27 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   listForm: {
-    width: "100%",
+    minWidth: "100%",
     alignItems: "center",
+    marginBottom: -50,
+    maxHeight: "75%",
     formField: {
+      minWidth: "100%",
       backgroundColor: "white",
       paddingHorizontal: 5,
       paddingVertical: 5,
       borderRadius: 5,
-      fontSize: 14,
+      fontSize: 16,
       height: "60%",
-      marginRight: "5%",
-      width: "80%",
     },
   },
   container: {
-    padding: 8,
+    minWidth: "100%",
+    paddingVertical: 8,
+    paddingHorizontal: 12,
     justifyContent: "center",
     alignItems: "center",
+    flex: 1,
   },
   buttonText: {
     color: "white",
@@ -145,6 +156,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.darkBlue,
     width: "auto",
     padding: 10,
+    marginTop: 20,
     alignItems: "center",
     borderRadius: 10,
   },

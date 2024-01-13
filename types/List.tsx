@@ -1,11 +1,14 @@
 import { Card } from "./Card"
 
-type CardList = { [count: number]: Card }[]
+export type CardListItem = {
+  count: number
+  card: Card
+}
 
-type List = {
+export type CardList = CardListItem[]
+
+export type List = {
   id: string
   deckId: string
   cards: CardList
 }
-
-export type { List, CardList }
