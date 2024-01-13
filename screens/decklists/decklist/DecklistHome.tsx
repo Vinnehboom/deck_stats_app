@@ -8,9 +8,9 @@ import { Text } from "react-native";
 
 import { DeckListTabParamList, DeckListTabParamsType, MainTabParamList } from "../../../types/RouteParams";
 import { colors } from "../../../utils/colors";
-import DecklistMatchups from "./DecklistMatchups";
-import DecklistList from "./DecklistList";
-import DecklistDetails from "./DecklistDetails";
+import { DecklistMatchups } from "./DecklistMatchups";
+import { DecklistList } from "./DecklistList";
+import { DecklistDetails } from "./DecklistDetails";
 
 const Tab = createBottomTabNavigator<DeckListTabParamList>();
 

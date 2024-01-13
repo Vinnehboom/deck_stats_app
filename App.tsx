@@ -4,14 +4,14 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NativeBaseProvider } from "native-base";
 import FlashMessage from "react-native-flash-message";
 
-import LoginScreen from "./screens/LoginScreen";
-import HomeScreen from "./screens/HomeScreen";
+import { LoginScreen } from "./screens/LoginScreen";
+import { HomeScreen } from "./screens/HomeScreen";
 import { DecklistHome } from "./screens/decklists/decklist/DecklistHome";
 import { RootStackParamList } from "./types/RouteParams";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-function App(): JSX.Element {
+export function App(): JSX.Element {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
@@ -25,5 +25,3 @@ function App(): JSX.Element {
     </NativeBaseProvider>
   );
 }
-
-export default App;

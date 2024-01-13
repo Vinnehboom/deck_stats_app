@@ -1,4 +1,4 @@
-const setTranslations: { [key: string]: string } = {
+export const setTranslations: { [key: string]: string } = {
   AOR: "xy7",
   AQ: "ecard2",
   AR: "pl4",
@@ -127,5 +127,3 @@ const setTranslations: { [key: string]: string } = {
   VIV: "swsh4",
   XY: "xy1",
 };
-
-export { setTranslations };

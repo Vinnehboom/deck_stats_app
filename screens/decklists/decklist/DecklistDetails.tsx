@@ -5,7 +5,7 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 
 import { DeckListTabParamsType } from "../../../types/RouteParams";
 
-const DecklistDetails = () => {
+export const DecklistDetails = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
   const { deck } = params;
 
@@ -15,5 +15,3 @@ const DecklistDetails = () => {
     </Container>
   );
 };
-
-export default DecklistDetails;

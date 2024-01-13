@@ -11,7 +11,7 @@ import { DeckItem } from "../../components/DeckItem";
 import { Spinner } from "../../components/Spinner";
 import { Deck } from "../../types";
 
-const DecklistScreen = () => {
+export const DecklistScreen = () => {
   const [deckName, setDeckName] = useState<string>("");
   const [decks, setDecks] = useState<Deck[] | []>([]);
   const [createdDecks, setCreatedDecks] = useState<Deck[]>();
@@ -95,8 +95,6 @@ const DecklistScreen = () => {
     );
   }
 };
-
-export default DecklistScreen;
 
 const styles = StyleSheet.create({
   button: {

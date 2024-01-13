@@ -8,7 +8,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { colors } from "../utils/colors";
 import { RootStackParamList } from "../types/RouteParams";
 
-const LoginScreen = () => {
+export const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
@@ -73,8 +73,6 @@ const LoginScreen = () => {
     </KeyboardAvoidingView>
   );
 };
-
-export default LoginScreen;
 
 const styles = StyleSheet.create({
   button: {

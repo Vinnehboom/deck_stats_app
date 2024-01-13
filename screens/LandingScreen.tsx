@@ -4,7 +4,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { colors } from "../utils/colors";
 import { useAuthContext } from "../contexts/useAuthContext";
 
-const LandingScreen = () => {
+export const LandingScreen = () => {
   const { user, signOut } = useAuthContext();
 
   return (
@@ -16,8 +16,6 @@ const LandingScreen = () => {
     </View>
   );
 };
-
-export default LandingScreen;
 
 const styles = StyleSheet.create({
   button: {

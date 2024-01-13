@@ -7,7 +7,7 @@ type AuthContextValueType = {
   signOut(): void;
 };
 
-const AuthContext = createContext<AuthContextValueType>({
+export const AuthContext = createContext<AuthContextValueType>({
   user: null,
   signOut: () => {
     throw {
@@ -16,5 +16,3 @@ const AuthContext = createContext<AuthContextValueType>({
     };
   },
 });
-
-export default AuthContext;

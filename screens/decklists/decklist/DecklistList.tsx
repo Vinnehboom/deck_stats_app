@@ -13,7 +13,7 @@ import { List } from "../../../types";
 import { DeckListTabParamsType } from "../../../types/RouteParams";
 import { ListItem } from "../../../components/ListItem";
 
-const DecklistList = () => {
+export const DecklistList = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
   const { deck } = params;
   const [lists, setLists] = useState<List[]>([]);
@@ -108,8 +108,6 @@ const DecklistList = () => {
     );
   }
 };
-
-export default DecklistList;
 
 const styles = StyleSheet.create({
   button: {

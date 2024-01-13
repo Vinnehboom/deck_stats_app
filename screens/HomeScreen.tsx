@@ -5,14 +5,15 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { showMessage } from "react-native-flash-message";
 import { StackNavigationProp } from "@react-navigation/stack";
 
-import AuthContext from "../contexts/AuthContext";
+import { AuthContext } from "../contexts/AuthContext";
 import { MainTabParamList, RootStackParamList } from "../types/RouteParams";
 import { colors } from "../utils/colors";
-import LandingScreen from "./LandingScreen";
-import DecklistScreen from "./decklists/DecklistScreen";
+import { LandingScreen } from "./LandingScreen";
+import { DecklistScreen } from "./decklists/DecklistScreen";
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
-const HomeScreen = () => {
+
+export const HomeScreen = () => {
   const user = auth().currentUser;
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const handleSignOut = () => {
@@ -53,5 +54,3 @@ const HomeScreen = () => {
     </AuthContext.Provider>
   );
 };
-
-export default HomeScreen;

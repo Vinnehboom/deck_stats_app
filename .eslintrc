@@ -27,6 +27,15 @@
         "newlines-between": "always"
       }
     ],
-    "react-native/no-color-literals": 0
-  }
+    "react-native/no-color-literals": 0,
+    "import/no-default-export": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ]
 }

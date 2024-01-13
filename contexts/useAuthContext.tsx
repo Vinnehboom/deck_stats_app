@@ -5,7 +5,7 @@ import { showMessage } from "react-native-flash-message";
 
 import { RootStackParamList } from "../types/RouteParams";
 import { User } from "../types";
-import AuthContext from "./AuthContext";
+import { AuthContext } from "./AuthContext";
 
 const useAuthContext = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
