@@ -8,6 +8,7 @@ export type CardListItem = {
 export type CardList = CardListItem[]
 
 export type List = {
+  name: string
   id: string
   deckId: string
   cards: CardList

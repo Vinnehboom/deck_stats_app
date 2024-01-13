@@ -3,7 +3,6 @@ import {
   Text,
   View,
   StyleSheet,
-  TextInput,
   TouchableOpacity,
   ScrollView,
 } from "react-native"
@@ -16,14 +15,16 @@ import { List } from "../../../types"
 import { RouteProp, useRoute } from "@react-navigation/native"
 import { DeckListTabParamsType } from "../../../types/RouteParams"
 import { v4 as uuidv4 } from "uuid"
-import { Container } from "native-base"
+import { Container, Input, TextArea } from "native-base"
 import { ListItem } from "../../../components/ListItem"
 
 const DecklistList = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>()
   const { deck } = params
   const [lists, setLists] = useState<List[]>([])
+  const [listsAdded, setListsAdded] = useState<number>(1)
   const [listString, setListString] = useState("")
+  const [listName, setListName] = useState("")
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -39,7 +40,7 @@ const DecklistList = () => {
     setLoading(true)
     getLists()
     setLoading(false)
-  }, [deck])
+  }, [deck, listsAdded])
 
   const representLists = () => {
     return lists.map((list: List) => <ListItem list={list} />)
@@ -48,6 +49,7 @@ const DecklistList = () => {
   const handleListSubmission = () => {
     const [cardList, errors] = transformList(listString)
     const list: List = {
+      name: listName,
       id: uuidv4(),
       deckId: deck.id,
       cards: cardList,
@@ -67,6 +69,7 @@ const DecklistList = () => {
             message: "List added!",
             type: "info",
           })
+          setListsAdded(listsAdded + 1)
         })
         .catch(e => console.log(e))
       setListString("")
@@ -85,11 +88,18 @@ const DecklistList = () => {
         <View style={styles.scrollContainer}>
           <ScrollView>
             <View style={styles.listForm}>
-              <Text style={styles.title}> Import form</Text>
-              <TextInput
+              <Text style={styles.title}> Import list</Text>
+              <Input
                 editable
-                multiline
+                placeholder="name"
+                value={listName}
+                onChangeText={text => setListName(text)}
+                style={styles.listForm.formField}
+              />
+              <TextArea
                 placeholder="import"
+                autoCompleteType
+                h={200}
                 value={listString}
                 onChangeText={text => setListString(text)}
                 style={styles.listForm.formField}
@@ -128,7 +138,7 @@ const styles = StyleSheet.create({
     minWidth: "100%",
     alignItems: "center",
     marginBottom: -50,
-    maxHeight: "75%",
+    minHeight: "45%",
     formField: {
       minWidth: "100%",
       backgroundColor: "white",
@@ -136,7 +146,7 @@ const styles = StyleSheet.create({
       paddingVertical: 5,
       borderRadius: 5,
       fontSize: 16,
-      height: "60%",
+      height: "80%",
     },
   },
   container: {

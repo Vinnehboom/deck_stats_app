@@ -1,6 +1,16 @@
 import React, { useState } from "react"
 import { List, CardList, CardListItem } from "../types"
-import { Image, Text, Box, Button, Center, Circle, HStack } from "native-base"
+import {
+  Image,
+  Text,
+  Box,
+  Button,
+  Center,
+  Circle,
+  HStack,
+  ArrowUpIcon,
+  ArrowDownIcon,
+} from "native-base"
 import { colors } from "../utils/colors"
 
 const CardListImage = ({ count, card }: CardListItem) => {
@@ -31,9 +41,13 @@ const CardListImage = ({ count, card }: CardListItem) => {
 export const ListItem = ({ list }: { list: List }) => {
   const cards = list.cards
   const [display, setDisplay] = useState<"list" | "image">("list")
+  const [collapse, setCollapse] = useState<boolean>(true)
 
   const toggleDisplay = () => {
     setDisplay(display === "list" ? "image" : "list")
+  }
+  const toggleCollapse = () => {
+    setCollapse(!collapse)
   }
   const renderImages = ({
     cardList,
@@ -79,25 +93,38 @@ export const ListItem = ({ list }: { list: List }) => {
     return renderedList
   }
 
+  const renderListItem = () => {
+    return (
+      <>
+        <Button
+          justifyContent={"center"}
+          minWidth="100%"
+          onPress={toggleDisplay}
+          backgroundColor={
+            display === "image" ? colors.primary : colors["primary-dark"]
+          }>
+          <Center>
+            <Text color={colors.light} fontSize={16} justifyContent={"center"}>
+              {" "}
+              Show {display === "list" ? "images" : "list"}
+            </Text>
+          </Center>
+        </Button>
+        {display === "image"
+          ? renderImages({ cardList: cards, columnLength: 3 })
+          : renderList(cards)}
+      </>
+    )
+  }
+
   return (
     <Box backgroundColor={colors.white}>
       <Button
-        justifyContent={"center"}
-        minWidth="100%"
-        onPress={toggleDisplay}
-        backgroundColor={
-          display === "image" ? colors.primary : colors["primary-dark"]
-        }>
-        <Center>
-          <Text color={colors.light} fontSize={16} justifyContent={"center"}>
-            {" "}
-            Show {display === "list" ? "images" : "list"}
-          </Text>
-        </Center>
+        leftIcon={collapse ? <ArrowDownIcon /> : <ArrowUpIcon />}
+        onPress={toggleCollapse}>
+        {list.name}
       </Button>
-      {display === "image"
-        ? renderImages({ cardList: cards, columnLength: 3 })
-        : renderList(cards)}
+      {collapse ? <></> : renderListItem()}
     </Box>
   )
 }
