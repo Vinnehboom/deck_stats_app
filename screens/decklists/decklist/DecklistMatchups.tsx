@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 const DecklistMatchups = () => {
-  return <></>
-}
+  return <></>;
+};
 
-export default DecklistMatchups
+export default DecklistMatchups;

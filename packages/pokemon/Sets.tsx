@@ -126,6 +126,6 @@ const setTranslations: { [key: string]: string } = {
   UPR: "sm5",
   VIV: "swsh4",
   XY: "xy1",
-}
+};
 
-export { setTranslations }
+export { setTranslations };

@@ -1,37 +1,38 @@
-import React from "react"
-import auth from "@react-native-firebase/auth"
-import { useNavigation } from "@react-navigation/core"
-import DecklistScreen from "./decklists/DecklistScreen"
-import LandingScreen from "./LandingScreen"
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import AuthContext from "../contexts/AuthContext"
-import { showMessage } from "react-native-flash-message"
-import { MainTabParamList, RootStackParamList } from "../types/RouteParams"
-import { StackNavigationProp } from "@react-navigation/stack"
-import { colors } from "../utils/colors"
+import React from "react";
+import auth from "@react-native-firebase/auth";
+import { useNavigation } from "@react-navigation/core";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { showMessage } from "react-native-flash-message";
+import { StackNavigationProp } from "@react-navigation/stack";
 
-const Tab = createBottomTabNavigator<MainTabParamList>()
+import AuthContext from "../contexts/AuthContext";
+import { MainTabParamList, RootStackParamList } from "../types/RouteParams";
+import { colors } from "../utils/colors";
+import LandingScreen from "./LandingScreen";
+import DecklistScreen from "./decklists/DecklistScreen";
+
+const Tab = createBottomTabNavigator<MainTabParamList>();
 const HomeScreen = () => {
-  const user = auth().currentUser
-  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
+  const user = auth().currentUser;
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const handleSignOut = () => {
     auth()
       .signOut()
       .then(() => {
-        navigation.replace("Login", undefined)
+        navigation.replace("Login", undefined);
       })
       .catch(error => {
         showMessage({
           message: `${error.message}`,
           type: "warning",
-        })
-      })
-  }
+        });
+      });
+  };
 
   const authProviderValue = {
     user: user,
     signOut: handleSignOut,
-  }
+  };
 
   return (
     <AuthContext.Provider value={authProviderValue}>
@@ -47,14 +48,10 @@ const HomeScreen = () => {
           },
         }}>
         <Tab.Screen name="Landing" component={LandingScreen} />
-        <Tab.Screen
-          name="Decks"
-          options={{ animation: "fade" }}
-          component={DecklistScreen}
-        />
+        <Tab.Screen name="Decks" options={{ animation: "fade" }} component={DecklistScreen} />
       </Tab.Navigator>
     </AuthContext.Provider>
-  )
-}
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;

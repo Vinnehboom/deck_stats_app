@@ -1,21 +1,22 @@
-import React from "react"
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native"
-import { Deck } from "../types"
-import { colors } from "../utils/colors"
-import { useNavigation } from "@react-navigation/core"
-import { StackNavigationProp } from "@react-navigation/stack"
-import { RootStackParamList } from "../types/RouteParams"
+import React from "react";
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/core";
+import { StackNavigationProp } from "@react-navigation/stack";
+
+import { Deck } from "../types";
+import { colors } from "../utils/colors";
+import { RootStackParamList } from "../types/RouteParams";
 
 type DeckListPropTypes = {
-  deck: Deck
-}
+  deck: Deck;
+};
 
 export const DeckItem = ({ deck }: DeckListPropTypes) => {
-  const { push } = useNavigation<StackNavigationProp<RootStackParamList>>()
+  const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   const showPage = () => {
-    push("DecklistHome", { deck: deck })
-  }
+    push("DecklistHome", { deck: deck });
+  };
 
   return (
     <View style={styles.container}>
@@ -24,22 +25,22 @@ export const DeckItem = ({ deck }: DeckListPropTypes) => {
         <Text>Show</Text>
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    padding: 8,
-    color: colors.white,
-    borderWidth: 0.5,
     borderRadius: 10,
-    margin: 5,
+    borderWidth: 0.5,
+    color: colors.white,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    margin: 5,
+    padding: 8,
   },
   title: {
-    fontSize: 14,
     color: colors.red,
+    fontSize: 14,
   },
-})
+});

@@ -1,40 +1,41 @@
-import React from "react"
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
-import { colors } from "../utils/colors"
-import { useAuthContext } from "../contexts/useAuthContext"
+import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
+import { colors } from "../utils/colors";
+import { useAuthContext } from "../contexts/useAuthContext";
 
 const LandingScreen = () => {
-  const { user, signOut } = useAuthContext()
+  const { user, signOut } = useAuthContext();
 
   return (
     <View style={styles.container}>
       <Text> Email: {user.email} </Text>
-      <TouchableOpacity onPress={signOut} style={[styles.button]}>
-        <Text style={[styles.buttonText]}> Sign out </Text>
+      <TouchableOpacity onPress={signOut} style={styles.button}>
+        <Text style={styles.buttonText}> Sign out </Text>
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
-export default LandingScreen
+export default LandingScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
+  button: {
     alignItems: "center",
+    backgroundColor: colors.darkBlue,
+    borderRadius: 10,
+    marginTop: 40,
+    padding: 15,
+    width: "60%",
   },
   buttonText: {
     color: "white",
-    fontWeight: "700",
     fontSize: 16,
+    fontWeight: "700",
   },
-  button: {
-    marginTop: 40,
-    backgroundColor: colors.darkBlue,
-    width: "60%",
-    padding: 15,
+  container: {
     alignItems: "center",
-    borderRadius: 10,
+    flex: 1,
+    justifyContent: "center",
   },
-})
+});

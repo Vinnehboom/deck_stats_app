@@ -1,33 +1,27 @@
-import React, { useState, useEffect } from "react"
-import {
-  KeyboardAvoidingView,
-  StyleSheet,
-  TextInput,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native"
-import { colors } from "../utils/colors"
-import auth from "@react-native-firebase/auth"
-import { useNavigation } from "@react-navigation/core"
-import { showMessage } from "react-native-flash-message"
-import { StackNavigationProp } from "@react-navigation/stack"
-import { RootStackParamList } from "../types/RouteParams"
+import React, { useState, useEffect } from "react";
+import { KeyboardAvoidingView, StyleSheet, TextInput, Text, TouchableOpacity, View } from "react-native";
+import auth from "@react-native-firebase/auth";
+import { useNavigation } from "@react-navigation/core";
+import { showMessage } from "react-native-flash-message";
+import { StackNavigationProp } from "@react-navigation/stack";
+
+import { colors } from "../utils/colors";
+import { RootStackParamList } from "../types/RouteParams";
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   useEffect(() => {
     const unsubscribe = auth().onAuthStateChanged(user => {
       if (user) {
-        navigation.replace("Home", undefined)
+        navigation.replace("Home", undefined);
       }
-    })
+    });
 
-    return unsubscribe
-  }, [navigation])
+    return unsubscribe;
+  }, [navigation]);
 
   const handleSignUp = () => {
     auth()
@@ -37,9 +31,9 @@ const LoginScreen = () => {
         showMessage({
           message: `${error.message}`,
           type: "warning",
-        })
-      })
-  }
+        });
+      });
+  };
 
   const handleLogin = () => {
     auth()
@@ -49,19 +43,14 @@ const LoginScreen = () => {
         showMessage({
           message: `${error.message}`,
           type: "warning",
-        })
-      })
-  }
+        });
+      });
+  };
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <View style={styles.inputContainer}>
-        <TextInput
-          placeholder="Email"
-          value={email}
-          onChangeText={text => setEmail(text)}
-          style={styles.input}
-        />
+        <TextInput placeholder="Email" value={email} onChangeText={text => setEmail(text)} style={styles.input} />
 
         <TextInput
           placeholder="Password"
@@ -73,65 +62,63 @@ const LoginScreen = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={handleLogin} style={[styles.button]}>
-          <Text style={[styles.buttonText]}> Login </Text>
+        <TouchableOpacity onPress={handleLogin} style={styles.button}>
+          <Text style={styles.buttonText}> Login </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={handleSignUp}
-          style={[styles.button, styles.buttonOutline]}>
-          <Text style={[styles.buttonOutlineText]}> Register </Text>
+        <TouchableOpacity onPress={handleSignUp} style={[styles.button, styles.buttonOutline]}>
+          <Text style={styles.buttonOutlineText}> Register </Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
-  )
-}
+  );
+};
 
-export default LoginScreen
+export default LoginScreen;
 
 const styles = StyleSheet.create({
-  container: {
+  button: {
+    alignItems: "center",
+    backgroundColor: colors.darkBlue,
+    borderRadius: 10,
+    padding: 15,
+    width: "100%",
+  },
+  buttonContainer: {
+    alignItems: "center",
     justifyContent: "center",
+    marginTop: 40,
+    width: "60%",
+  },
+  buttonOutline: {
+    backgroundColor: "white",
+    borderColor: colors.darkBlue,
+    borderWidth: 2,
+    marginTop: 5,
+  },
+  buttonOutlineText: {
+    color: colors.darkBlue,
+    fontSize: 16,
+    fontWeight: "700",
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "700",
+  },
+  container: {
     alignItems: "center",
     flex: 1,
+    justifyContent: "center",
+  },
+  input: {
+    backgroundColor: "white",
+    borderRadius: 10,
+    marginTop: 5,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
   },
   inputContainer: {
     width: "80%",
   },
-  input: {
-    backgroundColor: "white",
-    paddingHorizontal: 15,
-    paddingVertical: 10,
-    borderRadius: 10,
-    marginTop: 5,
-  },
-  buttonContainer: {
-    width: "60%",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 40,
-  },
-  buttonText: {
-    color: "white",
-    fontWeight: "700",
-    fontSize: 16,
-  },
-  buttonOutline: {
-    backgroundColor: "white",
-    marginTop: 5,
-    borderColor: colors.darkBlue,
-    borderWidth: 2,
-  },
-  button: {
-    backgroundColor: colors.darkBlue,
-    width: "100%",
-    padding: 15,
-    alignItems: "center",
-    borderRadius: 10,
-  },
-  buttonOutlineText: {
-    color: colors.darkBlue,
-    fontWeight: "700",
-    fontSize: 16,
-  },
-})
+});

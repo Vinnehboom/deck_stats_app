@@ -1,10 +1,11 @@
-import { User } from "../types"
-import { createContext } from "react"
+import { createContext } from "react";
+
+import { User } from "../types";
 
 type AuthContextValueType = {
-  user: User | null
-  signOut(): void
-}
+  user: User | null;
+  signOut(): void;
+};
 
 const AuthContext = createContext<AuthContextValueType>({
   user: null,
@@ -12,8 +13,8 @@ const AuthContext = createContext<AuthContextValueType>({
     throw {
       name: "NotImplementedError",
       message: `signOut() should be overridden by a useState setter or similar in the component that uses the Auth Provider.`,
-    }
+    };
   },
-})
+});
 
-export default AuthContext
+export default AuthContext;

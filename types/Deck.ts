@@ -1,11 +1,11 @@
-import { List } from "./List"
+import { List } from "./List";
 
 export type Deck = {
-  id: string
-  name: string
-  userId: string
-}
+  id: string;
+  name: string;
+  userId: string;
+};
 
 export type DeckWithLists = Deck & {
-  lists: [] | List[]
-}
+  lists: [] | List[];
+};
