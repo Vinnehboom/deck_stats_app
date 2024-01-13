@@ -2,6 +2,9 @@
 #
 .DS_Store
 
+# ENV
+.env
+
 # Xcode
 #
 build/
@@ -24,6 +27,7 @@ ios/.xcode.env.local
 
 # Android/IntelliJ
 #
+android/app/google-services.json
 build/
 .idea
 .gradle

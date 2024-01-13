@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { KeyboardAvoidingView, StyleSheet, TextInput, Text, TouchableOpacity, View } from "react-native";
-import auth from "@react-native-firebase/auth";
 import { useNavigation } from "@react-navigation/core";
 import { showMessage } from "react-native-flash-message";
 import { StackNavigationProp } from "@react-navigation/stack";
 
+import { authInstance } from "../firebase/firebaseconfig";
 import { colors } from "../utils/colors";
 import { RootStackParamList } from "../types/RouteParams";
 
@@ -14,7 +14,7 @@ export const LoginScreen = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   useEffect(() => {
-    const unsubscribe = auth().onAuthStateChanged(user => {
+    const unsubscribe = authInstance.onAuthStateChanged(user => {
       if (user) {
         navigation.replace("Home", undefined);
       }
@@ -24,7 +24,15 @@ export const LoginScreen = () => {
   }, [navigation]);
 
   const handleSignUp = () => {
-    auth()
+    if (email.trim() === "" || password.trim() === "") {
+      showMessage({
+        message: "Email or password cannot be empty",
+        type: "warning",
+      });
+      return;
+    }
+
+    authInstance
       .createUserWithEmailAndPassword(email, password)
       .then()
       .catch(error => {
@@ -36,7 +44,15 @@ export const LoginScreen = () => {
   };
 
   const handleLogin = () => {
-    auth()
+    if (email.trim() === "" || password.trim() === "") {
+      showMessage({
+        message: "Email or password cannot be empty",
+        type: "warning",
+      });
+      return;
+    }
+
+    authInstance
       .signInWithEmailAndPassword(email, password)
       .then()
       .catch(error => {
@@ -51,7 +67,6 @@ export const LoginScreen = () => {
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <View style={styles.inputContainer}>
         <TextInput placeholder="Email" value={email} onChangeText={text => setEmail(text)} style={styles.input} />
-
         <TextInput
           placeholder="Password"
           value={password}
