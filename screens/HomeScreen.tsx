@@ -35,6 +35,10 @@ export const HomeScreen = () => {
     signOut: handleSignOut,
   };
 
+  const animationOptions = {
+    animation: "fade",
+  };
+
   return (
     <AuthContext.Provider value={authProviderValue}>
       <Tab.Navigator
@@ -49,7 +53,7 @@ export const HomeScreen = () => {
           },
         }}>
         <Tab.Screen name="Landing" component={LandingScreen} />
-        <Tab.Screen name="Decks" options={{ animation: "fade" }} component={DecklistScreen} />
+        <Tab.Screen name="Decks" component={DecklistScreen} />
       </Tab.Navigator>
     </AuthContext.Provider>
   );
