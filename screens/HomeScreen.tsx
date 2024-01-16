@@ -35,10 +35,6 @@ export const HomeScreen = () => {
     signOut: handleSignOut,
   };
 
-  const animationOptions = {
-    animation: "fade",
-  };
-
   return (
     <AuthContext.Provider value={authProviderValue}>
       <Tab.Navigator
