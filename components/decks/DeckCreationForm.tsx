@@ -49,7 +49,7 @@ export const DeckCreationForm = ({ setCreatedDecks, user }: DeckCreationFormProp
 
   return (
     <VStack paddingTop={10}>
-      <Text style={DeckCreationFormStyle.subTitle}>Add decklist</Text>
+      <Text style={DeckCreationFormStyle.formTitle}>Add decklist</Text>
       <View style={DeckCreationFormStyle.deckForm}>
         <TextInput
           placeholder="Deck title"
@@ -62,7 +62,6 @@ export const DeckCreationForm = ({ setCreatedDecks, user }: DeckCreationFormProp
           <Text style={DeckCreationFormStyle.buttonText}> Add deck </Text>
         </TouchableOpacity>
       </View>
-      <Text style={DeckCreationFormStyle.subTitle}>Decks</Text>
     </VStack>
   );
 };
