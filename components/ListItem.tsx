@@ -7,17 +7,17 @@ import { colors } from "../utils/colors";
 const CardListImage = ({ count, card }: CardListItem) => {
   return (
     <Center w="30%" key={`${card.setId} ${card.setNumber}`}>
-      <Circle w="10" h="10" backgroundColor={colors.primary} position={"absolute"} bottom={"3"} zIndex={1}>
-        <Text fontSize={"16"}>{count}</Text>
+      <Circle w="10" h="10" backgroundColor={colors.primary} position="absolute" bottom="3" zIndex={1}>
+        <Text fontSize="16">{count}</Text>
       </Circle>
       <Image
         zIndex={-1}
         source={{
           uri: `https://images.pokemontcg.io/${card.apiSetId}/${card.setNumber}.png`,
         }}
-        borderRadius={"5"}
+        borderRadius="5"
         alt={card.name}
-        size={"lg"}
+        size="lg"
       />
     </Center>
   );
@@ -55,10 +55,10 @@ export const ListItem = ({ list }: { list: List }) => {
   };
 
   const renderList = (cardList: CardList) => {
-    const renderedList: Element[] = cardList.map((cardListItem, index) => {
+    const renderedList: React.JSX.Element[] = cardList.map((cardListItem, index) => {
       const { count, card } = cardListItem;
       return (
-        <Box key={index} minWidth={"100%"}>
+        <Box key={index} minWidth="100%">
           <Text>
             {count} {card.name} {card.setId} {card.setNumber}
           </Text>
@@ -72,12 +72,12 @@ export const ListItem = ({ list }: { list: List }) => {
     return (
       <>
         <Button
-          justifyContent={"center"}
+          justifyContent="center"
           minWidth="100%"
           onPress={toggleDisplay}
           backgroundColor={display === "image" ? colors.primary : colors["primary-dark"]}>
           <Center>
-            <Text color={colors.light} fontSize={16} justifyContent={"center"}>
+            <Text color={colors.light} fontSize={16} justifyContent="center">
               {" "}
               Show {display === "list" ? "images" : "list"}
             </Text>
