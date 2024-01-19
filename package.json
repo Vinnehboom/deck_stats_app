@@ -23,6 +23,7 @@
     "@react-navigation/stack": "^6.3.20",
     "@tanstack/react-query": "^5.17.14",
     "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.6.5",
     "native-base": "^3.4.28",
     "pokemontcgsdk": "^2.0.0",
     "react": "18.2.0",
@@ -32,6 +33,7 @@
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.24.0",
     "react-native-svg": "^12.1.1",
+    "use-lodash-debounce": "^1.3.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
