@@ -40,6 +40,7 @@ export const HomeScreen = () => {
       <Tab.Navigator
         initialRouteName="Decks"
         screenOptions={{
+          headerShown: false,
           headerTitle: "VS. Recorder",
           headerStyle: { backgroundColor: colors["primary-dark"] },
           headerTitleStyle: {

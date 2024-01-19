@@ -1,11 +1,13 @@
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { TextInput, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import firestore from "@react-native-firebase/firestore";
 import { showMessage } from "react-native-flash-message";
+import { VStack, Text } from "native-base";
 
-import { Deck, User } from "../../types";
 import { DeckCreationFormStyle } from "../../styles/decks/DeckCreationFormStyle";
+import { Deck, User, ArchetypeBase } from "../../types";
+import { ArchetypeSelect } from "../archetypes/ArchetypeSelect";
 
 type DeckCreationFormPropsType = {
   setCreatedDecks: (value: Deck[] | undefined) => void;
@@ -14,13 +16,17 @@ type DeckCreationFormPropsType = {
 
 export const DeckCreationForm = ({ setCreatedDecks, user }: DeckCreationFormPropsType) => {
   const [deckName, setDeckName] = useState<string>("");
+
+  const [deckArchetype, setDeckArchetype] = useState<ArchetypeBase>();
+
   const handleDeckCreation = () => {
-    if (deckName.length > 0) {
+    if (deckName.length > 0 && deckArchetype) {
       const myuuid = uuidv4();
       const deck: Deck = {
         id: myuuid,
         name: deckName,
         userId: user!.uid,
+        archetype: deckArchetype,
       };
       firestore()
         .collection("Decks")
@@ -42,7 +48,7 @@ export const DeckCreationForm = ({ setCreatedDecks, user }: DeckCreationFormProp
   };
 
   return (
-    <View>
+    <VStack paddingTop={10}>
       <Text style={DeckCreationFormStyle.subTitle}>Add decklist</Text>
       <View style={DeckCreationFormStyle.deckForm}>
         <TextInput
@@ -51,12 +57,12 @@ export const DeckCreationForm = ({ setCreatedDecks, user }: DeckCreationFormProp
           onChangeText={text => setDeckName(text)}
           style={DeckCreationFormStyle.deckForm.formField}
         />
+        <ArchetypeSelect setDeckArchetype={setDeckArchetype} selectedArchetype={deckArchetype} />
         <TouchableOpacity onPress={handleDeckCreation} style={DeckCreationFormStyle.button}>
           <Text style={DeckCreationFormStyle.buttonText}> Add deck </Text>
         </TouchableOpacity>
       </View>
-
       <Text style={DeckCreationFormStyle.subTitle}>Decks</Text>
-    </View>
+    </VStack>
   );
 };
