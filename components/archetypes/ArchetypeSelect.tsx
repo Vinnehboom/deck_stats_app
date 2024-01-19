@@ -41,6 +41,7 @@ const ArchetypesList = ({
                     source={{
                       uri: `https://limitlesstcg.s3.us-east-2.amazonaws.com/pokemon/gen9/${icon}.png`,
                     }}
+                    resizeMode="stretch"
                     alt={icon}
                     size="2xs"
                   />
