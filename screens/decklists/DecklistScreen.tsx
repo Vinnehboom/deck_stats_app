@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import auth from "@react-native-firebase/auth";
 import firestore from "@react-native-firebase/firestore";
 import { ScrollView, Box } from "native-base";
@@ -36,6 +36,34 @@ export const DecklistScreen = () => {
     }
   };
 
+  const handleDeckCreation = () => {
+    if (deckName.length > 0) {
+      const myuuid = uuidv4();
+      const deck: Deck = {
+        id: myuuid,
+        name: deckName,
+        userId: user!.uid,
+      };
+      firestore()
+        .collection("Decks")
+        .doc(deck.id)
+        .set(deck)
+        .then(() => {
+          showMessage({
+            message: "Deck added!",
+            type: "info",
+          });
+          setCreatedDecks([deck]);
+          setDeckName("");
+        });
+    } else {
+      showMessage({
+        message: "Please add a deck name",
+        type: "warning",
+      });
+    }
+  };
+
   if (loading) {
     return (
       <>
@@ -50,7 +78,7 @@ export const DecklistScreen = () => {
           <DeckCreationForm setCreatedDecks={setCreatedDecks} user={user} />
           <Text style={DeckCreationFormStyle.subTitle}>Decks</Text>
           <View style={DecklistScreenStyle.decksList}>{displayDecks()}</View>
-          <Box minH={"100%"} />
+          <Box minH="100%" />
         </ScrollView>
       </View>
     );
