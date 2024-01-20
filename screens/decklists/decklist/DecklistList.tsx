@@ -55,7 +55,8 @@ export const DecklistList = () => {
     } else {
       firestore()
         .collection("Lists")
-        .add(list)
+        .doc(list.id)
+        .set(list)
         .then(() => {
           showMessage({
             message: "List added!",
