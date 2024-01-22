@@ -1,7 +1,7 @@
 {
   "root": true,
   "extends": [
-    "@react-native-community",
+    "@react-native",
     "plugin:react/recommended",
     "plugin:react-native/all",
     "plugin:@typescript-eslint/recommended",
@@ -34,7 +34,8 @@
     {
       "files": ["*.js", "*.jsx"],
       "rules": {
-        "import/no-default-export": "off"
+        "import/no-default-export": "off",
+        "@typescript-eslint/no-var-requires": "off"
       }
     }
   ]
