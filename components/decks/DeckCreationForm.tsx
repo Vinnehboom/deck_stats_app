@@ -30,7 +30,8 @@ export const DeckCreationForm = ({ setCreatedDecks, user }: DeckCreationFormProp
       };
       firestore()
         .collection("Decks")
-        .add(deck)
+        .doc(deck.id)
+        .set(deck)
         .then(() => {
           showMessage({
             message: "Deck added!",
