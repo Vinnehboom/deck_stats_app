@@ -64,7 +64,6 @@ export const ArchetypeSelect = ({
   selectedArchetype: ArchetypeBase | Archetype | undefined;
 }) => {
   const [archetypeQuery, setArchetypeQuery] = useState<string>("");
-  const [showSearchField, setShowSearchField] = useState<boolean>(true);
   const debouncedArchetypeQuery = useDebounce(archetypeQuery, 400);
   const [queriedArchetypes, setQueriedArchetypes] = useState<(ArchetypeBase | Archetype)[]>([]);
   const { archetypes, isLoading } = useArchetypeQuery();
@@ -78,13 +77,12 @@ export const ArchetypeSelect = ({
 
   const handleArchetypeSelection = (archetype: ArchetypeBase | Archetype) => {
     setDeckArchetype(archetype);
-    setShowSearchField(false);
     setArchetypeQuery("");
   };
 
   if (isLoading) return <Spinner />;
 
-  if (showSearchField)
+  if (!selectedArchetype)
     return (
       <>
         <HStack maxWidth="75%">
@@ -94,13 +92,6 @@ export const ArchetypeSelect = ({
             onChangeText={text => setArchetypeQuery(text)}
             style={DeckCreationFormStyle.deckForm.selectField}
           />
-          {selectedArchetype ? (
-            <Text marginLeft={3} marginY="auto" paddingTop={2} onPress={() => setShowSearchField(!showSearchField)}>
-              Back
-            </Text>
-          ) : (
-            <></>
-          )}
         </HStack>
         <ArchetypesList
           archetypes={queriedArchetypes}
@@ -110,11 +101,11 @@ export const ArchetypeSelect = ({
       </>
     );
 
-  if (!showSearchField && selectedArchetype)
+  if (selectedArchetype)
     return (
       <>
         <Flex flexDirection="row">
-          <Text marginY={1} marginRight={2} onPress={() => setShowSearchField(!showSearchField)} fontSize="md">
+          <Text marginY={1} marginRight={2} onPress={() => setDeckArchetype(undefined)} fontSize="md">
             Archetype: {selectedArchetype.name}
           </Text>
           {selectedArchetype.icons?.length &&
