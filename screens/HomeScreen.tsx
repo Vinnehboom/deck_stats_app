@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/core";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { showMessage } from "react-native-flash-message";
 import { StackNavigationProp } from "@react-navigation/stack";
+import { useTranslation } from "react-i18next";
 
 import { AuthContext } from "../contexts/AuthContext";
 import { MainTabParamList, RootStackParamList } from "../types/RouteParams";
@@ -16,6 +17,8 @@ const Tab = createBottomTabNavigator<MainTabParamList>();
 export const HomeScreen = () => {
   const user = auth().currentUser;
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const { t } = useTranslation();
+
   const handleSignOut = () => {
     auth()
       .signOut()
@@ -41,7 +44,7 @@ export const HomeScreen = () => {
         initialRouteName="Decks"
         screenOptions={{
           headerShown: false,
-          headerTitle: "VS. Recorder",
+          headerTitle: t("HOME_SCREEN.HEADER_TITLE"),
           headerStyle: { backgroundColor: colors["primary-dark"] },
           headerTitleStyle: {
             color: colors.white,

@@ -3,6 +3,7 @@ import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { Flex, Image, Text, HStack } from "native-base";
+import { useTranslation } from "react-i18next";
 
 import { Deck } from "../types";
 import { colors } from "../utils/colors";
@@ -14,6 +15,7 @@ type DeckListPropTypes = {
 
 export const DeckItem = ({ deck }: DeckListPropTypes) => {
   const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const { t } = useTranslation();
 
   const showPage = () => {
     push("DecklistHome", { deck: deck });
@@ -43,7 +45,7 @@ export const DeckItem = ({ deck }: DeckListPropTypes) => {
         </HStack>
       </Flex>
       <TouchableOpacity onPress={showPage}>
-        <Text marginTop={1}>Show</Text>
+        <Text marginTop={1}>{t("DECK.LIST_ITEM.SHOW")}</Text>
       </TouchableOpacity>
     </View>
   );

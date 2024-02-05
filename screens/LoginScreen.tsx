@@ -3,6 +3,7 @@ import { KeyboardAvoidingView, StyleSheet, TextInput, Text, TouchableOpacity, Vi
 import { useNavigation } from "@react-navigation/core";
 import { showMessage } from "react-native-flash-message";
 import { StackNavigationProp } from "@react-navigation/stack";
+import { useTranslation } from "react-i18next";
 
 import { authInstance } from "../firebase/firebaseconfig";
 import { colors } from "../utils/colors";
@@ -12,6 +13,7 @@ export const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const unsubscribe = authInstance.onAuthStateChanged(user => {
@@ -26,7 +28,7 @@ export const LoginScreen = () => {
   const handleSignUp = () => {
     if (email.trim() === "" || password.trim() === "") {
       showMessage({
-        message: "Email or password cannot be empty",
+        message: t("LOGIN_SCREEN.INCOMPLETE_FORM"),
         type: "warning",
       });
       return;
@@ -34,7 +36,12 @@ export const LoginScreen = () => {
 
     authInstance
       .createUserWithEmailAndPassword(email, password)
-      .then()
+      .then(() => {
+        showMessage({
+          message: t("LOGIN_SCREEN.SIGN_UP.SUCCESS"),
+          type: "success",
+        });
+      })
       .catch(error => {
         showMessage({
           message: `${error.message}`,
@@ -46,7 +53,7 @@ export const LoginScreen = () => {
   const handleLogin = () => {
     if (email.trim() === "" || password.trim() === "") {
       showMessage({
-        message: "Email or password cannot be empty",
+        message: t("LOGIN_SCREEN.INCOMPLETE_FORM"),
         type: "warning",
       });
       return;
@@ -54,10 +61,15 @@ export const LoginScreen = () => {
 
     authInstance
       .signInWithEmailAndPassword(email, password)
-      .then()
+      .then(() => {
+        showMessage({
+          message: t("LOGIN_SCREEN.SIGN_IN.SUCCESS"),
+          type: "success",
+        });
+      })
       .catch(error => {
         showMessage({
-          message: `${error.message}`,
+          message: error,
           type: "warning",
         });
       });
@@ -66,9 +78,14 @@ export const LoginScreen = () => {
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <View style={styles.inputContainer}>
-        <TextInput placeholder="Email" value={email} onChangeText={text => setEmail(text)} style={styles.input} />
         <TextInput
-          placeholder="Password"
+          placeholder={t("LOGIN_SCREEN.FORM.EMAIL")}
+          value={email}
+          onChangeText={text => setEmail(text)}
+          style={styles.input}
+        />
+        <TextInput
+          placeholder={t("LOGIN_SCREEN.FORM.PASSWORD")}
           value={password}
           onChangeText={text => setPassword(text)}
           style={styles.input}
@@ -78,11 +95,11 @@ export const LoginScreen = () => {
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={handleLogin} style={styles.button}>
-          <Text style={styles.buttonText}> Login </Text>
+          <Text style={styles.buttonText}> {t("LOGIN_SCREEN.FORM.SIGN_IN")} </Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={handleSignUp} style={[styles.button, styles.buttonOutline]}>
-          <Text style={styles.buttonOutlineText}> Register </Text>
+          <Text style={styles.buttonOutlineText}>{t("LOGIN_SCREEN.FORM.SIGN_UP")}</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>

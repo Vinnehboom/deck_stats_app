@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/core";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { ArrowBackIcon, Button } from "native-base";
 import { Text } from "react-native";
+import { useTranslation } from "react-i18next";
 
 import { DeckListTabParamList, DeckListTabParamsType, MainTabParamList } from "../../../types/RouteParams";
 import { colors } from "../../../utils/colors";
@@ -15,12 +16,13 @@ import { DeckDetails } from "./DeckDetails";
 const Tab = createBottomTabNavigator<DeckListTabParamList>();
 
 const DeckHome = () => {
+  const { t } = useTranslation();
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
   const { deck } = params;
   const { navigate } = useNavigation<StackNavigationProp<MainTabParamList>>();
   const headerBackButton = () => (
     <Button colorScheme={"white"} fontWeight={"bold"} onPress={() => navigate("Decks")} startIcon={<ArrowBackIcon />}>
-      <Text>Decks</Text>
+      <Text>{t("DECK.NAVIGATION.BACK")}</Text>
     </Button>
   );
 

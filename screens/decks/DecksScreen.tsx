@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View } from "react-native";
 import auth from "@react-native-firebase/auth";
 import { ScrollView, Box } from "native-base";
-import "react-native-get-random-values";
+import { useTranslation } from "react-i18next";
 
 import { DeckItem } from "../../components/DeckItem";
 import { Spinner } from "../../components/Spinner";
@@ -14,6 +14,7 @@ import { useGetDecks } from "../../components/decks/_queries/useGetDecks";
 export const DecksScreen = () => {
   const user = auth().currentUser;
   const { data: decks, isLoading } = useGetDecks(user!);
+  const { t } = useTranslation();
 
   const displayDecks = () => {
     if (decks?.length > 0) {
@@ -31,9 +32,9 @@ export const DecksScreen = () => {
     return (
       <View style={DecklistScreenStyle.container}>
         <ScrollView>
-          <Text style={DecklistScreenStyle.title}> Decklists </Text>
+          <Text style={DecklistScreenStyle.title}> {t("DECKS_SCREEN.TITLE")} </Text>
           <DeckCreationForm user={user} />
-          <Text style={DeckCreationFormStyle.subTitle}>Decks</Text>
+          <Text style={DeckCreationFormStyle.subTitle}>{t("DECKS_SCREEN.SUB_TITLE")}</Text>
           <View style={DecklistScreenStyle.decksList}>{displayDecks()}</View>
           <Box minH="100%" />
         </ScrollView>

@@ -1,0 +1,82 @@
+{
+  "TYPES": {
+    "USER": {
+      "EMAIL": "Email"
+    }
+  },
+  "HOME_SCREEN": {
+    "HEADER_TITLE": "VS. Recorder"
+  },
+  "LANDING_SCREEN": {
+    "SIGN_OUT": "Sign out"
+  },
+  "LOGIN_SCREEN": {
+    "INCOMPLETE_FORM": "Email or password cannot be empty",
+    "SIGN_UP": {
+      "SUCCESS": "Successfully signed up!"
+    },
+    "SIGN_IN": {
+      "SUCCESS": "Successfully signed in!"
+    },
+    "FORM": {
+      "PASSWORD": "Password",
+      "EMAIL": "Email",
+      "SIGN_IN": "Log in",
+      "SIGN_UP": "Register"
+    }
+  },
+  "DECKS_SCREEN": {
+    "TITLE": "Decks",
+    "SUB_TITLE": "My decks"
+  },
+  "ARCHETYPE": {
+
+  },
+  "LIST": {
+    "ITEM": {
+      "SHOW": "Show",
+      "IMAGES": "images",
+      "LIST": "list"
+    }
+  },
+  "DECK": {
+    "LIST_ITEM": {
+      "SHOW": "Show"
+    },
+    "CREATION_FORM": {
+      "TITLE": "Add deck",
+      "NAME": "Deck title",
+      "INCOMPLETE_FORM": "Please fill in all fields before submitting.",
+      "CREATION": {
+        "SUCCESS": "Deck added!"
+      },
+      "SUBMIT": "Add deck"
+    },
+    "NAVIGATION": {
+      "BACK": "Decks"
+    },
+    "DECK_DETAILS": {
+      "DELETE": {
+        "ALERT_TITLE": "Confirm deletion",
+        "ALERT_MESSAGE": "Are you sure you want to delete this deck?",
+        "CONFIRM": "Confirm",
+        "CANCEL": "Cancel",
+        "SUCCESS": "Deck deleted!",
+        "DELETE_BUTTON": "Delete"
+      }
+    },
+    "DECK_MATCHUPS": {},
+    "DECK_LISTS": {
+      "LIST_CREATION": {
+        "SUCCESS": "List added!",
+        "ERROR": "Some errors were encountered during list submission:"
+      },
+      "LIST_FORM": {
+        "TITLE": "Import list",
+        "NAME": "Name",
+        "LIST_PLACEHOLDER": "deck export...",
+        "SUBMIT": "Submit list"
+      }
+    }
+  }
+}

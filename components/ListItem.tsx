@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Image, Text, Box, Button, Center, Circle, HStack, ArrowUpIcon, ArrowDownIcon } from "native-base";
+import { useTranslation } from "react-i18next";
 
 import { List, CardList, CardListItem } from "../types";
 import { colors } from "../utils/colors";
@@ -24,6 +25,8 @@ const CardListImage = ({ count, card }: CardListItem) => {
 };
 
 export const ListItem = ({ list }: { list: List }) => {
+  const { t } = useTranslation();
+
   const cards = list.cards;
   const [display, setDisplay] = useState<"list" | "image">("list");
   const [collapse, setCollapse] = useState<boolean>(true);
@@ -78,8 +81,7 @@ export const ListItem = ({ list }: { list: List }) => {
           backgroundColor={display === "image" ? colors.primary : colors["primary-dark"]}>
           <Center>
             <Text color={colors.light} fontSize={16} justifyContent="center">
-              {" "}
-              Show {display === "list" ? "images" : "list"}
+              {t("LIST.ITEM.SHOW")} {display === "list" ? t("LIST.ITEM.IMAGES") : t("LIST.ITEM.LIST")}
             </Text>
           </Center>
         </Button>

@@ -12,6 +12,8 @@ import { RootStackParamList } from "./types/RouteParams";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const queryClient = new QueryClient();
+import "./utils/i18n";
+
 export function App(): JSX.Element {
   return (
     <QueryClientProvider client={queryClient}>
