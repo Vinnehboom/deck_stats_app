@@ -9,7 +9,7 @@ import { AuthContext } from "../contexts/AuthContext";
 import { MainTabParamList, RootStackParamList } from "../types/RouteParams";
 import { colors } from "../utils/colors";
 import { LandingScreen } from "./LandingScreen";
-import { DecklistScreen } from "./decklists/DecklistScreen";
+import { DecksScreen } from "./decks/DecksScreen";
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -50,7 +50,7 @@ export const HomeScreen = () => {
           },
         }}>
         <Tab.Screen name="Landing" component={LandingScreen} />
-        <Tab.Screen name="Decks" component={DecklistScreen} />
+        <Tab.Screen name="Decks" component={DecksScreen} />
       </Tab.Navigator>
     </AuthContext.Provider>
   );

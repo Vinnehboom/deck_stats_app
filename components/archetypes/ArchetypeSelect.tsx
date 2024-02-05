@@ -8,7 +8,7 @@ import { transformArchetypes } from "../../helpers/archetypes";
 import { Archetype } from "../../types";
 import { DeckCreationFormStyle } from "../../styles/decks/DeckCreationFormStyle";
 import { Spinner } from "../Spinner";
-import { useArchetypeQuery } from "./queries/useArchetypeQuery";
+import { useArchetypeQuery } from "././_queries/useArchetypeQuery";
 
 const ArchetypesList = ({
   archetypes,
