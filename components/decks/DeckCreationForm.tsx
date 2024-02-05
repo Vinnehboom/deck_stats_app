@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { showMessage } from "react-native-flash-message";
 import { VStack, Text } from "native-base";
+import { useTranslation } from "react-i18next";
+import "react-native-get-random-values";
 
 import { DeckCreationFormStyle } from "../../styles/decks/DeckCreationFormStyle";
 import { Deck, User, ArchetypeBase } from "../../types";
@@ -15,9 +17,11 @@ type DeckCreationFormPropsType = {
 
 export const DeckCreationForm = ({ user }: DeckCreationFormPropsType) => {
   const [deckName, setDeckName] = useState<string>("");
+  const { t } = useTranslation();
+
   const deckCreationMutation = useDeckCreation(() => {
     showMessage({
-      message: "Deck added!",
+      message: t("DECK.CREATION_FORM.CREATION.SUCCESS"),
       type: "info",
     });
     setDeckName("");
@@ -38,7 +42,7 @@ export const DeckCreationForm = ({ user }: DeckCreationFormPropsType) => {
       deckCreationMutation.mutate(deck);
     } else {
       showMessage({
-        message: "Please add a deck name",
+        message: t("DECK.CREATION_FORM.INCOMPLETE_FORM"),
         type: "warning",
       });
     }
@@ -46,17 +50,17 @@ export const DeckCreationForm = ({ user }: DeckCreationFormPropsType) => {
 
   return (
     <VStack paddingTop={10}>
-      <Text style={DeckCreationFormStyle.formTitle}>Add decklist</Text>
+      <Text style={DeckCreationFormStyle.formTitle}>{t("DECK.CREATION_FORM.TITLE")}</Text>
       <View style={DeckCreationFormStyle.deckForm}>
         <TextInput
-          placeholder="Deck title"
+          placeholder={t("DECK.CREATION_FORM.NAME")}
           value={deckName}
           onChangeText={text => setDeckName(text)}
           style={DeckCreationFormStyle.deckForm.formField}
         />
         <ArchetypeSelect setDeckArchetype={setDeckArchetype} selectedArchetype={deckArchetype} />
         <TouchableOpacity onPress={handleDeckCreation} style={DeckCreationFormStyle.button}>
-          <Text style={DeckCreationFormStyle.buttonText}> Add deck </Text>
+          <Text style={DeckCreationFormStyle.buttonText}> {t("DECK.CREATION_FORM.SUBMIT")} </Text>
         </TouchableOpacity>
       </View>
     </VStack>
