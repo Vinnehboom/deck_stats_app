@@ -2,36 +2,23 @@ import React from "react";
 import { Text, Alert } from "react-native";
 import { Container, Button } from "native-base";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import firestore from "@react-native-firebase/firestore";
 import { showMessage } from "react-native-flash-message";
 import { useNavigation } from "@react-navigation/core";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { DeckListTabParamsType, MainTabParamList } from "../../../types/RouteParams";
+import { useDeckDeletion } from "../../../components/lists/_queries/useDeckDeletion";
 
-export const DecklistDetails = () => {
+export const DeckDetails = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
   const { deck } = params;
   const { navigate } = useNavigation<MainTabParamList>();
-  const queryClient = useQueryClient();
 
-  const deletionMutation = useMutation({
-    mutationFn: async () => {
-      firestore()
-        .collection("Decks")
-        .doc(deck.id)
-        .delete()
-        .then(() => {
-          navigate("Decks", undefined);
-        });
-    },
-    onSuccess: () => {
-      showMessage({
-        message: "Deck deleted!",
-        type: "info",
-      });
-      queryClient.invalidateQueries({ queryKey: ["Decks"] });
-    },
+  const deletionMutation = useDeckDeletion(deck, () => {
+    navigate("Decks", undefined);
+    showMessage({
+      message: "Deck deleted!",
+      type: "info",
+    });
   });
 
   const handleDeckDeletion = () => {

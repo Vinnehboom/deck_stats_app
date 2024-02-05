@@ -8,13 +8,13 @@ import { Text } from "react-native";
 
 import { DeckListTabParamList, DeckListTabParamsType, MainTabParamList } from "../../../types/RouteParams";
 import { colors } from "../../../utils/colors";
-import { DecklistMatchups } from "./DecklistMatchups";
-import { DecklistList } from "./DecklistList";
-import { DecklistDetails } from "./DecklistDetails";
+import { DeckMatchups } from "./DeckMatchups";
+import { DeckLists } from "./DeckLists";
+import { DeckDetails } from "./DeckDetails";
 
 const Tab = createBottomTabNavigator<DeckListTabParamList>();
 
-const DecklistHome = () => {
+const DeckHome = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
   const { deck } = params;
   const { navigate } = useNavigation<StackNavigationProp<MainTabParamList>>();
@@ -37,11 +37,11 @@ const DecklistHome = () => {
           fontWeight: "bold",
         },
       }}>
-      <Tab.Screen name="DecklistDetails" component={DecklistDetails} initialParams={{ deck: deck }} />
-      <Tab.Screen name="DecklistList" component={DecklistList} initialParams={{ deck: deck }} />
-      <Tab.Screen name="DecklistMatchups" component={DecklistMatchups} initialParams={{ deck: deck }} />
+      <Tab.Screen name="DecklistDetails" component={DeckDetails} initialParams={{ deck: deck }} />
+      <Tab.Screen name="DecklistList" component={DeckLists} initialParams={{ deck: deck }} />
+      <Tab.Screen name="DecklistMatchups" component={DeckMatchups} initialParams={{ deck: deck }} />
     </Tab.Navigator>
   );
 };
 
-export { DecklistHome };
+export { DeckHome };

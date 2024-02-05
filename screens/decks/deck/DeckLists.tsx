@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
-import firestore from "@react-native-firebase/firestore";
 import { showMessage } from "react-native-flash-message";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { v4 as uuidv4 } from "uuid";
 import { Container, Input, TextArea } from "native-base";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { colors } from "../../../utils/colors";
 import { transformList } from "../../../helpers/decklists";
@@ -13,35 +11,27 @@ import { Spinner } from "../../../components/Spinner";
 import { List } from "../../../types";
 import { DeckListTabParamsType } from "../../../types/RouteParams";
 import { ListItem } from "../../../components/ListItem";
-import { useFirebaseQuery } from "../../../helpers/useFireBaseQuery";
+import { useListCreation } from "../../../components/lists/_queries/useListCreation";
+import { useGetDeckLists } from "../../../components/lists/_queries/useGetDeckLists";
 
-export const DecklistList = () => {
+export const DeckLists = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
   const { deck } = params;
-  const { data: lists, isLoading } = useFirebaseQuery(["Lists", { deck: deck.id }], async () => {
-    return await firestore().collection("Lists").where("deckId", "==", deck.id).get();
-  });
+  const { data: lists, isLoading } = useGetDeckLists(deck);
   const [listString, setListString] = useState("");
   const [listName, setListName] = useState("");
-  const queryClient = useQueryClient();
+
+  const listCreationMutation = useListCreation(deck, () => {
+    showMessage({
+      message: "List added!",
+      type: "info",
+    });
+    setListString("");
+  });
 
   const representLists = () => {
     return lists?.map((list: List) => <ListItem key={list.id} list={list} />);
   };
-
-  const listCreationMutation = useMutation({
-    mutationFn: async list => {
-      firestore().collection("Lists").doc(list.id).set(list);
-    },
-    onSuccess: () => {
-      showMessage({
-        message: "List added!",
-        type: "info",
-      });
-      queryClient.invalidateQueries({ queryKey: ["Lists", { deck: deck.id }] });
-      setListString("");
-    },
-  });
 
   const handleListSubmission = () => {
     const [cardList, errors] = transformList(listString);
