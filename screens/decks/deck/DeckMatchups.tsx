@@ -1,5 +1,5 @@
 import React from "react";
 
-export const DecklistMatchups = () => {
+export const DeckMatchups = () => {
   return <></>;
 };

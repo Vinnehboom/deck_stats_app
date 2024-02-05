@@ -7,7 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { LoginScreen } from "./screens/LoginScreen";
 import { HomeScreen } from "./screens/HomeScreen";
-import { DecklistHome } from "./screens/decklists/decklist/DecklistHome";
+import { DeckHome } from "./screens/decks/deck/DeckHome";
 import { RootStackParamList } from "./types/RouteParams";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -20,7 +20,7 @@ export function App(): JSX.Element {
           <Stack.Navigator>
             <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
             <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
-            <Stack.Screen name="DecklistHome" options={{ animation: "fade", headerShown: false }} component={DecklistHome} />
+            <Stack.Screen name="DecklistHome" options={{ animation: "fade", headerShown: false }} component={DeckHome} />
           </Stack.Navigator>
           <FlashMessage position="top" />
         </NavigationContainer>
