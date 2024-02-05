@@ -1,17 +1,21 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useTranslation } from "react-i18next";
 
 import { colors } from "../utils/colors";
 import { useAuthContext } from "../contexts/useAuthContext";
 
 export const LandingScreen = () => {
   const { user, signOut } = useAuthContext();
+  const { t } = useTranslation();
 
   return (
     <View style={styles.container}>
-      <Text> Email: {user.email} </Text>
+      <Text>
+        {t("TYPES.USER.EMAIL")}: {user.email}
+      </Text>
       <TouchableOpacity onPress={signOut} style={styles.button}>
-        <Text style={styles.buttonText}> Sign out </Text>
+        <Text style={styles.buttonText}> {t("LANDING_SCREEN.SIGN_OUT")} </Text>
       </TouchableOpacity>
     </View>
   );

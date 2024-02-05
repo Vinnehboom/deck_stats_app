@@ -4,6 +4,8 @@ import { showMessage } from "react-native-flash-message";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { v4 as uuidv4 } from "uuid";
 import { Container, Input, TextArea } from "native-base";
+import { useTranslation } from "react-i18next";
+import "react-native-get-random-values";
 
 import { colors } from "../../../utils/colors";
 import { transformList } from "../../../helpers/decklists";
@@ -20,10 +22,11 @@ export const DeckLists = () => {
   const { data: lists, isLoading } = useGetDeckLists(deck);
   const [listString, setListString] = useState("");
   const [listName, setListName] = useState("");
+  const { t } = useTranslation();
 
   const listCreationMutation = useListCreation(deck, () => {
     showMessage({
-      message: "List added!",
+      message: t("DECK.DECK_LISTS.SUCCESS"),
       type: "info",
     });
     setListString("");
@@ -44,7 +47,7 @@ export const DeckLists = () => {
     if (errors.length > 0) {
       const errorString = errors.join(", ");
       showMessage({
-        message: `Some errors were encountered during list submission: ${errorString}`,
+        message: `${t("DECK.DECK_LISTS.LIST_CREATION.ERROR")} ${errorString}`,
         type: "warning",
       });
     } else {
@@ -64,16 +67,16 @@ export const DeckLists = () => {
         <View style={styles.scrollContainer}>
           <ScrollView>
             <View style={styles.listForm}>
-              <Text style={styles.title}> Import list</Text>
+              <Text style={styles.title}> {t("DECK.DECK_LISTS.LIST_FORM.TITLE")}</Text>
               <Input
                 editable
-                placeholder="name"
+                placeholder={t("DECK.DECK_LISTS.LIST_FORM.NAME")}
                 value={listName}
                 onChangeText={text => setListName(text)}
                 style={styles.listForm.formField}
               />
               <TextArea
-                placeholder="import"
+                placeholder={t("DECK.DECK_LISTS.LIST_FORM.LIST_PLACEHOLDER")}
                 autoCompleteType
                 h={200}
                 value={listString}
@@ -81,7 +84,7 @@ export const DeckLists = () => {
                 style={styles.listForm.formField}
               />
               <TouchableOpacity style={styles.button} onPress={handleListSubmission}>
-                <Text style={styles.buttonText}>Submit list</Text>
+                <Text style={styles.buttonText}>{t("DECK.DECK_LISTS.LIST_FORM.SUBMIT")}</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.listsContainer}>{isLoading ? <Spinner /> : representLists()}</View>
