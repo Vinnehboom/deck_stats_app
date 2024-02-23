@@ -25,6 +25,7 @@
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.6.5",
     "i18next": "^23.7.18",
+    "i18next-resources-for-ts": "^1.5.0",
     "intl-pluralrules": "^2.0.1",
     "native-base": "^3.4.28",
     "pokemontcgsdk": "^2.0.0",
