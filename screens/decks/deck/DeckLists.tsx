@@ -26,9 +26,10 @@ export const DeckLists = () => {
 
   const listCreationMutation = useListCreation(deck, () => {
     showMessage({
-      message: t("DECK.DECK_LISTS.SUCCESS"),
+      message: t("DECK.DECK_LISTS.LIST_CREATION.SUCCESS"),
       type: "info",
     });
+
     setListString("");
   });
 
