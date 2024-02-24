@@ -63,6 +63,14 @@
         "CANCEL": "Cancel",
         "SUCCESS": "Deck deleted!",
         "DELETE_BUTTON": "Delete"
+      },
+      "ACTIVE_DECK": {
+        "ALERT_TITLE": "Activate deck",
+        "ALERT_MESSAGE": "Set this deck as your current active deck?",
+        "CONFIRM": "Confirm",
+        "CANCEL": "Cancel",
+        "SUCCESS": "Active deck successfully updated!",
+        "ACTIVATE_BUTTON": "Set active"
       }
     },
     "DECK_MATCHUPS": {},
