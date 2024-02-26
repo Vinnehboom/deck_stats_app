@@ -4,7 +4,8 @@ export const DecklistScreenStyle = StyleSheet.create({
   container: {
     maxHeight: "100%",
     minWidth: "100%",
-    paddingY: 12,
+    paddingBottom: 12,
+    paddingTop: 12,
   },
   decksList: {
     minWidth: "80%",
@@ -12,7 +13,7 @@ export const DecklistScreenStyle = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    paddingTop: 48,
+    paddingTop: 60,
     textAlign: "center",
   },
 });

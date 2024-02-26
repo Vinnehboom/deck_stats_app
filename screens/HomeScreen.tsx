@@ -41,7 +41,7 @@ export const HomeScreen = () => {
   return (
     <AuthContext.Provider value={authProviderValue}>
       <Tab.Navigator
-        initialRouteName="Decks"
+        initialRouteName="Landing"
         screenOptions={{
           headerShown: false,
           headerTitle: t("HOME_SCREEN.HEADER_TITLE"),

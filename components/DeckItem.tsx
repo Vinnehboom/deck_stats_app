@@ -2,12 +2,13 @@ import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { Flex, Image, Text, HStack } from "native-base";
+import { Flex, Text, HStack } from "native-base";
 import { useTranslation } from "react-i18next";
 
 import { Deck } from "../types";
 import { colors } from "../utils/colors";
 import { RootStackParamList } from "../types/RouteParams";
+import { ArchetypeIcons } from "./decks/ArchetypeIcons";
 
 type DeckListPropTypes = {
   deck: Deck;
@@ -28,20 +29,7 @@ export const DeckItem = ({ deck }: DeckListPropTypes) => {
           {deck.name}
         </Text>
         <HStack flexDirection="row" marginTop={1}>
-          {deck.archetype?.icons?.length &&
-            deck.archetype.icons.map((icon, index) => (
-              <Image
-                marginRight={2}
-                key={icon + index}
-                source={{
-                  uri: `https://limitlesstcg.s3.us-east-2.amazonaws.com/pokemon/gen9/${icon}.png`,
-                }}
-                minHeight="100%"
-                resizeMode="stretch"
-                alt={icon}
-                size="2xs"
-              />
-            ))}
+          <ArchetypeIcons deck={deck} />
         </HStack>
       </Flex>
       <TouchableOpacity onPress={showPage}>

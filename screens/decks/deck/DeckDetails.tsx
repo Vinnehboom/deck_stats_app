@@ -29,7 +29,7 @@ export const DeckDetails = () => {
   const activateDeckMutation = useSetActiveDeck(deck, user!, () => {
     navigate("Landing", undefined);
     showMessage({
-      message: t("DECK.DECK_DETAILS.ACTIVE_DECK.ACTIVATE_BUTTON"),
+      message: t("DECK.DECK_DETAILS.ACTIVE_DECK.SUCCESS"),
       type: "info",
     });
   });
