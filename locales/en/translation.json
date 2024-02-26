@@ -8,7 +8,10 @@
     "HEADER_TITLE": "VS. Recorder"
   },
   "LANDING_SCREEN": {
-    "SIGN_OUT": "Sign out"
+    "SIGN_OUT": "Sign out",
+    "ACTIVE_DECK": {
+      "TITLE": "Active deck"
+    }
   },
   "LOGIN_SCREEN": {
     "INCOMPLETE_FORM": "Email or password cannot be empty",
