@@ -13,7 +13,7 @@ import { useGetDecks } from "../../components/decks/_queries/useGetDecks";
 
 export const DecksScreen = () => {
   const user = auth().currentUser;
-  const { data: decks, isLoading } = useGetDecks(user!);
+  const { queryResult: decks, isLoading } = useGetDecks(user!);
   const { t } = useTranslation();
 
   const displayDecks = () => {

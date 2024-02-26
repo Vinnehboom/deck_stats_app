@@ -14,9 +14,17 @@ export function useFirebaseQuery<T>(keys: [keyof QueryKeys, ...QueryKeysType], q
     staleTime: 5,
     queryFn: async () => {
       const querySnapshot = await queryFn();
-      return querySnapshot.docs.map(doc => doc.data() as T);
+      if (querySnapshot?.docs) {
+        return querySnapshot.docs.map(doc => doc.data() as T);
+      } else {
+        if (querySnapshot.exists) {
+          return querySnapshot.data();
+        } else {
+          return { data: {} };
+        }
+      }
     },
   });
   const { data } = result;
-  return { data: data as T[], ...result };
+  return { queryResult: data as T, ...result };
 }
