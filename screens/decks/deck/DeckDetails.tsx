@@ -10,9 +10,11 @@ import auth from "@react-native-firebase/auth";
 import { DeckListTabParamsType, MainTabParamList } from "../../../types/RouteParams";
 import { useDeckDeletion } from "../../../components/lists/_queries/useDeckDeletion";
 import { useSetActiveDeck } from "../../../components/decks/_queries/useSetActiveDeck";
+import { useGetActiveDeck } from "../../../components/decks/_queries/useGetActiveDeck";
 
 export const DeckDetails = () => {
   const user = auth().currentUser;
+  const { queryResult: activeDeck } = useGetActiveDeck(user!);
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
   const { deck } = params;
   const { navigate } = useNavigation<MainTabParamList>();
@@ -25,6 +27,14 @@ export const DeckDetails = () => {
       type: "info",
     });
   });
+
+  const handleDeletion = () => {
+    if (deck.id === activeDeck.deckId.id) {
+      Alert.alert("You cannot delete your active deck. Please select a new active deck before continuing.");
+    } else {
+      deletionMutation.mutate();
+    }
+  };
 
   const activateDeckMutation = useSetActiveDeck(deck, user!, () => {
     navigate("Landing", undefined);
@@ -41,7 +51,7 @@ export const DeckDetails = () => {
         onPress: () => {},
         style: "cancel",
       },
-      { text: t("DECK.DECK_DETAILS.DELETE.CONFIRM"), onPress: deletionMutation.mutate },
+      { text: t("DECK.DECK_DETAILS.DELETE.CONFIRM"), onPress: handleDeletion },
     ]);
   };
 
