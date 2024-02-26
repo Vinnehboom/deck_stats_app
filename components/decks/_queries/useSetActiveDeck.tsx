@@ -7,9 +7,8 @@ export const useSetActiveDeck = (deck: Deck, user: User, onSuccessCallback: () =
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async () => {
-      firestore().collection("ActivDecks").doc(user.uid).set({ deckId: deck });
+      firestore().collection("ActiveDecks").doc(user.uid).set({ deckId: deck });
     },
-    onError: e => console.log(e),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["ActiveDeck"] });
       onSuccessCallback();

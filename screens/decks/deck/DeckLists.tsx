@@ -19,7 +19,7 @@ import { useGetDeckLists } from "../../../components/lists/_queries/useGetDeckLi
 export const DeckLists = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
   const { deck } = params;
-  const { data: lists, isLoading } = useGetDeckLists(deck);
+  const { queryResult: lists, isLoading } = useGetDeckLists(deck);
   const [listString, setListString] = useState("");
   const [listName, setListName] = useState("");
   const { t } = useTranslation();
