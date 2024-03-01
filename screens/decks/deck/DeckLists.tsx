@@ -24,9 +24,12 @@ export const DeckLists = () => {
   const [listName, setListName] = useState("");
   const { t } = useTranslation();
 
-  const listCreationMutation = useListCreation(deck, () => {
+  const listCreationMutation = useListCreation(deck, (activated?: boolean) => {
+    const flashMessage = activated
+      ? t("DECK.DECK_LISTS.LIST_CREATION.SUCCESS_AND_ACTIVATED")
+      : t("DECK.DECK_LISTS.LIST_CREATION.SUCCESS");
     showMessage({
-      message: t("DECK.DECK_LISTS.LIST_CREATION.SUCCESS"),
+      message: flashMessage,
       type: "info",
     });
 
@@ -52,7 +55,7 @@ export const DeckLists = () => {
         type: "warning",
       });
     } else {
-      listCreationMutation.mutate(list);
+      listCreationMutation.mutate({ list: list, setActive: !lists || lists?.length < 1 });
     }
   };
 

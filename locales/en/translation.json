@@ -80,6 +80,7 @@
     "DECK_LISTS": {
       "LIST_CREATION": {
         "SUCCESS": "List added!",
+        "SUCCESS_AND_ACTIVATED": "List added. It was also set as the current active list for this deck.",
         "ERROR": "Some errors were encountered during list submission:"
       },
       "LIST_FORM": {

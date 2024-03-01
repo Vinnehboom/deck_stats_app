@@ -1,13 +1,16 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import firestore from "@react-native-firebase/firestore";
 
-import { Deck, User } from "../../../types";
+import { Deck, List } from "../../../types";
 
-export const useSetActiveDeck = (deck: Deck, user: User, onSuccessCallback: () => void) => {
+export const useSetActiveList = (deck: Deck, onSuccessCallback: () => void) => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: async () => {
-      firestore().collection("ActiveDecks").doc(user.uid).set({ deck: deck });
+    mutationFn: async (list: List) => {
+      firestore()
+        .collection("Decks")
+        .doc(deck.id)
+        .set({ ...deck, activeListId: list.id });
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["ActiveDeck"] });
