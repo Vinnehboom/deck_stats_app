@@ -18,7 +18,8 @@ export const LandingScreen = () => {
   const { t } = useTranslation();
   const { navigate } = useNavigation<MainTabParamList>();
   const { queryResult: activeDeck, isLoading } = useGetActiveDeck(user!);
-  const deck = activeDeck?.deckId;
+  const deck = activeDeck?.deck;
+
   return (
     <View style={LandingScreenStyle.container}>
       <ScrollView>

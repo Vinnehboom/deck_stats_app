@@ -29,7 +29,7 @@ export const DeckDetails = () => {
   });
 
   const handleDeletion = () => {
-    if (deck.id === activeDeck.deckId.id) {
+    if (deck.id === activeDeck.deck.id) {
       Alert.alert("You cannot delete your active deck. Please select a new active deck before continuing.");
     } else {
       deletionMutation.mutate();
