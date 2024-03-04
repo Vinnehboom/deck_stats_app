@@ -38,8 +38,8 @@
   "LIST": {
     "ITEM": {
       "SHOW": "Show",
-      "IMAGES": "images",
-      "LIST": "list"
+      "IMAGES": "IMAGES",
+      "LIST": "LIST"
     }
   },
   "DECK": {
