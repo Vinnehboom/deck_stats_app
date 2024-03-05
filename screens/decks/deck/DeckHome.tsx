@@ -44,9 +44,9 @@ const DeckHome = () => {
           fontWeight: "bold",
         },
       }}>
-      <Tab.Screen name="DeckDetails" component={DeckDetails} initialParams={{ deck: deck }} />
-      <Tab.Screen name="DeckLists" component={DeckLists} initialParams={{ deck: deck }} />
-      <Tab.Screen name="DeckMatchups" component={DeckMatchups} initialParams={{ deck: deck }} />
+      <Tab.Screen name="DeckDetails" component={DeckDetails} initialParams={{ deck }} />
+      <Tab.Screen name="DeckLists" component={DeckLists} initialParams={{ deck }} />
+      <Tab.Screen name="DeckMatchups" component={DeckMatchups} initialParams={{ deck }} />
     </Tab.Navigator>
   );
 };

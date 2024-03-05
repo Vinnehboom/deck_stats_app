@@ -15,21 +15,15 @@ export const DeckLists = () => {
   const { deck } = params;
   const { queryResult: lists, isLoading } = useGetDeckLists(deck);
 
-  if (isLoading) {
-    return (
-      <>
-        <Spinner />
-      </>
-    );
-  } else {
-    return (
-      <View style={DeckListsStyle.container}>
-        <ScrollView style={DeckListsStyle.scrollViewContainer}>
-          <ListCreationForm deck={deck} lists={lists} />
-          {isLoading || !lists ? <Spinner /> : <ListsScrollContainer lists={lists} />}
-          <View />
-        </ScrollView>
-      </View>
-    );
-  }
+  if (isLoading) <Spinner />;
+
+  return (
+    <View style={DeckListsStyle.container}>
+      <ScrollView style={DeckListsStyle.scrollViewContainer}>
+        <ListCreationForm deck={deck} lists={lists} />
+        {isLoading || !lists ? <Spinner /> : <ListsScrollContainer deck={deck} lists={lists} />}
+        <View />
+      </ScrollView>
+    </View>
+  );
 };

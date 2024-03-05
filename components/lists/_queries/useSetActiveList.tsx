@@ -13,7 +13,11 @@ export const useSetActiveList = (deck: Deck, onSuccessCallback: () => void) => {
         .set({ ...deck, activeListId: list.id });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["ActiveDeck"] });
+      Promise.all([
+        queryClient.invalidateQueries({ queryKey: ["Deck", { deck: deck.id }] }),
+        queryClient.invalidateQueries({ queryKey: ["ActiveDeck"] }),
+        queryClient.invalidateQueries({ queryKey: ["Lists", { deck: deck.id }] }),
+      ]);
       onSuccessCallback();
     },
   });
