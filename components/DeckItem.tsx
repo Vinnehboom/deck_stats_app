@@ -19,7 +19,7 @@ export const DeckItem = ({ deck }: DeckListPropTypes) => {
   const { t } = useTranslation();
 
   const showPage = () => {
-    push("DecklistHome", { deck: deck });
+    push("DecklistHome", { deckId: deck.id });
   };
 
   return (
