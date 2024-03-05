@@ -8,15 +8,15 @@ export type MainTabParamList = {
 export type RootStackParamList = {
   Home: undefined;
   Login: undefined;
-  DecklistHome: { deck: Deck };
+  DecklistHome: { deckId: Deck["id"] };
 };
 
 export type DeckListTabParamList = {
-  DecklistDetails: { deck: Deck };
-  DecklistMatchups: { deck: Deck };
-  DecklistList: { deck: Deck };
+  DeckDetails: { deck: Deck };
+  DeckMatchups: { deck: Deck };
+  DeckLists: { deck: Deck };
 };
 
 export type DeckListTabParamsType = {
-  Params: { deck: Deck };
+  Params: { deckId: Deck["id"] };
 };

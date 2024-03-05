@@ -7,7 +7,7 @@ import { useNavigation } from "@react-navigation/core";
 import { useTranslation } from "react-i18next";
 import auth from "@react-native-firebase/auth";
 
-import { DeckListTabParamsType, MainTabParamList } from "../../../types/RouteParams";
+import { DeckListTabParamList, MainTabParamList } from "../../../types/RouteParams";
 import { useDeckDeletion } from "../../../components/lists/_queries/useDeckDeletion";
 import { useSetActiveDeck } from "../../../components/decks/_queries/useSetActiveDeck";
 import { useGetActiveDeck } from "../../../components/decks/_queries/useGetActiveDeck";
@@ -15,7 +15,7 @@ import { useGetActiveDeck } from "../../../components/decks/_queries/useGetActiv
 export const DeckDetails = () => {
   const user = auth().currentUser;
   const { queryResult: activeDeck } = useGetActiveDeck(user!);
-  const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
+  const { params } = useRoute<RouteProp<DeckListTabParamList, "DeckDetails">>();
   const { deck } = params;
   const { navigate } = useNavigation<MainTabParamList>();
   const { t } = useTranslation();
