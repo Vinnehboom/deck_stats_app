@@ -1,13 +1,15 @@
+import React, { useRef, useState, useEffect } from "react";
 import { FlatList, Animated, NativeSyntheticEvent, NativeScrollEvent } from "react-native";
-import React, { useRef } from "react";
 
 import { ListItem } from "./ListItem";
 import { ListPagination } from "./ListPagination";
 import { ListContainerStyle } from "../../styles/lists/ListsContainerStyle";
-import { List } from "../../types";
+import { Deck, List } from "../../types";
 
-export const ListsScrollContainer = ({ lists }: { lists: List[] }) => {
+export const ListsScrollContainer = ({ lists, deck }: { lists: List[]; deck: Deck }) => {
   const scrollX = useRef(new Animated.Value(0)).current;
+  const [activeListId, setActiveListId] = useState<string | undefined>(deck.activeListId);
+  const sortedLists = useRef<List[]>(lists);
 
   const handleOnScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     Animated.event(
@@ -28,10 +30,20 @@ export const ListsScrollContainer = ({ lists }: { lists: List[] }) => {
 
   const viewabilityConfig = useRef({ itemVisiblePercentThreshold: 50 }).current;
 
+  useEffect(() => {
+    const activeList = lists.find(list => list.id === deck.activeListId);
+    if (activeList) {
+      const activeListIndex = lists.indexOf(activeList);
+      lists.splice(activeListIndex, 1)[0];
+      lists.unshift(activeList);
+      sortedLists.current = lists;
+    }
+  }, [activeListId, lists, deck.activeListId]);
+
   return (
     <>
       <FlatList
-        data={lists}
+        data={sortedLists.current}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
@@ -39,9 +51,11 @@ export const ListsScrollContainer = ({ lists }: { lists: List[] }) => {
         snapToAlignment="center"
         onScroll={handleOnScroll}
         viewabilityConfig={viewabilityConfig}
-        renderItem={({ item }: { item: List }) => <ListItem list={item} />}
+        renderItem={({ item }: { item: List }) => (
+          <ListItem activeListId={activeListId ?? ""} setActiveListId={setActiveListId} deck={deck} list={item} />
+        )}
       />
-      <ListPagination data={lists} scrollX={scrollX} />
+      <ListPagination data={sortedLists.current} scrollX={scrollX} />
     </>
   );
 };

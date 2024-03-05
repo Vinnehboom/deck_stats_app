@@ -9,16 +9,15 @@ export const useListCreation = (deck: Deck, onSuccessCallback: (listActivated?: 
   const activeListMutation = useSetActiveList(deck, () => {});
 
   return useMutation({
-    mutationFn: async ({ list, setActive }: { list: List; setActive: boolean }) => {
+    mutationFn: async ({ list }: { list: List; setActive: boolean }) => {
       firestore().collection("Lists").doc(list.id).set(list);
-      if (setActive) return list;
     },
-    onSuccess: list => {
-      if (list) {
+    onSuccess: (_data, { list, setActive }) => {
+      if (setActive) {
         activeListMutation.mutate(list);
       }
       queryClient.invalidateQueries({ queryKey: ["Lists", { deck: deck.id }] });
-      onSuccessCallback(list ? true : false);
+      onSuccessCallback(setActive);
     },
   });
 };

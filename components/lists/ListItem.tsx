@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { Image, Text, Box, Button, Center, Circle, HStack } from "native-base";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
+import { showMessage } from "react-native-flash-message";
 
-import { List, CardList, CardListItem } from "../../types";
+import { useSetActiveList } from "./_queries/useSetActiveList";
+import { List, CardList, CardListItem, Deck } from "../../types";
 import { colors } from "../../utils/colors";
 import { ListItemStyle } from "../../styles/lists/ListItemStyle";
-
 const CardListImage = ({ count, card }: CardListItem) => {
   return (
     <Center style={ListItemStyle.cardImage} key={`${card.setId} ${card.setNumber}`}>
@@ -27,11 +28,27 @@ const CardListImage = ({ count, card }: CardListItem) => {
   );
 };
 
-export const ListItem = ({ list }: { list: List }) => {
+const ListItem = ({
+  list,
+  deck,
+  activeListId,
+  setActiveListId,
+}: {
+  list: List;
+  deck: Deck;
+  activeListId: List["id"];
+  setActiveListId: (i: List["id"]) => void;
+}) => {
   const { t } = useTranslation();
 
   const cards = list?.cards;
   const [display, setDisplay] = useState<"list" | "image">("list");
+  const listActivationMutation = useSetActiveList(deck, () => {
+    showMessage({
+      message: t("DECK.DECK_DETAILS.ACTIVE_DECK.SUCCESS"),
+      type: "info",
+    });
+  });
 
   const renderImages = ({ cardList, columnLength }: { cardList: CardList; columnLength: number }) => {
     let column: CardListItem[] = [];
@@ -117,12 +134,24 @@ export const ListItem = ({ list }: { list: List }) => {
         </Box>
 
         <Box style={ListItemStyle.titleActionBox}>
-          <Button style={ListItemStyle.activateButton} onPress={() => {}}>
-            <Text style={ListItemStyle.activateButtonText}>Set active</Text>
-          </Button>
+          {activeListId === list.id ? (
+            <Text>Active List</Text>
+          ) : (
+            <Button
+              style={ListItemStyle.activateButton}
+              onPress={() => {
+                setActiveListId(list.id);
+                listActivationMutation.mutate(list);
+              }}>
+              <Text style={ListItemStyle.activateButtonText}>Set active</Text>
+            </Button>
+          )}
         </Box>
       </HStack>
       {renderListItem()}
     </Box>
   );
 };
+
+const memoizedListItem = memo(ListItem);
+export { memoizedListItem as ListItem };
