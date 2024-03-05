@@ -12,13 +12,16 @@ import { colors } from "../../../utils/colors";
 import { DeckMatchups } from "./DeckMatchups";
 import { DeckLists } from "./DeckLists";
 import { DeckDetails } from "./DeckDetails";
+import { Spinner } from "../../../components/Spinner";
+import { useGetDeck } from "../../../components/decks/_queries/useGetDeck";
 
 const Tab = createBottomTabNavigator<DeckListTabParamList>();
 
 const DeckHome = () => {
   const { t } = useTranslation();
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
-  const { deck } = params;
+  const { deckId } = params;
+  const { queryResult: deck, isLoading } = useGetDeck(deckId);
   const { navigate } = useNavigation<StackNavigationProp<MainTabParamList>>();
   const headerBackButton = () => (
     <Button colorScheme={"white"} fontWeight={"bold"} onPress={() => navigate("Decks")} startIcon={<ArrowBackIcon />}>
@@ -26,9 +29,11 @@ const DeckHome = () => {
     </Button>
   );
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <Tab.Navigator
-      initialRouteName="DecklistDetails"
+      initialRouteName="DeckDetails"
       screenOptions={{
         headerTitle: deck.name,
         headerLeft: headerBackButton,
@@ -39,9 +44,9 @@ const DeckHome = () => {
           fontWeight: "bold",
         },
       }}>
-      <Tab.Screen name="DecklistDetails" component={DeckDetails} initialParams={{ deck: deck }} />
-      <Tab.Screen name="DecklistList" component={DeckLists} initialParams={{ deck: deck }} />
-      <Tab.Screen name="DecklistMatchups" component={DeckMatchups} initialParams={{ deck: deck }} />
+      <Tab.Screen name="DeckDetails" component={DeckDetails} initialParams={{ deck: deck }} />
+      <Tab.Screen name="DeckLists" component={DeckLists} initialParams={{ deck: deck }} />
+      <Tab.Screen name="DeckMatchups" component={DeckMatchups} initialParams={{ deck: deck }} />
     </Tab.Navigator>
   );
 };
