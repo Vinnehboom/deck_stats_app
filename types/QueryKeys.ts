@@ -3,4 +3,5 @@ export type QueryKeys = {
   Lists: string;
   ActiveDeck: string;
   Deck: string;
+  ActiveList: string;
 };

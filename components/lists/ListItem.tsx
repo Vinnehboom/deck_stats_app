@@ -28,17 +28,7 @@ const CardListImage = ({ count, card }: CardListItem) => {
   );
 };
 
-const ListItem = ({
-  list,
-  deck,
-  activeListId,
-  setActiveListId,
-}: {
-  list: List;
-  deck: Deck;
-  activeListId: List["id"];
-  setActiveListId: (i: List["id"]) => void;
-}) => {
+const ListItem = ({ list, deck, activeListId }: { list: List; deck: Deck; activeListId: List["id"] }) => {
   const { t } = useTranslation();
 
   const cards = list?.cards;
@@ -140,7 +130,6 @@ const ListItem = ({
             <Button
               style={ListItemStyle.activateButton}
               onPress={() => {
-                setActiveListId(list.id);
                 listActivationMutation.mutate(list);
               }}>
               <Text style={ListItemStyle.activateButtonText}>Set active</Text>
