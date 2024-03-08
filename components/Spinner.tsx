@@ -3,10 +3,10 @@ import { ActivityIndicator, View, StyleSheet } from "react-native";
 
 import { colors } from "../utils/colors";
 
-export const Spinner = () => {
+export const Spinner = ({ marginTop, height }: { marginTop?: number; height?: number }) => {
   return (
-    <View style={styles.container}>
-      <ActivityIndicator style={styles.spinner} size="large" color={colors.darkBlue} />
+    <View style={{ ...styles.container, marginTop: marginTop || 12 }}>
+      <ActivityIndicator style={{ height: height || 50 }} size="large" color={colors.darkBlue} />
     </View>
   );
 };
@@ -16,5 +16,4 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
   },
-  spinner: {},
 });

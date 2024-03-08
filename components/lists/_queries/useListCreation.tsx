@@ -12,7 +12,7 @@ export const useListCreation = (deck: Deck, onSuccessCallback: (listActivated?: 
     mutationFn: async ({ list }: { list: List; setActive: boolean }) => {
       firestore().collection("Lists").doc(list.id).set(list);
     },
-    onSuccess: (_data, { list, setActive }) => {
+    onSuccess: async (_data, { list, setActive }) => {
       if (setActive) {
         activeListMutation.mutate(list);
       }
