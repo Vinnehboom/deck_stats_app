@@ -7,17 +7,12 @@ export const useSetActiveList = (deck: Deck, onSuccessCallback: () => void) => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (list: List) => {
-      firestore()
-        .collection("Decks")
-        .doc(deck.id)
-        .set({ ...deck, activeListId: list.id });
+      firestore().collection("ActiveLists").doc(deck.id).set({ list: list });
     },
     onSuccess: () => {
-      Promise.all([
-        queryClient.invalidateQueries({ queryKey: ["Deck", { deck: deck.id }] }),
-        queryClient.invalidateQueries({ queryKey: ["ActiveDeck"] }),
-        queryClient.invalidateQueries({ queryKey: ["Lists", { deck: deck.id }] }),
-      ]);
+      queryClient.invalidateQueries({ queryKey: ["ActiveList", { deck }] });
+      queryClient.invalidateQueries({ queryKey: ["ActiveDeck"] });
+      queryClient.invalidateQueries({ queryKey: ["Lists", { deck: deck.id }] });
       onSuccessCallback();
     },
   });

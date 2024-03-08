@@ -8,6 +8,12 @@ export const DeckListsStyle = StyleSheet.create({
     maxHeight: height - 6,
     minWidth: width - 6,
   },
+  listsTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginTop: 12,
+    textAlign: "center",
+  },
   scrollViewContainer: {
     maxHeight: height,
   },

@@ -13,3 +13,7 @@ export type List = {
   deckId: string;
   cards: CardList;
 };
+
+export type ActiveList = {
+  list: List;
+};
