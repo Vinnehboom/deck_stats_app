@@ -17,6 +17,7 @@ export const ListItemStyle = StyleSheet.create({
     fontSize: 14,
     fontWeight: "700",
   },
+
   activeTabButton: {
     backgroundColor: colors.light,
     borderBottomEndRadius: 0,
@@ -63,6 +64,14 @@ export const ListItemStyle = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
+  },
+  countCircle: {
+    backgroundColor: colors.primary,
+    bottom: 3,
+    height: 8,
+    position: "absolute",
+    width: 8,
+    zIndex: 1,
   },
   header: {
     display: "flex",
