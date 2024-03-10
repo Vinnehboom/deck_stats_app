@@ -1,18 +1,38 @@
 import { Text, View, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import { showMessage } from "react-native-flash-message";
 import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
-import { Input, TextArea } from "native-base";
+import { Input, TextArea, Checkbox } from "native-base";
 
 import { ListFormStyle } from "../../styles/lists/ListFormStyle";
 import { useListCreation } from "./_queries/useListCreation";
 import { Deck, List } from "../../types";
 import { transformList } from "../../helpers/decklists";
 
+type newListStateType = { listString: string; listName: string; activate: "0" | "1" };
+const listStringReducer = (
+  state: newListStateType,
+  action: { type: "setListString" | "setListName" | "clear" | "updateActivate"; payload?: string }
+): newListStateType => {
+  switch (action.type) {
+    case "clear": {
+      return { listName: "", listString: "", activate: "0" };
+    }
+    case "setListString": {
+      return action.payload !== undefined ? { ...state, listString: action.payload } : { ...state };
+    }
+    case "setListName": {
+      return action.payload !== undefined ? { ...state, listName: action.payload } : { ...state };
+    }
+    case "updateActivate": {
+      return action.payload === "0" || action.payload === "1" ? { ...state, activate: action.payload } : { ...state };
+    }
+  }
+};
+
 export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] }) => {
-  const [listString, setListString] = useState("");
-  const [listName, setListName] = useState("");
+  const [newListObject, newListObjectDispatch] = useReducer(listStringReducer, { listString: "", listName: "", activate: "0" });
   const { t } = useTranslation();
 
   const listCreationMutation = useListCreation(deck, (activated?: boolean) => {
@@ -23,15 +43,13 @@ export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] })
       message: flashMessage,
       type: "info",
     });
-
-    setListString("");
-    setListName("");
+    newListObjectDispatch({ type: "clear" });
   });
 
   const handleListSubmission = () => {
-    const [cardList, errors] = transformList(listString);
+    const [cardList, errors] = transformList(newListObject.listString);
     const list: List = {
-      name: listName,
+      name: newListObject.listName,
       id: uuidv4(),
       deckId: deck.id,
       cards: cardList,
@@ -43,7 +61,8 @@ export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] })
         type: "warning",
       });
     } else {
-      listCreationMutation.mutate({ list: list, setActive: !lists || lists?.length < 1 });
+      const activateList = newListObject.activate === "1" || !lists || lists?.length < 1;
+      listCreationMutation.mutate({ list: list, setActive: activateList });
     }
   };
   return (
@@ -51,8 +70,8 @@ export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] })
       <Text style={ListFormStyle.title}> {t("DECK.DECK_LISTS.LIST_FORM.TITLE")}</Text>
       <Input
         placeholder={t("DECK.DECK_LISTS.LIST_FORM.NAME")}
-        value={listName}
-        onChangeText={(text: string) => setListName(text)}
+        value={newListObject.listName}
+        onChangeText={(text: string) => newListObjectDispatch({ type: "setListName", payload: text })}
         style={ListFormStyle.formField}
       />
       <TextArea
@@ -60,10 +79,17 @@ export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] })
         placeholder={t("DECK.DECK_LISTS.LIST_FORM.LIST_PLACEHOLDER")}
         autoCompleteType
         h={200}
-        value={listString}
-        onChangeText={text => setListString(text)}
+        value={newListObject.listString}
+        onChangeText={text => newListObjectDispatch({ type: "setListString", payload: text })}
         style={ListFormStyle.formField}
       />
+      <Checkbox
+        marginTop={4}
+        value={newListObject.activate}
+        isChecked={newListObject.activate === "1"}
+        onChange={value => newListObjectDispatch({ type: "updateActivate", payload: value ? "1" : "0" })}>
+        <Text> Set active </Text>
+      </Checkbox>
       <TouchableOpacity style={ListFormStyle.button} onPress={handleListSubmission}>
         <Text style={ListFormStyle.buttonText}>{t("DECK.DECK_LISTS.LIST_FORM.SUBMIT")}</Text>
       </TouchableOpacity>
