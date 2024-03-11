@@ -44,6 +44,7 @@ export const HomeScreen = () => {
         initialRouteName="Landing"
         screenOptions={{
           headerShown: false,
+          tabBarStyle: { backgroundColor: colors.light },
           headerTitle: t("HOME_SCREEN.HEADER_TITLE"),
           headerStyle: { backgroundColor: colors["primary-dark"] },
           headerTitleStyle: {
