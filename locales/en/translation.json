@@ -10,7 +10,17 @@
   "LANDING_SCREEN": {
     "SIGN_OUT": "Sign out",
     "ACTIVE_DECK": {
-      "TITLE": "Active deck"
+      "TITLE": "Active deck",
+      "RECORD_FORM": {
+        "LIST": "List",
+        "OPP_ARCHETYPE": "Opponent archetype",
+        "COIN_FLIP": "Coin flip",
+        "WON": "Won",
+        "LOST": "Lost",
+        "RESULT": "Result",
+        "REMARKS": "Remark",
+        "SUBMIT": "Submit"
+      }
     }
   },
   "LOGIN_SCREEN": {

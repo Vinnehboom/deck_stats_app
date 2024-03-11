@@ -1,67 +1,27 @@
 import { TextInput } from "react-native";
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
-import { Flex, Image, ScrollView, Text, VStack, HStack } from "native-base";
+import { Flex, Image, Text, HStack } from "native-base";
 import { useDebounce } from "use-lodash-debounce";
 
+import { ArchetypesList } from "./ArchetypesList";
 import { ArchetypeBase } from "../../types";
 import { transformArchetypes } from "../../helpers/archetypes";
 import { Archetype } from "../../types";
-import { DeckCreationFormStyle } from "../../styles/decks/DeckCreationFormStyle";
 import { Spinner } from "../Spinner";
 import { useArchetypeQuery } from "././_queries/useArchetypeQuery";
-
-const ArchetypesList = ({
-  archetypes,
-  shown,
-  handleArchetypeSelection,
-}: {
-  archetypes: (ArchetypeBase | Archetype)[];
-  shown: boolean;
-  handleArchetypeSelection: (archetype: ArchetypeBase | Archetype) => void;
-}) => {
-  return archetypes.length && shown ? (
-    <VStack space="xs" style={DeckCreationFormStyle.deckForm.selectContainer}>
-      <ScrollView minHeight="100%">
-        {archetypes.map(archetype => (
-          <Flex
-            marginX={1}
-            flexDirection="row"
-            justifyContent="space-between"
-            key={archetype.identifier}
-            borderBottomWidth={1}
-            padding={2}
-            minWidth="75%">
-            <Text onPress={() => handleArchetypeSelection(archetype)}>{archetype.name}</Text>
-            <Flex flexDirection="row">
-              {archetype.icons?.length &&
-                archetype.icons.map((icon, index) => (
-                  <Image
-                    marginRight={2}
-                    key={icon + index}
-                    source={{
-                      uri: `https://limitlesstcg.s3.us-east-2.amazonaws.com/pokemon/gen9/${icon}.png`,
-                    }}
-                    resizeMode="stretch"
-                    alt={icon}
-                    size="2xs"
-                  />
-                ))}
-            </Flex>
-          </Flex>
-        ))}
-      </ScrollView>
-    </VStack>
-  ) : (
-    <></>
-  );
-};
+import { isArchetype } from "../../helpers/typeGuards";
+import { ArchetypeSelectStyle } from "../../styles/archetypes/ArchetypeSelectStyle";
 
 export const ArchetypeSelect = ({
   setDeckArchetype,
   selectedArchetype,
+  listContainerTop,
 }: {
-  setDeckArchetype: Dispatch<SetStateAction<ArchetypeBase | Archetype | undefined>>;
-  selectedArchetype: ArchetypeBase | Archetype | undefined;
+  setDeckArchetype:
+    | Dispatch<SetStateAction<ArchetypeBase | Archetype | undefined>>
+    | ((v: ArchetypeBase | Archetype | undefined) => void);
+  selectedArchetype: ArchetypeBase | Archetype | undefined | Record<string, unknown>;
+  listContainerTop?: number;
 }) => {
   const [archetypeQuery, setArchetypeQuery] = useState<string>("");
   const debouncedArchetypeQuery = useDebounce(archetypeQuery, 400);
@@ -82,26 +42,27 @@ export const ArchetypeSelect = ({
 
   if (isLoading) return <Spinner />;
 
-  if (!selectedArchetype)
+  if (!isArchetype(selectedArchetype))
     return (
       <>
-        <HStack maxWidth="75%">
+        <HStack>
           <TextInput
             placeholder="Find archetype..."
             value={archetypeQuery}
             onChangeText={text => setArchetypeQuery(text)}
-            style={DeckCreationFormStyle.deckForm.selectField}
+            style={ArchetypeSelectStyle.selectField}
           />
         </HStack>
         <ArchetypesList
           archetypes={queriedArchetypes}
+          listContainerTop={listContainerTop}
           shown={archetypeQuery.length > 0}
           handleArchetypeSelection={handleArchetypeSelection}
         />
       </>
     );
 
-  if (selectedArchetype)
+  if (isArchetype(selectedArchetype))
     return (
       <>
         <Flex flexDirection="row">

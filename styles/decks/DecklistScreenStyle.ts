@@ -10,10 +10,18 @@ export const DecklistScreenStyle = StyleSheet.create({
   decksList: {
     minWidth: "80%",
     paddingHorizontal: 24,
+    zIndex: -1,
+  },
+  subTitle: {
+    fontSize: 22,
+    marginVertical: 20,
+    textAlign: "center",
+    zIndex: -1,
   },
   title: {
     fontSize: 24,
     paddingTop: 60,
     textAlign: "center",
+    zIndex: -1,
   },
 });

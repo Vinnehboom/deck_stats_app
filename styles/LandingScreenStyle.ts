@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 
 import { colors } from "../utils/colors";
+import { screenHeight } from "./dimensions";
 
 export const LandingScreenStyle = StyleSheet.create({
   activeDeck: {
@@ -12,7 +13,6 @@ export const LandingScreenStyle = StyleSheet.create({
   },
   activeDeckContainer: {
     borderRadius: 10,
-    borderWidth: 1,
     height: "auto",
     marginHorizontal: "10%",
     marginTop: 24,
@@ -24,9 +24,9 @@ export const LandingScreenStyle = StyleSheet.create({
     marginEnd: 16,
   },
   activeDeckTitle: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: "bold",
-    paddingTop: 12,
+    paddingTop: 24,
     textAlign: "center",
   },
   button: {
@@ -44,15 +44,16 @@ export const LandingScreenStyle = StyleSheet.create({
     fontWeight: "700",
   },
   container: {
+    backgroundColor: colors.white,
     flex: 1,
-    maxHeight: "100%",
+    maxHeight: screenHeight,
     minWidth: "100%",
-    paddingBottom: 36,
+    paddingBottom: 12,
     paddingTop: 12,
   },
   logo: {
     alignSelf: "center",
-    height: 75,
+    height: 60,
     marginTop: 24,
     resizeMode: "contain",
     width: 100,
@@ -68,7 +69,7 @@ export const LandingScreenStyle = StyleSheet.create({
   },
   welcome: {
     fontSize: 18,
-    paddingTop: 24,
+    paddingTop: 16,
     textAlign: "center",
   },
 });
