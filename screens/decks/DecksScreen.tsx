@@ -8,7 +8,6 @@ import { DeckItem } from "../../components/DeckItem";
 import { Spinner } from "../../components/Spinner";
 import { DeckCreationForm } from "../../components/decks/DeckCreationForm";
 import { DecklistScreenStyle } from "../../styles/decks/DecklistScreenStyle";
-import { DeckCreationFormStyle } from "../../styles/decks/DeckCreationFormStyle";
 import { useGetDecks } from "../../components/decks/_queries/useGetDecks";
 
 export const DecksScreen = () => {
@@ -34,7 +33,7 @@ export const DecksScreen = () => {
         <ScrollView>
           <Text style={DecklistScreenStyle.title}> {t("DECKS_SCREEN.TITLE")} </Text>
           <DeckCreationForm user={user} />
-          <Text style={DeckCreationFormStyle.subTitle}>{t("DECKS_SCREEN.SUB_TITLE")}</Text>
+          <Text style={DecklistScreenStyle.subTitle}>{t("DECKS_SCREEN.SUB_TITLE")}</Text>
           <View style={DecklistScreenStyle.decksList}>{displayDecks()}</View>
           <Box minH="100%" />
         </ScrollView>

@@ -2,7 +2,7 @@ import { TextInput, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { showMessage } from "react-native-flash-message";
-import { VStack, Text } from "native-base";
+import { VStack, Text, Box } from "native-base";
 import { useTranslation } from "react-i18next";
 import "react-native-get-random-values";
 
@@ -58,7 +58,9 @@ export const DeckCreationForm = ({ user }: DeckCreationFormPropsType) => {
           onChangeText={text => setDeckName(text)}
           style={DeckCreationFormStyle.deckForm.formField}
         />
-        <ArchetypeSelect setDeckArchetype={setDeckArchetype} selectedArchetype={deckArchetype} />
+        <Box width={"80"}>
+          <ArchetypeSelect setDeckArchetype={setDeckArchetype} selectedArchetype={deckArchetype} />
+        </Box>
         <TouchableOpacity onPress={handleDeckCreation} style={DeckCreationFormStyle.button}>
           <Text style={DeckCreationFormStyle.buttonText}> {t("DECK.CREATION_FORM.SUBMIT")} </Text>
         </TouchableOpacity>
