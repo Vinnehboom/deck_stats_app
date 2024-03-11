@@ -1,12 +1,9 @@
-import { Archetype } from "../types";
+import { ArchetypeBase } from "../types";
 import { Result, resultOptions } from "../types/MatchRecord";
 
-export const isArchetype = (obj: unknown): obj is Archetype => {
+export const isArchetype = (obj: unknown): obj is ArchetypeBase => {
   if (obj) {
-    return (
-      typeof obj === "object" &&
-      ["identifier", "name", "icons", "cards", "variants", "generation"].every(property => property in obj)
-    );
+    return typeof obj === "object" && ["identifier", "name", "icons", "cards"].every(property => property in obj);
   }
   return false;
 };
