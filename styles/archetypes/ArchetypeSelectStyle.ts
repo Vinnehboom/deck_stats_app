@@ -18,7 +18,9 @@ export const ArchetypeSelectStyle = StyleSheet.create({
   },
   selectField: {
     backgroundColor: "white",
-    borderRadius: 5,
+    borderColor: colors.grey,
+    borderRadius: 3,
+    borderWidth: 0.2,
     fontSize: 14,
     height: screenHeight / 30,
     marginVertical: 10,

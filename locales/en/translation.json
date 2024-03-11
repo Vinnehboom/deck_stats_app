@@ -18,8 +18,11 @@
         "WON": "Won",
         "LOST": "Lost",
         "RESULT": "Result",
-        "REMARKS": "Remark",
-        "SUBMIT": "Submit"
+        "REMARKS": "Remarks",
+        "SUBMIT": "Submit",
+        "SUCCESS": "Record successfully added!",
+        "FAILED": "Record could not be saved. Please validate all required fields and try again."
+
       }
     }
   },
