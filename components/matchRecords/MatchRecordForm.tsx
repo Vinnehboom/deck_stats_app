@@ -2,12 +2,15 @@ import { StyleSheet } from "react-native";
 import React, { useReducer } from "react";
 import { Box, Text, Select, Radio, HStack, TextArea, Button } from "native-base";
 import { useTranslation } from "react-i18next";
+import { v4 as uuidv4 } from "uuid";
+import { showMessage } from "react-native-flash-message";
 
 import { ArchetypeSelect } from "../archetypes/ArchetypeSelect";
 import { ArchetypeBase, Archetype, Deck, List } from "../../types";
 import { MatchRecord, resultOptions } from "../../types/MatchRecord";
 import { isArchetype, isResult } from "../../helpers/typeGuards";
 import { colors } from "../../utils/colors";
+import { useMatchRecordCreation } from "./_queries/useMatchRecordCreation";
 
 interface RecordStateType extends MatchRecord {
   opponentArchetype: ArchetypeBase | undefined;
@@ -21,7 +24,7 @@ type RecordActionType = {
     | "UPDATE_RESULT"
     | "UPDATE_OPPONENT_ARCHETYPE"
     | "UPDATE_REMARK";
-  payload: unknown;
+  payload?: unknown;
 };
 
 const recordStateReducer = (state: RecordStateType, action: RecordActionType): RecordStateType => {
@@ -73,6 +76,25 @@ export const MatchRecordForm = ({ deck, lists, activeList }: { deck: Deck; lists
 
   const { t } = useTranslation();
   const [matchRecord, matchRecordDispatch] = useReducer(recordStateReducer, initialMatchRecord);
+
+  const matchRecordCreationMutation = useMatchRecordCreation(deck, () => {
+    showMessage({ message: t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.SUCCESS"), type: "info" });
+  });
+
+  const handleRecordSubmission = () => {
+    const matchRecordValid: boolean =
+      [matchRecord.listId, matchRecord.result].every(property => property?.length > 0) &&
+      matchRecord.opponentArchetype !== undefined &&
+      isArchetype(matchRecord.opponentArchetype);
+    const record = { ...matchRecord, id: uuidv4() } as MatchRecord;
+
+    if (matchRecordValid) {
+      matchRecordCreationMutation.mutate(record);
+      matchRecordDispatch({ type: "CLEAR" });
+    } else {
+      showMessage({ message: t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.FAILED"), type: "warning" });
+    }
+  };
 
   return (
     <Box style={styles.container}>
@@ -129,7 +151,7 @@ export const MatchRecordForm = ({ deck, lists, activeList }: { deck: Deck; lists
         </Select>
       </Box>
       <Box style={styles.inputBox}>
-        <Text style={styles.inputLabel}>Remarks</Text>
+        <Text style={styles.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.REMARKS")}</Text>
         <TextArea
           style={styles.input}
           marginTop={2}
@@ -140,7 +162,7 @@ export const MatchRecordForm = ({ deck, lists, activeList }: { deck: Deck; lists
         />
       </Box>
       <Box marginTop={3}>
-        <Button style={styles.submitButton}>
+        <Button style={styles.submitButton} onPress={handleRecordSubmission}>
           <Text style={styles.submitButtonText}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.SUBMIT")}</Text>
         </Button>
       </Box>
