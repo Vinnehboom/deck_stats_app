@@ -1,7 +1,8 @@
 import { ArchetypeBase } from "./Archetype";
 import { Deck } from "./Deck";
 import { List } from "./List";
-export const resultOptions = ["W", "L", "T", "WLT", "LWT", "WW", "LL", "WWL", "WLL", "LWW", "LWL", "WLW"];
+export const bo1ResultOptions = ["W", "L", "T"];
+export const allResultOptions = [...bo1ResultOptions, "WLT", "LWT", "WW", "LL", "WWL", "WLL", "LWW", "LWL", "WLW"];
 
 // TODO: look into cleaner options
 
@@ -12,7 +13,8 @@ export type MatchRecord = {
   deckId: Deck["id"];
   listId: List["id"];
   opponentArchetype: ArchetypeBase;
-  coinFlipWon: boolean;
+  coinFlipWon?: boolean;
+  started?: boolean;
   result: Result;
   remarks: string;
 };

@@ -1,5 +1,5 @@
 import { ArchetypeBase } from "../types";
-import { Result, resultOptions } from "../types/MatchRecord";
+import { Result, allResultOptions as resultOptions } from "../types/MatchRecord";
 
 export const isArchetype = (obj: unknown): obj is ArchetypeBase => {
   if (obj) {
