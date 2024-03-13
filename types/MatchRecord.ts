@@ -12,6 +12,7 @@ export type MatchRecord = {
   id: string;
   deckId: Deck["id"];
   listId: List["id"];
+  deckArchetype: ArchetypeBase;
   opponentArchetype: ArchetypeBase;
   coinFlipWon?: boolean;
   started?: boolean;

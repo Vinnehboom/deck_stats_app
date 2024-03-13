@@ -93,6 +93,7 @@ export const MatchRecordForm = ({
   const initialMatchRecord: RecordStateType = {
     id: "",
     deckId: deck.id,
+    deckArchetype: deck.archetype,
     listId: activeList?.id || "",
     result: "",
     opponentArchetype: undefined,
