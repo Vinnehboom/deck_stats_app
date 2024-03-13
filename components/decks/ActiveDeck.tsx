@@ -31,7 +31,7 @@ export const ActiveDeck = ({ deck }: { deck: Deck }) => {
               <Text style={LandingScreenStyle.activeDeckName}>{deck.name}</Text>
               <ArchetypeIcons deck={deck} size={"xs"} />
             </HStack>
-            <MatchRecordForm activeList={activeList?.list} deck={deck} lists={lists} />
+            <MatchRecordForm bo1={true} started={true} activeList={activeList?.list} deck={deck} lists={lists} />
           </>
         ) : (
           <Text style={LandingScreenStyle.setActiveDeckText}>
