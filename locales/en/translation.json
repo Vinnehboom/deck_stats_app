@@ -24,7 +24,8 @@
         "REMARKS": "Remarks",
         "SUBMIT": "Submit",
         "SUCCESS": "Record successfully added!",
-        "FAILED": "Record could not be saved. Please validate all required fields and try again."
+        "FAILED": "Record could not be saved. Please validate all required fields and try again.",
+        "RECENT_RECORDS": "Recent results"
 
       }
     }
@@ -57,6 +58,11 @@
       "IMAGES": "IMAGES",
       "LIST": "LIST"
     }
+  },
+  "MATCH_RECORD": {
+    "FIRST": "1st",
+    "SECOND": "2nd",
+    "REMARKS": "Remarks"
   },
   "DECK": {
     "LIST_ITEM": {
