@@ -8,7 +8,10 @@ export const useMatchRecordCreation = (deck: Deck, onSuccessCallback: () => void
 
   return useMutation({
     mutationFn: async (matchRecord: MatchRecord) => {
-      firestore().collection("MatchRecords").doc(matchRecord.id).set(matchRecord);
+      firestore()
+        .collection("MatchRecords")
+        .doc(matchRecord.id)
+        .set({ ...matchRecord, createdAt: firestore.FieldValue.serverTimestamp() });
     },
     onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: ["MatchRecords", { deck: deck.id }] });

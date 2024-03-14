@@ -1,5 +1,6 @@
 import { ArchetypeBase } from "./Archetype";
 import { Deck } from "./Deck";
+import { TimeStamped } from "./TimeStamped";
 import { List } from "./List";
 export const bo1ResultOptions = ["W", "L", "T"];
 export const allResultOptions = [...bo1ResultOptions, "WLT", "LWT", "WW", "LL", "WWL", "WLL", "LWW", "LWL", "WLW"];
@@ -8,7 +9,7 @@ export const allResultOptions = [...bo1ResultOptions, "WLT", "LWT", "WW", "LL", 
 
 export type Result = "W" | "L" | "T" | "WLT" | "LWT" | "WW" | "LL" | "WWL" | "WLL" | "LWW" | "LWL" | "WLW" | string;
 
-export type MatchRecord = {
+export type MatchRecord = TimeStamped & {
   id: string;
   deckId: Deck["id"];
   listId: List["id"];

@@ -8,10 +8,11 @@ type QueryKeysType = {
   list?: { list: string };
 };
 
-export function useFirebaseQuery<T>(keys: [keyof QueryKeys, ...QueryKeysType], queryFn) {
+export function useFirebaseQuery<T>(keys: [keyof QueryKeys, ...QueryKeysType], queryFn, enabled: boolean = true) {
   const result = useQuery({
     queryKey: keys,
     staleTime: 5,
+    enabled,
     queryFn: async () => {
       const querySnapshot = await queryFn();
       if (querySnapshot?.docs) {

@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 import React, { useReducer } from "react";
 import { Box, Text, Select, Radio, HStack, TextArea, Button } from "native-base";
 import { useTranslation } from "react-i18next";
+import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import { showMessage } from "react-native-flash-message";
 
@@ -57,7 +58,6 @@ const recordStateReducer = (state: RecordStateType, action: RecordActionType): R
       const baseRecord = {
         ...state,
         id: "",
-        listId: "",
         result: "",
         opponentArchetype: undefined,
         remarks: "",
@@ -112,8 +112,6 @@ export const MatchRecordForm = ({
 
   const handleRecordSubmission = () => {
     const record = { ...matchRecord, id: uuidv4() } as MatchRecord;
-    console.log(record);
-
     const matchRecordValid: boolean =
       [record.listId, record.result].every(property => property?.length > 0) &&
       record.opponentArchetype !== undefined &&
