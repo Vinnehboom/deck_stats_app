@@ -13,13 +13,13 @@ import { colors } from "../../utils/colors";
 import { Spinner } from "../Spinner";
 import { useGetActiveList } from "../lists/_queries/useGetActiveList";
 
-export const ActiveDeck = ({ deck }: { deck: Deck }) => {
+export const ActiveDeck = ({ deck }: { deck: Deck | undefined }) => {
   const { navigate } = useNavigation<MainTabParamList>();
-  const { queryResult: lists, isLoading: listsLoading, isFetching: listsFetching } = useGetDeckLists(deck);
+  const { queryResult: lists, isFetching: listsFetching } = useGetDeckLists(deck);
   const { t } = useTranslation();
-  const { queryResult: activeList, isLoading: activeListLoading, isFetching: activeListFetching } = useGetActiveList(deck);
+  const { queryResult: activeList, isFetching: activeListFetching } = useGetActiveList(deck);
 
-  if (listsFetching || listsLoading || activeListLoading || activeListFetching) return <Spinner />;
+  if (listsFetching || activeListFetching) return <Spinner />;
 
   return (
     <Box style={[LandingScreenStyle.activeDeckContainer, { backgroundColor: colors.light }]}>
@@ -29,7 +29,7 @@ export const ActiveDeck = ({ deck }: { deck: Deck }) => {
           <>
             <HStack style={LandingScreenStyle.activeDeck}>
               <Text style={LandingScreenStyle.activeDeckName}>{deck.name}</Text>
-              <ArchetypeIcons deck={deck} size={"xs"} />
+              <ArchetypeIcons archetype={deck?.archetype} size={"xs"} />
             </HStack>
             <MatchRecordForm bo1={true} started={true} activeList={activeList?.list} deck={deck} lists={lists} />
           </>

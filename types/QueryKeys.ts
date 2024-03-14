@@ -4,4 +4,5 @@ export type QueryKeys = {
   ActiveDeck: string;
   Deck: string;
   ActiveList: string;
+  MatchRecords: string;
 };

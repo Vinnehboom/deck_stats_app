@@ -58,6 +58,17 @@ export const LandingScreenStyle = StyleSheet.create({
     resizeMode: "contain",
     width: 100,
   },
+  recentRecordsContainer: {
+    alignItems: "center",
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
+  },
+  recentRecordsTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginVertical: 12,
+  },
   setActiveDeckLink: {
     color: colors.darkBlue,
     fontWeight: "bold",

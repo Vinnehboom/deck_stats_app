@@ -29,7 +29,7 @@ export const DeckItem = ({ deck }: DeckListPropTypes) => {
           {deck.name}
         </Text>
         <HStack flexDirection="row" marginTop={1}>
-          <ArchetypeIcons deck={deck} />
+          <ArchetypeIcons archetype={deck?.archetype} />
         </HStack>
       </Flex>
       <TouchableOpacity onPress={showPage}>
