@@ -1,7 +1,8 @@
 import React from "react";
-import { View, ScrollView, Text } from "react-native";
+import { View, ScrollView } from "react-native";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import "react-native-get-random-values";
+import { Text } from "native-base";
 import { useTranslation } from "react-i18next";
 
 import { Spinner } from "../../../components/Spinner";

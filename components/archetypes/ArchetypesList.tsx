@@ -3,6 +3,7 @@ import { VStack, Flex, Text, Image, ScrollView } from "native-base";
 
 import { ArchetypeBase, Archetype } from "../../types/Archetype";
 import { ArchetypeSelectStyle } from "../../styles/archetypes/ArchetypeSelectStyle";
+import { transformIdentifier } from "../../helpers/archetypes";
 
 export const ArchetypesList = ({
   archetypes,
@@ -18,6 +19,9 @@ export const ArchetypesList = ({
   const containerStyle = listContainerTop
     ? [ArchetypeSelectStyle.selectContainer, { top: listContainerTop }]
     : ArchetypeSelectStyle.selectContainer;
+
+  console.log(archetypes && archetypes.map(arch => [arch.identifier, arch.generation, arch.priority]));
+
   return archetypes.length && shown ? (
     <VStack space="xs" style={containerStyle}>
       <ScrollView minHeight="100%">
@@ -28,10 +32,10 @@ export const ArchetypesList = ({
             flexDirection="row"
             justifyContent="space-between"
             key={archetype.identifier}
-            borderBottomWidth={1}
+            borderBottomWidth={0.2}
             padding={2}
             minWidth="75%">
-            <Text onPress={() => handleArchetypeSelection(archetype)}>{archetype.name}</Text>
+            <Text onPress={() => handleArchetypeSelection(archetype)}>{transformIdentifier(archetype.identifier)}</Text>
             <Flex flexDirection="row">
               {archetype.icons?.length &&
                 archetype.icons.map((icon, index) => (
