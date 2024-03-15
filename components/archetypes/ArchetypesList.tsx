@@ -23,7 +23,7 @@ export const ArchetypesList = ({
       <ScrollView minHeight="100%">
         {archetypes.map(archetype => (
           <Flex
-            zIndex={"999"}
+            zIndex="999"
             marginX={1}
             flexDirection="row"
             justifyContent="space-between"
