@@ -17,7 +17,7 @@ export const CardListImage = ({ count, card }: CardListItem) => {
         resizeMode="contain"
         borderRadius="5"
         alt={card.name}
-        size={"lg"}
+        size="lg"
       />
     </Center>
   );

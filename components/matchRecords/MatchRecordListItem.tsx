@@ -15,10 +15,10 @@ export const MatchRecordListItem = ({
   view?: boolean;
 }) => {
   const { t } = useTranslation();
-  const [toggled, setToggled] = useState<boolean>(false);
+  const [toggled, setToggled] = useState(false);
   return (
     <>
-      <HStack justifyContent={"space-between"} alignItems={"center"} style={MatchRecordListItemStyle.listItem}>
+      <HStack justifyContent="space-between" alignItems="center" style={MatchRecordListItemStyle.listItem}>
         <ArchetypeIcons archetype={matchRecord.deckArchetype} size={iconSize} />
         <Text style={MatchRecordListItemStyle.litItemText}>{matchRecord.result}</Text>
         <Text style={MatchRecordListItemStyle.litItemText}>
@@ -29,7 +29,7 @@ export const MatchRecordListItem = ({
           <Button
             onPress={() => setToggled(!toggled)}
             rightIcon={toggled ? <ChevronUpIcon /> : <ChevronDownIcon />}
-            variant={"link"}>
+            variant="link">
             <Text>{t("MATCH_RECORD.REMARKS")}</Text>
           </Button>
         )}

@@ -24,7 +24,7 @@ const DeckHome = () => {
   const { queryResult: deck, isLoading } = useGetDeck(deckId);
   const { navigate } = useNavigation<StackNavigationProp<MainTabParamList>>();
   const headerBackButton = () => (
-    <Button colorScheme={"white"} fontWeight={"bold"} onPress={() => navigate("Decks")} startIcon={<ArrowBackIcon />}>
+    <Button colorScheme="white" fontWeight="bold" onPress={() => navigate("Decks")} startIcon={<ArrowBackIcon />}>
       <Text>{t("DECK.NAVIGATION.BACK")}</Text>
     </Button>
   );
