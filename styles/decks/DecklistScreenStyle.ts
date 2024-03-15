@@ -1,7 +1,11 @@
 import { StyleSheet } from "react-native";
 
+import { colors } from "../../utils/colors";
+
 export const DecklistScreenStyle = StyleSheet.create({
   container: {
+    backgroundColor: colors.white,
+    flex: 1,
     maxHeight: "100%",
     minWidth: "100%",
     paddingBottom: 12,

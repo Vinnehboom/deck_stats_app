@@ -1,4 +1,3 @@
-import { StyleSheet } from "react-native";
 import React, { useReducer } from "react";
 import { Box, Text, Select, Radio, HStack, TextArea, Button } from "native-base";
 import { useTranslation } from "react-i18next";
@@ -12,6 +11,7 @@ import { MatchRecord, bo1ResultOptions, allResultOptions } from "../../types/Mat
 import { isArchetype, isResult } from "../../helpers/typeGuards";
 import { colors } from "../../utils/colors";
 import { useMatchRecordCreation } from "./_queries/useMatchRecordCreation";
+import { MatchRecordFormStyle } from "../../styles/matchRecords/MatchRecordFormStyle";
 
 interface RecordStateType extends MatchRecord {
   opponentArchetype: ArchetypeBase | undefined;
@@ -126,20 +126,20 @@ export const MatchRecordForm = ({
   };
 
   return (
-    <Box style={styles.container}>
+    <Box style={MatchRecordFormStyle.container}>
       <Box>
-        <Text style={styles.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.LIST")}</Text>
+        <Text style={MatchRecordFormStyle.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.LIST")}</Text>
         <Select
           bgColor={colors.white}
           onValueChange={value => matchRecordDispatch({ type: "UPDATE_LIST_ID", payload: value })}
           selectedValue={matchRecord.listId}
-          style={styles.listSelect}>
+          style={MatchRecordFormStyle.listSelect}>
           {lists &&
             lists.map(list => <Select.Item minWidth="full" key={`select-${list.id}`} label={list.name} value={list.id} />)}
         </Select>
       </Box>
       <Box>
-        <Text style={styles.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.OPP_ARCHETYPE")}</Text>
+        <Text style={MatchRecordFormStyle.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.OPP_ARCHETYPE")}</Text>
         <ArchetypeSelect
           listContainerTop={60}
           selectedArchetype={matchRecord.opponentArchetype}
@@ -149,8 +149,8 @@ export const MatchRecordForm = ({
         />
       </Box>
       {coinFlip && (
-        <Box style={styles.inputBox}>
-          <Text style={styles.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.COIN_FLIP")}</Text>
+        <Box style={stMatchRecordFormStyleyles.inputBox}>
+          <Text style={MatchRecordFormStyle.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.COIN_FLIP")}</Text>
           <Radio.Group
             justifyContent="space-around"
             name="myRadioGroup"
@@ -172,8 +172,8 @@ export const MatchRecordForm = ({
       )}
 
       {started && (
-        <Box style={styles.inputBox}>
-          <Text style={styles.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.STARTED")}</Text>
+        <Box style={MatchRecordFormStyle.inputBox}>
+          <Text style={MatchRecordFormStyle.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.STARTED")}</Text>
           <Radio.Group
             justifyContent="space-around"
             name="StartedRadioGroup"
@@ -194,21 +194,21 @@ export const MatchRecordForm = ({
         </Box>
       )}
 
-      <Box style={styles.inputBox}>
-        <Text style={styles.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.RESULT")}</Text>
+      <Box style={MatchRecordFormStyle.inputBox}>
+        <Text style={MatchRecordFormStyle.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.RESULT")}</Text>
         <Select
           bgColor={colors.white}
           onValueChange={value => matchRecordDispatch({ type: "UPDATE_RESULT", payload: value })}
           selectedValue={matchRecord.result}
-          style={styles.listSelect}>
+          style={MatchRecordFormStyle.listSelect}>
           {resultOptions &&
             resultOptions.map(result => <Select.Item minWidth="full" key={`select-${result}`} label={result} value={result} />)}
         </Select>
       </Box>
-      <Box style={styles.inputBox}>
-        <Text style={styles.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.REMARKS")}</Text>
+      <Box style={MatchRecordFormStyle.inputBox}>
+        <Text style={MatchRecordFormStyle.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.REMARKS")}</Text>
         <TextArea
-          style={styles.input}
+          style={MatchRecordFormStyle.input}
           marginTop={2}
           autoCompleteType
           h={75}
@@ -217,47 +217,10 @@ export const MatchRecordForm = ({
         />
       </Box>
       <Box marginTop={3}>
-        <Button style={styles.submitButton} onPress={handleRecordSubmission}>
-          <Text style={styles.submitButtonText}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.SUBMIT")}</Text>
+        <Button style={MatchRecordFormStyle.submitButton} onPress={handleRecordSubmission}>
+          <Text style={MatchRecordFormStyle.submitButtonText}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.SUBMIT")}</Text>
         </Button>
       </Box>
     </Box>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: "2%",
-    paddingHorizontal: "4%",
-    position: "relative",
-    top: "-5%",
-    width: "96%",
-    zIndex: -1,
-  },
-  input: {
-    backgroundColor: colors.white,
-  },
-  inputBox: {
-    marginVertical: 2,
-    position: "relative",
-    zIndex: -1,
-  },
-  inputLabel: {
-    fontSize: 16,
-    fontWeight: "bold",
-    marginVertical: 2,
-  },
-  listSelect: {
-    width: "100%",
-  },
-  submitButton: {
-    alignSelf: "center",
-    backgroundColor: colors.primary,
-    width: "75%",
-  },
-  submitButtonText: {
-    color: colors.white,
-    fontWeight: "bold",
-    textTransform: "uppercase",
-  },
-});

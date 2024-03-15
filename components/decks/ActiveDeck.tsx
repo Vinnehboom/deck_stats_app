@@ -13,9 +13,8 @@ import { colors } from "../../utils/colors";
 import { Spinner } from "../Spinner";
 import { useGetActiveList } from "../lists/_queries/useGetActiveList";
 
-export const ActiveDeck = ({ deck }: { deck: Deck | undefined }) => {
-  const { navigate } = useNavigation<MainTabParamList>();
-  const { queryResult: lists, isFetching: listsFetching } = useGetDeckLists(deck);
+export const ActiveDeck = ({ deck }: { deck: Deck }) => {
+  const { queryResult: lists, isFetching: listsFetching } = useGetDeckLists(deck!);
   const { t } = useTranslation();
   const { queryResult: activeList, isFetching: activeListFetching } = useGetActiveList(deck);
 
@@ -25,23 +24,11 @@ export const ActiveDeck = ({ deck }: { deck: Deck | undefined }) => {
     <Box style={[LandingScreenStyle.activeDeckContainer, { backgroundColor: colors.light }]}>
       <VStack width="100%" justifyContent="center" display="flex">
         <Text style={LandingScreenStyle.activeDeckTitle}>{t("LANDING_SCREEN.ACTIVE_DECK.TITLE")}</Text>
-        {deck ? (
-          <>
-            <HStack style={LandingScreenStyle.activeDeck}>
-              <Text style={LandingScreenStyle.activeDeckName}>{deck.name}</Text>
-              <ArchetypeIcons archetype={deck?.archetype} size="xs" />
-            </HStack>
-            <MatchRecordForm bo1={true} started={true} activeList={activeList?.list} deck={deck} lists={lists} />
-          </>
-        ) : (
-          <Text style={LandingScreenStyle.setActiveDeckText}>
-            Please add an active deck on the{" "}
-            <Text style={LandingScreenStyle.setActiveDeckLink} onPress={() => navigate("Decks", undefined)}>
-              Decks
-            </Text>{" "}
-            tab
-          </Text>
-        )}
+        <HStack style={LandingScreenStyle.activeDeck}>
+          <Text style={LandingScreenStyle.activeDeckName}>{deck.name}</Text>
+          <ArchetypeIcons archetype={deck.archetype} size="xs" />
+        </HStack>
+        <MatchRecordForm bo1={true} started={true} activeList={activeList?.list} deck={deck} lists={lists} />
       </VStack>
     </Box>
   );
