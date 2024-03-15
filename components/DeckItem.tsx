@@ -1,14 +1,14 @@
 import React from "react";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { Flex, Text, HStack } from "native-base";
+import { HStack, Text } from "native-base";
 import { useTranslation } from "react-i18next";
 
 import { Deck } from "../types";
-import { colors } from "../utils/colors";
 import { RootStackParamList } from "../types/RouteParams";
 import { ArchetypeIcons } from "./decks/ArchetypeIcons";
+import { DeckItemStyle } from "../styles/decks/DeckItemStyle";
 
 type DeckListPropTypes = {
   deck: Deck;
@@ -23,31 +23,18 @@ export const DeckItem = ({ deck }: DeckListPropTypes) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Flex flexDirection="row" width="80%" justifyContent="space-between">
-        <Text marginY={1} marginRight={2} fontSize="md">
-          {deck.name}
-        </Text>
-        <HStack flexDirection="row" marginTop={1}>
-          <ArchetypeIcons archetype={deck?.archetype} />
+    <View style={DeckItemStyle.container}>
+      <HStack paddingX={3} flexDirection="row" width="full" justifyContent="space-between" space={4}>
+        <HStack flexDirection="row">
+          <HStack display="flex" justifyContent="flex-end" minWidth="30%">
+            <ArchetypeIcons archetype={deck?.archetype} />
+          </HStack>
+          <Text style={DeckItemStyle.deckName}>{deck.name}</Text>
         </HStack>
-      </Flex>
-      <TouchableOpacity onPress={showPage}>
-        <Text marginTop={1}>{t("DECK.LIST_ITEM.SHOW")}</Text>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={showPage}>
+          <Text style={DeckItemStyle.showLink}>{t("DECK.LIST_ITEM.SHOW")}</Text>
+        </TouchableOpacity>
+      </HStack>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    borderRadius: 10,
-    borderWidth: 0.5,
-    color: colors.white,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    margin: 5,
-    padding: 8,
-  },
-});

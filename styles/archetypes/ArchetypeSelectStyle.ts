@@ -5,7 +5,7 @@ import { screenHeight } from "../dimensions";
 
 export const ArchetypeSelectStyle = StyleSheet.create({
   selectContainer: {
-    backgroundColor: colors.light,
+    backgroundColor: colors.white,
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
     elevation: 50,
