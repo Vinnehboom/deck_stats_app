@@ -135,7 +135,7 @@ export const MatchRecordForm = ({
           selectedValue={matchRecord.listId}
           style={styles.listSelect}>
           {lists &&
-            lists.map(list => <Select.Item minWidth={"full"} key={`select-${list.id}`} label={list.name} value={list.id} />)}
+            lists.map(list => <Select.Item minWidth="full" key={`select-${list.id}`} label={list.name} value={list.id} />)}
         </Select>
       </Box>
       <Box>
@@ -152,7 +152,7 @@ export const MatchRecordForm = ({
         <Box style={styles.inputBox}>
           <Text style={styles.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.COIN_FLIP")}</Text>
           <Radio.Group
-            justifyContent={"space-around"}
+            justifyContent="space-around"
             name="myRadioGroup"
             accessibilityLabel="Coin flip"
             value={matchRecord.coinFlipWon ? "1" : "0"}
@@ -175,7 +175,7 @@ export const MatchRecordForm = ({
         <Box style={styles.inputBox}>
           <Text style={styles.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.STARTED")}</Text>
           <Radio.Group
-            justifyContent={"space-around"}
+            justifyContent="space-around"
             name="StartedRadioGroup"
             accessibilityLabel="Started"
             value={matchRecord.started ? "1" : "0"}
@@ -202,7 +202,7 @@ export const MatchRecordForm = ({
           selectedValue={matchRecord.result}
           style={styles.listSelect}>
           {resultOptions &&
-            resultOptions.map(result => <Select.Item minWidth={"full"} key={`select-${result}`} label={result} value={result} />)}
+            resultOptions.map(result => <Select.Item minWidth="full" key={`select-${result}`} label={result} value={result} />)}
         </Select>
       </Box>
       <Box style={styles.inputBox}>

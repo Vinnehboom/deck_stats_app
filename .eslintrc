@@ -20,6 +20,10 @@
   "rules": {
     "prettier/prettier": "error",
     "react/prop-types": "off",
+    "react/jsx-curly-brace-presence": [
+      "error",
+      { "props": "never", "children": "never" }
+    ],
     "import/order": [
       "error",
       {

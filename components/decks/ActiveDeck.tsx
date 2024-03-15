@@ -23,13 +23,13 @@ export const ActiveDeck = ({ deck }: { deck: Deck | undefined }) => {
 
   return (
     <Box style={[LandingScreenStyle.activeDeckContainer, { backgroundColor: colors.light }]}>
-      <VStack width={"100%"} justifyContent={"center"} display={"flex"}>
+      <VStack width="100%" justifyContent="center" display="flex">
         <Text style={LandingScreenStyle.activeDeckTitle}>{t("LANDING_SCREEN.ACTIVE_DECK.TITLE")}</Text>
         {deck ? (
           <>
             <HStack style={LandingScreenStyle.activeDeck}>
               <Text style={LandingScreenStyle.activeDeckName}>{deck.name}</Text>
-              <ArchetypeIcons archetype={deck?.archetype} size={"xs"} />
+              <ArchetypeIcons archetype={deck?.archetype} size="xs" />
             </HStack>
             <MatchRecordForm bo1={true} started={true} activeList={activeList?.list} deck={deck} lists={lists} />
           </>

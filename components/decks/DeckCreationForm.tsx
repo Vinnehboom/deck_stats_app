@@ -58,7 +58,7 @@ export const DeckCreationForm = ({ user }: DeckCreationFormPropsType) => {
           onChangeText={text => setDeckName(text)}
           style={DeckCreationFormStyle.deckForm.formField}
         />
-        <Box width={"80"}>
+        <Box width="80">
           <ArchetypeSelect setDeckArchetype={setDeckArchetype} selectedArchetype={deckArchetype} />
         </Box>
         <TouchableOpacity onPress={handleDeckCreation} style={DeckCreationFormStyle.button}>
