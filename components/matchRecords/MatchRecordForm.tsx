@@ -149,7 +149,7 @@ export const MatchRecordForm = ({
         />
       </Box>
       {coinFlip && (
-        <Box style={stMatchRecordFormStyleyles.inputBox}>
+        <Box style={MatchRecordFormStyle.inputBox}>
           <Text style={MatchRecordFormStyle.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.COIN_FLIP")}</Text>
           <Radio.Group
             justifyContent="space-around"

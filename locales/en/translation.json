@@ -11,6 +11,7 @@
     "SIGN_OUT": "Sign out",
     "ACTIVE_DECK": {
       "TITLE": "Active deck",
+      "DETAILS": "Details & matchups",
       "RECORD_FORM": {
         "LIST": "List",
         "OPP_ARCHETYPE": "Opponent archetype",
