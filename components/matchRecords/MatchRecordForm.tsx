@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, SetStateAction } from "react";
 import { Box, Text, Select, Radio, HStack, TextArea, Button } from "native-base";
 import { useTranslation } from "react-i18next";
 import "react-native-get-random-values";
@@ -141,9 +141,9 @@ export const MatchRecordForm = ({
       <Box>
         <Text style={MatchRecordFormStyle.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.OPP_ARCHETYPE")}</Text>
         <ArchetypeSelect
-          listContainerTop={60}
+          listContainerTop={65}
           selectedArchetype={matchRecord.opponentArchetype}
-          setDeckArchetype={(v: ArchetypeBase | Archetype | undefined) =>
+          setDeckArchetype={(v: SetStateAction<ArchetypeBase | Archetype | undefined>) =>
             matchRecordDispatch({ type: "UPDATE_OPPONENT_ARCHETYPE", payload: v })
           }
         />

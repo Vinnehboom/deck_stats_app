@@ -13,14 +13,16 @@ import { useArchetypeQuery } from "././_queries/useArchetypeQuery";
 const ArchetypesList = ({
   archetypes,
   shown,
+  top,
   handleArchetypeSelection,
 }: {
   archetypes: (ArchetypeBase | Archetype)[];
   shown: boolean;
+  top?: number;
   handleArchetypeSelection: (archetype: ArchetypeBase | Archetype) => void;
 }) => {
   return archetypes.length && shown ? (
-    <VStack space="xs" style={ArchetypeSelectStyle.selectContainer}>
+    <VStack space="xs" style={top ? [ArchetypeSelectStyle.selectContainer, { top }] : ArchetypeSelectStyle.selectContainer}>
       <ScrollView minHeight="100%">
         {archetypes.map(archetype => (
           <Flex
@@ -58,10 +60,12 @@ const ArchetypesList = ({
 
 export const ArchetypeSelect = ({
   setDeckArchetype,
+  listContainerTop,
   selectedArchetype,
 }: {
   setDeckArchetype: Dispatch<SetStateAction<ArchetypeBase | Archetype | undefined>>;
   selectedArchetype: ArchetypeBase | Archetype | undefined;
+  listContainerTop?: number;
 }) => {
   const [archetypeQuery, setArchetypeQuery] = useState<string>("");
   const debouncedArchetypeQuery = useDebounce(archetypeQuery, 400);
@@ -71,6 +75,7 @@ export const ArchetypeSelect = ({
   useEffect(() => {
     if (archetypes && debouncedArchetypeQuery !== "") {
       setQueriedArchetypes(transformArchetypes(archetypes, [8, 9, 10], archetypeQuery));
+      console.log(queriedArchetypes.map(arch => arch.identifier));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedArchetypeQuery]);
@@ -94,6 +99,7 @@ export const ArchetypeSelect = ({
           />
         </HStack>
         <ArchetypesList
+          top={listContainerTop}
           archetypes={queriedArchetypes}
           shown={archetypeQuery.length > 0}
           handleArchetypeSelection={handleArchetypeSelection}

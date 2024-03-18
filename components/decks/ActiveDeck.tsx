@@ -1,13 +1,11 @@
 import { VStack, Box, Text, HStack } from "native-base";
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 
 import { MatchRecordForm } from "../matchRecords/MatchRecordForm";
 import { LandingScreenStyle } from "../../styles/LandingScreenStyle";
 import { Deck } from "../../types";
 import { ArchetypeIcons } from "./ArchetypeIcons";
-import { MainTabParamList } from "../../types/RouteParams";
 import { useGetDeckLists } from "../lists/_queries/useGetDeckLists";
 import { colors } from "../../utils/colors";
 import { Spinner } from "../Spinner";
