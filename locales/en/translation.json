@@ -64,6 +64,11 @@
     "SECOND": "2nd",
     "REMARKS": "Remarks"
   },
+  "MATCHUP_LIST":{
+    "ARCHETYPE": "Archetype",
+    "FIRST": "1st",
+    "SECOND":"2nd"
+  },
   "DECK": {
     "LIST_ITEM": {
       "SHOW": "Show"
@@ -98,7 +103,13 @@
         "ACTIVATE_BUTTON": "Set active"
       }
     },
-    "DECK_MATCHUPS": {},
+    "DECK_MATCHUPS": {
+      "MATCHUP_DATA": "Matchup data",
+      "BEST_MATCHUPS": "Best matchups",
+      "WORST_MATCHUPS": "Worst matchups",
+      "FIRST": "1st",
+      "SECOND": "2nd",
+    },
     "DECK_LISTS": {
       "LIST_CREATION": {
         "SUCCESS": "List added!",
