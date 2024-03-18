@@ -19,6 +19,14 @@ export const LandingScreenStyle = StyleSheet.create({
     maxWidth: "80%",
     minWidth: "80%",
   },
+  activeDeckLink: {
+    color: colors["primary-dark"],
+    fontSize: 16,
+    fontWeight: "500",
+    paddingVertical: 5,
+    textAlign: "center",
+    textDecorationLine: "underline",
+  },
   activeDeckName: {
     fontSize: 16,
     marginEnd: 16,
