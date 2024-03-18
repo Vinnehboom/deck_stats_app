@@ -10,7 +10,7 @@ import { useAuthContext } from "../contexts/useAuthContext";
 import { LandingScreenStyle } from "../styles/LandingScreenStyle";
 import { Spinner } from "../components/Spinner";
 import { ActiveDeck } from "../components/decks/ActiveDeck";
-import { DeckMatchRecords } from "../components/decks/DeckMatchRecords";
+import { DeckMatchHistory } from "../components/decks/DeckMatchHistory";
 import { MainTabParamList } from "../types/RouteParams";
 export const LandingScreen = () => {
   const { signOut } = useAuthContext();
@@ -37,7 +37,7 @@ export const LandingScreen = () => {
                   <Text style={LandingScreenStyle.recentRecordsTitle}>
                     {t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.RECENT_RECORDS")}
                   </Text>
-                  <DeckMatchRecords deck={deck} limit={3} recent={true} />
+                  <DeckMatchHistory deck={deck} limit={3} />
                 </Box>
               </>
             ) : (
