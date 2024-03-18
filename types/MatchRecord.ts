@@ -20,3 +20,15 @@ export type MatchRecord = TimeStamped & {
   result: Result;
   remarks: string;
 };
+
+export type MatchRecordDataResults = { wins: number; losses: number; ties: number; wr: number };
+
+export type MatchRecordDataEntry = {
+  total?: number;
+  first: MatchRecordDataResults;
+  second: MatchRecordDataResults;
+};
+
+export type MatchRecordData = {
+  [a: string]: MatchRecordDataEntry;
+};
