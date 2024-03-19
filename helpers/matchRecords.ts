@@ -19,6 +19,8 @@ export const transformMatchRecordData = (records: MatchRecord[]) => {
     const archetypeData = recordData[archetype.identifier] || {
       first: { wins: 0, losses: 0, ties: 0, wr: 0 },
       second: { wins: 0, losses: 0, ties: 0, wr: 0 },
+      archetype: archetype,
+      matchRecords: [],
     };
     const started = record.started;
     if (matchWon(record)) {
@@ -34,7 +36,7 @@ export const transformMatchRecordData = (records: MatchRecord[]) => {
         ? (archetypeData.first.ties = archetypeData.first.ties + 1)
         : (archetypeData.second.ties = archetypeData.second.ties + 1);
     }
-    return { ...recordData, [archetype.identifier]: archetypeData };
+    return { ...recordData, [archetype.identifier]: { ...archetypeData, matchRecords: [...archetypeData.matchRecords, record] } };
   }, {});
   Object.keys(calculatedData).forEach(arketype => {
     calculatedData[arketype].first.wr = calculateWinRate(calculatedData[arketype].first);

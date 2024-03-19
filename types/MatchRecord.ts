@@ -27,6 +27,8 @@ export type MatchRecordDataEntry = {
   total?: number;
   first: MatchRecordDataResults;
   second: MatchRecordDataResults;
+  archetype: ArchetypeBase;
+  matchRecords: MatchRecord[];
 };
 
 export type MatchRecordData = {

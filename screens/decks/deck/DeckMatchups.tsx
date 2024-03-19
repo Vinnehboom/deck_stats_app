@@ -112,8 +112,7 @@ export const DeckMatchups = () => {
         </HStack>
 
         <Text style={DeckMatchupsStyle.matchupsTitle}>Win rates</Text>
-
-        <MatchupsList archetypes={archetypes} data={data} />
+        <MatchupsList iconSize="xs" matchRecords={records} archetypes={archetypes} data={data} viewable={true} />
       </ScrollView>
     </View>
   );

@@ -31,9 +31,9 @@ export const DeckMatchupsStyle = StyleSheet.create({
     fontSize: 16,
     fontWeight: "500",
     minHeight: "100%",
-    minWidth: "30%",
     paddingTop: 12,
     textAlign: "center",
+    width: "20%",
   },
   matchupsTitle: { fontSize: 22, fontWeight: "600", marginVertical: height / 30, paddingTop: 6, textAlign: "center" },
   scrollViewContainer: {

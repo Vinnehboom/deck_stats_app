@@ -1,33 +1,22 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import { useNavigation } from "@react-navigation/core";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { ArrowBackIcon, Button } from "native-base";
-import { Text } from "react-native";
-import { useTranslation } from "react-i18next";
 
-import { DeckListTabParamList, DeckListTabParamsType, MainTabParamList } from "../../../types/RouteParams";
+import { DeckListTabParamList, DeckListTabParamsType } from "../../../types/RouteParams";
 import { colors } from "../../../utils/colors";
 import { DeckMatchups } from "./DeckMatchups";
 import { DeckLists } from "./DeckLists";
 import { DeckDetails } from "./DeckDetails";
 import { Spinner } from "../../../components/Spinner";
 import { useGetDeck } from "../../../components/decks/_queries/useGetDeck";
+import { HeaderBackButton } from "../../../components/navigation/HeaderBackButton";
 
 const Tab = createBottomTabNavigator<DeckListTabParamList>();
 
 const DeckHome = () => {
-  const { t } = useTranslation();
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
   const { deckId } = params;
   const { queryResult: deck, isLoading } = useGetDeck(deckId);
-  const { navigate } = useNavigation<StackNavigationProp<MainTabParamList>>();
-  const headerBackButton = () => (
-    <Button colorScheme="white" fontWeight="bold" onPress={() => navigate("Decks")} startIcon={<ArrowBackIcon />}>
-      <Text>{t("DECK.NAVIGATION.BACK")}</Text>
-    </Button>
-  );
 
   return isLoading ? (
     <Spinner />
@@ -36,10 +25,12 @@ const DeckHome = () => {
       initialRouteName="DeckDetails"
       screenOptions={{
         headerTitle: deck.name,
-        headerLeft: headerBackButton,
+        headerLeft: HeaderBackButton,
         headerStyle: { backgroundColor: colors.primary },
+        headerShadowVisible: true,
+        headerLeftContainerStyle: { paddingStart: 15 },
         headerTitleStyle: {
-          color: colors.dark,
+          color: colors.white,
           fontSize: 18,
           fontWeight: "bold",
         },
