@@ -8,4 +8,6 @@ export const colors = {
   "primary-dark": "#3D4D6B",
   dark: "#0C0F0A",
   light: "#EFF0FB",
+  baseNegativeColorHue: "15",
+  basePositiveColorHue: "210",
 };

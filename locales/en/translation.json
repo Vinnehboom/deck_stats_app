@@ -70,6 +70,13 @@
     "FIRST": "1st",
     "SECOND":"2nd"
   },
+  "MATCHUP_NOTES": {
+    "SCREEN_TITLE": "Matchup notes",
+    "VS": "VS",
+    "FIRST":"1st",
+    "SECOND":"2nd",
+    "NOTES": "Notes"
+  },
   "DECK": {
     "LIST_ITEM": {
       "SHOW": "Show"
@@ -84,7 +91,7 @@
       "SUBMIT": "Add deck"
     },
     "NAVIGATION": {
-      "BACK": "Decks"
+      "BACK": "Back"
     },
     "DECK_DETAILS": {
       "DELETE": {
