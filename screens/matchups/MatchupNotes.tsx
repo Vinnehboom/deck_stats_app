@@ -35,7 +35,7 @@ export const MatchupNotes = () => {
         {matchupRecords.map(record => {
           return record.remarks.length > 1 ? (
             <Box style={MatchupNotesStyle.noteContainer}>
-              <HStack alignItems="center">
+              <HStack>
                 <HStack justifyContent="space-around">
                   <Text paddingLeft={3} width="12" justifyContent="center" fontSize={18} fontWeight="black">
                     {record.result}
@@ -44,10 +44,18 @@ export const MatchupNotes = () => {
                     {record.started ? t("MATCHUP_NOTES.FIRST") : t("MATCHUP_NOTES.SECOND")}
                   </Text>
                 </HStack>
-                <Text fontSize={14} marginLeft="2%" width="60%">
+                <Text fontSize={14} textAlign="justify" marginLeft="2%" width="64">
                   {record.remarks}
                 </Text>
               </HStack>
+              {record.list?.name ? (
+                <HStack display="flex" justifyContent="flex-end" width="100%">
+                  <Text color={colors["primary-dark"]} fontWeight="bold">
+                    {t("MATCHUP_NOTES.LIST_NAME")}
+                  </Text>
+                  <Text color={colors["primary-dark"]}> {record.list.name}</Text>
+                </HStack>
+              ) : null}
             </Box>
           ) : null;
         })}

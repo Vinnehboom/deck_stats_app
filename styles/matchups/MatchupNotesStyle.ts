@@ -18,6 +18,7 @@ export const MatchupNotesStyle = StyleSheet.create({
     borderBottomWidth: 1,
     marginHorizontal: 12,
     paddingBottom: 12,
+    padding: 10,
   },
   scrollViewContainer: {
     maxHeight: height,
