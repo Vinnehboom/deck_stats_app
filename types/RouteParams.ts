@@ -1,4 +1,4 @@
-import { Deck } from "../types";
+import { ArchetypeBase, Deck, MatchRecord } from "../types";
 
 export type MainTabParamList = {
   Landing: undefined;
@@ -9,6 +9,7 @@ export type RootStackParamList = {
   Home: undefined;
   Login: undefined;
   DecklistHome: { deckId: Deck["id"] };
+  MatchupNotes: { matchupRecords: MatchRecord[]; archetype: ArchetypeBase };
 };
 
 export type DeckListTabParamList = {
