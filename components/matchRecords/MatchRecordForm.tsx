@@ -15,6 +15,7 @@ import { MatchRecordFormStyle } from "../../styles/matchRecords/MatchRecordFormS
 
 interface RecordStateType extends MatchRecord {
   opponentArchetype: ArchetypeBase | undefined;
+  list: List | undefined;
 }
 type RecordActionType = {
   type:
@@ -26,7 +27,7 @@ type RecordActionType = {
     | "UPDATE_STARTED"
     | "UPDATE_OPPONENT_ARCHETYPE"
     | "UPDATE_REMARK";
-  payload?: unknown;
+  payload?: unknown | ListPayloadtype;
 };
 
 const recordStateReducer = (state: RecordStateType, action: RecordActionType): RecordStateType => {
@@ -95,6 +96,7 @@ export const MatchRecordForm = ({
     deckId: deck.id,
     deckArchetype: deck.archetype,
     listId: activeList?.id || "",
+    list: activeList,
     result: "",
     opponentArchetype: undefined,
     remarks: "",
@@ -118,7 +120,8 @@ export const MatchRecordForm = ({
       isArchetype(record.opponentArchetype);
 
     if (matchRecordValid) {
-      matchRecordCreationMutation.mutate(record);
+      const list = lists.find(l => l.id === record.listId);
+      matchRecordCreationMutation.mutate({ ...record, list: list! });
       matchRecordDispatch({ type: "CLEAR", payload: { started, coinFlip } });
     } else {
       showMessage({ message: t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.FAILED"), type: "warning" });

@@ -10,7 +10,13 @@ export const HeaderBackButton = () => {
   const { pop } = useNavigation();
   return (
     <HStack justifyContent="start">
-      <Button colorScheme="white" color={colors.white} fontWeight="bold" onPress={() => pop()} startIcon={<ArrowBackIcon />}>
+      <Button
+        right={3}
+        colorScheme="white"
+        color={colors.white}
+        fontWeight="bold"
+        onPress={() => pop()}
+        startIcon={<ArrowBackIcon />}>
         <Text color={colors.white}>{t("DECK.NAVIGATION.BACK")}</Text>
       </Button>
     </HStack>
