@@ -31,18 +31,16 @@ export const DeckMatchups = () => {
 
     setArchetypes([...new Set(records?.map(record => record.opponentArchetype))]);
     const calculatedData = transformMatchRecordData(records);
-    bestMuFirst.current = Object.keys(calculatedData).reduce((a, b) =>
+    const musFirstSortedByWinrate = Object.keys(calculatedData).reduce((a, b) =>
       calculatedData[a].first.wr > calculatedData[b].first.wr ? a : b
     );
-    bestMuSecond.current = Object.keys(calculatedData).reduce((a, b) =>
+    const musSecondSortedByWinrate = Object.keys(calculatedData).reduce((a, b) =>
       calculatedData[a].second.wr > calculatedData[b].second.wr ? a : b
     );
-    worstMuFirst.current = Object.keys(calculatedData).reduce((a, b) =>
-      calculatedData[a].first.wr < calculatedData[b].first.wr ? a : b
-    );
-    worstMuSecond.current = Object.keys(calculatedData).reduce((a, b) =>
-      calculatedData[a].second.wr < calculatedData[b].second.wr ? a : b
-    );
+    bestMuFirst.current = musFirstSortedByWinrate.slice(0);
+    worstMuFirst.current = musFirstSortedByWinrate.slice(-1);
+    bestMuSecond.current = musSecondSortedByWinrate.slice(0);
+    worstMuSecond.current = musSecondSortedByWinrate.slice(-1);
     setData(calculatedData);
     setCalculating(false);
   }, [isFetching, isLoading, records]);

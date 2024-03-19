@@ -75,7 +75,6 @@ export const ArchetypeSelect = ({
   useEffect(() => {
     if (archetypes && debouncedArchetypeQuery !== "") {
       setQueriedArchetypes(transformArchetypes(archetypes, [8, 9, 10], archetypeQuery));
-      console.log(queriedArchetypes.map(arch => arch.identifier));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedArchetypeQuery]);

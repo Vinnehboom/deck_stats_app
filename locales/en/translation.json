@@ -75,7 +75,8 @@
     "VS": "VS",
     "FIRST":"1st",
     "SECOND":"2nd",
-    "NOTES": "Notes"
+    "NOTES": "Notes",
+    "LIST_NAME": "List:"
   },
   "DECK": {
     "LIST_ITEM": {
