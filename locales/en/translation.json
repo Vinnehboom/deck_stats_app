@@ -35,6 +35,7 @@
     "T&C": "Terms and conditions",
     "TITLE": "VS. RECORDER",
     "INCOMPLETE_FORM": "Email or password cannot be empty",
+    "PASSWORD_MISMATCH": "Passwords do not match",
     "SIGN_UP": {
       "SUCCESS": "Successfully signed up!"
     },
@@ -43,7 +44,9 @@
     },
     "FORM": {
       "LOGIN_TITLE": "Log in",
+      "REGISTER_TITLE": "Creat account",
       "PASSWORD": "Password",
+      "PASSWORD_CONFIRMATION": "Password confirmation",
       "EMAIL": "Email",
       "SIGN_IN": "Log in",
       "SIGN_UP": "Register"
