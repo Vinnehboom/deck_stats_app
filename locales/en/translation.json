@@ -42,6 +42,7 @@
       "SUCCESS": "Successfully signed in!"
     },
     "FORM": {
+      "LOGIN_TITLE": "Log in",
       "PASSWORD": "Password",
       "EMAIL": "Email",
       "SIGN_IN": "Log in",
