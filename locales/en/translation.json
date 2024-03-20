@@ -32,6 +32,7 @@
     }
   },
   "LOGIN_SCREEN": {
+    "TITLE": "VS. RECORDER",
     "INCOMPLETE_FORM": "Email or password cannot be empty",
     "SIGN_UP": {
       "SUCCESS": "Successfully signed up!"

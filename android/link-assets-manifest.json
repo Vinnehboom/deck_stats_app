@@ -1,0 +1,93 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/BungeeInline-Regular.ttf",
+      "sha1": "1c51c2c14a21488cbe7e9721ff12fb29a06de232"
+    },
+    {
+      "path": "assets/fonts/Halcom-Black.otf",
+      "sha1": "df7db086563f3e07ce6915a645a92e33e6d8a529"
+    },
+    {
+      "path": "assets/fonts/Halcom-BlackItalic.otf",
+      "sha1": "37d7e54a5461b89e19f93ca84102358751b6211b"
+    },
+    {
+      "path": "assets/fonts/Halcom-Bold.otf",
+      "sha1": "53f7e85abfcad83e4269fd22d57f2bd93adef748"
+    },
+    {
+      "path": "assets/fonts/Halcom-BoldItalic.otf",
+      "sha1": "fd3444e1260cd86bc4f3462358f6d12e42ef91c1"
+    },
+    {
+      "path": "assets/fonts/Halcom-Book.otf",
+      "sha1": "6af9df71d09cae43ef9fb26fdf097022ccce52f7"
+    },
+    {
+      "path": "assets/fonts/Halcom-BookItalic.otf",
+      "sha1": "9ca91f1106bbeb3f98ab79f4a51aa327f0778b97"
+    },
+    {
+      "path": "assets/fonts/Halcom-ExtraBold.otf",
+      "sha1": "2662856e7e85fb930055ce4219b8384ca2cfa876"
+    },
+    {
+      "path": "assets/fonts/Halcom-ExtraBoldItalic.otf",
+      "sha1": "9e29ec13a0ea1d0df89a721086c4dd02b5594796"
+    },
+    {
+      "path": "assets/fonts/Halcom-Italic.otf",
+      "sha1": "f34b2eae45fd36a0a84fa1cfdbeec7708912db4e"
+    },
+    {
+      "path": "assets/fonts/Halcom-Light.otf",
+      "sha1": "5512180ad494a095cb660112e77d9bf445defadd"
+    },
+    {
+      "path": "assets/fonts/Halcom-LightItalic.otf",
+      "sha1": "55c8cd3e0cfed5323ecf41c2577d19c9bd464f6d"
+    },
+    {
+      "path": "assets/fonts/Halcom-Medium.otf",
+      "sha1": "06d2dfdaf351c0e68329e7435790095713bf608b"
+    },
+    {
+      "path": "assets/fonts/Halcom-MediumItalic.otf",
+      "sha1": "e829d36e07f02a7e6f5dc79cca6a2f52c011e8c5"
+    },
+    {
+      "path": "assets/fonts/Halcom-Regular.otf",
+      "sha1": "1757afa7fb5399fad35aa5c2fb618776eac25b74"
+    },
+    {
+      "path": "assets/fonts/Halcom-Thin.otf",
+      "sha1": "e51975d870926cde6a0495443cac7cb5e5133e8d"
+    },
+    {
+      "path": "assets/fonts/Halcom-ThinItalic.otf",
+      "sha1": "9a82ca87497ea4f51db6f334c51601ecb7999147"
+    },
+    {
+      "path": "assets/fonts/pokemon-dp-pro.otf",
+      "sha1": "5783041aa943a09f16796fdd5064c74477d36b38"
+    },
+    {
+      "path": "assets/images/button-blue.png",
+      "sha1": "5a640bdb1181d2a5913eed5691dc05e681de9bba"
+    },
+    {
+      "path": "assets/images/dots.png",
+      "sha1": "73734540a9c925ba762fc63a0d91dc2983ae6e81"
+    },
+    {
+      "path": "assets/images/pokeball-bit.png",
+      "sha1": "b94b9a69051575be13bad7373df84e076dd0ed28"
+    },
+    {
+      "path": "assets/images/screw.png",
+      "sha1": "799e8c71dc8b73850209c0c8b5a3948afcd4b0a4"
+    }
+  ]
+}
