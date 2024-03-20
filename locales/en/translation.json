@@ -32,6 +32,7 @@
     }
   },
   "LOGIN_SCREEN": {
+    "T&C": "Terms and conditions",
     "TITLE": "VS. RECORDER",
     "INCOMPLETE_FORM": "Email or password cannot be empty",
     "SIGN_UP": {

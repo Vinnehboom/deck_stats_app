@@ -12,6 +12,7 @@ import { colors } from "../utils/colors";
 import { RootStackParamList } from "../types/RouteParams";
 import { LoginScreenContainer } from "../components/layout/LoginScreenContainer";
 import { LoginScreenStyle } from "../styles/login/LoginScreenStyle";
+import { TermsAndConditions } from "../components/layout/TermsAndConditions";
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -118,6 +119,9 @@ export const LoginScreen = () => {
             <Text style={LoginScreenStyle.buttonOutlineText}>{t("LOGIN_SCREEN.FORM.SIGN_UP")}</Text>
           </TouchableOpacity>
         </View>
+        <Box bottom={-175}>
+          <TermsAndConditions />
+        </Box>
       </View>
     </LoginScreenContainer>
   );
