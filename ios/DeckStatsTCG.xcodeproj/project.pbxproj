@@ -8,13 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* DeckStatsTCGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* DeckStatsTCGTests.m */; };
-		08D7DA52D708E000A76B16DB /* Pods_DeckStatsTCG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E986B9D5A22A307FC9C23F59 /* Pods_DeckStatsTCG.framework */; };
+		0587E5FB9AEE4BDA8A46B27D /* Halcom-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2307DDD88E154C938270CEF6 /* Halcom-Italic.otf */; };
+		08D7DA52D708E000A76B16DB /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		0C407D8FA22848AC96CFB76F /* Halcom-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 066D85643EFB4922B4A01B0F /* Halcom-Thin.otf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		40C6AB8B607ED47BDAF31C38 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96C0BDBFF9085431CDC217B /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */; };
+		19359218DA304E369EAD1D72 /* Halcom-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 781EEE08A23944AE867A9B12 /* Halcom-Medium.otf */; };
+		2FC2E50AD60744DCB138001B /* screw.png in Resources */ = {isa = PBXBuildFile; fileRef = CB15EF699E364887AAFB0033 /* screw.png */; };
+		353E64A579464A78B29DB41E /* Halcom-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 060422CA4B43414EB4DAA723 /* Halcom-MediumItalic.otf */; };
+		3583D69A80D743CCBD4388DB /* Halcom-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB417D5D1219484B8C775A18 /* Halcom-Book.otf */; };
+		3B908AFEC325490F973E8E4E /* BungeeInline-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D5AD8CEFFB54FA78F495264 /* BungeeInline-Regular.ttf */; };
+		40C6AB8B607ED47BDAF31C38 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		46EEACCB4381474ABA011E92 /* Halcom-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9BCDDF5214A24C7AA53053CC /* Halcom-ExtraBoldItalic.otf */; };
+		47206568112B4D5DA783B0EF /* Halcom-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14CE53CDCC404FBE86533BDF /* Halcom-Light.otf */; };
+		4F0070AF4EB04FE1ABA5FF13 /* Halcom-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8189BFFB05F74D68BC04DEB5 /* Halcom-LightItalic.otf */; };
+		55F7263C20FF49589F9FBA10 /* Halcom-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F0F9837925849F8B3E2A44C /* Halcom-BoldItalic.otf */; };
+		7A2F93A513834EDBAE251867 /* Halcom-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E8332530DF544C581A4A9DE /* Halcom-Black.otf */; };
+		7D11A515D695807A123A3FD3 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F2F38FC9274FA35DE0DED5 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9603CA505866474DA0BA47D2 /* Halcom-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0D4918AE5084A5EB08FA67E /* Halcom-ExtraBold.otf */; };
+		97D264AB368B4E44BA8F0EF9 /* Halcom-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0977F10D3FC84F96A629844B /* Halcom-BookItalic.otf */; };
+		9FD7E91CDB0E48368EA4418D /* button-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC046973EE6467EA8A2C5C7 /* button-blue.png */; };
+		A4D7985604CA4DBFB4F1D071 /* pokeball-bit.png in Resources */ = {isa = PBXBuildFile; fileRef = 55F2A91E76474C398284D4CF /* pokeball-bit.png */; };
+		A8C6783310DCD65C212DDE0B /* Pods_DeckStatsTCG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93174D5BC5A842DB28820EF1 /* Pods_DeckStatsTCG.framework */; };
+		ADC9E5BB177E4CA8A9E100F9 /* Halcom-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F836B67087F34E30972E0053 /* Halcom-BlackItalic.otf */; };
+		B8BE327AA81245DCADB0BAFD /* Halcom-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E7B583DD503428EA9917357 /* Halcom-Bold.otf */; };
+		C265BBA06BE644E28AF84636 /* Halcom-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8F8DF9E59EB49AD9ADE002C /* Halcom-ThinItalic.otf */; };
+		D53E5BB17F4B481B97EEBDB7 /* pokemon-dp-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8CB15C72944413AA730D68E /* pokemon-dp-pro.otf */; };
+		D87CE875DA3C466FA24BF3AB /* dots.png in Resources */ = {isa = PBXBuildFile; fileRef = 0531151DF3A94C4CA7E79A50 /* dots.png */; };
 		EE676F5D2A9148D100C570A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE676F5C2A9148D100C570A6 /* GoogleService-Info.plist */; };
+		FBD72768846742C8B0080DC9 /* Halcom-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C3004BDE73C449AA704FF1E /* Halcom-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,20 +56,42 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* DeckStatsTCGTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckStatsTCGTests.m; sourceTree = "<group>"; };
 		043A3CB2634CF2E843E44D8C /* Pods-DeckStatsTCG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG.release.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG.release.xcconfig"; sourceTree = "<group>"; };
+		0531151DF3A94C4CA7E79A50 /* dots.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = dots.png; path = ../assets/images/dots.png; sourceTree = "<group>"; };
+		060422CA4B43414EB4DAA723 /* Halcom-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-MediumItalic.otf"; path = "../assets/fonts/Halcom-MediumItalic.otf"; sourceTree = "<group>"; };
+		066D85643EFB4922B4A01B0F /* Halcom-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Thin.otf"; path = "../assets/fonts/Halcom-Thin.otf"; sourceTree = "<group>"; };
+		0977F10D3FC84F96A629844B /* Halcom-BookItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BookItalic.otf"; path = "../assets/fonts/Halcom-BookItalic.otf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* DeckStatsTCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckStatsTCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DeckStatsTCG/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = DeckStatsTCG/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = DeckStatsTCG/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DeckStatsTCG/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = DeckStatsTCG/main.m; sourceTree = "<group>"; };
+		14CE53CDCC404FBE86533BDF /* Halcom-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Light.otf"; path = "../assets/fonts/Halcom-Light.otf"; sourceTree = "<group>"; };
 		15E8396DFC5E66376D3BDF08 /* Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; sourceTree = "<group>"; };
+		2307DDD88E154C938270CEF6 /* Halcom-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Italic.otf"; path = "../assets/fonts/Halcom-Italic.otf"; sourceTree = "<group>"; };
+		2E8332530DF544C581A4A9DE /* Halcom-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Black.otf"; path = "../assets/fonts/Halcom-Black.otf"; sourceTree = "<group>"; };
 		402B2092524C34E21EEFA386 /* Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig"; sourceTree = "<group>"; };
+		55F2A91E76474C398284D4CF /* pokeball-bit.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "pokeball-bit.png"; path = "../assets/images/pokeball-bit.png"; sourceTree = "<group>"; };
 		5EDE38F5E723B087CD6732AA /* Pods-DeckStatsTCG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG.debug.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG.debug.xcconfig"; sourceTree = "<group>"; };
+		62F2F38FC9274FA35DE0DED5 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG_DeckStatsTCGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C3004BDE73C449AA704FF1E /* Halcom-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Regular.otf"; path = "../assets/fonts/Halcom-Regular.otf"; sourceTree = "<group>"; };
+		781EEE08A23944AE867A9B12 /* Halcom-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Medium.otf"; path = "../assets/fonts/Halcom-Medium.otf"; sourceTree = "<group>"; };
+		8189BFFB05F74D68BC04DEB5 /* Halcom-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-LightItalic.otf"; path = "../assets/fonts/Halcom-LightItalic.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DeckStatsTCG/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E96C0BDBFF9085431CDC217B /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG_DeckStatsTCGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E986B9D5A22A307FC9C23F59 /* Pods_DeckStatsTCG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5AD8CEFFB54FA78F495264 /* BungeeInline-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BungeeInline-Regular.ttf"; path = "../assets/fonts/BungeeInline-Regular.ttf"; sourceTree = "<group>"; };
+		8E7B583DD503428EA9917357 /* Halcom-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Bold.otf"; path = "../assets/fonts/Halcom-Bold.otf"; sourceTree = "<group>"; };
+		93174D5BC5A842DB28820EF1 /* Pods_DeckStatsTCG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BCDDF5214A24C7AA53053CC /* Halcom-ExtraBoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ExtraBoldItalic.otf"; path = "../assets/fonts/Halcom-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		9F0F9837925849F8B3E2A44C /* Halcom-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BoldItalic.otf"; path = "../assets/fonts/Halcom-BoldItalic.otf"; sourceTree = "<group>"; };
+		C0D4918AE5084A5EB08FA67E /* Halcom-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ExtraBold.otf"; path = "../assets/fonts/Halcom-ExtraBold.otf"; sourceTree = "<group>"; };
+		CB15EF699E364887AAFB0033 /* screw.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = screw.png; path = ../assets/images/screw.png; sourceTree = "<group>"; };
+		E8CB15C72944413AA730D68E /* pokemon-dp-pro.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "pokemon-dp-pro.otf"; path = "../assets/fonts/pokemon-dp-pro.otf"; sourceTree = "<group>"; };
+		E8F8DF9E59EB49AD9ADE002C /* Halcom-ThinItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ThinItalic.otf"; path = "../assets/fonts/Halcom-ThinItalic.otf"; sourceTree = "<group>"; };
+		EBC046973EE6467EA8A2C5C7 /* button-blue.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "button-blue.png"; path = "../assets/images/button-blue.png"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EE676F5C2A9148D100C570A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F836B67087F34E30972E0053 /* Halcom-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BlackItalic.otf"; path = "../assets/fonts/Halcom-BlackItalic.otf"; sourceTree = "<group>"; };
+		FB417D5D1219484B8C775A18 /* Halcom-Book.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Book.otf"; path = "../assets/fonts/Halcom-Book.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40C6AB8B607ED47BDAF31C38 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework in Frameworks */,
+				40C6AB8B607ED47BDAF31C38 /* BuildFile in Frameworks */,
+				7D11A515D695807A123A3FD3 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08D7DA52D708E000A76B16DB /* Pods_DeckStatsTCG.framework in Frameworks */,
+				08D7DA52D708E000A76B16DB /* BuildFile in Frameworks */,
+				A8C6783310DCD65C212DDE0B /* Pods_DeckStatsTCG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				E986B9D5A22A307FC9C23F59 /* Pods_DeckStatsTCG.framework */,
-				E96C0BDBFF9085431CDC217B /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */,
+				93174D5BC5A842DB28820EF1 /* Pods_DeckStatsTCG.framework */,
+				62F2F38FC9274FA35DE0DED5 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -125,6 +173,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				A391B82630994C2BAA262D16 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -138,6 +187,36 @@
 				00E356EE1AD99517003FC87E /* DeckStatsTCGTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A391B82630994C2BAA262D16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E8CB15C72944413AA730D68E /* pokemon-dp-pro.otf */,
+				8D5AD8CEFFB54FA78F495264 /* BungeeInline-Regular.ttf */,
+				EBC046973EE6467EA8A2C5C7 /* button-blue.png */,
+				0531151DF3A94C4CA7E79A50 /* dots.png */,
+				55F2A91E76474C398284D4CF /* pokeball-bit.png */,
+				CB15EF699E364887AAFB0033 /* screw.png */,
+				2E8332530DF544C581A4A9DE /* Halcom-Black.otf */,
+				F836B67087F34E30972E0053 /* Halcom-BlackItalic.otf */,
+				8E7B583DD503428EA9917357 /* Halcom-Bold.otf */,
+				9F0F9837925849F8B3E2A44C /* Halcom-BoldItalic.otf */,
+				FB417D5D1219484B8C775A18 /* Halcom-Book.otf */,
+				0977F10D3FC84F96A629844B /* Halcom-BookItalic.otf */,
+				C0D4918AE5084A5EB08FA67E /* Halcom-ExtraBold.otf */,
+				9BCDDF5214A24C7AA53053CC /* Halcom-ExtraBoldItalic.otf */,
+				2307DDD88E154C938270CEF6 /* Halcom-Italic.otf */,
+				14CE53CDCC404FBE86533BDF /* Halcom-Light.otf */,
+				8189BFFB05F74D68BC04DEB5 /* Halcom-LightItalic.otf */,
+				781EEE08A23944AE867A9B12 /* Halcom-Medium.otf */,
+				060422CA4B43414EB4DAA723 /* Halcom-MediumItalic.otf */,
+				6C3004BDE73C449AA704FF1E /* Halcom-Regular.otf */,
+				066D85643EFB4922B4A01B0F /* Halcom-Thin.otf */,
+				E8F8DF9E59EB49AD9ADE002C /* Halcom-ThinItalic.otf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -249,6 +328,28 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				EE676F5D2A9148D100C570A6 /* GoogleService-Info.plist in Resources */,
+				D53E5BB17F4B481B97EEBDB7 /* pokemon-dp-pro.otf in Resources */,
+				3B908AFEC325490F973E8E4E /* BungeeInline-Regular.ttf in Resources */,
+				9FD7E91CDB0E48368EA4418D /* button-blue.png in Resources */,
+				D87CE875DA3C466FA24BF3AB /* dots.png in Resources */,
+				A4D7985604CA4DBFB4F1D071 /* pokeball-bit.png in Resources */,
+				2FC2E50AD60744DCB138001B /* screw.png in Resources */,
+				7A2F93A513834EDBAE251867 /* Halcom-Black.otf in Resources */,
+				ADC9E5BB177E4CA8A9E100F9 /* Halcom-BlackItalic.otf in Resources */,
+				B8BE327AA81245DCADB0BAFD /* Halcom-Bold.otf in Resources */,
+				55F7263C20FF49589F9FBA10 /* Halcom-BoldItalic.otf in Resources */,
+				3583D69A80D743CCBD4388DB /* Halcom-Book.otf in Resources */,
+				97D264AB368B4E44BA8F0EF9 /* Halcom-BookItalic.otf in Resources */,
+				9603CA505866474DA0BA47D2 /* Halcom-ExtraBold.otf in Resources */,
+				46EEACCB4381474ABA011E92 /* Halcom-ExtraBoldItalic.otf in Resources */,
+				0587E5FB9AEE4BDA8A46B27D /* Halcom-Italic.otf in Resources */,
+				47206568112B4D5DA783B0EF /* Halcom-Light.otf in Resources */,
+				4F0070AF4EB04FE1ABA5FF13 /* Halcom-LightItalic.otf in Resources */,
+				19359218DA304E369EAD1D72 /* Halcom-Medium.otf in Resources */,
+				353E64A579464A78B29DB41E /* Halcom-MediumItalic.otf in Resources */,
+				FBD72768846742C8B0080DC9 /* Halcom-Regular.otf in Resources */,
+				0C407D8FA22848AC96CFB76F /* Halcom-Thin.otf in Resources */,
+				C265BBA06BE644E28AF84636 /* Halcom-ThinItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

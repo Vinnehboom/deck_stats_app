@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { KeyboardAvoidingView, StyleSheet, TextInput, Text, TouchableOpacity, View } from "react-native";
+import { TextInput, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { showMessage } from "react-native-flash-message";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { useTranslation } from "react-i18next";
+import { Text, Box } from "native-base";
+import { StrokeText } from "@charmy.tech/react-native-stroke-text";
 
 import { authInstance } from "../firebase/firebaseconfig";
 import { colors } from "../utils/colors";
 import { RootStackParamList } from "../types/RouteParams";
+import { LoginScreenContainer } from "../components/layout/LoginScreenContainer";
+import { LoginScreenStyle } from "../styles/login/LoginScreenStyle";
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -76,79 +80,45 @@ export const LoginScreen = () => {
   };
 
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <View style={styles.inputContainer}>
-        <TextInput
-          placeholder={t("LOGIN_SCREEN.FORM.EMAIL")}
-          value={email}
-          onChangeText={text => setEmail(text)}
-          style={styles.input}
-        />
-        <TextInput
-          placeholder={t("LOGIN_SCREEN.FORM.PASSWORD")}
-          value={password}
-          onChangeText={text => setPassword(text)}
-          style={styles.input}
-          secureTextEntry
-        />
-      </View>
+    <LoginScreenContainer>
+      <View style={LoginScreenStyle.content}>
+        <Box style={LoginScreenStyle.title}>
+          <StrokeText
+            fontFamily="BungeeInline-Regular"
+            color={colors.light}
+            strokeColor={colors["primary-dark"]}
+            strokeWidth={2}
+            fontSize={32}
+            text={t("LOGIN_SCREEN.TITLE")}
+          />
+        </Box>
 
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={handleLogin} style={styles.button}>
-          <Text style={styles.buttonText}> {t("LOGIN_SCREEN.FORM.SIGN_IN")} </Text>
-        </TouchableOpacity>
+        <View style={LoginScreenStyle.inputContainer}>
+          <TextInput
+            placeholder={t("LOGIN_SCREEN.FORM.EMAIL")}
+            value={email}
+            onChangeText={text => setEmail(text)}
+            style={LoginScreenStyle.input}
+          />
+          <TextInput
+            placeholder={t("LOGIN_SCREEN.FORM.PASSWORD")}
+            value={password}
+            onChangeText={text => setPassword(text)}
+            style={LoginScreenStyle.input}
+            secureTextEntry
+          />
+        </View>
 
-        <TouchableOpacity onPress={handleSignUp} style={[styles.button, styles.buttonOutline]}>
-          <Text style={styles.buttonOutlineText}>{t("LOGIN_SCREEN.FORM.SIGN_UP")}</Text>
-        </TouchableOpacity>
+        <View style={LoginScreenStyle.buttonContainer}>
+          <TouchableOpacity onPress={handleLogin} style={LoginScreenStyle.button}>
+            <Text style={LoginScreenStyle.buttonText}> {t("LOGIN_SCREEN.FORM.SIGN_IN")} </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleSignUp} style={[LoginScreenStyle.button, LoginScreenStyle.buttonOutline]}>
+            <Text style={LoginScreenStyle.buttonOutlineText}>{t("LOGIN_SCREEN.FORM.SIGN_UP")}</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </KeyboardAvoidingView>
+    </LoginScreenContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  button: {
-    alignItems: "center",
-    backgroundColor: colors.darkBlue,
-    borderRadius: 10,
-    padding: 15,
-    width: "100%",
-  },
-  buttonContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 40,
-    width: "60%",
-  },
-  buttonOutline: {
-    backgroundColor: "white",
-    borderColor: colors.darkBlue,
-    borderWidth: 2,
-    marginTop: 5,
-  },
-  buttonOutlineText: {
-    color: colors.darkBlue,
-    fontSize: 16,
-    fontWeight: "700",
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "700",
-  },
-  container: {
-    alignItems: "center",
-    flex: 1,
-    justifyContent: "center",
-  },
-  input: {
-    backgroundColor: "white",
-    borderRadius: 10,
-    marginTop: 5,
-    paddingHorizontal: 15,
-    paddingVertical: 10,
-  },
-  inputContainer: {
-    width: "80%",
-  },
-});

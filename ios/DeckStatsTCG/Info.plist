@@ -40,7 +40,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -55,5 +55,26 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>pokemon-dp-pro.otf</string>
+		<string>BungeeInline-Regular.ttf</string>
+		<string>Halcom-Black.otf</string>
+		<string>Halcom-BlackItalic.otf</string>
+		<string>Halcom-Bold.otf</string>
+		<string>Halcom-BoldItalic.otf</string>
+		<string>Halcom-Book.otf</string>
+		<string>Halcom-BookItalic.otf</string>
+		<string>Halcom-ExtraBold.otf</string>
+		<string>Halcom-ExtraBoldItalic.otf</string>
+		<string>Halcom-Italic.otf</string>
+		<string>Halcom-Light.otf</string>
+		<string>Halcom-LightItalic.otf</string>
+		<string>Halcom-Medium.otf</string>
+		<string>Halcom-MediumItalic.otf</string>
+		<string>Halcom-Regular.otf</string>
+		<string>Halcom-Thin.otf</string>
+		<string>Halcom-ThinItalic.otf</string>
+	</array>
 </dict>
 </plist>
