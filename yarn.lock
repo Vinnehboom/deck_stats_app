@@ -1159,6 +1159,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@charmy.tech/react-native-stroke-text@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@charmy.tech/react-native-stroke-text/-/react-native-stroke-text-1.0.3.tgz#853a4925db68c0f7163329e77d36f0aea5040a78"
+  integrity sha512-YNCOf21fvU0O0rzfb75Qlc3bCI75ybVMCz2HfiSnsWwEYp1ZtNo28EtFJoBYdEIt/t23WxRr4idawJBcl9ylFw==
+
 "@eslint-community/eslint-utils@^4.2.0", "@eslint-community/eslint-utils@^4.4.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz#a23514e8fb9af1269d5f7788aa556798d61c6b59"
