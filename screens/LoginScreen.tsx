@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { TextInput, TouchableOpacity, View } from "react-native";
+import { TextInput, View } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { showMessage } from "react-native-flash-message";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { useTranslation } from "react-i18next";
-import { Text, Box } from "native-base";
+import { Text, Box, Button } from "native-base";
 import { StrokeText } from "@charmy.tech/react-native-stroke-text";
 
 import { authInstance } from "../firebase/firebaseconfig";
@@ -93,33 +93,44 @@ export const LoginScreen = () => {
             text={t("LOGIN_SCREEN.TITLE")}
           />
         </Box>
+        <Box style={LoginScreenStyle.formContainer}>
+          <View style={LoginScreenStyle.inputContainer}>
+            <Box style={LoginScreenStyle.formTitle}>
+              <StrokeText
+                fontFamily="BungeeInline-Regular"
+                color="#ffffff"
+                strokeColor={colors["primary-dark"]}
+                strokeWidth={3}
+                fontSize={26}
+                text={t("LOGIN_SCREEN.FORM.LOGIN_TITLE")}
+              />
+            </Box>
+            <TextInput
+              placeholder={t("LOGIN_SCREEN.FORM.EMAIL")}
+              value={email}
+              onChangeText={text => setEmail(text)}
+              style={LoginScreenStyle.input}
+            />
+            <TextInput
+              placeholder={t("LOGIN_SCREEN.FORM.PASSWORD")}
+              value={password}
+              onChangeText={text => setPassword(text)}
+              style={LoginScreenStyle.input}
+              secureTextEntry
+            />
+          </View>
 
-        <View style={LoginScreenStyle.inputContainer}>
-          <TextInput
-            placeholder={t("LOGIN_SCREEN.FORM.EMAIL")}
-            value={email}
-            onChangeText={text => setEmail(text)}
-            style={LoginScreenStyle.input}
-          />
-          <TextInput
-            placeholder={t("LOGIN_SCREEN.FORM.PASSWORD")}
-            value={password}
-            onChangeText={text => setPassword(text)}
-            style={LoginScreenStyle.input}
-            secureTextEntry
-          />
-        </View>
+          <View style={LoginScreenStyle.buttonContainer}>
+            <Button style={LoginScreenStyle.button} marginY={3} colorScheme="primary" onPress={handleLogin}>
+              <Text style={LoginScreenStyle.buttonText}> {t("LOGIN_SCREEN.FORM.SIGN_IN")} </Text>
+            </Button>
 
-        <View style={LoginScreenStyle.buttonContainer}>
-          <TouchableOpacity onPress={handleLogin} style={LoginScreenStyle.button}>
-            <Text style={LoginScreenStyle.buttonText}> {t("LOGIN_SCREEN.FORM.SIGN_IN")} </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={handleSignUp} style={[LoginScreenStyle.button, LoginScreenStyle.buttonOutline]}>
-            <Text style={LoginScreenStyle.buttonOutlineText}>{t("LOGIN_SCREEN.FORM.SIGN_UP")}</Text>
-          </TouchableOpacity>
-        </View>
-        <Box bottom={-175}>
+            <Button bgColor={colors["primary-dark"]} style={LoginScreenStyle.button} onPress={handleSignUp}>
+              <Text style={LoginScreenStyle.buttonText}>{t("LOGIN_SCREEN.FORM.SIGN_UP")}</Text>
+            </Button>
+          </View>
+        </Box>
+        <Box position="absolute" bottom={5}>
           <TermsAndConditions />
         </Box>
       </View>
