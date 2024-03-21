@@ -1,22 +1,33 @@
-import React from "react";
-import { Text, Alert } from "react-native";
-import { Container, Button } from "native-base";
+import React, { useState } from "react";
+import { Alert } from "react-native";
+import { Button, Box, View, ScrollView, Text, HStack, AddIcon, MinusIcon } from "native-base";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { showMessage } from "react-native-flash-message";
 import { useNavigation } from "@react-navigation/core";
 import { useTranslation } from "react-i18next";
 import auth from "@react-native-firebase/auth";
 
+import { DeckDetailsStyle } from "../../../styles/decks/DeckDetailsStyle";
+import { ScrollableScreenStyle } from "../../../styles/layout/ScrollableScreenStyle";
 import { DeckListTabParamList, MainTabParamList } from "../../../types/RouteParams";
 import { useDeckDeletion } from "../../../components/lists/_queries/useDeckDeletion";
 import { useSetActiveDeck } from "../../../components/decks/_queries/useSetActiveDeck";
 import { useGetActiveDeck } from "../../../components/decks/_queries/useGetActiveDeck";
+import { MatchRecordForm } from "../../../components/matchRecords/MatchRecordForm";
+import { useGetDeckLists } from "../../../components/lists/_queries/useGetDeckLists";
+import { Spinner } from "../../../components/Spinner";
+import { colors } from "../../../utils/colors";
+import { DeckMatchHistory } from "../../../components/decks/DeckMatchHistory";
 
 export const DeckDetails = () => {
   const user = auth().currentUser;
   const { queryResult: activeDeck } = useGetActiveDeck(user!);
   const { params } = useRoute<RouteProp<DeckListTabParamList, "DeckDetails">>();
   const { deck } = params;
+  const { queryResult: lists, isLoading: listsLoading, isFetching: listsFetching } = useGetDeckLists(deck);
+
+  const [showForm, setshowForm] = useState(false);
+
   const { navigate } = useNavigation<MainTabParamList>();
   const { t } = useTranslation();
 
@@ -67,17 +78,52 @@ export const DeckDetails = () => {
   };
 
   return (
-    <Container minWidth="100%" safeAreaTop flex={1} justifyContent="center" alignItems="center">
-      <Text>{deck.name}</Text>
-      <Button mt={3} colorScheme="danger" onPress={handleDeckDeletion}>
-        <Text>
-          {t("DECK.DECK_DETAILS.DELETE.DELETE_BUTTON")} {deck.name}
-        </Text>
-      </Button>
-
-      <Button mt={3} colorScheme="info" onPress={handleDeckActivation}>
-        <Text>{t("DECK.DECK_DETAILS.ACTIVE_DECK.ACTIVATE_BUTTON")}</Text>
-      </Button>
-    </Container>
+    <View style={ScrollableScreenStyle.container}>
+      <ScrollView style={ScrollableScreenStyle.scrollViewContainer}>
+        <Box style={DeckDetailsStyle.optionsContainer}>
+          <Text style={DeckDetailsStyle.optionsTitle}>{t("DECK.DECK_DETAILS.OPTIONS.TITLE")}</Text>
+          <HStack justifyContent="space-evenly" width="90%" marginX="auto" paddingTop={4}>
+            <Button height="100%" colorScheme="danger" onPress={handleDeckDeletion}>
+              <Text color="white">
+                {t("DECK.DECK_DETAILS.DELETE.DELETE_BUTTON")} {deck.name}
+              </Text>
+            </Button>
+            <Button maxWidth="50%" height="100%" colorScheme="info" onPress={handleDeckActivation}>
+              <Text color="white">{t("DECK.DECK_DETAILS.ACTIVE_DECK.ACTIVATE_BUTTON")}</Text>
+            </Button>
+          </HStack>
+        </Box>
+        <Box>
+          <Text style={DeckDetailsStyle.historyTitle}>{t("DECK.DECK_DETAILS.RECENT_RESULTS")}</Text>
+          <Box marginX="auto">
+            <DeckMatchHistory deck={deck} limit={3} />
+          </Box>
+        </Box>
+        {listsFetching || listsLoading ? (
+          <Spinner />
+        ) : (
+          <>
+            <Button
+              leftIcon={showForm ? <MinusIcon /> : <AddIcon />}
+              variant="link"
+              width="50%"
+              alignSelf="center"
+              onPress={() => setshowForm(!showForm)}>
+              <Text fontWeight="bold" color={colors["primary-dark"]} fontSize={18}>
+                {showForm ? t("DECK.DECK_DETAILS.RECORD_FORM.HIDE") : t("DECK.DECK_DETAILS.RECORD_FORM.SHOW")}
+              </Text>
+            </Button>
+            {showForm ? (
+              <Box alignSelf="center">
+                <Box style={DeckDetailsStyle.matchRecordFormContainer}>
+                  <Text style={DeckDetailsStyle.formTitle}>{t("DECK.DECK_DETAILS.RECORD_FORM.TITLE")}</Text>
+                  <MatchRecordForm bo1={true} started={true} deck={deck} lists={lists} />
+                </Box>
+              </Box>
+            ) : null}
+          </>
+        )}
+      </ScrollView>
+    </View>
   );
 };
