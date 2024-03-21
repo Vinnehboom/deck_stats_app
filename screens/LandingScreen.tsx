@@ -12,6 +12,7 @@ import { Spinner } from "../components/Spinner";
 import { ActiveDeck } from "../components/decks/ActiveDeck";
 import { DeckMatchHistory } from "../components/decks/DeckMatchHistory";
 import { MainTabParamList } from "../types/RouteParams";
+
 export const LandingScreen = () => {
   const { signOut } = useAuthContext();
   const user = auth().currentUser;
