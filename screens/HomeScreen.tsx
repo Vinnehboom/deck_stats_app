@@ -5,6 +5,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { showMessage } from "react-native-flash-message";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { useTranslation } from "react-i18next";
+import { faHouse } from "@fortawesome/free-solid-svg-icons/faHouse";
+import { faFolderOpen } from "@fortawesome/free-solid-svg-icons/faFolderOpen";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 import { AuthContext } from "../contexts/AuthContext";
 import { MainTabParamList, RootStackParamList } from "../types/RouteParams";
@@ -13,6 +16,9 @@ import { LandingScreen } from "./LandingScreen";
 import { DecksScreen } from "./decks/DecksScreen";
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
+
+const HouseIcon = () => <FontAwesomeIcon color={colors["primary-dark"]} icon={faHouse} />;
+const FolderIcon = () => <FontAwesomeIcon color={colors["primary-dark"]} icon={faFolderOpen} />;
 
 export const HomeScreen = () => {
   const user = auth().currentUser;
@@ -53,8 +59,8 @@ export const HomeScreen = () => {
             fontWeight: "bold",
           },
         }}>
-        <Tab.Screen name="Landing" component={LandingScreen} />
-        <Tab.Screen name="Decks" component={DecksScreen} />
+        <Tab.Screen name="Landing" options={{ tabBarIcon: () => HouseIcon() }} component={LandingScreen} />
+        <Tab.Screen name="Decks" options={{ tabBarIcon: () => FolderIcon() }} component={DecksScreen} />
       </Tab.Navigator>
     </AuthContext.Provider>
   );
