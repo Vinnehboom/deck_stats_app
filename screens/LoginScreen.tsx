@@ -6,6 +6,9 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { useTranslation } from "react-i18next";
 import { Text, Box, Button, Link } from "native-base";
 import { StrokeText } from "@charmy.tech/react-native-stroke-text";
+import { GoogleSignin, GoogleSigninButton } from "@react-native-google-signin/google-signin";
+import { ANDROID_OAUTH_CLIENT_ID } from "@env";
+import auth from "@react-native-firebase/auth";
 
 import { authInstance } from "../firebase/firebaseconfig";
 import { colors } from "../utils/colors";
@@ -13,6 +16,10 @@ import { RootStackParamList } from "../types/RouteParams";
 import { LoginScreenContainer } from "../components/layout/LoginScreenContainer";
 import { LoginScreenStyle } from "../styles/login/LoginScreenStyle";
 import { TermsAndConditions } from "../components/layout/TermsAndConditions";
+
+GoogleSignin.configure({
+  webClientId: ANDROID_OAUTH_CLIENT_ID,
+});
 
 type loginStateType = { email: string; password: string; passwordConfirmation: string };
 
@@ -114,6 +121,19 @@ export const LoginScreen = () => {
       });
   };
 
+  async function onGoogleButtonPress() {
+    // Check if your device supports Google Play
+    await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+    // Get the users ID token
+    const { idToken } = await GoogleSignin.signIn();
+
+    // Create a Google credential with the token
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+    // Sign-in the user with the credential
+    return auth().signInWithCredential(googleCredential);
+  }
+
   return (
     <LoginScreenContainer>
       <View style={LoginScreenStyle.content}>
@@ -184,6 +204,11 @@ export const LoginScreen = () => {
               </>
             )}
           </View>
+          <GoogleSigninButton
+            onPress={async () => await onGoogleButtonPress()}
+            size={GoogleSigninButton.Size.Standard}
+            color={GoogleSigninButton.Color.Light}
+          />
         </Box>
         <Box position="absolute" bottom={5}>
           <TermsAndConditions />

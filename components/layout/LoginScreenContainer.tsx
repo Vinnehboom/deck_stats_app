@@ -1,23 +1,22 @@
 import React from "react";
-import { KeyboardAvoidingView } from "native-base";
-import { Image } from "native-base";
+import { View, Image } from "native-base";
 
 import { LoginScreenContainerStyle } from "../../styles/login/LoginScreenContainerStyle";
 import { LoginScreenGlare } from "./LoginScreenGlare";
 
 export const LoginScreenContainer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <KeyboardAvoidingView style={LoginScreenContainerStyle.container} behavior="padding">
+    <View style={LoginScreenContainerStyle.container}>
       {children}
       <Image
         alt="button"
         style={[LoginScreenContainerStyle.buttonImage, LoginScreenContainerStyle.buttonLeft]}
-        source={require("../../assets/images/button-blue.png")}
+        source={require("../../assets/images/button_blue.png")}
       />
       <Image
         alt="button"
         style={[LoginScreenContainerStyle.buttonImage, LoginScreenContainerStyle.buttonRight]}
-        source={require("../../assets/images/button-blue.png")}
+        source={require("../../assets/images/button_blue.png")}
       />
       <Image
         alt="screw-left"
@@ -50,6 +49,6 @@ export const LoginScreenContainer = ({ children }: { children: React.ReactNode }
         source={require("../../assets/images/dots.png")}
       />
       <LoginScreenGlare />
-    </KeyboardAvoidingView>
+    </View>
   );
 };
