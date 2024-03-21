@@ -1,11 +1,17 @@
 import React from "react";
 import { ActivityIndicator, View, StyleSheet } from "react-native";
+import { Text } from "native-base";
 
 import { colors } from "../utils/colors";
 
-export const Spinner = ({ marginTop, height }: { marginTop?: number; height?: number }) => {
+export const Spinner = ({ marginTop, height, description }: { marginTop?: number; height?: number; description?: string }) => {
   return (
     <View style={{ ...styles.container, marginTop: marginTop || 12 }}>
+      {description ? (
+        <Text alignSelf="center" italic={true} marginBottom={5} fontSize={16}>
+          {description}
+        </Text>
+      ) : null}
       <ActivityIndicator style={{ height: height || 50 }} size="large" color={colors.darkBlue} />
     </View>
   );

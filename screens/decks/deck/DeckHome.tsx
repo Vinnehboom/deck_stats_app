@@ -14,6 +14,7 @@ import { DeckDetails } from "./DeckDetails";
 import { Spinner } from "../../../components/Spinner";
 import { useGetDeck } from "../../../components/decks/_queries/useGetDeck";
 import { HeaderBackButton } from "../../../components/navigation/HeaderBackButton";
+import { DeckScreenTitle } from "../../../components/decks/DeckScreenTitle";
 
 const Tab = createBottomTabNavigator<DeckListTabParamList>();
 
@@ -32,11 +33,13 @@ const DeckHome = () => {
     <Tab.Navigator
       initialRouteName="DeckDetails"
       screenOptions={{
-        headerTitle: deck.name,
+        headerTitle: () => DeckScreenTitle({ deck }),
         headerLeft: HeaderBackButton,
         headerStyle: { backgroundColor: colors.primary },
+        tabBarStyle: { backgroundColor: colors.light },
         headerShadowVisible: true,
         headerLeftContainerStyle: { paddingStart: 15 },
+
         headerTitleStyle: {
           color: colors.white,
           fontSize: 18,
