@@ -26,10 +26,11 @@ export const DeckMatchups = () => {
   const worstMuSecond = useRef("");
 
   useEffect(() => {
-    if (!records) return;
+    if (!records || records.length < 1) return;
     setCalculating(true);
 
     setArchetypes([...new Set(records?.map(record => record.opponentArchetype))]);
+
     const calculatedData = transformMatchRecordData(records);
     const musFirstSortedByWinrate = Object.keys(calculatedData).reduce((a, b) =>
       calculatedData[a].first.wr > calculatedData[b].first.wr ? a : b

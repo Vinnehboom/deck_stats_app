@@ -74,7 +74,7 @@
       "sha1": "5783041aa943a09f16796fdd5064c74477d36b38"
     },
     {
-      "path": "assets/images/button-blue.png",
+      "path": "assets/images/button_blue.png",
       "sha1": "5a640bdb1181d2a5913eed5691dc05e681de9bba"
     },
     {
@@ -82,12 +82,16 @@
       "sha1": "73734540a9c925ba762fc63a0d91dc2983ae6e81"
     },
     {
-      "path": "assets/images/pokeball-bit.png",
+      "path": "assets/images/pokeball_bit.png",
       "sha1": "b94b9a69051575be13bad7373df84e076dd0ed28"
     },
     {
       "path": "assets/images/screw.png",
       "sha1": "799e8c71dc8b73850209c0c8b5a3948afcd4b0a4"
+    },
+    {
+      "path": "assets/images/triangle_top_left_icon.svg",
+      "sha1": "e64aa426d159730ba088ee05af1b9049055537ea"
     }
   ]
 }

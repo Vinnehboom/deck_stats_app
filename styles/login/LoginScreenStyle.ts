@@ -14,7 +14,7 @@ export const LoginScreenStyle = StyleSheet.create({
   buttonContainer: {
     alignItems: "center",
     justifyContent: "center",
-    marginVertical: 10,
+    marginVertical: 12,
     width: "60%",
   },
   buttonText: {
