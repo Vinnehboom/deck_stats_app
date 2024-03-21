@@ -22,7 +22,7 @@
         "FIRST": "1st",
         "SECOND": "2nd",
         "RESULT": "Result",
-        "REMARKS": "Remarks",
+        "REMARKS": "Notes",
         "SUBMIT": "Submit",
         "SUCCESS": "Record successfully added!",
         "FAILED": "Record could not be saved. Please validate all required fields and try again.",
@@ -94,7 +94,11 @@
     "NAVIGATION": {
       "BACK": "Back"
     },
+    "DECK_MATCH_HISTORY": {"LOADING": "Loading match history"},
     "DECK_DETAILS": {
+      "OPTIONS": { "TITLE": "Options"},
+      "RECENT_RESULTS": "Recent results",
+      "RECORD_FORM": {"SHOW": "Add result", "HIDE": "Hide form", "TITLE": "Add result"},
       "DELETE": {
         "ALERT_TITLE": "Confirm deletion",
         "ALERT_MESSAGE": "Are you sure you want to delete this deck?",
