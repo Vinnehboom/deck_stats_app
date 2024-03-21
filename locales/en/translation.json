@@ -129,11 +129,11 @@
         "SUCCESS_AND_ACTIVATED": "List added. It was also set as the current active list for this deck.",
         "ERROR": "Some errors were encountered during list submission:"
       },
-      "LISTS":{"TITLE": "Lists"},
+      "LISTS":{"TITLE": "Lists", "LOADING": "Lists loading..."},
       "LIST_FORM": {
         "TITLE": "Import list",
         "NAME": "Name",
-        "LIST_PLACEHOLDER": "deck export...",
+        "LIST_PLACEHOLDER": "Deck string (Live/Limitless/...)",
         "SUBMIT": "Submit list"
       }
     }

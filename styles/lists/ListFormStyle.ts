@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
 
 import { colors } from "../../utils/colors";
-import { screenHeight, screenWidth } from "../dimensions";
+import { screenWidth } from "../dimensions";
 
 export const ListFormStyle = StyleSheet.create({
   button: {
     alignItems: "center",
-    backgroundColor: colors.primary,
+    backgroundColor: colors["primary-dark"],
     borderRadius: 10,
     marginTop: 20,
     padding: 10,
@@ -18,10 +18,16 @@ export const ListFormStyle = StyleSheet.create({
     fontWeight: "700",
   },
   formField: {
-    backgroundColor: "white",
+    backgroundColor: colors.light,
     borderRadius: 5,
     borderWidth: 0,
     fontSize: 14,
+  },
+  inputLabel: {
+    color: colors["primary-dark"],
+    fontSize: 16,
+    fontWeight: "bold",
+    marginVertical: 12,
   },
   listForm: {
     alignItems: "center",
@@ -31,7 +37,7 @@ export const ListFormStyle = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "600",
-    marginVertical: screenHeight / 30,
+    marginTop: "5%",
     textAlign: "center",
   },
 });

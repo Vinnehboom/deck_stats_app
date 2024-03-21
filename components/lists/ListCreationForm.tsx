@@ -1,9 +1,9 @@
-import { Text, View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import React, { useReducer } from "react";
 import { showMessage } from "react-native-flash-message";
 import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
-import { Input, TextArea, Checkbox } from "native-base";
+import { Input, TextArea, Checkbox, Text, Box } from "native-base";
 
 import { ListFormStyle } from "../../styles/lists/ListFormStyle";
 import { useListCreation } from "./_queries/useListCreation";
@@ -68,21 +68,26 @@ export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] })
   return (
     <View style={ListFormStyle.listForm}>
       <Text style={ListFormStyle.title}> {t("DECK.DECK_LISTS.LIST_FORM.TITLE")}</Text>
-      <Input
-        placeholder={t("DECK.DECK_LISTS.LIST_FORM.NAME")}
-        value={newListObject.listName}
-        onChangeText={(text: string) => newListObjectDispatch({ type: "setListName", payload: text })}
-        style={ListFormStyle.formField}
-      />
-      <TextArea
-        marginTop={5}
-        placeholder={t("DECK.DECK_LISTS.LIST_FORM.LIST_PLACEHOLDER")}
-        autoCompleteType
-        h={200}
-        value={newListObject.listString}
-        onChangeText={text => newListObjectDispatch({ type: "setListString", payload: text })}
-        style={ListFormStyle.formField}
-      />
+      <Box width="100%">
+        <Text style={ListFormStyle.inputLabel}>{t("DECK.DECK_LISTS.LIST_FORM.NAME")}</Text>
+        <Input
+          value={newListObject.listName}
+          onChangeText={(text: string) => newListObjectDispatch({ type: "setListName", payload: text })}
+          style={ListFormStyle.formField}
+        />
+      </Box>
+
+      <Box width="100%">
+        <Text style={ListFormStyle.inputLabel}>{t("DECK.DECK_LISTS.LIST_FORM.LIST_PLACEHOLDER")}</Text>
+        <TextArea
+          autoCompleteType
+          h={200}
+          value={newListObject.listString}
+          onChangeText={text => newListObjectDispatch({ type: "setListString", payload: text })}
+          style={ListFormStyle.formField}
+        />
+      </Box>
+
       <Checkbox
         marginTop={4}
         value={newListObject.activate}
