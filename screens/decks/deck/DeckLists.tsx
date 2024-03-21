@@ -12,6 +12,7 @@ import { DeckListsStyle } from "../../../styles/decks/DeckListsStyle";
 import { ListsScrollContainer } from "../../../components/lists/ListsScrollContainer";
 import { ListCreationForm } from "../../../components/lists/ListCreationForm";
 import { useGetActiveList } from "../../../components/lists/_queries/useGetActiveList";
+import { ScrollableScreenStyle } from "../../../styles/layout/ScrollableScreenStyle";
 
 export const DeckLists = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamList, "DeckLists">>();
@@ -25,12 +26,12 @@ export const DeckLists = () => {
   if (loading) <Spinner />;
 
   return (
-    <View style={DeckListsStyle.container}>
-      <ScrollView style={DeckListsStyle.scrollViewContainer}>
+    <View style={ScrollableScreenStyle.container}>
+      <ScrollView style={ScrollableScreenStyle.scrollViewContainer}>
         <ListCreationForm deck={deck} lists={lists} />
         <Text style={DeckListsStyle.listsTitle}> {t("DECK.DECK_LISTS.LISTS.TITLE")}</Text>
         {loading || !lists ? (
-          <Spinner />
+          <Spinner description={t("DECK.DECK_LISTS.LISTS.LOADING")} />
         ) : (
           <ListsScrollContainer deck={deck} lists={lists} loading={loading} activeList={activeListList} />
         )}

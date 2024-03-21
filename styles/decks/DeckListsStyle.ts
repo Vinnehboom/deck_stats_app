@@ -1,20 +1,19 @@
 import { StyleSheet } from "react-native";
 
-import { screenWidth as width, screenHeight as height } from "../dimensions";
-
+import { colors } from "../../utils/colors";
 export const DeckListsStyle = StyleSheet.create({
-  container: {
-    flex: 1,
-    maxHeight: height - 6,
-    minWidth: width - 6,
+  listFormContainer: {
+    backgroundColor: colors.light,
+    borderRadius: 10,
+    height: "auto",
+    marginBottom: 40,
+    marginHorizontal: "10%",
+    minWidth: "80%",
   },
   listsTitle: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
-    marginTop: 12,
+    marginTop: 24,
     textAlign: "center",
-  },
-  scrollViewContainer: {
-    maxHeight: height,
   },
 });
