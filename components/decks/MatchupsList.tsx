@@ -44,28 +44,28 @@ export const MatchupsList = ({
             </Text>
           ) : null}
         </HStack>
-        {Object.keys(data).map((identifier, idx) => {
-          const archetypeData: MatchRecordDataEntry = data[identifier];
-          return (
-            <HStack key={identifier + idx}>
-              <MatchupListItem viewable={viewable || false} archetype={archetypeData.archetype} data={archetypeData} />
-              {viewable && matchRecords ? (
-                <Button
-                  width="16"
-                  variant="outline"
-                  right="6"
-                  onPress={() =>
-                    push("MatchupNotes", { matchupRecords: archetypeData.matchRecords, archetype: archetypeData.archetype })
-                  }>
-                  <Text fontWeight="bold" color={colors["primary-dark"]}>
-                    View
-                  </Text>
-                </Button>
-              ) : null}
-            </HStack>
-          );
-        })}
       </VStack>
+      {Object.keys(data).map((identifier, idx) => {
+        const archetypeData: MatchRecordDataEntry = data[identifier];
+        return (
+          <HStack key={identifier + idx}>
+            <MatchupListItem viewable={viewable || false} archetype={archetypeData.archetype} data={archetypeData} />
+            {viewable && matchRecords ? (
+              <Button
+                width="16"
+                variant="outline"
+                right="6"
+                onPress={() =>
+                  push("MatchupNotes", { matchupRecords: archetypeData.matchRecords, archetype: archetypeData.archetype })
+                }>
+                <Text fontWeight="bold" color={colors["primary-dark"]}>
+                  View
+                </Text>
+              </Button>
+            ) : null}
+          </HStack>
+        );
+      })}
     </Box>
   );
 };
