@@ -5,7 +5,9 @@ export const transformArchetypes = (archetypes: Archetype[], generations: number
   if (query.length > 0) {
     filteredTypes = filteredTypes
       .filter(
-        archetype => archetype.identifier.match(query.toLowerCase()) || archetype.name.toLowerCase().includes(query.toLowerCase())
+        archetype =>
+          archetype.identifier.split("-").join(" ").toLowerCase().match(query.toLowerCase()) ||
+          archetype.name.toLowerCase().includes(query.toLowerCase())
       )
       .sort((a, b) => (a.generation > b.generation ? 1 : -1));
   }
@@ -16,6 +18,7 @@ export const transformArchetypes = (archetypes: Archetype[], generations: number
       variants.forEach(variant => (variant.icons = [...archetype.icons, variant.icon]));
       return [...acc, archetype, ...variants];
     }, []);
+
   return flattenedTypes;
 };
 

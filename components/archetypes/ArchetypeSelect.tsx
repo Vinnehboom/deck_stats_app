@@ -4,7 +4,7 @@ import { Flex, Image, ScrollView, Text, VStack, HStack } from "native-base";
 import { useDebounce } from "use-lodash-debounce";
 
 import { ArchetypeBase } from "../../types";
-import { transformArchetypes } from "../../helpers/archetypes";
+import { transformArchetypes, transformIdentifier } from "../../helpers/archetypes";
 import { Archetype } from "../../types";
 import { ArchetypeSelectStyle } from "../../styles/archetypes/ArchetypeSelectStyle";
 import { Spinner } from "../Spinner";
@@ -33,7 +33,7 @@ const ArchetypesList = ({
             borderBottomWidth={0.2}
             padding={2}
             minWidth="75%">
-            <Text onPress={() => handleArchetypeSelection(archetype)}>{archetype.name}</Text>
+            <Text onPress={() => handleArchetypeSelection(archetype)}>{transformIdentifier(archetype.identifier)}</Text>
             <Flex flexDirection="row">
               {archetype.icons?.length &&
                 archetype.icons.map((icon, index) => (
