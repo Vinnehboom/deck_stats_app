@@ -20,6 +20,7 @@ const transformList = (listString: string): [CardList, string[]] => {
       const [setCode, setNumber] = cardItems.splice(-2);
       cardName = cardItems.join(" ");
       apiSetId = setCode === "Energy" ? "sve" : setTranslations[setCode] || "";
+      if (setCode === "TEF") apiSetId = "sv5";
       const card: Card = {
         setNumber: setNumber,
         setId: setCode,

@@ -1,3 +1,5 @@
+// TODO: Figure out more streamlined way of keeping up to date
+
 export const setTranslations: { [key: string]: string } = {
   AOR: "xy7",
   AQ: "ecard2",
@@ -78,6 +80,8 @@ export const setTranslations: { [key: string]: string } = {
   NXD: "bw4",
   OBF: "sv3",
   PAR: "sv4",
+  PAF: "sv4pt5",
+  TEF: "sv5",
   PAL: "sv2",
   PGO: "pgo",
   PHF: "xy4",
