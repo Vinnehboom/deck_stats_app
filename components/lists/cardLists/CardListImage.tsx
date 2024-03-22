@@ -7,7 +7,7 @@ export const CardListImage = ({ count, card }: CardListItem) => {
   return (
     <Center style={ListItemStyle.cardImage} key={`${card.setId} ${card.setNumber}`}>
       <Circle style={ListItemStyle.countCircle}>
-        <Text fontSize="14">{count}</Text>
+        <Text style={ListItemStyle.countCircleCount}>{count}</Text>
       </Circle>
       <Image
         zIndex={-1}
