@@ -13,7 +13,19 @@ export const DeckMatchupsStyle = StyleSheet.create({
   highlightMatchupBlock: {
     width: width * 0.6,
   },
-  highlightMatchupTitle: { fontSize: 18, fontWeight: "bold", padding: 4, width: width * 0.4 },
+  highlightMatchupTitle: { fontSize: 16, fontWeight: "bold", paddingHorizontal: 8, width: width * 0.4 },
+  listSelect: {
+    marginBottom: 24,
+    marginHorizontal: "2%",
+    minWidth: "100%",
+  },
+  listSelectTitle: {
+    fontSize: 14,
+    fontWeight: "bold",
+    minWidth: "30%",
+    paddingTop: 3,
+    textAlign: "center",
+  },
   matchupContainer: {
     padding: 12,
   },
@@ -36,13 +48,18 @@ export const DeckMatchupsStyle = StyleSheet.create({
     width: "20%",
   },
   matchupsTitle: { fontSize: 22, fontWeight: "600", marginVertical: height / 30, paddingTop: 6, textAlign: "center" },
+  noData: {
+    alignSelf: "center",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
   scrollViewContainer: {
     maxHeight: height,
   },
   title: {
     fontSize: 24,
     fontWeight: "600",
-    marginVertical: height / 30,
+    marginVertical: height / 40,
     paddingTop: 12,
     textAlign: "center",
   },
