@@ -1,6 +1,7 @@
 import React from "react";
-import { VStack, Flex, Text, Image, ScrollView } from "native-base";
+import { VStack, Flex, Image, ScrollView } from "native-base";
 
+import { Text } from "../../components/layout/Text";
 import { ArchetypeBase, Archetype } from "../../types/Archetype";
 import { ArchetypeSelectStyle } from "../../styles/archetypes/ArchetypeSelectStyle";
 import { transformIdentifier } from "../../helpers/archetypes";

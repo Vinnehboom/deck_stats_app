@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Alert } from "react-native";
-import { Button, Box, View, ScrollView, Text, HStack, AddIcon, MinusIcon } from "native-base";
+import { Button, Box, View, ScrollView, HStack, AddIcon, MinusIcon } from "native-base";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { showMessage } from "react-native-flash-message";
 import { useNavigation } from "@react-navigation/core";
 import { useTranslation } from "react-i18next";
 import auth from "@react-native-firebase/auth";
 
+import { Text } from "../../../components/layout/Text";
 import { DeckDetailsStyle } from "../../../styles/decks/DeckDetailsStyle";
 import { ScrollableScreenStyle } from "../../../styles/layout/ScrollableScreenStyle";
 import { DeckListTabParamList, MainTabParamList } from "../../../types/RouteParams";

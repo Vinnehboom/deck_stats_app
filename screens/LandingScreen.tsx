@@ -1,10 +1,11 @@
 import React from "react";
 import { TouchableOpacity, View, Image } from "react-native";
 import { useTranslation } from "react-i18next";
-import { ScrollView, Box, Text } from "native-base";
+import { ScrollView, Box } from "native-base";
 import auth from "@react-native-firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 
+import { Text } from "../components/layout/Text";
 import { useGetActiveDeck } from "../components/decks/_queries/useGetActiveDeck";
 import { useAuthContext } from "../contexts/useAuthContext";
 import { LandingScreenStyle } from "../styles/LandingScreenStyle";

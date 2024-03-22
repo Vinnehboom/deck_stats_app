@@ -1,7 +1,7 @@
 import React from "react";
 import { ActivityIndicator, View, StyleSheet } from "react-native";
-import { Text } from "native-base";
 
+import { Text } from "../components/layout/Text";
 import { colors } from "../utils/colors";
 
 export const Spinner = ({ marginTop, height, description }: { marginTop?: number; height?: number; description?: string }) => {

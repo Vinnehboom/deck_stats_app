@@ -1,8 +1,9 @@
 import React, { useState, useLayoutEffect, useRef } from "react";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import { Box, Text, View, ScrollView, VStack, HStack, Select } from "native-base";
+import { Box, View, ScrollView, VStack, HStack, Select } from "native-base";
 import { useTranslation } from "react-i18next";
 
+import { Text } from "../../../components/layout/Text";
 import { DeckListTabParamList } from "../../../types/RouteParams";
 import { useGetDeckMatchRecords } from "../../../components/matchRecords/_queries/useGetDeckMatchRecords";
 import { ArchetypeBase, List, MatchRecordDataType } from "../../../types";

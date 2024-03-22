@@ -1,6 +1,7 @@
-import { HStack, Text, Box } from "native-base";
+import { HStack, Box } from "native-base";
 import React, { useState } from "react";
 
+import { Text } from "../../components/layout/Text";
 import { ArchetypeIcons } from "./ArchetypeIcons";
 import { ArchetypeBase } from "../../types";
 import { MatchRecordDataEntry } from "../../types/MatchRecord";

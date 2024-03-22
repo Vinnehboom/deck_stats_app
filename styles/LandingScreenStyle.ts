@@ -40,7 +40,7 @@ export const LandingScreenStyle = StyleSheet.create({
   button: {
     alignItems: "center",
     alignSelf: "center",
-    backgroundColor: colors.darkBlue,
+    backgroundColor: colors.red,
     borderRadius: 10,
     marginTop: 40,
     padding: 15,
