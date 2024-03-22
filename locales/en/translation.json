@@ -98,7 +98,16 @@
       "SUBMIT": "Add deck"
     },
     "NAVIGATION": {
-      "BACK": "Back"
+      "BACK": "Back",
+      "DECKS": {
+        "DETAILS": "Details",
+        "LISTS": "Lists",
+        "MATCHUPS": "Matchup data"
+      },
+      "HOME": {
+        "LANDING": "Landing",
+        "DECKS": "Decks"
+      }
     },
     "DECK_MATCH_HISTORY": {"LOADING": "Loading match history"},
     "DECK_DETAILS": {
