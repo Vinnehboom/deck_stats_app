@@ -66,12 +66,16 @@ export const ListItemStyle = StyleSheet.create({
     shadowRadius: 4,
   },
   countCircle: {
-    backgroundColor: colors.primary,
-    bottom: 3,
-    height: 8,
+    backgroundColor: colors["primary-dark"],
+    bottom: height / 60,
+    height: height / 40,
     position: "absolute",
-    width: 8,
+    width: height / 40,
     zIndex: 1,
+  },
+  countCircleCount: {
+    color: colors.white,
+    fontSize: 14,
   },
   header: {
     display: "flex",
