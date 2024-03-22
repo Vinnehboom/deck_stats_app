@@ -1,10 +1,11 @@
 import React, { useReducer, SetStateAction } from "react";
-import { Box, Text, Select, Radio, HStack, TextArea, Button } from "native-base";
+import { Box, Select, Radio, HStack, TextArea, Button } from "native-base";
 import { useTranslation } from "react-i18next";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import { showMessage } from "react-native-flash-message";
 
+import { Text } from "../../components/layout/Text";
 import { ArchetypeSelect } from "../archetypes/ArchetypeSelect";
 import { ArchetypeBase, Archetype, Deck, List } from "../../types";
 import { MatchRecord, bo1ResultOptions, allResultOptions } from "../../types/MatchRecord";
@@ -142,7 +143,9 @@ export const MatchRecordForm = ({
         </Select>
       </Box>
       <Box>
-        <Text style={MatchRecordFormStyle.inputLabel}>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.OPP_ARCHETYPE")}</Text>
+        <Text paddingTop={2} style={MatchRecordFormStyle.inputLabel}>
+          {t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.OPP_ARCHETYPE")}
+        </Text>
         <ArchetypeSelect
           listContainerTop={65}
           selectedArchetype={matchRecord.opponentArchetype}

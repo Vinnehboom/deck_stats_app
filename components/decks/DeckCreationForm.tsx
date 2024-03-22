@@ -2,9 +2,10 @@ import { TextInput, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { showMessage } from "react-native-flash-message";
-import { VStack, Text, Box } from "native-base";
+import { VStack, Box } from "native-base";
 import { useTranslation } from "react-i18next";
 
+import { Text } from "../../components/layout/Text";
 import "react-native-get-random-values";
 import { colors } from "../../utils/colors";
 import { DeckCreationFormStyle } from "../../styles/decks/DeckCreationFormStyle";

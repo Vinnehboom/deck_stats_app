@@ -3,8 +3,9 @@ import React, { useReducer } from "react";
 import { showMessage } from "react-native-flash-message";
 import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
-import { Input, TextArea, Checkbox, Text, Box } from "native-base";
+import { Input, TextArea, Checkbox, Box } from "native-base";
 
+import { Text } from "../../components/layout/Text";
 import { ListFormStyle } from "../../styles/lists/ListFormStyle";
 import { useListCreation } from "./_queries/useListCreation";
 import { Deck, List } from "../../types";

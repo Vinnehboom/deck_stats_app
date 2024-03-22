@@ -1,9 +1,10 @@
-import { VStack, Box, Text, HStack, Link } from "native-base";
+import { VStack, Box, HStack, Link } from "native-base";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
+import { Text } from "../../components/layout/Text";
 import { MatchRecordForm } from "../matchRecords/MatchRecordForm";
 import { LandingScreenStyle } from "../../styles/LandingScreenStyle";
 import { Deck } from "../../types";

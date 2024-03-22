@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { HStack, View, Text, Box, Button, Center } from "native-base";
+import { HStack, View, Box, Button, Center } from "native-base";
 import { useTranslation } from "react-i18next";
 
+import { Text } from "../../components/layout/Text";
 import { CardListImage } from "./cardLists/CardListImage";
 import { List, CardList, CardListItem } from "../../types";
 import { ListItemStyle } from "../../styles/lists/ListItemStyle";

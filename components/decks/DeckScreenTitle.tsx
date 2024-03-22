@@ -1,6 +1,7 @@
-import { Text, HStack } from "native-base";
+import { HStack } from "native-base";
 import React from "react";
 
+import { Text } from "../../components/layout/Text";
 import { colors } from "../../utils/colors";
 import { ArchetypeIcons } from "./ArchetypeIcons";
 import { Deck } from "../../types";

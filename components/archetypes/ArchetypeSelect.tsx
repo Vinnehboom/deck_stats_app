@@ -1,8 +1,9 @@
 import { TextInput } from "react-native";
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
-import { Flex, Image, ScrollView, Text, VStack, HStack } from "native-base";
+import { Flex, Image, ScrollView, VStack, HStack } from "native-base";
 import { useDebounce } from "use-lodash-debounce";
 
+import { Text } from "../../components/layout/Text";
 import { ArchetypeBase } from "../../types";
 import { transformArchetypes, transformIdentifier } from "../../helpers/archetypes";
 import { Archetype } from "../../types";

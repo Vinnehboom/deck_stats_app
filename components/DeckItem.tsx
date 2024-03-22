@@ -2,9 +2,10 @@ import React from "react";
 import { View, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { HStack, Text } from "native-base";
+import { HStack } from "native-base";
 import { useTranslation } from "react-i18next";
 
+import { Text } from "../components/layout/Text";
 import { Deck } from "../types";
 import { RootStackParamList } from "../types/RouteParams";
 import { ArchetypeIcons } from "./decks/ArchetypeIcons";

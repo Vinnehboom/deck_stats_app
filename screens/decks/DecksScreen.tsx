@@ -1,9 +1,10 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import auth from "@react-native-firebase/auth";
 import { ScrollView, Box } from "native-base";
 import { useTranslation } from "react-i18next";
 
+import { Text } from "../../components/layout/Text";
 import { DeckItem } from "../../components/DeckItem";
 import { Spinner } from "../../components/Spinner";
 import { DeckCreationForm } from "../../components/decks/DeckCreationForm";

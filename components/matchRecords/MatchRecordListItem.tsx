@@ -1,7 +1,8 @@
-import { HStack, Text, Button, ChevronDownIcon, ChevronUpIcon } from "native-base";
+import { HStack, Button, ChevronDownIcon, ChevronUpIcon } from "native-base";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { Text } from "../../components/layout/Text";
 import { MatchRecord } from "../../types";
 import { ArchetypeIcons } from "../decks/ArchetypeIcons";
 import { MatchRecordListItemStyle } from "../../styles/matchRecords/MatchRecordListItemStyle";

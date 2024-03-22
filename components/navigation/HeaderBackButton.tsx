@@ -1,8 +1,9 @@
-import { Button, HStack, ArrowBackIcon, Text } from "native-base";
+import { Button, HStack, ArrowBackIcon } from "native-base";
 import { useTranslation } from "react-i18next";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
+import { Text } from "../../components/layout/Text";
 import { colors } from "../../utils/colors";
 
 export const HeaderBackButton = () => {
