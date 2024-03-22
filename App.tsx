@@ -17,7 +17,7 @@ import "./utils/i18n";
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const queryClient = new QueryClient();
 
-export function App(): JSX.Element {
+export function App(): React.JSX.Element {
   const { t } = useTranslation();
   const theme = extendTheme({
     colors: {
