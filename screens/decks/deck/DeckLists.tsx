@@ -2,9 +2,9 @@ import React from "react";
 import { View, ScrollView } from "react-native";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import "react-native-get-random-values";
-import { Text } from "native-base";
 import { useTranslation } from "react-i18next";
 
+import { Text } from "../../../components/layout/Text";
 import { Spinner } from "../../../components/Spinner";
 import { DeckListTabParamList } from "../../../types/RouteParams";
 import { useGetDeckLists } from "../../../components/lists/_queries/useGetDeckLists";

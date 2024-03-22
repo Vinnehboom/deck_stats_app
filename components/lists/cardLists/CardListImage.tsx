@@ -1,6 +1,7 @@
-import { Image, Text, Center, Circle } from "native-base";
+import { Image, Center, Circle } from "native-base";
 import React from "react";
 
+import { Text } from "../../../components/layout/Text";
 import { CardListItem } from "../../../types";
 import { ListItemStyle } from "../../../styles/lists/ListItemStyle";
 export const CardListImage = ({ count, card }: CardListItem) => {

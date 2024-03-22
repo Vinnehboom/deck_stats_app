@@ -1,9 +1,10 @@
 import React from "react";
-import { VStack, HStack, Box, Text, Button } from "native-base";
+import { VStack, HStack, Box, Button } from "native-base";
 import { useTranslation } from "react-i18next";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
+import { Text } from "../../components/layout/Text";
 import { colors } from "../../utils/colors";
 import { DeckMatchupsStyle } from "../../styles/decks/DeckMatchupsStyle";
 import { MatchupListItem } from "./MatchupListItem";
