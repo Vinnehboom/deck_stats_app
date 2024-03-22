@@ -59,8 +59,16 @@ export const HomeScreen = () => {
             fontWeight: "bold",
           },
         }}>
-        <Tab.Screen name="Landing" options={{ tabBarIcon: () => HouseIcon() }} component={LandingScreen} />
-        <Tab.Screen name="Decks" options={{ tabBarIcon: () => FolderIcon() }} component={DecksScreen} />
+        <Tab.Screen
+          name="Landing"
+          options={{ tabBarIcon: () => HouseIcon(), title: t("DECK.NAVIGATION.HOME.LANDING") }}
+          component={LandingScreen}
+        />
+        <Tab.Screen
+          name="Decks"
+          options={{ tabBarIcon: () => FolderIcon(), title: t("DECK.NAVIGATION.HOME.DECKS") }}
+          component={DecksScreen}
+        />
       </Tab.Navigator>
     </AuthContext.Provider>
   );

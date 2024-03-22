@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { faTable } from "@fortawesome/free-solid-svg-icons/faTable";
 import { faList } from "@fortawesome/free-solid-svg-icons/faList";
+import { useTranslation } from "react-i18next";
 
 import { DeckListTabParamList, DeckListTabParamsType } from "../../../types/RouteParams";
 import { colors } from "../../../utils/colors";
@@ -26,6 +27,7 @@ const DeckHome = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
   const { deckId } = params;
   const { queryResult: deck, isLoading } = useGetDeck(deckId);
+  const { t } = useTranslation();
 
   return isLoading ? (
     <Spinner />
@@ -39,7 +41,6 @@ const DeckHome = () => {
         tabBarStyle: { backgroundColor: colors.light },
         headerShadowVisible: true,
         headerLeftContainerStyle: { paddingStart: 15 },
-
         headerTitleStyle: {
           color: colors.white,
           fontSize: 18,
@@ -48,14 +49,19 @@ const DeckHome = () => {
       }}>
       <Tab.Screen
         name="DeckDetails"
-        options={{ tabBarIcon: () => InfoIcon() }}
+        options={{ tabBarIcon: () => InfoIcon(), title: t("DECK.NAVIGATION.DECKS.DETAILS") }}
         component={DeckDetails}
         initialParams={{ deck }}
       />
-      <Tab.Screen name="DeckLists" options={{ tabBarIcon: () => ListIcon() }} component={DeckLists} initialParams={{ deck }} />
+      <Tab.Screen
+        name="DeckLists"
+        options={{ tabBarIcon: () => ListIcon(), title: t("DECK.NAVIGATION.DECKS.LISTS") }}
+        component={DeckLists}
+        initialParams={{ deck }}
+      />
       <Tab.Screen
         name="DeckMatchups"
-        options={{ tabBarIcon: () => TableIcon() }}
+        options={{ tabBarIcon: () => TableIcon(), title: t("DECK.NAVIGATION.DECKS.MATCHUPS") }}
         component={DeckMatchups}
         initialParams={{ deck }}
       />
