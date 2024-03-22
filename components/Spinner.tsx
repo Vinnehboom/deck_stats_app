@@ -5,6 +5,8 @@ import { Text } from "../components/layout/Text";
 import { colors } from "../utils/colors";
 
 export const Spinner = ({ marginTop, height, description }: { marginTop?: number; height?: number; description?: string }) => {
+  // TODO: look into React Suspense
+
   return (
     <View style={{ ...styles.container, marginTop: marginTop || 12 }}>
       {description ? (
