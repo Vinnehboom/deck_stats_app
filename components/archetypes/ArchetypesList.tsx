@@ -21,8 +21,6 @@ export const ArchetypesList = ({
     ? [ArchetypeSelectStyle.selectContainer, { top: listContainerTop }]
     : ArchetypeSelectStyle.selectContainer;
 
-  console.log(archetypes && archetypes.map(arch => [arch.identifier, arch.generation, arch.priority]));
-
   return archetypes.length && shown ? (
     <VStack space="xs" style={containerStyle}>
       <ScrollView minHeight="100%">
