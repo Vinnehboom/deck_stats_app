@@ -1,12 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FlatList, Animated, NativeSyntheticEvent, NativeScrollEvent } from "react-native";
+import { LogBox } from "react-native";
 
 import { ListItem } from "./ListItem";
 import { ListPagination } from "./ListPagination";
 import { ListContainerStyle } from "../../styles/lists/ListsContainerStyle";
 import { Deck, List } from "../../types";
 import { Spinner } from "../Spinner";
-
 export const ListsScrollContainer = ({
   lists,
   deck,
@@ -42,6 +42,7 @@ export const ListsScrollContainer = ({
   const viewabilityConfig = useRef({ itemVisiblePercentThreshold: 50 }).current;
 
   useEffect(() => {
+    LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
     const aktiveList = lists.find(list => list.id === activeList?.id);
     setSorting(true);
     if (aktiveList) {

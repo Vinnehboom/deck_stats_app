@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { VStack, HStack, Box, Button } from "native-base";
 import { useTranslation } from "react-i18next";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
+import { LogBox } from "react-native";
 
 import { Text } from "../../components/layout/Text";
 import { colors } from "../../utils/colors";
@@ -23,6 +24,10 @@ export const MatchupsList = ({
   iconSize?: string;
   matchRecords?: MatchRecord[];
 }) => {
+  // TODO: look into virtualized list issue
+  useEffect(() => {
+    LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
+  }, []);
   const { t } = useTranslation();
   const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
   return (
