@@ -16,9 +16,10 @@ export const ListItemBody = ({ list }: { list: List }) => {
     let column: CardListItem[] = [];
     const imageColumns: CardListItem[][] = [];
 
+    const lastItem = cardList.at(-1);
     cardList.forEach((cardListItem: CardListItem) => {
       column.push(cardListItem);
-      if (column.length === columnLength) {
+      if (column.length === columnLength || cardListItem === lastItem) {
         imageColumns.push(column);
         column = [];
       }
