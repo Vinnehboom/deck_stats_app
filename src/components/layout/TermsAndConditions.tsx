@@ -36,7 +36,7 @@ export const TermsAndConditions = () => {
               <Text textAlign="justify" marginY={2}>
                 This privacy notice for Vinnie Schelfhaut ("we," "us," or "our"), describes how and why we might collect, store,
                 use, and/or share ("process") your information when you use our services ("Services"), such as when you: Download
-                and use our mobile application (VS. Recorder), or any other application of ours that links to this privacy notice
+                and use our mobile application (VS. Log), or any other application of ours that links to this privacy notice
                 Engage with us in other related ways, including any sales, marketing, or events Questions or concerns? Reading
                 this privacy notice will help you understand your privacy rights and choices. If you do not agree with our
                 policies and practices, please do not use our Services.{" "}
@@ -102,7 +102,7 @@ export const TermsAndConditions = () => {
                 AGREEMENT TO OUR LEGAL TERMS
               </Text>
               <Text textAlign="justify">
-                We are Vinnie Schelfhaut. We operate the mobile application VS. Recorder (the "App"), as well as any other related
+                We are Vinnie Schelfhaut. We operate the mobile application VS. Log (the "App"), as well as any other related
                 products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").
                 You can contact us by email at vinnieschelfhaut@gmail.com . These Legal Terms constitute a legally binding
                 agreement made between you, whether personally or on behalf of an entity ("you"), and Vinnie Schelfhaut,
