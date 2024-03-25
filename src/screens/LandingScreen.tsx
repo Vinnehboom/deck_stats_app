@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { ScrollView, Box } from "native-base";
 import auth from "@react-native-firebase/auth";
 import { useNavigation } from "@react-navigation/native";
+import { KeyboardAvoidingView } from "react-native";
 
 import { Text } from "../components/layout/Text";
 import { useGetActiveDeck } from "../components/decks/_queries/useGetActiveDeck";
@@ -33,7 +34,7 @@ export const LandingScreen = () => {
         ) : (
           <Box>
             {deck ? (
-              <>
+              <KeyboardAvoidingView behavior="position" enabled={true}>
                 <ActiveDeck deck={deck} />
                 <Box style={LandingScreenStyle.recentRecordsContainer}>
                   <Text style={LandingScreenStyle.recentRecordsTitle}>
@@ -41,7 +42,7 @@ export const LandingScreen = () => {
                   </Text>
                   <DeckMatchHistory deck={deck} limit={3} />
                 </Box>
-              </>
+              </KeyboardAvoidingView>
             ) : (
               <Text style={LandingScreenStyle.setActiveDeckText}>
                 Please add an active deck on the{" "}

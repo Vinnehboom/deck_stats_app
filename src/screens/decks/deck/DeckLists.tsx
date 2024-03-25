@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, KeyboardAvoidingView } from "react-native";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import "react-native-get-random-values";
 import { useTranslation } from "react-i18next";
@@ -28,7 +28,9 @@ export const DeckLists = () => {
   return (
     <View style={ScrollableScreenStyle.container}>
       <ScrollView style={ScrollableScreenStyle.scrollViewContainer}>
-        <ListCreationForm deck={deck} lists={lists} />
+        <KeyboardAvoidingView behavior="position" enabled={true} keyboardVerticalOffset={50}>
+          <ListCreationForm deck={deck} lists={lists} />
+        </KeyboardAvoidingView>
         <Text style={DeckListsStyle.listsTitle}> {t("DECK.DECK_LISTS.LISTS.TITLE")}</Text>
         {loading || !lists ? (
           <Spinner description={t("DECK.DECK_LISTS.LISTS.LOADING")} />
