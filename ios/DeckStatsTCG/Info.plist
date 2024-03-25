@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>VS. Recorder</string>
+	<string>DeckStatsTCG</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -41,18 +41,11 @@
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
-		<key>NSAllowsArbitraryLoads</key>
-		<false/>
-		<key>NSAllowsLocalNetworking</key>
-		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>pokemon-dp-pro.otf</string>
-		<string>BungeeInline-Regular.ttf</string>
 		<string>Halcom-Black.otf</string>
 		<string>Halcom-BlackItalic.otf</string>
 		<string>Halcom-Bold.otf</string>
@@ -69,6 +62,8 @@
 		<string>Halcom-Regular.otf</string>
 		<string>Halcom-Thin.otf</string>
 		<string>Halcom-ThinItalic.otf</string>
+		<string>pokemon-dp-pro.otf</string>
+		<string>BungeeInline-Regular.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

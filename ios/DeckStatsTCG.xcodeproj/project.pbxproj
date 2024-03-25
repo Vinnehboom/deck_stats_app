@@ -8,37 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* DeckStatsTCGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* DeckStatsTCGTests.m */; };
-		0587E5FB9AEE4BDA8A46B27D /* Halcom-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2307DDD88E154C938270CEF6 /* Halcom-Italic.otf */; };
-		0BB03897E0074C6E956789DE /* pokeball_bit.png in Resources */ = {isa = PBXBuildFile; fileRef = 45199D4B1647469484D00A3F /* pokeball_bit.png */; };
-		0C407D8FA22848AC96CFB76F /* Halcom-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 066D85643EFB4922B4A01B0F /* Halcom-Thin.otf */; };
+		02318611A4704B859D347591 /* Halcom-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 664BB16939274E66813A6F50 /* Halcom-BlackItalic.otf */; };
+		0EA6B0CE0AF848C085370F10 /* triangle_top_left_icon.svg in Resources */ = {isa = PBXBuildFile; fileRef = D1E377756D944EAFB9EFA06D /* triangle_top_left_icon.svg */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		19359218DA304E369EAD1D72 /* Halcom-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 781EEE08A23944AE867A9B12 /* Halcom-Medium.otf */; };
-		2521E956E28840A88C3DEE59 /* button_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDFAD1C10EE453887C61175 /* button_blue.png */; };
-		2FC2E50AD60744DCB138001B /* screw.png in Resources */ = {isa = PBXBuildFile; fileRef = CB15EF699E364887AAFB0033 /* screw.png */; };
-		353E64A579464A78B29DB41E /* Halcom-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 060422CA4B43414EB4DAA723 /* Halcom-MediumItalic.otf */; };
-		3583D69A80D743CCBD4388DB /* Halcom-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB417D5D1219484B8C775A18 /* Halcom-Book.otf */; };
-		3B908AFEC325490F973E8E4E /* BungeeInline-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D5AD8CEFFB54FA78F495264 /* BungeeInline-Regular.ttf */; };
-		46EEACCB4381474ABA011E92 /* Halcom-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9BCDDF5214A24C7AA53053CC /* Halcom-ExtraBoldItalic.otf */; };
-		47206568112B4D5DA783B0EF /* Halcom-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14CE53CDCC404FBE86533BDF /* Halcom-Light.otf */; };
-		4F0070AF4EB04FE1ABA5FF13 /* Halcom-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8189BFFB05F74D68BC04DEB5 /* Halcom-LightItalic.otf */; };
-		55F7263C20FF49589F9FBA10 /* Halcom-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F0F9837925849F8B3E2A44C /* Halcom-BoldItalic.otf */; };
-		5C89792868B03C2431615504 /* Pods_DeckStatsTCG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51669C3691FAF13A937D1AD6 /* Pods_DeckStatsTCG.framework */; };
-		7A2F93A513834EDBAE251867 /* Halcom-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E8332530DF544C581A4A9DE /* Halcom-Black.otf */; };
+		17F7A41912A740C69B8044E7 /* Halcom-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D7AA1EC0CCB4A418433C20E /* Halcom-Thin.otf */; };
+		1E991F2951CE46C79F6507B7 /* Halcom-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7BCC71DAF64FD2826959BE /* Halcom-Black.otf */; };
+		20CF83ABEC2442C0B29E36FD /* Halcom-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 163F3E9B92664480B4137A81 /* Halcom-Medium.otf */; };
+		26AA2D17750C41C89792C8AC /* Halcom-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4EE378479B1460A94A4934F /* Halcom-BookItalic.otf */; };
+		30A2359A2C374AEAA3F78462 /* Halcom-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB9DAC2ED5EB4332BF5E6930 /* Halcom-Light.otf */; };
+		311B78B49206C45D13BF1C36 /* Pods_DeckStatsTCG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0236215D5D81F178746C46 /* Pods_DeckStatsTCG.framework */; };
+		3563F96EA5164BD59A73555E /* Halcom-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A7C9D7BBD884E30A4DEAE1A /* Halcom-ExtraBoldItalic.otf */; };
+		44FE65F62DA940E8BE3F8715 /* Halcom-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E14AB487DE442E805899BF /* Halcom-MediumItalic.otf */; };
+		453D5C0188FB491A9A93C96B /* Halcom-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 334EC7CC339E408C9EB73501 /* Halcom-Italic.otf */; };
+		6EE320CB07DB43FEBDB6D357 /* Halcom-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82876B1A42364D22BE45AB72 /* Halcom-BoldItalic.otf */; };
+		7D97013076104F8F8CAD31BC /* Halcom-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59901895B86A4DFD83EE3D38 /* Halcom-Bold.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9603CA505866474DA0BA47D2 /* Halcom-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0D4918AE5084A5EB08FA67E /* Halcom-ExtraBold.otf */; };
-		97D264AB368B4E44BA8F0EF9 /* Halcom-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0977F10D3FC84F96A629844B /* Halcom-BookItalic.otf */; };
-		ADC9E5BB177E4CA8A9E100F9 /* Halcom-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F836B67087F34E30972E0053 /* Halcom-BlackItalic.otf */; };
-		B8BE327AA81245DCADB0BAFD /* Halcom-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E7B583DD503428EA9917357 /* Halcom-Bold.otf */; };
-		C265BBA06BE644E28AF84636 /* Halcom-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8F8DF9E59EB49AD9ADE002C /* Halcom-ThinItalic.otf */; };
-		CFE3E9B4F2A9407FB0AE21D9 /* triangle_top_left_icon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 423E8C79EEF7479FA46045B7 /* triangle_top_left_icon.svg */; };
-		D53E5BB17F4B481B97EEBDB7 /* pokemon-dp-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8CB15C72944413AA730D68E /* pokemon-dp-pro.otf */; };
-		D87CE875DA3C466FA24BF3AB /* dots.png in Resources */ = {isa = PBXBuildFile; fileRef = 0531151DF3A94C4CA7E79A50 /* dots.png */; };
-		E5D16874112C84489990AF9D /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B2FBC2D48330654CC67B02 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */; };
-		EE6057642BAC447E0040CA61 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6057632BAC447E0040CA61 /* GoogleSignIn.framework */; };
-		EE676F5D2A9148D100C570A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE676F5C2A9148D100C570A6 /* GoogleService-Info.plist */; };
-		FBD72768846742C8B0080DC9 /* Halcom-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C3004BDE73C449AA704FF1E /* Halcom-Regular.otf */; };
+		8525DDE99AC74036A4E2C356 /* pokeball_bit.png in Resources */ = {isa = PBXBuildFile; fileRef = 06577A8AAA3B4ADB9CED0122 /* pokeball_bit.png */; };
+		8C6081D80E2344438B8891A9 /* dots.png in Resources */ = {isa = PBXBuildFile; fileRef = 1991682AF24443DBBE4C0D24 /* dots.png */; };
+		9FD76511911E4E5AA5E07CA7 /* BungeeInline-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7487A37E92E5424683E8D74A /* BungeeInline-Regular.ttf */; };
+		A59807C832E74018A3E576E7 /* button_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D985B758034842E4887AB8B9 /* button_blue.png */; };
+		A87CEE41EBF240F19452B33F /* screw.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E04A17F957E4E3CA2F6D25F /* screw.png */; };
+		B24A78BE6AA94AA4A8BDFBFD /* Halcom-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 37095120181146FD9914DDA3 /* Halcom-Regular.otf */; };
+		C7631DFEA32546A09AAA465A /* Halcom-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48FD368426884347B3D64952 /* Halcom-ThinItalic.otf */; };
+		D882A4811DBD4E14B89035E8 /* Halcom-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC6A7B79838044BAA694B2AF /* Halcom-LightItalic.otf */; };
+		DA120F15CE01417CB11526FC /* Halcom-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8C1402E65AD4E32864D211C /* Halcom-ExtraBold.otf */; };
+		DE3531EB1D67FC83E7BA9E69 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12129291EB9164FF57F23110 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */; };
+		DF03DA6B4B6749238AC8B8E7 /* pokemon-dp-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1FB6F88B4C842A7870707B4 /* pokemon-dp-pro.otf */; };
+		EEE39C582BB1916100BEFCB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */; };
+		F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEBDB8A096E84AA2B6A5B6F3 /* Halcom-Book.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,45 +54,44 @@
 		00E356EE1AD99517003FC87E /* DeckStatsTCGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeckStatsTCGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* DeckStatsTCGTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckStatsTCGTests.m; sourceTree = "<group>"; };
-		02B2FBC2D48330654CC67B02 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG_DeckStatsTCGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0531151DF3A94C4CA7E79A50 /* dots.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = dots.png; path = ../assets/images/dots.png; sourceTree = "<group>"; };
-		060422CA4B43414EB4DAA723 /* Halcom-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-MediumItalic.otf"; path = "../assets/fonts/Halcom-MediumItalic.otf"; sourceTree = "<group>"; };
-		066D85643EFB4922B4A01B0F /* Halcom-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Thin.otf"; path = "../assets/fonts/Halcom-Thin.otf"; sourceTree = "<group>"; };
-		0977F10D3FC84F96A629844B /* Halcom-BookItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BookItalic.otf"; path = "../assets/fonts/Halcom-BookItalic.otf"; sourceTree = "<group>"; };
+		06577A8AAA3B4ADB9CED0122 /* pokeball_bit.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pokeball_bit.png; path = ../src/assets/images/pokeball_bit.png; sourceTree = "<group>"; };
+		12129291EB9164FF57F23110 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG_DeckStatsTCGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* DeckStatsTCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckStatsTCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DeckStatsTCG/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = DeckStatsTCG/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = DeckStatsTCG/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DeckStatsTCG/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = DeckStatsTCG/main.m; sourceTree = "<group>"; };
-		14CE53CDCC404FBE86533BDF /* Halcom-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Light.otf"; path = "../assets/fonts/Halcom-Light.otf"; sourceTree = "<group>"; };
-		1DDFAD1C10EE453887C61175 /* button_blue.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = button_blue.png; path = ../assets/images/button_blue.png; sourceTree = "<group>"; };
-		2307DDD88E154C938270CEF6 /* Halcom-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Italic.otf"; path = "../assets/fonts/Halcom-Italic.otf"; sourceTree = "<group>"; };
-		2E8332530DF544C581A4A9DE /* Halcom-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Black.otf"; path = "../assets/fonts/Halcom-Black.otf"; sourceTree = "<group>"; };
-		423E8C79EEF7479FA46045B7 /* triangle_top_left_icon.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = triangle_top_left_icon.svg; path = ../assets/images/triangle_top_left_icon.svg; sourceTree = "<group>"; };
-		45199D4B1647469484D00A3F /* pokeball_bit.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pokeball_bit.png; path = ../assets/images/pokeball_bit.png; sourceTree = "<group>"; };
-		4790EAB35009DC8EC51756AB /* Pods-DeckStatsTCG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG.debug.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG.debug.xcconfig"; sourceTree = "<group>"; };
-		51669C3691FAF13A937D1AD6 /* Pods_DeckStatsTCG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C3004BDE73C449AA704FF1E /* Halcom-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Regular.otf"; path = "../assets/fonts/Halcom-Regular.otf"; sourceTree = "<group>"; };
-		781EEE08A23944AE867A9B12 /* Halcom-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Medium.otf"; path = "../assets/fonts/Halcom-Medium.otf"; sourceTree = "<group>"; };
-		8189BFFB05F74D68BC04DEB5 /* Halcom-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-LightItalic.otf"; path = "../assets/fonts/Halcom-LightItalic.otf"; sourceTree = "<group>"; };
+		163F3E9B92664480B4137A81 /* Halcom-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Medium.otf"; path = "../src/assets/fonts/Halcom-Medium.otf"; sourceTree = "<group>"; };
+		1991682AF24443DBBE4C0D24 /* dots.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = dots.png; path = ../src/assets/images/dots.png; sourceTree = "<group>"; };
+		1B0236215D5D81F178746C46 /* Pods_DeckStatsTCG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E04A17F957E4E3CA2F6D25F /* screw.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = screw.png; path = ../src/assets/images/screw.png; sourceTree = "<group>"; };
+		334EC7CC339E408C9EB73501 /* Halcom-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Italic.otf"; path = "../src/assets/fonts/Halcom-Italic.otf"; sourceTree = "<group>"; };
+		37095120181146FD9914DDA3 /* Halcom-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Regular.otf"; path = "../src/assets/fonts/Halcom-Regular.otf"; sourceTree = "<group>"; };
+		48FD368426884347B3D64952 /* Halcom-ThinItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ThinItalic.otf"; path = "../src/assets/fonts/Halcom-ThinItalic.otf"; sourceTree = "<group>"; };
+		59901895B86A4DFD83EE3D38 /* Halcom-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Bold.otf"; path = "../src/assets/fonts/Halcom-Bold.otf"; sourceTree = "<group>"; };
+		664BB16939274E66813A6F50 /* Halcom-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BlackItalic.otf"; path = "../src/assets/fonts/Halcom-BlackItalic.otf"; sourceTree = "<group>"; };
+		6B7BCC71DAF64FD2826959BE /* Halcom-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Black.otf"; path = "../src/assets/fonts/Halcom-Black.otf"; sourceTree = "<group>"; };
+		7262854E1B058C3ED6D5CAAE /* Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; sourceTree = "<group>"; };
+		7487A37E92E5424683E8D74A /* BungeeInline-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BungeeInline-Regular.ttf"; path = "../src/assets/fonts/BungeeInline-Regular.ttf"; sourceTree = "<group>"; };
+		7A7C9D7BBD884E30A4DEAE1A /* Halcom-ExtraBoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ExtraBoldItalic.otf"; path = "../src/assets/fonts/Halcom-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		7F26F1D10728145159406C2D /* Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DeckStatsTCG/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8D5AD8CEFFB54FA78F495264 /* BungeeInline-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BungeeInline-Regular.ttf"; path = "../assets/fonts/BungeeInline-Regular.ttf"; sourceTree = "<group>"; };
-		8E7B583DD503428EA9917357 /* Halcom-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Bold.otf"; path = "../assets/fonts/Halcom-Bold.otf"; sourceTree = "<group>"; };
-		9BCDDF5214A24C7AA53053CC /* Halcom-ExtraBoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ExtraBoldItalic.otf"; path = "../assets/fonts/Halcom-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
-		9F0F9837925849F8B3E2A44C /* Halcom-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BoldItalic.otf"; path = "../assets/fonts/Halcom-BoldItalic.otf"; sourceTree = "<group>"; };
-		BE2A3B1EA26F4D43428ACB92 /* Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C0D4918AE5084A5EB08FA67E /* Halcom-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ExtraBold.otf"; path = "../assets/fonts/Halcom-ExtraBold.otf"; sourceTree = "<group>"; };
-		CAFA2E8A2C19FF24809846F1 /* Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; sourceTree = "<group>"; };
-		CB15EF699E364887AAFB0033 /* screw.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = screw.png; path = ../assets/images/screw.png; sourceTree = "<group>"; };
-		DB30AAC4A950B4322D3EF851 /* Pods-DeckStatsTCG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG.release.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG.release.xcconfig"; sourceTree = "<group>"; };
-		E8CB15C72944413AA730D68E /* pokemon-dp-pro.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "pokemon-dp-pro.otf"; path = "../assets/fonts/pokemon-dp-pro.otf"; sourceTree = "<group>"; };
-		E8F8DF9E59EB49AD9ADE002C /* Halcom-ThinItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ThinItalic.otf"; path = "../assets/fonts/Halcom-ThinItalic.otf"; sourceTree = "<group>"; };
+		82876B1A42364D22BE45AB72 /* Halcom-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BoldItalic.otf"; path = "../src/assets/fonts/Halcom-BoldItalic.otf"; sourceTree = "<group>"; };
+		9D7AA1EC0CCB4A418433C20E /* Halcom-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Thin.otf"; path = "../src/assets/fonts/Halcom-Thin.otf"; sourceTree = "<group>"; };
+		AB9DAC2ED5EB4332BF5E6930 /* Halcom-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Light.otf"; path = "../src/assets/fonts/Halcom-Light.otf"; sourceTree = "<group>"; };
+		AEBDB8A096E84AA2B6A5B6F3 /* Halcom-Book.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Book.otf"; path = "../src/assets/fonts/Halcom-Book.otf"; sourceTree = "<group>"; };
+		B0E14AB487DE442E805899BF /* Halcom-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-MediumItalic.otf"; path = "../src/assets/fonts/Halcom-MediumItalic.otf"; sourceTree = "<group>"; };
+		D1E377756D944EAFB9EFA06D /* triangle_top_left_icon.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = triangle_top_left_icon.svg; path = ../src/assets/images/triangle_top_left_icon.svg; sourceTree = "<group>"; };
+		D70519A27169088B035DB0B0 /* Pods-DeckStatsTCG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG.debug.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG.debug.xcconfig"; sourceTree = "<group>"; };
+		D985B758034842E4887AB8B9 /* button_blue.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = button_blue.png; path = ../src/assets/images/button_blue.png; sourceTree = "<group>"; };
+		DA7E4A270B017367AE1C77CA /* Pods-DeckStatsTCG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG.release.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG.release.xcconfig"; sourceTree = "<group>"; };
+		E1FB6F88B4C842A7870707B4 /* pokemon-dp-pro.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "pokemon-dp-pro.otf"; path = "../src/assets/fonts/pokemon-dp-pro.otf"; sourceTree = "<group>"; };
+		E4EE378479B1460A94A4934F /* Halcom-BookItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BookItalic.otf"; path = "../src/assets/fonts/Halcom-BookItalic.otf"; sourceTree = "<group>"; };
+		E8C1402E65AD4E32864D211C /* Halcom-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ExtraBold.otf"; path = "../src/assets/fonts/Halcom-ExtraBold.otf"; sourceTree = "<group>"; };
+		EC6A7B79838044BAA694B2AF /* Halcom-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-LightItalic.otf"; path = "../src/assets/fonts/Halcom-LightItalic.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EE6057632BAC447E0040CA61 /* GoogleSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE676F5C2A9148D100C570A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F836B67087F34E30972E0053 /* Halcom-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BlackItalic.otf"; path = "../assets/fonts/Halcom-BlackItalic.otf"; sourceTree = "<group>"; };
-		FB417D5D1219484B8C775A18 /* Halcom-Book.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Book.otf"; path = "../assets/fonts/Halcom-Book.otf"; sourceTree = "<group>"; };
+		EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5D16874112C84489990AF9D /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework in Frameworks */,
+				DE3531EB1D67FC83E7BA9E69 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,8 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE6057642BAC447E0040CA61 /* GoogleSignIn.framework in Frameworks */,
-				5C89792868B03C2431615504 /* Pods_DeckStatsTCG.framework in Frameworks */,
+				311B78B49206C45D13BF1C36 /* Pods_DeckStatsTCG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,12 +147,41 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE6057632BAC447E0040CA61 /* GoogleSignIn.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				51669C3691FAF13A937D1AD6 /* Pods_DeckStatsTCG.framework */,
-				02B2FBC2D48330654CC67B02 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */,
+				1B0236215D5D81F178746C46 /* Pods_DeckStatsTCG.framework */,
+				12129291EB9164FF57F23110 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62D9FD39C0E64A9A94D3E3F5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6B7BCC71DAF64FD2826959BE /* Halcom-Black.otf */,
+				664BB16939274E66813A6F50 /* Halcom-BlackItalic.otf */,
+				59901895B86A4DFD83EE3D38 /* Halcom-Bold.otf */,
+				82876B1A42364D22BE45AB72 /* Halcom-BoldItalic.otf */,
+				AEBDB8A096E84AA2B6A5B6F3 /* Halcom-Book.otf */,
+				E4EE378479B1460A94A4934F /* Halcom-BookItalic.otf */,
+				E8C1402E65AD4E32864D211C /* Halcom-ExtraBold.otf */,
+				7A7C9D7BBD884E30A4DEAE1A /* Halcom-ExtraBoldItalic.otf */,
+				334EC7CC339E408C9EB73501 /* Halcom-Italic.otf */,
+				AB9DAC2ED5EB4332BF5E6930 /* Halcom-Light.otf */,
+				EC6A7B79838044BAA694B2AF /* Halcom-LightItalic.otf */,
+				163F3E9B92664480B4137A81 /* Halcom-Medium.otf */,
+				B0E14AB487DE442E805899BF /* Halcom-MediumItalic.otf */,
+				37095120181146FD9914DDA3 /* Halcom-Regular.otf */,
+				9D7AA1EC0CCB4A418433C20E /* Halcom-Thin.otf */,
+				48FD368426884347B3D64952 /* Halcom-ThinItalic.otf */,
+				E1FB6F88B4C842A7870707B4 /* pokemon-dp-pro.otf */,
+				7487A37E92E5424683E8D74A /* BungeeInline-Regular.ttf */,
+				D985B758034842E4887AB8B9 /* button_blue.png */,
+				1991682AF24443DBBE4C0D24 /* dots.png */,
+				06577A8AAA3B4ADB9CED0122 /* pokeball_bit.png */,
+				2E04A17F957E4E3CA2F6D25F /* screw.png */,
+				D1E377756D944EAFB9EFA06D /* triangle_top_left_icon.svg */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -168,14 +194,14 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				EE676F5C2A9148D100C570A6 /* GoogleService-Info.plist */,
+				EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* DeckStatsTCG */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* DeckStatsTCGTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				A391B82630994C2BAA262D16 /* Resources */,
+				62D9FD39C0E64A9A94D3E3F5 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -191,43 +217,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A391B82630994C2BAA262D16 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E8CB15C72944413AA730D68E /* pokemon-dp-pro.otf */,
-				8D5AD8CEFFB54FA78F495264 /* BungeeInline-Regular.ttf */,
-				0531151DF3A94C4CA7E79A50 /* dots.png */,
-				CB15EF699E364887AAFB0033 /* screw.png */,
-				2E8332530DF544C581A4A9DE /* Halcom-Black.otf */,
-				F836B67087F34E30972E0053 /* Halcom-BlackItalic.otf */,
-				8E7B583DD503428EA9917357 /* Halcom-Bold.otf */,
-				9F0F9837925849F8B3E2A44C /* Halcom-BoldItalic.otf */,
-				FB417D5D1219484B8C775A18 /* Halcom-Book.otf */,
-				0977F10D3FC84F96A629844B /* Halcom-BookItalic.otf */,
-				C0D4918AE5084A5EB08FA67E /* Halcom-ExtraBold.otf */,
-				9BCDDF5214A24C7AA53053CC /* Halcom-ExtraBoldItalic.otf */,
-				2307DDD88E154C938270CEF6 /* Halcom-Italic.otf */,
-				14CE53CDCC404FBE86533BDF /* Halcom-Light.otf */,
-				8189BFFB05F74D68BC04DEB5 /* Halcom-LightItalic.otf */,
-				781EEE08A23944AE867A9B12 /* Halcom-Medium.otf */,
-				060422CA4B43414EB4DAA723 /* Halcom-MediumItalic.otf */,
-				6C3004BDE73C449AA704FF1E /* Halcom-Regular.otf */,
-				066D85643EFB4922B4A01B0F /* Halcom-Thin.otf */,
-				E8F8DF9E59EB49AD9ADE002C /* Halcom-ThinItalic.otf */,
-				1DDFAD1C10EE453887C61175 /* button_blue.png */,
-				45199D4B1647469484D00A3F /* pokeball_bit.png */,
-				423E8C79EEF7479FA46045B7 /* triangle_top_left_icon.svg */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4790EAB35009DC8EC51756AB /* Pods-DeckStatsTCG.debug.xcconfig */,
-				DB30AAC4A950B4322D3EF851 /* Pods-DeckStatsTCG.release.xcconfig */,
-				BE2A3B1EA26F4D43428ACB92 /* Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig */,
-				CAFA2E8A2C19FF24809846F1 /* Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig */,
+				D70519A27169088B035DB0B0 /* Pods-DeckStatsTCG.debug.xcconfig */,
+				DA7E4A270B017367AE1C77CA /* Pods-DeckStatsTCG.release.xcconfig */,
+				7F26F1D10728145159406C2D /* Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig */,
+				7262854E1B058C3ED6D5CAAE /* Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -239,12 +235,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DeckStatsTCGTests" */;
 			buildPhases = (
-				F5EBC7B0F38394D8EDCE8241 /* [CP] Check Pods Manifest.lock */,
+				B705068854211C084D7406C8 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				31D8DEDA8CE17FDEA6F259D9 /* [CP] Embed Pods Frameworks */,
-				BA223356D08032785D46814E /* [CP] Copy Pods Resources */,
+				3453A89EC74D4085D5240EEE /* [CP] Embed Pods Frameworks */,
+				BC098F3AF83895F5B8F8C0D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,15 +256,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DeckStatsTCG" */;
 			buildPhases = (
-				050EF58BAEF8257F51DCBA7F /* [CP] Check Pods Manifest.lock */,
-				FD10A7F022414F080027D42C /* Start Packager */,
+				949C3BA947D0C00797B31020 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				AA629820C347F4E88F1C8256 /* [CP] Embed Pods Frameworks */,
-				F14770E6E1B2ABF01DA59DAE /* [CP] Copy Pods Resources */,
-				FAB1B049751E71A91D3C3DDE /* [CP-User] [RNFB] Core Configuration */,
+				105C28029F8427E87CB910B3 /* [CP] Embed Pods Frameworks */,
+				17B5D3F56E926723B1BE4E16 /* [CP] Copy Pods Resources */,
+				971D67FA0A8780E2B904542B /* [CP-User] [RNFB] Core Configuration */,
 			);
 			buildRules = (
 			);
@@ -285,8 +280,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -306,9 +300,6 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
-			packageReferences = (
-				EEAAEE4D2BAB56FE00299D7E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,30 +324,30 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				EE676F5D2A9148D100C570A6 /* GoogleService-Info.plist in Resources */,
-				D53E5BB17F4B481B97EEBDB7 /* pokemon-dp-pro.otf in Resources */,
-				3B908AFEC325490F973E8E4E /* BungeeInline-Regular.ttf in Resources */,
-				D87CE875DA3C466FA24BF3AB /* dots.png in Resources */,
-				2FC2E50AD60744DCB138001B /* screw.png in Resources */,
-				7A2F93A513834EDBAE251867 /* Halcom-Black.otf in Resources */,
-				ADC9E5BB177E4CA8A9E100F9 /* Halcom-BlackItalic.otf in Resources */,
-				B8BE327AA81245DCADB0BAFD /* Halcom-Bold.otf in Resources */,
-				55F7263C20FF49589F9FBA10 /* Halcom-BoldItalic.otf in Resources */,
-				3583D69A80D743CCBD4388DB /* Halcom-Book.otf in Resources */,
-				97D264AB368B4E44BA8F0EF9 /* Halcom-BookItalic.otf in Resources */,
-				9603CA505866474DA0BA47D2 /* Halcom-ExtraBold.otf in Resources */,
-				46EEACCB4381474ABA011E92 /* Halcom-ExtraBoldItalic.otf in Resources */,
-				0587E5FB9AEE4BDA8A46B27D /* Halcom-Italic.otf in Resources */,
-				47206568112B4D5DA783B0EF /* Halcom-Light.otf in Resources */,
-				4F0070AF4EB04FE1ABA5FF13 /* Halcom-LightItalic.otf in Resources */,
-				19359218DA304E369EAD1D72 /* Halcom-Medium.otf in Resources */,
-				353E64A579464A78B29DB41E /* Halcom-MediumItalic.otf in Resources */,
-				FBD72768846742C8B0080DC9 /* Halcom-Regular.otf in Resources */,
-				0C407D8FA22848AC96CFB76F /* Halcom-Thin.otf in Resources */,
-				C265BBA06BE644E28AF84636 /* Halcom-ThinItalic.otf in Resources */,
-				2521E956E28840A88C3DEE59 /* button_blue.png in Resources */,
-				0BB03897E0074C6E956789DE /* pokeball_bit.png in Resources */,
-				CFE3E9B4F2A9407FB0AE21D9 /* triangle_top_left_icon.svg in Resources */,
+				EEE39C582BB1916100BEFCB9 /* GoogleService-Info.plist in Resources */,
+				1E991F2951CE46C79F6507B7 /* Halcom-Black.otf in Resources */,
+				02318611A4704B859D347591 /* Halcom-BlackItalic.otf in Resources */,
+				7D97013076104F8F8CAD31BC /* Halcom-Bold.otf in Resources */,
+				6EE320CB07DB43FEBDB6D357 /* Halcom-BoldItalic.otf in Resources */,
+				F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */,
+				26AA2D17750C41C89792C8AC /* Halcom-BookItalic.otf in Resources */,
+				DA120F15CE01417CB11526FC /* Halcom-ExtraBold.otf in Resources */,
+				3563F96EA5164BD59A73555E /* Halcom-ExtraBoldItalic.otf in Resources */,
+				453D5C0188FB491A9A93C96B /* Halcom-Italic.otf in Resources */,
+				30A2359A2C374AEAA3F78462 /* Halcom-Light.otf in Resources */,
+				D882A4811DBD4E14B89035E8 /* Halcom-LightItalic.otf in Resources */,
+				20CF83ABEC2442C0B29E36FD /* Halcom-Medium.otf in Resources */,
+				44FE65F62DA940E8BE3F8715 /* Halcom-MediumItalic.otf in Resources */,
+				B24A78BE6AA94AA4A8BDFBFD /* Halcom-Regular.otf in Resources */,
+				17F7A41912A740C69B8044E7 /* Halcom-Thin.otf in Resources */,
+				C7631DFEA32546A09AAA465A /* Halcom-ThinItalic.otf in Resources */,
+				DF03DA6B4B6749238AC8B8E7 /* pokemon-dp-pro.otf in Resources */,
+				9FD76511911E4E5AA5E07CA7 /* BungeeInline-Regular.ttf in Resources */,
+				A59807C832E74018A3E576E7 /* button_blue.png in Resources */,
+				8C6081D80E2344438B8891A9 /* dots.png in Resources */,
+				8525DDE99AC74036A4E2C356 /* pokeball_bit.png in Resources */,
+				A87CEE41EBF240F19452B33F /* screw.png in Resources */,
+				0EA6B0CE0AF848C085370F10 /* triangle_top_left_icon.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,9 +368,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh index.ts\"\n\n/bin/sh -c \"$REACT_NATIVE_XCODE\"\n";
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		050EF58BAEF8257F51DCBA7F /* [CP] Check Pods Manifest.lock */ = {
+		105C28029F8427E87CB910B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17B5D3F56E926723B1BE4E16 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3453A89EC74D4085D5240EEE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		949C3BA947D0C00797B31020 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -401,75 +443,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		31D8DEDA8CE17FDEA6F259D9 /* [CP] Embed Pods Frameworks */ = {
+		971D67FA0A8780E2B904542B /* [CP-User] [RNFB] Core Configuration */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
+			name = "[CP-User] [RNFB] Core Configuration";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\n\n##########################################################################\n##########################################################################\n#\n#  NOTE THAT IF YOU CHANGE THIS FILE YOU MUST RUN pod install AFTERWARDS\n#\n#  This file is installed as an Xcode build script in the project file\n#  by cocoapods, and you will not see your changes until you pod install\n#\n##########################################################################\n##########################################################################\n\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | /usr/bin/head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    if ! python3 --version >/dev/null 2>&1; then echo \"python3 not found, firebase.json file processing error.\" && exit 1; fi\n    _JSON_OUTPUT_BASE64=$(python3 -c 'import json,sys,base64;print(base64.b64encode(bytes(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"', '\"'rb'\"').read())['${_JSON_ROOT}']), '\"'utf-8'\"')).decode())' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.app_data_collection_default_enabled\n  _APP_DATA_COLLECTION_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_data_collection_default_enabled\")\n  if [[ $_APP_DATA_COLLECTION_ENABLED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseDataCollectionDefaultEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_DATA_COLLECTION_ENABLED\")\")\n  fi\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.analytics_collection_deactivated\n  _ANALYTICS_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_collection_deactivated\")\n  if [[ $_ANALYTICS_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_DEACTIVATED\")\")\n  fi\n\n  # config.analytics_idfv_collection_enabled\n  _ANALYTICS_IDFV_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_idfv_collection_enabled\")\n  if [[ $_ANALYTICS_IDFV_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_IDFV_COLLECTION\")\")\n  fi\n\n  # config.analytics_default_allow_analytics_storage\n  _ANALYTICS_STORAGE=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_analytics_storage\")\n  if [[ $_ANALYTICS_STORAGE ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_ANALYTICS_STORAGE\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_STORAGE\")\")\n  fi\n\n  # config.analytics_default_allow_ad_storage\n  _ANALYTICS_AD_STORAGE=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_storage\")\n  if [[ $_ANALYTICS_AD_STORAGE ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_STORAGE\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AD_STORAGE\")\")\n  fi\n\n  # config.analytics_default_allow_ad_user_data\n  _ANALYTICS_AD_USER_DATA=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_user_data\")\n  if [[ $_ANALYTICS_AD_USER_DATA ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_USER_DATA\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AD_USER_DATA\")\")\n  fi\n\n  # config.analytics_default_allow_ad_personalization_signals\n  _ANALYTICS_PERSONALIZATION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_personalization_signals\")\n  if [[ $_ANALYTICS_PERSONALIZATION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_PERSONALIZATION\")\")\n  fi\n\n  # config.analytics_registration_with_ad_network_enabled\n  _ANALYTICS_REGISTRATION_WITH_AD_NETWORK=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_registration_with_ad_network_enabled\")\n  if [[ $_ANALYTICS_REGISTRATION_WITH_AD_NETWORK ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_REGISTRATION_WITH_AD_NETWORK\")\")\n  fi\n\n  # config.google_analytics_automatic_screen_reporting_enabled\n  _ANALYTICS_AUTO_SCREEN_REPORTING=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_automatic_screen_reporting_enabled\")\n  if [[ $_ANALYTICS_AUTO_SCREEN_REPORTING ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAutomaticScreenReportingEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_SCREEN_REPORTING\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_collection_deactivated\n  _PERF_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_collection_deactivated\")\n  if [[ $_PERF_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_deactivated\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_DEACTIVATED\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.in_app_messaging_auto_colllection_enabled\n  _FIAM_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"in_app_messaging_auto_collection_enabled\")\n  if [[ $_FIAM_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseInAppMessagingAutomaticDataCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_FIAM_AUTO_INIT\")\")\n  fi\n\n  # config.app_check_token_auto_refresh\n  _APP_CHECK_TOKEN_AUTO_REFRESH=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_check_token_auto_refresh\")\n  if [[ $_APP_CHECK_TOKEN_AUTO_REFRESH ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAppCheckTokenAutoRefreshEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_CHECK_TOKEN_AUTO_REFRESH\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
 		};
-		AA629820C347F4E88F1C8256 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BA223356D08032785D46814E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F14770E6E1B2ABF01DA59DAE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F5EBC7B0F38394D8EDCE8241 /* [CP] Check Pods Manifest.lock */ = {
+		B705068854211C084D7406C8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -491,36 +478,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FAB1B049751E71A91D3C3DDE /* [CP-User] [RNFB] Core Configuration */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			name = "[CP-User] [RNFB] Core Configuration";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\n\n##########################################################################\n##########################################################################\n#\n#  NOTE THAT IF YOU CHANGE THIS FILE YOU MUST RUN pod install AFTERWARDS\n#\n#  This file is installed as an Xcode build script in the project file\n#  by cocoapods, and you will not see your changes until you pod install\n#\n##########################################################################\n##########################################################################\n\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | /usr/bin/head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    if ! python3 --version >/dev/null 2>&1; then echo \"python3 not found, firebase.json file processing error.\" && exit 1; fi\n    _JSON_OUTPUT_BASE64=$(python3 -c 'import json,sys,base64;print(base64.b64encode(bytes(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"', '\"'rb'\"').read())['${_JSON_ROOT}']), '\"'utf-8'\"')).decode())' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.app_data_collection_default_enabled\n  _APP_DATA_COLLECTION_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_data_collection_default_enabled\")\n  if [[ $_APP_DATA_COLLECTION_ENABLED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseDataCollectionDefaultEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_DATA_COLLECTION_ENABLED\")\")\n  fi\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.analytics_collection_deactivated\n  _ANALYTICS_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_collection_deactivated\")\n  if [[ $_ANALYTICS_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_DEACTIVATED\")\")\n  fi\n\n  # config.analytics_idfv_collection_enabled\n  _ANALYTICS_IDFV_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_idfv_collection_enabled\")\n  if [[ $_ANALYTICS_IDFV_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_IDFV_COLLECTION\")\")\n  fi\n\n  # config.analytics_default_allow_analytics_storage\n  _ANALYTICS_STORAGE=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_analytics_storage\")\n  if [[ $_ANALYTICS_STORAGE ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_ANALYTICS_STORAGE\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_STORAGE\")\")\n  fi\n\n  # config.analytics_default_allow_ad_storage\n  _ANALYTICS_AD_STORAGE=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_storage\")\n  if [[ $_ANALYTICS_AD_STORAGE ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_STORAGE\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AD_STORAGE\")\")\n  fi\n\n  # config.analytics_default_allow_ad_user_data\n  _ANALYTICS_AD_USER_DATA=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_user_data\")\n  if [[ $_ANALYTICS_AD_USER_DATA ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_USER_DATA\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AD_USER_DATA\")\")\n  fi\n\n  # config.analytics_default_allow_ad_personalization_signals\n  _ANALYTICS_PERSONALIZATION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_personalization_signals\")\n  if [[ $_ANALYTICS_PERSONALIZATION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_PERSONALIZATION\")\")\n  fi\n\n  # config.analytics_registration_with_ad_network_enabled\n  _ANALYTICS_REGISTRATION_WITH_AD_NETWORK=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_registration_with_ad_network_enabled\")\n  if [[ $_ANALYTICS_REGISTRATION_WITH_AD_NETWORK ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_REGISTRATION_WITH_AD_NETWORK\")\")\n  fi\n\n  # config.google_analytics_automatic_screen_reporting_enabled\n  _ANALYTICS_AUTO_SCREEN_REPORTING=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_automatic_screen_reporting_enabled\")\n  if [[ $_ANALYTICS_AUTO_SCREEN_REPORTING ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAutomaticScreenReportingEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_SCREEN_REPORTING\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_collection_deactivated\n  _PERF_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_collection_deactivated\")\n  if [[ $_PERF_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_deactivated\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_DEACTIVATED\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.in_app_messaging_auto_colllection_enabled\n  _FIAM_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"in_app_messaging_auto_collection_enabled\")\n  if [[ $_FIAM_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseInAppMessagingAutomaticDataCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_FIAM_AUTO_INIT\")\")\n  fi\n\n  # config.app_check_token_auto_refresh\n  _APP_CHECK_TOKEN_AUTO_REFRESH=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_check_token_auto_refresh\")\n  if [[ $_APP_CHECK_TOKEN_AUTO_REFRESH ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAppCheckTokenAutoRefreshEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_CHECK_TOKEN_AUTO_REFRESH\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
-		};
-		FD10A7F022414F080027D42C /* Start Packager */ = {
+		BC098F3AF83895F5B8F8C0D8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
-			name = "Start Packager";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -556,24 +528,19 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE2A3B1EA26F4D43428ACB92 /* Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig */;
+			baseConfigurationReference = 7F26F1D10728145159406C2D /* Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = DeckStatsTCGTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/lib/swift",
-					"$(inherited)",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -588,21 +555,16 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAFA2E8A2C19FF24809846F1 /* Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig */;
+			baseConfigurationReference = 7262854E1B058C3ED6D5CAAE /* Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = DeckStatsTCGTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/lib/swift",
-					"$(inherited)",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -617,38 +579,24 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4790EAB35009DC8EC51756AB /* Pods-DeckStatsTCG.debug.xcconfig */;
+			baseConfigurationReference = D70519A27169088B035DB0B0 /* Pods-DeckStatsTCG.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HL5QP24CVY;
 				ENABLE_BITCODE = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = DeckStatsTCG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/lib/swift",
-					"$(inherited)",
-				);
 				MARKETING_VERSION = 1.0;
-				OTHER_CPLUSPLUSFLAGS = (
-					"$(OTHER_CFLAGS)",
-					"-DFOLLY_NO_CONFIG",
-					"-DFOLLY_MOBILE=1",
-					"-DFOLLY_USE_LIBCPP=1",
-					"-fcxx-modules",
-					"-fmodules",
-				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = VinnieSchelfhaut.DeckStatsTCG;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = DeckStatsTCG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -658,37 +606,23 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB30AAC4A950B4322D3EF851 /* Pods-DeckStatsTCG.release.xcconfig */;
+			baseConfigurationReference = DA7E4A270B017367AE1C77CA /* Pods-DeckStatsTCG.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HL5QP24CVY;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = DeckStatsTCG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/lib/swift",
-					"$(inherited)",
-				);
 				MARKETING_VERSION = 1.0;
-				OTHER_CPLUSPLUSFLAGS = (
-					"$(OTHER_CFLAGS)",
-					"-DFOLLY_NO_CONFIG",
-					"-DFOLLY_MOBILE=1",
-					"-DFOLLY_USE_LIBCPP=1",
-					"-fcxx-modules",
-					"-fmodules",
-				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = VinnieSchelfhaut.DeckStatsTCG;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = DeckStatsTCG;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -755,7 +689,7 @@
 					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
 					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -773,8 +707,9 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
+					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -834,7 +769,7 @@
 					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
 					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -851,8 +786,9 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
+					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -891,17 +827,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		EEAAEE4D2BAB56FE00299D7E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }

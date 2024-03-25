@@ -9,4 +9,6 @@ declare module "@env" {
   export const POKEMON_TCG_API_KEY: string;
   export const LIMITLESS_API_KEY: string;
   export const ANDROID_OAUTH_CLIENT_ID: string;
+  export const REACT_APP_FIREBASE_DATABASE_URL: string;
+  export const REACT_APP_FIREBASE_MESSAGING_SENDER_ID: string;
 }

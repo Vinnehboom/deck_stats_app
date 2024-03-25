@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
+import { Dimensions } from "react-native";
 
 import { colors } from "../../utils/colors";
+const { height: screenHeight } = Dimensions.get("screen");
+const { height: windowHeight } = Dimensions.get("window");
+const glareTop = screenHeight - windowHeight !== 0 ? -(screenHeight / 4) : -(screenHeight / 3.5);
 export const LoginScreenContainerStyle = StyleSheet.create({
   buttonImage: {
     height: 30,
@@ -24,12 +28,11 @@ export const LoginScreenContainerStyle = StyleSheet.create({
     backgroundColor: "#D4D4D4",
     borderBottomWidth: 60,
     borderColor: colors["primary-dark"],
-    borderRadius: 10,
     borderWidth: 30,
     flex: 1,
     justifyContent: "center",
   },
-  glareSvg: { left: 5, position: "absolute", top: -215 },
+  glareSvg: { left: 5, position: "absolute", top: glareTop + screenHeight / 30 },
   screwImage: { height: 15, position: "absolute", width: 15 },
   screwImageLeft: { right: -18, top: -15 },
   screwImageRight: { left: -15, top: -15 },

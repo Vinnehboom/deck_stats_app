@@ -1,6 +1,7 @@
 import { Platform } from "react-native";
 import firebase from "@react-native-firebase/app";
 import "@react-native-firebase/auth";
+
 import {
   REACT_APP_FIREBASE_AUTH_DOMAIN,
   REACT_APP_FIREBASE_PROJECT_ID,
@@ -9,6 +10,8 @@ import {
   REACT_APP_IOS_FIREBASE_APP_ID,
   REACT_APP_ANDROID_FIREBASE_API_KEY,
   REACT_APP_ANDROID_FIREBASE_APP_ID,
+  REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  REACT_APP_FIREBASE_DATABASE_URL,
 } from "@env";
 
 // Common Firebase Config
@@ -16,6 +19,8 @@ const commonFirebaseConfig = {
   authDomain: REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: REACT_APP_FIREBASE_PROJECT_ID,
   storageBucket: REACT_APP_FIREBASE_STORAGE_BUCKET,
+  databaseURL: REACT_APP_FIREBASE_DATABASE_URL,
+  messagingSenderId: REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
 };
 
 // Platform-specific Firebase Config
@@ -42,7 +47,6 @@ const firebaseConfig = { ...commonFirebaseConfig, ...platformFirebaseConfig };
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
-
 const authInstance = firebase.auth();
 
 export { authInstance, firebase };
