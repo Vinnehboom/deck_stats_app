@@ -152,6 +152,7 @@
       "LIST_FORM": {
         "TITLE": "Import list",
         "NAME": "Name",
+        "LIMITLESS": "Limitless",
         "LIST_PLACEHOLDER": "Deck string (Live/Limitless/...)",
         "SUBMIT": "Submit list"
       }

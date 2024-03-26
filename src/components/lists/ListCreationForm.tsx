@@ -3,7 +3,9 @@ import React, { useReducer } from "react";
 import { showMessage } from "react-native-flash-message";
 import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
-import { Input, TextArea, Checkbox, Box } from "native-base";
+import { Input, TextArea, Checkbox, Box, HStack, Link } from "native-base";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 import { Text } from "../../components/layout/Text";
 import { ListFormStyle } from "../../styles/lists/ListFormStyle";
@@ -79,7 +81,13 @@ export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] })
       </Box>
 
       <Box width="100%">
-        <Text style={ListFormStyle.inputLabel}>{t("DECK.DECK_LISTS.LIST_FORM.LIST_PLACEHOLDER")}</Text>
+        <HStack justifyContent="space-between">
+          <Text style={ListFormStyle.inputLabel}>{t("DECK.DECK_LISTS.LIST_FORM.LIST_PLACEHOLDER")}</Text>
+          <Link href="https://limitlesstcg.com">
+            <FontAwesomeIcon size={12} style={ListFormStyle.limitlessLinkIcon} icon={faArrowUpRightFromSquare} />
+            <Text style={ListFormStyle.limitlessLink}> {t("DECK.DECK_LISTS.LIST_FORM.LIMITLESS")}</Text>
+          </Link>
+        </HStack>
         <TextArea
           autoCompleteType
           h={200}

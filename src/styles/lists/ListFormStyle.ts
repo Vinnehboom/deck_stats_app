@@ -29,6 +29,9 @@ export const ListFormStyle = StyleSheet.create({
     fontWeight: "bold",
     marginVertical: 12,
   },
+  limitlessLink: { color: colors["primary-dark"], fontSize: 14, fontStyle: "italic", marginTop: 12 },
+  limitlessLinkIcon: { color: colors["primary-dark"], fontSize: 14, fontStyle: "italic", marginTop: 18 },
+
   listForm: {
     alignItems: "center",
     minWidth: screenWidth - screenWidth / 10,
