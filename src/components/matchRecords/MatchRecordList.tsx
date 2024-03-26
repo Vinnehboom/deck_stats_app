@@ -17,7 +17,7 @@ export const MatchRecordList = ({
 }) => {
   return (
     <FlatList
-      width={width || viewableItems ? "85%" : "75%"}
+      width={width || viewableItems ? "90%" : "80%"}
       data={matchRecords}
       renderItem={({ item }: { item: MatchRecord }) => (
         <MatchRecordListItem matchRecord={item} view={viewableItems} iconSize={iconSize} />
