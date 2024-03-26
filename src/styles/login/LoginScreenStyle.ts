@@ -1,10 +1,11 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
 import { screenWidth } from "../dimensions";
 import { colors } from "../../utils/colors";
 export const LoginScreenStyle = StyleSheet.create({
   button: {
     borderRadius: 20,
+    elevation: 15,
     shadowColor: "rgba(0,0,0,0.3)",
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
@@ -34,6 +35,7 @@ export const LoginScreenStyle = StyleSheet.create({
     alignItems: "center",
     backgroundColor: colors.light,
     borderRadius: 10,
+    elevation: 15,
     height: "auto",
     marginHorizontal: "10%",
     marginTop: 24,
@@ -55,16 +57,17 @@ export const LoginScreenStyle = StyleSheet.create({
   input: {
     backgroundColor: "white",
     borderColor: colors.grey,
-    borderRadius: 10,
+    borderRadius: Platform.OS === "ios" ? 10 : 2,
     borderWidth: 0.2,
+    elevation: 15,
     fontSize: 14,
     marginTop: 5,
     marginVertical: 20,
     minWidth: "82%",
+    padding: 5,
     paddingHorizontal: 15,
     paddingVertical: 10,
-    padding: 5,
-    shadowColor: "rgba(0,0,0,0.3)",
+    shadowColor: "rgba(0,0,0,0.5)",
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
     shadowRadius: 0,

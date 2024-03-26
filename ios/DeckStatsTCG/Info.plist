@@ -43,7 +43,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Halcom-Black.otf</string>
@@ -62,8 +62,8 @@
 		<string>Halcom-Regular.otf</string>
 		<string>Halcom-Thin.otf</string>
 		<string>Halcom-ThinItalic.otf</string>
-		<string>pokemon-dp-pro.otf</string>
 		<string>BungeeInline-Regular.ttf</string>
+		<string>pokemon_dp.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
