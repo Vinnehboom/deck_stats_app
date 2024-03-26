@@ -84,13 +84,13 @@ export const DeckDetails = () => {
         <Box style={DeckDetailsStyle.optionsContainer}>
           <Text style={DeckDetailsStyle.optionsTitle}>{t("DECK.DECK_DETAILS.OPTIONS.TITLE")}</Text>
           <HStack justifyContent="space-evenly" width="90%" marginX="auto" paddingTop={4}>
-            <Button height="100%" colorScheme="danger" onPress={handleDeckDeletion}>
-              <Text color="white">
+            <Button style={DeckDetailsStyle.optionButton} colorScheme="primary" onPress={handleDeckActivation}>
+              <Text style={DeckDetailsStyle.optionButtonText}>{t("DECK.DECK_DETAILS.ACTIVE_DECK.ACTIVATE_BUTTON")}</Text>
+            </Button>
+            <Button style={DeckDetailsStyle.optionButton} colorScheme="danger" onPress={handleDeckDeletion}>
+              <Text style={DeckDetailsStyle.optionButtonText}>
                 {t("DECK.DECK_DETAILS.DELETE.DELETE_BUTTON")} {deck.name}
               </Text>
-            </Button>
-            <Button maxWidth="50%" height="100%" colorScheme="info" onPress={handleDeckActivation}>
-              <Text color="white">{t("DECK.DECK_DETAILS.ACTIVE_DECK.ACTIVATE_BUTTON")}</Text>
             </Button>
           </HStack>
         </Box>

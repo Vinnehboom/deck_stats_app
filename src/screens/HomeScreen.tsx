@@ -7,18 +7,16 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { useTranslation } from "react-i18next";
 import { faHouse } from "@fortawesome/free-solid-svg-icons/faHouse";
 import { faFolderOpen } from "@fortawesome/free-solid-svg-icons/faFolderOpen";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 import { AuthContext } from "../contexts/AuthContext";
 import { MainTabParamList, RootStackParamList } from "../types/RouteParams";
 import { colors } from "../utils/colors";
 import { LandingScreen } from "./LandingScreen";
 import { DecksScreen } from "./decks/DecksScreen";
+import { TabIcon } from "../components/layout/TabIcon";
+import { TabBarStyle } from "../styles/layout/TabBarStyle";
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
-
-const HouseIcon = () => <FontAwesomeIcon color={colors["primary-dark"]} icon={faHouse} />;
-const FolderIcon = () => <FontAwesomeIcon color={colors["primary-dark"]} icon={faFolderOpen} />;
 
 export const HomeScreen = () => {
   const user = auth().currentUser;
@@ -50,7 +48,12 @@ export const HomeScreen = () => {
         initialRouteName="Landing"
         screenOptions={{
           headerShown: false,
-          tabBarStyle: { backgroundColor: colors.light },
+          tabBarStyle: TabBarStyle.bar,
+          tabBarItemStyle: TabBarStyle.item,
+          tabBarInactiveTintColor: colors["primary-dark"],
+          tabBarLabelStyle: TabBarStyle.label,
+          tabBarActiveTintColor: colors.white,
+          tabBarActiveBackgroundColor: colors.light,
           headerTitle: t("HOME_SCREEN.HEADER_TITLE"),
           headerStyle: { backgroundColor: colors["primary-dark"] },
           headerTitleStyle: {
@@ -61,12 +64,15 @@ export const HomeScreen = () => {
         }}>
         <Tab.Screen
           name="Landing"
-          options={{ tabBarIcon: () => HouseIcon(), title: t("DECK.NAVIGATION.HOME.LANDING") }}
+          options={{
+            tabBarIcon: ({ focused }) => TabIcon(focused, faHouse),
+            title: t("DECK.NAVIGATION.HOME.LANDING"),
+          }}
           component={LandingScreen}
         />
         <Tab.Screen
           name="Decks"
-          options={{ tabBarIcon: () => FolderIcon(), title: t("DECK.NAVIGATION.HOME.DECKS") }}
+          options={{ tabBarIcon: ({ focused }) => TabIcon(focused, faFolderOpen), title: t("DECK.NAVIGATION.HOME.DECKS") }}
           component={DecksScreen}
         />
       </Tab.Navigator>

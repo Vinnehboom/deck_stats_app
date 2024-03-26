@@ -23,9 +23,9 @@ export const DeckCreationFormStyle = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: "10%",
     marginTop: 24,
-    maxHeight: screenHeight / 3,
+    maxHeight: screenHeight / 2,
     maxWidth: "80%",
-    minHeight: screenHeight / 4,
+    minHeight: screenHeight / 3.8,
     minWidth: "80%",
   },
   deckForm: {

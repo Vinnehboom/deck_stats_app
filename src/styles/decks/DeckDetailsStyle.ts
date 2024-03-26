@@ -13,6 +13,8 @@ export const DeckDetailsStyle = StyleSheet.create({
     marginHorizontal: "10%",
     minWidth: "80%",
   },
+  optionButton: { borderRadius: 5, height: "100%" },
+  optionButtonText: { color: colors.white, fontWeight: "bold" },
   optionsContainer: {
     alignSelf: "center",
     justifyContent: "space-around",
