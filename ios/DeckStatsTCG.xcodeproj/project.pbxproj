@@ -43,7 +43,6 @@
 		C7631DFEA32546A09AAA465A /* Halcom-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48FD368426884347B3D64952 /* Halcom-ThinItalic.otf */; };
 		D882A4811DBD4E14B89035E8 /* Halcom-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC6A7B79838044BAA694B2AF /* Halcom-LightItalic.otf */; };
 		DA120F15CE01417CB11526FC /* Halcom-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8C1402E65AD4E32864D211C /* Halcom-ExtraBold.otf */; };
-		EEC1F6882BBB2E9800FCE065 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EEC1F6872BBB2E9800FCE065 /* PrivacyInfo.xcprivacy */; };
 		EEE39C582BB1916100BEFCB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */; };
 		F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEBDB8A096E84AA2B6A5B6F3 /* Halcom-Book.otf */; };
 		FC0D60792BBF4BC6B078E41C /* bootsplash_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */; };
@@ -107,7 +106,6 @@
 		E8C1402E65AD4E32864D211C /* Halcom-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ExtraBold.otf"; path = "../src/assets/fonts/Halcom-ExtraBold.otf"; sourceTree = "<group>"; };
 		EC6A7B79838044BAA694B2AF /* Halcom-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-LightItalic.otf"; path = "../src/assets/fonts/Halcom-LightItalic.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EEC1F6872BBB2E9800FCE065 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7B36423B2964CE8ACF48999 /* bootsplash_logo_3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo_3x.png; path = ../src/assets/bootsplash_logo_3x.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,7 +218,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				EEC1F6872BBB2E9800FCE065 /* PrivacyInfo.xcprivacy */,
 				EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* DeckStatsTCG */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -357,7 +354,6 @@
 				7D97013076104F8F8CAD31BC /* Halcom-Bold.otf in Resources */,
 				6EE320CB07DB43FEBDB6D357 /* Halcom-BoldItalic.otf in Resources */,
 				F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */,
-				EEC1F6882BBB2E9800FCE065 /* PrivacyInfo.xcprivacy in Resources */,
 				26AA2D17750C41C89792C8AC /* Halcom-BookItalic.otf in Resources */,
 				DA120F15CE01417CB11526FC /* Halcom-ExtraBold.otf in Resources */,
 				3563F96EA5164BD59A73555E /* Halcom-ExtraBoldItalic.otf in Resources */,

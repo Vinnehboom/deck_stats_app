@@ -8,8 +8,8 @@ export const matchLost = (record: MatchRecord): boolean => {
   return record.result === "L" ? true : false;
 };
 
-export const calculateWinRate = (winRateData: { wins: number; losses: number }) => {
-  const result = winRateData.wins / (winRateData.wins + winRateData.losses);
+export const calculateWinRate = (winRateData: { wins: number; losses: number; ties: number }) => {
+  const result = winRateData.wins / (winRateData.wins + winRateData.losses + winRateData.ties);
   return isNaN(result) || result === Infinity ? 0 : result * 100;
 };
 
