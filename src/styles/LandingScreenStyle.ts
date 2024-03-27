@@ -61,7 +61,7 @@ export const LandingScreenStyle = StyleSheet.create({
   },
   logo: {
     alignSelf: "center",
-    height: 60,
+    height: screenHeight * 0.08,
     marginTop: 24,
     resizeMode: "contain",
     width: 100,

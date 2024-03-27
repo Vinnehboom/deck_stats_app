@@ -2,6 +2,30 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/bootsplash_logo.png",
+      "sha1": "ebe1940a4136b723daf0544653b3e82b254887ad"
+    },
+    {
+      "path": "src/assets/bootsplash_logo@1,5x.png",
+      "sha1": "419105db20172903edc0048765610bf5e0088f97"
+    },
+    {
+      "path": "src/assets/bootsplash_logo@2x.png",
+      "sha1": "e27c3ea675e71f45bf1ceb4bab00d70e678c3142"
+    },
+    {
+      "path": "src/assets/bootsplash_logo@3x.png",
+      "sha1": "cbf736bf10b066567a7769f3a03f90eaea00649f"
+    },
+    {
+      "path": "src/assets/bootsplash_logo@4x.png",
+      "sha1": "6221ac5805c59f37977e2a1bab0dd9ffea826be1"
+    },
+    {
+      "path": "src/assets/bootsplash_manifest.json",
+      "sha1": "0c0729082aec07cbd95ee2b0fa76ca5e1d853f5e"
+    },
+    {
       "path": "src/assets/fonts/BungeeInline-Regular.ttf",
       "sha1": "1c51c2c14a21488cbe7e9721ff12fb29a06de232"
     },
@@ -80,6 +104,14 @@
     {
       "path": "src/assets/images/dots.png",
       "sha1": "73734540a9c925ba762fc63a0d91dc2983ae6e81"
+    },
+    {
+      "path": "src/assets/images/logo-dark-with-text-500.png",
+      "sha1": "d19901cec6152c4c15d12c998762adb7054fa808"
+    },
+    {
+      "path": "src/assets/images/logo-light-no-bg-500.png",
+      "sha1": "89692063baa638371b675d5603fd8b2f2b8dad89"
     },
     {
       "path": "src/assets/images/pokeball_bit.png",

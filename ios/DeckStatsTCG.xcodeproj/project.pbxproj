@@ -19,6 +19,7 @@
 		26AA2D17750C41C89792C8AC /* Halcom-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4EE378479B1460A94A4934F /* Halcom-BookItalic.otf */; };
 		30A2359A2C374AEAA3F78462 /* Halcom-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB9DAC2ED5EB4332BF5E6930 /* Halcom-Light.otf */; };
 		3563F96EA5164BD59A73555E /* Halcom-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A7C9D7BBD884E30A4DEAE1A /* Halcom-ExtraBoldItalic.otf */; };
+		3DA9406D862E4E1DBBD8B122 /* pokemon_dp.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7AC36586367477BBA4C8F91 /* pokemon_dp.otf */; };
 		44FE65F62DA940E8BE3F8715 /* Halcom-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E14AB487DE442E805899BF /* Halcom-MediumItalic.otf */; };
 		453D5C0188FB491A9A93C96B /* Halcom-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 334EC7CC339E408C9EB73501 /* Halcom-Italic.otf */; };
 		6EE320CB07DB43FEBDB6D357 /* Halcom-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82876B1A42364D22BE45AB72 /* Halcom-BoldItalic.otf */; };
@@ -37,7 +38,14 @@
 		DA120F15CE01417CB11526FC /* Halcom-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8C1402E65AD4E32864D211C /* Halcom-ExtraBold.otf */; };
 		EEE39C582BB1916100BEFCB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */; };
 		F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEBDB8A096E84AA2B6A5B6F3 /* Halcom-Book.otf */; };
-		3DA9406D862E4E1DBBD8B122 /* pokemon_dp.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7AC36586367477BBA4C8F91 /* pokemon_dp.otf */; };
+		9C95F8FA77F84159ACF42DB9 /* bootsplash_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A0023A74140D0BC35CFFF /* bootsplash_logo.png */; };
+		0C635607F8EA40E0A8E98023 /* bootsplash_logo@1,5x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5CB517DA3474DA45092B5 /* bootsplash_logo@1,5x.png */; };
+		7E7FA7971527437CAAE1645A /* bootsplash_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 715BB6F58D29482C84B9388B /* bootsplash_logo@2x.png */; };
+		856AE77DD5E547769A48CC58 /* bootsplash_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A3449892A74E8AB7E508C2 /* bootsplash_logo@3x.png */; };
+		B6298DED9F0343E3A01B223B /* bootsplash_logo@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A6512D66592406FB29F3844 /* bootsplash_logo@4x.png */; };
+		FC0D60792BBF4BC6B078E41C /* bootsplash_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */; };
+		49EED6F504BB483E82ADD7C9 /* logo-dark-with-text-500.png in Resources */ = {isa = PBXBuildFile; fileRef = FA781420722C4D5B92BCC04A /* logo-dark-with-text-500.png */; };
+		29484AD665C24976AF966C84 /* logo-light-no-bg-500.png in Resources */ = {isa = PBXBuildFile; fileRef = B8194530D34B4699BE93A757 /* logo-light-no-bg-500.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,11 +95,19 @@
 		D985B758034842E4887AB8B9 /* button_blue.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = button_blue.png; path = ../src/assets/images/button_blue.png; sourceTree = "<group>"; };
 		E4EE378479B1460A94A4934F /* Halcom-BookItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BookItalic.otf"; path = "../src/assets/fonts/Halcom-BookItalic.otf"; sourceTree = "<group>"; };
 		E71BD161F6128004FFF30819 /* Pods_DeckStatsTCG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7AC36586367477BBA4C8F91 /* pokemon_dp.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pokemon_dp.otf; path = ../src/assets/fonts/pokemon_dp.otf; sourceTree = "<group>"; };
 		E8C1402E65AD4E32864D211C /* Halcom-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ExtraBold.otf"; path = "../src/assets/fonts/Halcom-ExtraBold.otf"; sourceTree = "<group>"; };
 		EC6A7B79838044BAA694B2AF /* Halcom-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-LightItalic.otf"; path = "../src/assets/fonts/Halcom-LightItalic.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E7AC36586367477BBA4C8F91 /* pokemon_dp.otf */ = {isa = PBXFileReference; name = "pokemon_dp.otf"; path = "../src/assets/fonts/pokemon_dp.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0D8A0023A74140D0BC35CFFF /* bootsplash_logo.png */ = {isa = PBXFileReference; name = "bootsplash_logo.png"; path = "../src/assets/bootsplash_logo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0AB5CB517DA3474DA45092B5 /* bootsplash_logo@1,5x.png */ = {isa = PBXFileReference; name = "bootsplash_logo@1,5x.png"; path = "../src/assets/bootsplash_logo@1,5x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		715BB6F58D29482C84B9388B /* bootsplash_logo@2x.png */ = {isa = PBXFileReference; name = "bootsplash_logo@2x.png"; path = "../src/assets/bootsplash_logo@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		99A3449892A74E8AB7E508C2 /* bootsplash_logo@3x.png */ = {isa = PBXFileReference; name = "bootsplash_logo@3x.png"; path = "../src/assets/bootsplash_logo@3x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8A6512D66592406FB29F3844 /* bootsplash_logo@4x.png */ = {isa = PBXFileReference; name = "bootsplash_logo@4x.png"; path = "../src/assets/bootsplash_logo@4x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */ = {isa = PBXFileReference; name = "bootsplash_manifest.json"; path = "../src/assets/bootsplash_manifest.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FA781420722C4D5B92BCC04A /* logo-dark-with-text-500.png */ = {isa = PBXFileReference; name = "logo-dark-with-text-500.png"; path = "../src/assets/images/logo-dark-with-text-500.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B8194530D34B4699BE93A757 /* logo-light-no-bg-500.png */ = {isa = PBXFileReference; name = "logo-light-no-bg-500.png"; path = "../src/assets/images/logo-light-no-bg-500.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +196,14 @@
 				2E04A17F957E4E3CA2F6D25F /* screw.png */,
 				D1E377756D944EAFB9EFA06D /* triangle_top_left_icon.svg */,
 				E7AC36586367477BBA4C8F91 /* pokemon_dp.otf */,
+				0D8A0023A74140D0BC35CFFF /* bootsplash_logo.png */,
+				0AB5CB517DA3474DA45092B5 /* bootsplash_logo@1,5x.png */,
+				715BB6F58D29482C84B9388B /* bootsplash_logo@2x.png */,
+				99A3449892A74E8AB7E508C2 /* bootsplash_logo@3x.png */,
+				8A6512D66592406FB29F3844 /* bootsplash_logo@4x.png */,
+				5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */,
+				FA781420722C4D5B92BCC04A /* logo-dark-with-text-500.png */,
+				B8194530D34B4699BE93A757 /* logo-light-no-bg-500.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -348,6 +372,14 @@
 				A87CEE41EBF240F19452B33F /* screw.png in Resources */,
 				0EA6B0CE0AF848C085370F10 /* triangle_top_left_icon.svg in Resources */,
 				3DA9406D862E4E1DBBD8B122 /* pokemon_dp.otf in Resources */,
+				9C95F8FA77F84159ACF42DB9 /* bootsplash_logo.png in Resources */,
+				0C635607F8EA40E0A8E98023 /* bootsplash_logo@1,5x.png in Resources */,
+				7E7FA7971527437CAAE1645A /* bootsplash_logo@2x.png in Resources */,
+				856AE77DD5E547769A48CC58 /* bootsplash_logo@3x.png in Resources */,
+				B6298DED9F0343E3A01B223B /* bootsplash_logo@4x.png in Resources */,
+				FC0D60792BBF4BC6B078E41C /* bootsplash_manifest.json in Resources */,
+				49EED6F504BB483E82ADD7C9 /* logo-dark-with-text-500.png in Resources */,
+				29484AD665C24976AF966C84 /* logo-light-no-bg-500.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +400,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh index.ts\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh index.ts\"\n\n/bin/sh -c \"$REACT_NATIVE_XCODE\"\n";
 		};
 		144CB812A2A57284EEAC2A49 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -584,6 +616,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HL5QP24CVY;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = DeckStatsTCG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -611,6 +644,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HL5QP24CVY;
 				INFOPLIST_FILE = DeckStatsTCG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -709,10 +743,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -791,10 +822,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

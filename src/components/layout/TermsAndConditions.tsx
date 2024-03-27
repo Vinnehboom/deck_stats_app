@@ -102,7 +102,7 @@ export const TermsAndConditions = () => {
                 AGREEMENT TO OUR LEGAL TERMS
               </Text>
               <Text textAlign="justify">
-                We are Vinnie Schelfhaut. We operate the mobile application VS. Log (the "App"), as well as any other related
+                We are Vinnie Schelfhaut. We operate the mobile application VS Log (the "App"), as well as any other related
                 products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").
                 You can contact us by email at vinnieschelfhaut@gmail.com . These Legal Terms constitute a legally binding
                 agreement made between you, whether personally or on behalf of an entity ("you"), and Vinnie Schelfhaut,

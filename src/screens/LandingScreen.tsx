@@ -27,7 +27,7 @@ export const LandingScreen = () => {
   return (
     <View style={LandingScreenStyle.container}>
       <ScrollView>
-        <Image style={LandingScreenStyle.logo} source={require("../assets/images/pokeball_bit.png")} />
+        <Image style={LandingScreenStyle.logo} source={require("../assets/images/logo-light-no-bg-500.png")} />
         <Text style={LandingScreenStyle.welcome}>Welcome back, trainer!</Text>
         {isLoading || isFetching ? (
           <Spinner />
