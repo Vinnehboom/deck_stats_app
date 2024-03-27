@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NativeBaseProvider, extendTheme } from "native-base";
 import FlashMessage from "react-native-flash-message";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
+import BootSplash from "react-native-bootsplash";
 
 import { colors } from "./utils/colors";
 import { LoginScreen } from "./screens/LoginScreen";
@@ -28,6 +29,10 @@ export function App(): JSX.Element {
       },
     },
   });
+
+  useEffect(() => {
+    BootSplash.hide({ fade: true });
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

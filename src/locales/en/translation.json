@@ -5,7 +5,7 @@
     }
   },
   "HOME_SCREEN": {
-    "HEADER_TITLE": "VS. Log"
+    "HEADER_TITLE": "VS Log"
   },
   "LANDING_SCREEN": {
     "SIGN_OUT": "Sign out",
@@ -33,7 +33,7 @@
   },
   "LOGIN_SCREEN": {
     "T&C": "Terms and conditions",
-    "TITLE": "VS. Log",
+    "TITLE": "VS Log",
     "INCOMPLETE_FORM": "Email or password cannot be empty",
     "PASSWORD_MISMATCH": "Passwords do not match",
     "SIGN_UP": {
