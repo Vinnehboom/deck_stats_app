@@ -1,6 +1,6 @@
 import { Platform, StyleSheet } from "react-native";
 
-import { screenWidth } from "../dimensions";
+import { screenWidth, screenHeight } from "../dimensions";
 import { colors } from "../../utils/colors";
 export const LoginScreenStyle = StyleSheet.create({
   button: {
@@ -38,8 +38,8 @@ export const LoginScreenStyle = StyleSheet.create({
     elevation: 15,
     height: "auto",
     marginHorizontal: "10%",
-    marginTop: 24,
-    padding: 12,
+    marginTop: screenHeight / 35,
+    padding: screenHeight / 60,
     shadowColor: "rgba(0,0,0,0.3)",
     shadowOffset: { width: 3, height: 3 },
     shadowOpacity: 1,
@@ -59,25 +59,25 @@ export const LoginScreenStyle = StyleSheet.create({
     borderColor: colors.grey,
     borderRadius: Platform.OS === "ios" ? 10 : 2,
     borderWidth: 0.2,
-    elevation: 15,
     fontSize: 14,
     marginTop: 5,
-    marginVertical: 20,
+    marginVertical: screenHeight / 70,
     minWidth: "82%",
     padding: 5,
-    paddingHorizontal: 15,
-    paddingVertical: 10,
+    paddingHorizontal: screenHeight / 50,
+    paddingVertical: screenHeight / 80,
     shadowColor: "rgba(0,0,0,0.5)",
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
     shadowRadius: 0,
+    zIndex: 1,
   },
   inputContainer: {
     width: "80%",
   },
   title: {
-    paddingTop: 20,
+    paddingTop: screenHeight / 60,
     position: "absolute",
-    top: 50,
+    top: screenHeight / 30,
   },
 });

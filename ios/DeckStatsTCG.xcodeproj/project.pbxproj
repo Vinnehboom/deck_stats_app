@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* DeckStatsTCGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* DeckStatsTCGTests.m */; };
 		02318611A4704B859D347591 /* Halcom-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 664BB16939274E66813A6F50 /* Halcom-BlackItalic.otf */; };
+		0655A12B9655471D96CFDEE8 /* bootsplash_logo_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7B36423B2964CE8ACF48999 /* bootsplash_logo_3x.png */; };
 		0EA6B0CE0AF848C085370F10 /* triangle_top_left_icon.svg in Resources */ = {isa = PBXBuildFile; fileRef = D1E377756D944EAFB9EFA06D /* triangle_top_left_icon.svg */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -16,18 +17,24 @@
 		17F7A41912A740C69B8044E7 /* Halcom-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D7AA1EC0CCB4A418433C20E /* Halcom-Thin.otf */; };
 		1E991F2951CE46C79F6507B7 /* Halcom-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7BCC71DAF64FD2826959BE /* Halcom-Black.otf */; };
 		20CF83ABEC2442C0B29E36FD /* Halcom-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 163F3E9B92664480B4137A81 /* Halcom-Medium.otf */; };
+		256483022A3143D9970F58C8 /* bootsplash_logo_1,5x.png in Resources */ = {isa = PBXBuildFile; fileRef = 102479D0844A4FB9B846DB28 /* bootsplash_logo_1,5x.png */; };
 		26AA2D17750C41C89792C8AC /* Halcom-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4EE378479B1460A94A4934F /* Halcom-BookItalic.otf */; };
 		30A2359A2C374AEAA3F78462 /* Halcom-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB9DAC2ED5EB4332BF5E6930 /* Halcom-Light.otf */; };
 		3563F96EA5164BD59A73555E /* Halcom-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A7C9D7BBD884E30A4DEAE1A /* Halcom-ExtraBoldItalic.otf */; };
 		3DA9406D862E4E1DBBD8B122 /* pokemon_dp.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7AC36586367477BBA4C8F91 /* pokemon_dp.otf */; };
 		44FE65F62DA940E8BE3F8715 /* Halcom-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E14AB487DE442E805899BF /* Halcom-MediumItalic.otf */; };
 		453D5C0188FB491A9A93C96B /* Halcom-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 334EC7CC339E408C9EB73501 /* Halcom-Italic.otf */; };
+		4F968A6FBF9A4A7DA3BE17CD /* logo_light_no_bg_500.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA7721FCB94F33BBE6F24F /* logo_light_no_bg_500.png */; };
+		66246C6723D84F25A26355D0 /* bootsplash_logo_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 990C63F554C24334A266CCA1 /* bootsplash_logo_2x.png */; };
+		6674EF666F784213982B8CE1 /* bootsplash_logo_4x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7BAB57814294E8EB15F43C5 /* bootsplash_logo_4x.png */; };
 		6EE320CB07DB43FEBDB6D357 /* Halcom-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82876B1A42364D22BE45AB72 /* Halcom-BoldItalic.otf */; };
 		7D97013076104F8F8CAD31BC /* Halcom-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59901895B86A4DFD83EE3D38 /* Halcom-Bold.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8525DDE99AC74036A4E2C356 /* pokeball_bit.png in Resources */ = {isa = PBXBuildFile; fileRef = 06577A8AAA3B4ADB9CED0122 /* pokeball_bit.png */; };
 		85C6BA5673C55FEA30ED6EE3 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1A131F6FAA74723AE4F1A6 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */; };
+		897FB141C75E4343B0B575BF /* logo_dark_with_text_500.png in Resources */ = {isa = PBXBuildFile; fileRef = 9558D5BE6B6F4D6994C0F708 /* logo_dark_with_text_500.png */; };
 		8C6081D80E2344438B8891A9 /* dots.png in Resources */ = {isa = PBXBuildFile; fileRef = 1991682AF24443DBBE4C0D24 /* dots.png */; };
+		9C95F8FA77F84159ACF42DB9 /* bootsplash_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A0023A74140D0BC35CFFF /* bootsplash_logo.png */; };
 		9FD76511911E4E5AA5E07CA7 /* BungeeInline-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7487A37E92E5424683E8D74A /* BungeeInline-Regular.ttf */; };
 		A59807C832E74018A3E576E7 /* button_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D985B758034842E4887AB8B9 /* button_blue.png */; };
 		A7E6AE33E98FF94E9ADEC875 /* Pods_DeckStatsTCG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71BD161F6128004FFF30819 /* Pods_DeckStatsTCG.framework */; };
@@ -36,16 +43,10 @@
 		C7631DFEA32546A09AAA465A /* Halcom-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48FD368426884347B3D64952 /* Halcom-ThinItalic.otf */; };
 		D882A4811DBD4E14B89035E8 /* Halcom-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC6A7B79838044BAA694B2AF /* Halcom-LightItalic.otf */; };
 		DA120F15CE01417CB11526FC /* Halcom-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8C1402E65AD4E32864D211C /* Halcom-ExtraBold.otf */; };
+		EEC1F6882BBB2E9800FCE065 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EEC1F6872BBB2E9800FCE065 /* PrivacyInfo.xcprivacy */; };
 		EEE39C582BB1916100BEFCB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */; };
 		F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEBDB8A096E84AA2B6A5B6F3 /* Halcom-Book.otf */; };
-		9C95F8FA77F84159ACF42DB9 /* bootsplash_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A0023A74140D0BC35CFFF /* bootsplash_logo.png */; };
-		0C635607F8EA40E0A8E98023 /* bootsplash_logo@1,5x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5CB517DA3474DA45092B5 /* bootsplash_logo@1,5x.png */; };
-		7E7FA7971527437CAAE1645A /* bootsplash_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 715BB6F58D29482C84B9388B /* bootsplash_logo@2x.png */; };
-		856AE77DD5E547769A48CC58 /* bootsplash_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A3449892A74E8AB7E508C2 /* bootsplash_logo@3x.png */; };
-		B6298DED9F0343E3A01B223B /* bootsplash_logo@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A6512D66592406FB29F3844 /* bootsplash_logo@4x.png */; };
 		FC0D60792BBF4BC6B078E41C /* bootsplash_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */; };
-		49EED6F504BB483E82ADD7C9 /* logo-dark-with-text-500.png in Resources */ = {isa = PBXBuildFile; fileRef = FA781420722C4D5B92BCC04A /* logo-dark-with-text-500.png */; };
-		29484AD665C24976AF966C84 /* logo-light-no-bg-500.png in Resources */ = {isa = PBXBuildFile; fileRef = B8194530D34B4699BE93A757 /* logo-light-no-bg-500.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* DeckStatsTCGTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckStatsTCGTests.m; sourceTree = "<group>"; };
 		06577A8AAA3B4ADB9CED0122 /* pokeball_bit.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pokeball_bit.png; path = ../src/assets/images/pokeball_bit.png; sourceTree = "<group>"; };
+		0D8A0023A74140D0BC35CFFF /* bootsplash_logo.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo.png; path = ../src/assets/bootsplash_logo.png; sourceTree = "<group>"; };
+		102479D0844A4FB9B846DB28 /* bootsplash_logo_1,5x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "bootsplash_logo_1,5x.png"; path = "../src/assets/bootsplash_logo_1,5x.png"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* DeckStatsTCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckStatsTCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DeckStatsTCG/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = DeckStatsTCG/AppDelegate.mm; sourceTree = "<group>"; };
@@ -76,7 +79,9 @@
 		37095120181146FD9914DDA3 /* Halcom-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Regular.otf"; path = "../src/assets/fonts/Halcom-Regular.otf"; sourceTree = "<group>"; };
 		3E1A131F6FAA74723AE4F1A6 /* Pods_DeckStatsTCG_DeckStatsTCGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG_DeckStatsTCGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FD368426884347B3D64952 /* Halcom-ThinItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ThinItalic.otf"; path = "../src/assets/fonts/Halcom-ThinItalic.otf"; sourceTree = "<group>"; };
+		4CBA7721FCB94F33BBE6F24F /* logo_light_no_bg_500.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = logo_light_no_bg_500.png; path = ../src/assets/images/logo_light_no_bg_500.png; sourceTree = "<group>"; };
 		59901895B86A4DFD83EE3D38 /* Halcom-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Bold.otf"; path = "../src/assets/fonts/Halcom-Bold.otf"; sourceTree = "<group>"; };
+		5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_manifest.json; path = ../src/assets/bootsplash_manifest.json; sourceTree = "<group>"; };
 		65CD03B2A72A70AEDB0AF1B3 /* Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig"; sourceTree = "<group>"; };
 		664BB16939274E66813A6F50 /* Halcom-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BlackItalic.otf"; path = "../src/assets/fonts/Halcom-BlackItalic.otf"; sourceTree = "<group>"; };
 		6B7BCC71DAF64FD2826959BE /* Halcom-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Black.otf"; path = "../src/assets/fonts/Halcom-Black.otf"; sourceTree = "<group>"; };
@@ -84,6 +89,8 @@
 		7A7C9D7BBD884E30A4DEAE1A /* Halcom-ExtraBoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ExtraBoldItalic.otf"; path = "../src/assets/fonts/Halcom-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DeckStatsTCG/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82876B1A42364D22BE45AB72 /* Halcom-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BoldItalic.otf"; path = "../src/assets/fonts/Halcom-BoldItalic.otf"; sourceTree = "<group>"; };
+		9558D5BE6B6F4D6994C0F708 /* logo_dark_with_text_500.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = logo_dark_with_text_500.png; path = ../src/assets/images/logo_dark_with_text_500.png; sourceTree = "<group>"; };
+		990C63F554C24334A266CCA1 /* bootsplash_logo_2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo_2x.png; path = ../src/assets/bootsplash_logo_2x.png; sourceTree = "<group>"; };
 		9D7AA1EC0CCB4A418433C20E /* Halcom-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Thin.otf"; path = "../src/assets/fonts/Halcom-Thin.otf"; sourceTree = "<group>"; };
 		9F8A82A18F0233F536CEDA77 /* Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB9DAC2ED5EB4332BF5E6930 /* Halcom-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Light.otf"; path = "../src/assets/fonts/Halcom-Light.otf"; sourceTree = "<group>"; };
@@ -92,6 +99,7 @@
 		B0E14AB487DE442E805899BF /* Halcom-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-MediumItalic.otf"; path = "../src/assets/fonts/Halcom-MediumItalic.otf"; sourceTree = "<group>"; };
 		D1E377756D944EAFB9EFA06D /* triangle_top_left_icon.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = triangle_top_left_icon.svg; path = ../src/assets/images/triangle_top_left_icon.svg; sourceTree = "<group>"; };
 		D64A1CA17DF47C930C658DF2 /* Pods-DeckStatsTCG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG.release.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG/Pods-DeckStatsTCG.release.xcconfig"; sourceTree = "<group>"; };
+		D7BAB57814294E8EB15F43C5 /* bootsplash_logo_4x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo_4x.png; path = ../src/assets/bootsplash_logo_4x.png; sourceTree = "<group>"; };
 		D985B758034842E4887AB8B9 /* button_blue.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = button_blue.png; path = ../src/assets/images/button_blue.png; sourceTree = "<group>"; };
 		E4EE378479B1460A94A4934F /* Halcom-BookItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BookItalic.otf"; path = "../src/assets/fonts/Halcom-BookItalic.otf"; sourceTree = "<group>"; };
 		E71BD161F6128004FFF30819 /* Pods_DeckStatsTCG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeckStatsTCG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,15 +107,9 @@
 		E8C1402E65AD4E32864D211C /* Halcom-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ExtraBold.otf"; path = "../src/assets/fonts/Halcom-ExtraBold.otf"; sourceTree = "<group>"; };
 		EC6A7B79838044BAA694B2AF /* Halcom-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-LightItalic.otf"; path = "../src/assets/fonts/Halcom-LightItalic.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EEC1F6872BBB2E9800FCE065 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0D8A0023A74140D0BC35CFFF /* bootsplash_logo.png */ = {isa = PBXFileReference; name = "bootsplash_logo.png"; path = "../src/assets/bootsplash_logo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0AB5CB517DA3474DA45092B5 /* bootsplash_logo@1,5x.png */ = {isa = PBXFileReference; name = "bootsplash_logo@1,5x.png"; path = "../src/assets/bootsplash_logo@1,5x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		715BB6F58D29482C84B9388B /* bootsplash_logo@2x.png */ = {isa = PBXFileReference; name = "bootsplash_logo@2x.png"; path = "../src/assets/bootsplash_logo@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		99A3449892A74E8AB7E508C2 /* bootsplash_logo@3x.png */ = {isa = PBXFileReference; name = "bootsplash_logo@3x.png"; path = "../src/assets/bootsplash_logo@3x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8A6512D66592406FB29F3844 /* bootsplash_logo@4x.png */ = {isa = PBXFileReference; name = "bootsplash_logo@4x.png"; path = "../src/assets/bootsplash_logo@4x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */ = {isa = PBXFileReference; name = "bootsplash_manifest.json"; path = "../src/assets/bootsplash_manifest.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FA781420722C4D5B92BCC04A /* logo-dark-with-text-500.png */ = {isa = PBXFileReference; name = "logo-dark-with-text-500.png"; path = "../src/assets/images/logo-dark-with-text-500.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B8194530D34B4699BE93A757 /* logo-light-no-bg-500.png */ = {isa = PBXFileReference; name = "logo-light-no-bg-500.png"; path = "../src/assets/images/logo-light-no-bg-500.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F7B36423B2964CE8ACF48999 /* bootsplash_logo_3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo_3x.png; path = ../src/assets/bootsplash_logo_3x.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,13 +199,13 @@
 				D1E377756D944EAFB9EFA06D /* triangle_top_left_icon.svg */,
 				E7AC36586367477BBA4C8F91 /* pokemon_dp.otf */,
 				0D8A0023A74140D0BC35CFFF /* bootsplash_logo.png */,
-				0AB5CB517DA3474DA45092B5 /* bootsplash_logo@1,5x.png */,
-				715BB6F58D29482C84B9388B /* bootsplash_logo@2x.png */,
-				99A3449892A74E8AB7E508C2 /* bootsplash_logo@3x.png */,
-				8A6512D66592406FB29F3844 /* bootsplash_logo@4x.png */,
 				5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */,
-				FA781420722C4D5B92BCC04A /* logo-dark-with-text-500.png */,
-				B8194530D34B4699BE93A757 /* logo-light-no-bg-500.png */,
+				9558D5BE6B6F4D6994C0F708 /* logo_dark_with_text_500.png */,
+				4CBA7721FCB94F33BBE6F24F /* logo_light_no_bg_500.png */,
+				102479D0844A4FB9B846DB28 /* bootsplash_logo_1,5x.png */,
+				990C63F554C24334A266CCA1 /* bootsplash_logo_2x.png */,
+				F7B36423B2964CE8ACF48999 /* bootsplash_logo_3x.png */,
+				D7BAB57814294E8EB15F43C5 /* bootsplash_logo_4x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -218,6 +220,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				EEC1F6872BBB2E9800FCE065 /* PrivacyInfo.xcprivacy */,
 				EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* DeckStatsTCG */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -354,6 +357,7 @@
 				7D97013076104F8F8CAD31BC /* Halcom-Bold.otf in Resources */,
 				6EE320CB07DB43FEBDB6D357 /* Halcom-BoldItalic.otf in Resources */,
 				F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */,
+				EEC1F6882BBB2E9800FCE065 /* PrivacyInfo.xcprivacy in Resources */,
 				26AA2D17750C41C89792C8AC /* Halcom-BookItalic.otf in Resources */,
 				DA120F15CE01417CB11526FC /* Halcom-ExtraBold.otf in Resources */,
 				3563F96EA5164BD59A73555E /* Halcom-ExtraBoldItalic.otf in Resources */,
@@ -373,13 +377,13 @@
 				0EA6B0CE0AF848C085370F10 /* triangle_top_left_icon.svg in Resources */,
 				3DA9406D862E4E1DBBD8B122 /* pokemon_dp.otf in Resources */,
 				9C95F8FA77F84159ACF42DB9 /* bootsplash_logo.png in Resources */,
-				0C635607F8EA40E0A8E98023 /* bootsplash_logo@1,5x.png in Resources */,
-				7E7FA7971527437CAAE1645A /* bootsplash_logo@2x.png in Resources */,
-				856AE77DD5E547769A48CC58 /* bootsplash_logo@3x.png in Resources */,
-				B6298DED9F0343E3A01B223B /* bootsplash_logo@4x.png in Resources */,
 				FC0D60792BBF4BC6B078E41C /* bootsplash_manifest.json in Resources */,
-				49EED6F504BB483E82ADD7C9 /* logo-dark-with-text-500.png in Resources */,
-				29484AD665C24976AF966C84 /* logo-light-no-bg-500.png in Resources */,
+				897FB141C75E4343B0B575BF /* logo_dark_with_text_500.png in Resources */,
+				4F968A6FBF9A4A7DA3BE17CD /* logo_light_no_bg_500.png in Resources */,
+				256483022A3143D9970F58C8 /* bootsplash_logo_1,5x.png in Resources */,
+				66246C6723D84F25A26355D0 /* bootsplash_logo_2x.png in Resources */,
+				0655A12B9655471D96CFDEE8 /* bootsplash_logo_3x.png in Resources */,
+				6674EF666F784213982B8CE1 /* bootsplash_logo_4x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +567,7 @@
 			baseConfigurationReference = 65CD03B2A72A70AEDB0AF1B3 /* Pods-DeckStatsTCG-DeckStatsTCGTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HL5QP24CVY;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -579,7 +584,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.vinnieSchelfhaut.VsLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeckStatsTCG.app/DeckStatsTCG";
 			};
@@ -591,6 +596,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = HL5QP24CVY;
 				INFOPLIST_FILE = DeckStatsTCGTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -603,7 +609,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.vinnieSchelfhaut.VsLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeckStatsTCG.app/DeckStatsTCG";
 			};
@@ -623,13 +629,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.vinnieSchelfhaut.VsLog;
 				PRODUCT_NAME = DeckStatsTCG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -650,13 +656,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.vinnieSchelfhaut.VsLog;
 				PRODUCT_NAME = DeckStatsTCG;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

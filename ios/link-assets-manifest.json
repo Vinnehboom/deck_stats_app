@@ -6,19 +6,19 @@
       "sha1": "ebe1940a4136b723daf0544653b3e82b254887ad"
     },
     {
-      "path": "src/assets/bootsplash_logo@1,5x.png",
+      "path": "src/assets/bootsplash_logo_1,5x.png",
       "sha1": "419105db20172903edc0048765610bf5e0088f97"
     },
     {
-      "path": "src/assets/bootsplash_logo@2x.png",
+      "path": "src/assets/bootsplash_logo_2x.png",
       "sha1": "e27c3ea675e71f45bf1ceb4bab00d70e678c3142"
     },
     {
-      "path": "src/assets/bootsplash_logo@3x.png",
+      "path": "src/assets/bootsplash_logo_3x.png",
       "sha1": "cbf736bf10b066567a7769f3a03f90eaea00649f"
     },
     {
-      "path": "src/assets/bootsplash_logo@4x.png",
+      "path": "src/assets/bootsplash_logo_4x.png",
       "sha1": "6221ac5805c59f37977e2a1bab0dd9ffea826be1"
     },
     {
@@ -106,11 +106,11 @@
       "sha1": "73734540a9c925ba762fc63a0d91dc2983ae6e81"
     },
     {
-      "path": "src/assets/images/logo-dark-with-text-500.png",
+      "path": "src/assets/images/logo_dark_with_text_500.png",
       "sha1": "d19901cec6152c4c15d12c998762adb7054fa808"
     },
     {
-      "path": "src/assets/images/logo-light-no-bg-500.png",
+      "path": "src/assets/images/logo_light_no_bg_500.png",
       "sha1": "89692063baa638371b675d5603fd8b2f2b8dad89"
     },
     {
