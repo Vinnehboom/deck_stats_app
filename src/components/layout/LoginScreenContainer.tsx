@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Image } from "native-base";
+import { Platform } from "react-native";
 
 import { LoginScreenContainerStyle } from "../../styles/login/LoginScreenContainerStyle";
 import { LoginScreenGlare } from "./LoginScreenGlare";
@@ -48,7 +49,7 @@ export const LoginScreenContainer = ({ children }: { children: React.ReactNode }
         style={[LoginScreenContainerStyle.speakerImage, LoginScreenContainerStyle.speakerImageRight1]}
         source={require("../../assets/images/dots.png")}
       />
-      <LoginScreenGlare />
+      {Platform.OS === "android" ? null : <LoginScreenGlare />}
     </View>
   );
 };
