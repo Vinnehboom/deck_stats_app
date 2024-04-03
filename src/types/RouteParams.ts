@@ -8,7 +8,7 @@ export type MainTabParamList = {
 export type RootStackParamList = {
   Home: undefined;
   Login: undefined;
-  DecklistHome: { deckId: Deck["id"] };
+  DecklistHome: { deckId: Deck["id"]; screen?: keyof DeckListTabParamList };
   MatchupNotes: { matchupRecords: MatchRecord[]; archetype: ArchetypeBase };
 };
 
