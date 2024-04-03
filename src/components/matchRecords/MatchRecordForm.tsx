@@ -16,7 +16,6 @@ import { MatchRecordFormStyle } from "../../styles/matchRecords/MatchRecordFormS
 
 interface RecordStateType extends MatchRecord {
   opponentArchetype: ArchetypeBase | undefined;
-  list: List | undefined;
 }
 type RecordActionType = {
   type:
@@ -116,13 +115,13 @@ export const MatchRecordForm = ({
   const handleRecordSubmission = () => {
     const record = { ...matchRecord, id: uuidv4() } as MatchRecord;
     const matchRecordValid: boolean =
-      [record.listId, record.result].every(property => property?.length > 0) &&
+      [record.result].every(property => property?.length > 0) &&
       record.opponentArchetype !== undefined &&
       isArchetype(record.opponentArchetype);
 
     if (matchRecordValid) {
       const list = lists.find(l => l.id === record.listId);
-      matchRecordCreationMutation.mutate({ ...record, list: list! });
+      matchRecordCreationMutation.mutate({ ...record, list: list });
       matchRecordDispatch({ type: "CLEAR", payload: { started, coinFlip } });
     } else {
       showMessage({ message: t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.FAILED"), type: "warning" });
@@ -138,6 +137,7 @@ export const MatchRecordForm = ({
           onValueChange={value => matchRecordDispatch({ type: "UPDATE_LIST_ID", payload: value })}
           selectedValue={matchRecord.listId}
           style={MatchRecordFormStyle.listSelect}>
+          <Select.Item minWidth="full" label={t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.NO_LIST")} value="" />
           {lists &&
             lists.map(list => <Select.Item minWidth="full" key={`select-${list.id}`} label={list.name} value={list.id} />)}
         </Select>

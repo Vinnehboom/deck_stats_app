@@ -11,7 +11,7 @@ export const useMatchRecordCreation = (deck: Deck, onSuccessCallback: () => void
       firestore()
         .collection("MatchRecords")
         .doc(matchRecord.id)
-        .set({ ...matchRecord, createdAt: firestore.FieldValue.serverTimestamp() });
+        .set({ ...matchRecord, list: matchRecord.list || null, createdAt: firestore.FieldValue.serverTimestamp() });
     },
     onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: ["MatchRecords", { deck: deck.id }] });

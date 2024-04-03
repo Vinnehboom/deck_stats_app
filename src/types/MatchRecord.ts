@@ -13,7 +13,7 @@ export type MatchRecord = TimeStamped & {
   id: string;
   deckId: Deck["id"];
   listId: List["id"];
-  list: List;
+  list?: List;
   deckArchetype: ArchetypeBase;
   opponentArchetype: ArchetypeBase;
   coinFlipWon?: boolean;
