@@ -161,6 +161,7 @@ export const LoginScreen = () => {
             </Box>
             <TextInput
               placeholder={t("LOGIN_SCREEN.FORM.EMAIL")}
+              placeholderTextColor={colors["primary-dark"]}
               value={loginState.email}
               onChangeText={text => loginFormDispatch({ type: "SET_EMAIL", payload: text })}
               style={LoginScreenStyle.input}
@@ -168,6 +169,7 @@ export const LoginScreen = () => {
             <TextInput
               placeholder={t("LOGIN_SCREEN.FORM.PASSWORD")}
               value={loginState.password}
+              placeholderTextColor={colors["primary-dark"]}
               onChangeText={text => loginFormDispatch({ type: "SET_PASSWORD", payload: text })}
               style={LoginScreenStyle.input}
               secureTextEntry
@@ -175,6 +177,7 @@ export const LoginScreen = () => {
             {login ? null : (
               <TextInput
                 placeholder={t("LOGIN_SCREEN.FORM.PASSWORD_CONFIRMATION")}
+                placeholderTextColor={colors["primary-dark"]}
                 value={loginState.passwordConfirmation}
                 onChangeText={text => loginFormDispatch({ type: "SET_PASSWORD_CONFIRMATION", payload: text })}
                 style={LoginScreenStyle.input}
