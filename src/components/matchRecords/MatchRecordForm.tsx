@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import { showMessage } from "react-native-flash-message";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 
 import { Text } from "../../components/layout/Text";
 import { ArchetypeSelect } from "../archetypes/ArchetypeSelect";
@@ -13,6 +15,7 @@ import { isArchetype, isResult } from "../../helpers/typeGuards";
 import { colors } from "../../utils/colors";
 import { useMatchRecordCreation } from "./_queries/useMatchRecordCreation";
 import { MatchRecordFormStyle } from "../../styles/matchRecords/MatchRecordFormStyle";
+import { RootStackParamList } from "../../types/RouteParams";
 
 interface RecordStateType extends MatchRecord {
   opponentArchetype: ArchetypeBase | undefined;
@@ -106,6 +109,7 @@ export const MatchRecordForm = ({
   const resultOptions = bo1 ? bo1ResultOptions : allResultOptions;
 
   const { t } = useTranslation();
+  const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
   const [matchRecord, matchRecordDispatch] = useReducer(recordStateReducer, initialMatchRecord);
 
   const matchRecordCreationMutation = useMatchRecordCreation(deck, () => {
@@ -140,6 +144,12 @@ export const MatchRecordForm = ({
           <Select.Item minWidth="full" label={t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.NO_LIST")} value="" />
           {lists &&
             lists.map(list => <Select.Item minWidth="full" key={`select-${list.id}`} label={list.name} value={list.id} />)}
+          <Select.Item
+            minWidth="full"
+            label="++ Add list ++"
+            onPress={() => push("DecklistHome", { deckId: deck.id, screen: "DeckLists" })}
+            value="no"
+          />
         </Select>
       </Box>
       <Box>
