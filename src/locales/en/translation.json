@@ -19,6 +19,7 @@
         "WON": "Won",
         "LOST": "Lost",
         "STARTED": "Started",
+        "NO_LIST": "No list",
         "FIRST": "1st",
         "SECOND": "2nd",
         "RESULT": "Result",
