@@ -1,66 +1,69 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "../../utils/colors";
-import { screenWidth as width, screenHeight as height } from "../dimensions";
+import { Colors } from "../variables";
+import { Typography, screenWidth as width, screenHeight as height, Spacing } from "../variables";
 
 export const DeckMatchupsStyle = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
     flex: 1,
     maxHeight: height - 6,
     minWidth: width - 6,
+    padding: Spacing.xs,
   },
   highlightMatchupBlock: {
-    width: width * 0.6,
+    width: width * 0.655,
   },
-  highlightMatchupTitle: { fontSize: 16, fontWeight: "bold", paddingHorizontal: 8, width: width * 0.4 },
+  highlightMatchupContainer: {
+    backgroundColor: Colors.light,
+    marginHorizontal: Spacing.md,
+    paddingBottom: 0,
+    width: "90%",
+  },
+  highlightMatchupTitle: {
+    fontSize: Typography.fontSizes.lg,
+    fontWeight: "bold",
+    paddingHorizontal: Spacing.sm,
+    width: width * 0.2,
+  },
   listSelect: {
-    marginBottom: 24,
-    marginHorizontal: "2%",
+    marginBottom: Spacing.lg,
     minWidth: "100%",
   },
   listSelectTitle: {
-    fontSize: 14,
+    fontSize: Typography.fontSizes.md,
     fontWeight: "bold",
+    marginLeft: Spacing.md,
     minWidth: "30%",
-    paddingTop: 3,
-    textAlign: "center",
-  },
-  matchupContainer: {
-    padding: 12,
+    paddingTop: Spacing.xxs,
   },
   matchupListEven: {
-    borderColor: colors.light,
-    paddingHorizontal: 4,
+    borderColor: Colors.light,
+    paddingHorizontal: Spacing.xxs,
   },
   matchupListOdd: {
-    backgroundColor: colors.white,
-    paddingHorizontal: 4,
+    backgroundColor: Colors.white,
+    borderBottomEndRadius: 10,
+    borderBottomStartRadius: 10,
+
+    paddingHorizontal: Spacing.xxs,
   },
   matchupText: {
     alignItems: "center",
     color: "rgba(0,0,0,0.8)",
-    fontSize: 16,
+    fontSize: Typography.fontSizes.lg,
     fontWeight: "500",
     minHeight: "100%",
-    paddingTop: 12,
+    paddingTop: Spacing.sm,
     textAlign: "center",
     width: "20%",
   },
-  matchupsTitle: { fontSize: 22, fontWeight: "600", marginVertical: height / 30, paddingTop: 6, textAlign: "center" },
   noData: {
     alignSelf: "center",
-    fontSize: 18,
+    fontSize: Typography.fontSizes.xl,
     fontWeight: "bold",
   },
   scrollViewContainer: {
     maxHeight: height,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "600",
-    marginVertical: height / 40,
-    paddingTop: 12,
-    textAlign: "center",
   },
 });

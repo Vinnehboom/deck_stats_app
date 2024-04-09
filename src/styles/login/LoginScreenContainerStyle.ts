@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { Dimensions } from "react-native";
 
-import { colors } from "../../utils/colors";
+import { Colors } from "../variables";
 const { height: screenHeight } = Dimensions.get("screen");
 const { height: windowHeight } = Dimensions.get("window");
 const glareTop = screenHeight - windowHeight !== 0 ? -(screenHeight / 4) : -(screenHeight / 3.5);
@@ -27,7 +27,7 @@ export const LoginScreenContainerStyle = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#D4D4D4",
     borderBottomWidth: 60,
-    borderColor: colors["primary-dark"],
+    borderColor: Colors["primary-dark"],
     borderWidth: 30,
     flex: 1,
     justifyContent: "center",

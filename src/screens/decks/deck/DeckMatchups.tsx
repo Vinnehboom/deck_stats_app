@@ -12,8 +12,10 @@ import { Spinner } from "../../../components/Spinner";
 import { DeckMatchupsStyle } from "../../../styles/decks/DeckMatchupsStyle";
 import { ArchetypeIcons } from "../../../components/decks/ArchetypeIcons";
 import { MatchupsList } from "../../../components/decks/MatchupsList";
-import { colors } from "../../../utils/colors";
+import { Colors, Typography } from "../../../styles/variables";
 import { useGetDeckLists } from "../../../components/lists/_queries/useGetDeckLists";
+import { ElevatedContainer } from "../../../components/layout/ElevatedContainer";
+import { Header } from "../../../components/layout/Header";
 
 export const DeckMatchups = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamList, "DeckLists">>();
@@ -25,7 +27,7 @@ export const DeckMatchups = () => {
   const [calculating, setCalculating] = useState(false);
   const [archetypes, setArchetypes] = useState<ArchetypeBase[]>([]);
   const [selectedList, setSelectedList] = useState<List["id"]>("");
-  const bestMuFirst = useRef("");
+  const bestMuFirst = useRef<MatchRecordDataType>("");
   const bestMuSecond = useRef("");
   const worstMuFirst = useRef("");
   const worstMuSecond = useRef("");
@@ -58,13 +60,14 @@ export const DeckMatchups = () => {
   ) : (
     <View style={DeckMatchupsStyle.container}>
       <ScrollView style={DeckMatchupsStyle.scrollViewContainer}>
-        <Text style={DeckMatchupsStyle.title}>{t("DECK.DECK_MATCHUPS.MATCHUP_DATA")}</Text>
+        <Header header="h2">{t("DECK.DECK_MATCHUPS.MATCHUP_DATA")}</Header>
         <HStack style={DeckMatchupsStyle.listSelect}>
           <Text style={DeckMatchupsStyle.listSelectTitle}>{t("DECK.DECK_MATCHUPS.LIST")}</Text>
           <Select
             minWidth="60%"
-            marginLeft="3%"
-            bgColor={colors.light}
+            marginLeft="1%"
+            fontSize={Typography.fontSizes.md}
+            bgColor={Colors.light}
             onValueChange={value => setSelectedList(value)}
             selectedValue={selectedList}>
             <Select.Item minWidth="full" label={t("DECK.DECK_MATCHUPS.ALL_LISTS")} value="" />
@@ -74,65 +77,67 @@ export const DeckMatchups = () => {
         </HStack>
         {Object.keys(data).length > 0 ? (
           <>
-            <HStack maxWidth="100">
-              <Text style={DeckMatchupsStyle.highlightMatchupTitle}>{t("DECK.DECK_MATCHUPS.BEST_MATCHUPS")}</Text>
-              <Box>
-                <VStack style={DeckMatchupsStyle.highlightMatchupBlock}>
-                  <HStack style={DeckMatchupsStyle.matchupListEven} space={1}>
-                    <Text fontSize={14} minWidth="20%" textAlign="center">
-                      {t("DECK.DECK_MATCHUPS.FIRST")}
-                    </Text>
-                    <Text fontSize={14} maxWidth="20%" textAlign="center">
-                      {data[bestMuFirst.current]?.first.wr} %
-                    </Text>
-                    <HStack display="flex" justifyContent="flex-end" minWidth="20%">
-                      <ArchetypeIcons archetype={archetypes.find(type => type.identifier === bestMuFirst.current)!} />
+            <ElevatedContainer style={DeckMatchupsStyle.highlightMatchupContainer}>
+              <HStack maxWidth="100">
+                <Text style={DeckMatchupsStyle.highlightMatchupTitle}>{t("DECK.DECK_MATCHUPS.BEST_MATCHUPS")}</Text>
+                <Box>
+                  <VStack style={DeckMatchupsStyle.highlightMatchupBlock}>
+                    <HStack style={DeckMatchupsStyle.matchupListEven} space={1}>
+                      <Text fontSize={Typography.fontSizes.md} minWidth="20%" textAlign="center">
+                        {t("DECK.DECK_MATCHUPS.FIRST")}
+                      </Text>
+                      <Text fontSize={Typography.fontSizes.md} maxWidth="20%" textAlign="center">
+                        {data[bestMuFirst.current]?.first.wr} %
+                      </Text>
+                      <HStack display="flex" justifyContent="flex-end" minWidth="20%">
+                        <ArchetypeIcons archetype={archetypes.find(type => type.identifier === bestMuFirst.current)!} />
+                      </HStack>
                     </HStack>
-                  </HStack>
-                  <HStack style={DeckMatchupsStyle.matchupListOdd} space={1}>
-                    <Text fontSize={14} width="20%" textAlign="center">
-                      {t("DECK.DECK_MATCHUPS.SECOND")}
-                    </Text>
-                    <Text fontSize={14} width="20%" textAlign="center">
-                      {data[bestMuSecond.current]?.second.wr} %
-                    </Text>
-                    <HStack display="flex" justifyContent="flex-end" minWidth="20%">
-                      <ArchetypeIcons archetype={archetypes.find(type => type.identifier === bestMuSecond.current)!} />
+                    <HStack style={DeckMatchupsStyle.matchupListOdd} space={1}>
+                      <Text fontSize={Typography.fontSizes.md} width="20%" textAlign="center">
+                        {t("DECK.DECK_MATCHUPS.SECOND")}
+                      </Text>
+                      <Text fontSize={Typography.fontSizes.md} width="20%" textAlign="center">
+                        {data[bestMuSecond.current]?.second.wr} %
+                      </Text>
+                      <HStack display="flex" justifyContent="flex-end" minWidth="20%">
+                        <ArchetypeIcons archetype={archetypes.find(type => type.identifier === bestMuSecond.current)!} />
+                      </HStack>
                     </HStack>
-                  </HStack>
-                </VStack>
-              </Box>
-            </HStack>
+                  </VStack>
+                </Box>
+              </HStack>
 
-            <HStack marginTop={2} maxWidth="100%">
-              <Text style={DeckMatchupsStyle.highlightMatchupTitle}> {t("DECK.DECK_MATCHUPS.WORST_MATCHUPS")}</Text>
-              <Box>
-                <VStack style={DeckMatchupsStyle.highlightMatchupBlock} space={1}>
-                  <HStack style={DeckMatchupsStyle.matchupListEven}>
-                    <Text fontSize={14} width="20%" textAlign="center">
-                      {t("DECK.DECK_MATCHUPS.FIRST")}
-                    </Text>
-                    <Text fontSize={14} width="20%" textAlign="center">
-                      {data[worstMuFirst.current]?.first.wr} %
-                    </Text>
-                    <ArchetypeIcons archetype={archetypes.find(type => type.identifier === worstMuFirst.current)!} />
-                  </HStack>
-                  <HStack style={DeckMatchupsStyle.matchupListOdd}>
-                    <Text fontSize={14} width="20%" textAlign="center">
-                      {t("DECK.DECK_MATCHUPS.SECOND")}
-                    </Text>
-                    <Text fontSize={14} width="20%" textAlign="center">
-                      {data[worstMuSecond.current]?.second.wr} %
-                    </Text>
-                    <HStack display="flex" justifyContent="flex-end" minWidth="20%">
-                      <ArchetypeIcons archetype={archetypes.find(type => type.identifier === worstMuSecond.current)!} />
+              <HStack marginTop={2} maxWidth="100%">
+                <Text style={DeckMatchupsStyle.highlightMatchupTitle}> {t("DECK.DECK_MATCHUPS.WORST_MATCHUPS")}</Text>
+                <Box>
+                  <VStack style={DeckMatchupsStyle.highlightMatchupBlock} space={1}>
+                    <HStack style={DeckMatchupsStyle.matchupListEven}>
+                      <Text fontSize={Typography.fontSizes.md} width="20%" textAlign="center">
+                        {t("DECK.DECK_MATCHUPS.FIRST")}
+                      </Text>
+                      <Text fontSize={Typography.fontSizes.md} width="20%" textAlign="center">
+                        {data[worstMuFirst.current]?.first.wr} %
+                      </Text>
+                      <ArchetypeIcons archetype={archetypes.find(type => type.identifier === worstMuFirst.current)!} />
                     </HStack>
-                  </HStack>
-                </VStack>
-              </Box>
-            </HStack>
+                    <HStack style={DeckMatchupsStyle.matchupListOdd}>
+                      <Text fontSize={Typography.fontSizes.md} width="20%" textAlign="center">
+                        {t("DECK.DECK_MATCHUPS.SECOND")}
+                      </Text>
+                      <Text fontSize={Typography.fontSizes.md} width="20%" textAlign="center">
+                        {data[worstMuSecond.current]?.second.wr} %
+                      </Text>
+                      <HStack display="flex" justifyContent="flex-end" minWidth="20%">
+                        <ArchetypeIcons archetype={archetypes.find(type => type.identifier === worstMuSecond.current)!} />
+                      </HStack>
+                    </HStack>
+                  </VStack>
+                </Box>
+              </HStack>
+            </ElevatedContainer>
 
-            <Text style={DeckMatchupsStyle.matchupsTitle}>{t("DECK.DECK_MATCHUPS.WIN_RATES")}</Text>
+            <Header header="h3">{t("DECK.DECK_MATCHUPS.WIN_RATES")}</Header>
             <MatchupsList iconSize="xs" matchRecords={records} archetypes={archetypes} data={data} viewable={true} />
           </>
         ) : (

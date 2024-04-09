@@ -7,7 +7,7 @@ import { faList } from "@fortawesome/free-solid-svg-icons/faList";
 import { useTranslation } from "react-i18next";
 
 import { DeckListTabParamList, DeckListTabParamsType } from "../../../types/RouteParams";
-import { colors } from "../../../utils/colors";
+import { Colors, Typography } from "../../../styles/variables";
 import { DeckMatchups } from "./DeckMatchups";
 import { DeckLists } from "./DeckLists";
 import { DeckDetails } from "./DeckDetails";
@@ -33,18 +33,18 @@ const DeckHome = () => {
       screenOptions={{
         headerTitle: () => DeckScreenTitle({ deck }),
         headerLeft: HeaderBackButton,
-        headerStyle: { backgroundColor: colors.primary },
+        headerStyle: { backgroundColor: Colors.primary },
         tabBarStyle: TabBarStyle.bar,
         tabBarItemStyle: TabBarStyle.item,
-        tabBarInactiveTintColor: colors["primary-dark"],
+        tabBarInactiveTintColor: Colors["primary-dark"],
         tabBarLabelStyle: TabBarStyle.label,
-        tabBarActiveTintColor: colors.white,
-        tabBarActiveBackgroundColor: colors.light,
+        tabBarActiveTintColor: Colors.white,
+        tabBarActiveBackgroundColor: Colors.light,
         headerShadowVisible: true,
         headerLeftContainerStyle: { paddingStart: 15 },
         headerTitleStyle: {
-          color: colors.white,
-          fontSize: 18,
+          color: Colors.white,
+          fontSize: Typography.fontSizes.xl,
           fontWeight: "bold",
         },
       }}>

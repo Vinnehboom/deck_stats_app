@@ -4,15 +4,14 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 import "react-native-get-random-values";
 import { useTranslation } from "react-i18next";
 
-import { Text } from "../../../components/layout/Text";
 import { Spinner } from "../../../components/Spinner";
 import { DeckListTabParamList } from "../../../types/RouteParams";
 import { useGetDeckLists } from "../../../components/lists/_queries/useGetDeckLists";
-import { DeckListsStyle } from "../../../styles/decks/DeckListsStyle";
 import { ListsScrollContainer } from "../../../components/lists/ListsScrollContainer";
 import { ListCreationForm } from "../../../components/lists/ListCreationForm";
 import { useGetActiveList } from "../../../components/lists/_queries/useGetActiveList";
 import { ScrollableScreenStyle } from "../../../styles/layout/ScrollableScreenStyle";
+import { Header } from "../../../components/layout/Header";
 
 export const DeckLists = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamList, "DeckLists">>();
@@ -31,7 +30,7 @@ export const DeckLists = () => {
         <KeyboardAvoidingView behavior="position" enabled={true} keyboardVerticalOffset={50}>
           <ListCreationForm deck={deck} lists={lists} />
         </KeyboardAvoidingView>
-        <Text style={DeckListsStyle.listsTitle}> {t("DECK.DECK_LISTS.LISTS.TITLE")}</Text>
+        <Header header="h2">{t("DECK.DECK_LISTS.LISTS.TITLE")}</Header>
         {loading || !lists ? (
           <Spinner description={t("DECK.DECK_LISTS.LISTS.LOADING")} />
         ) : (

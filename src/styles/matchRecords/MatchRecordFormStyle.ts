@@ -1,40 +1,25 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "../../utils/colors";
+import { Colors, Typography, Spacing, screenHeight } from "../variables";
 
 export const MatchRecordFormStyle = StyleSheet.create({
   container: {
-    marginHorizontal: "2%",
-    paddingHorizontal: "4%",
+    marginHorizontal: Spacing.md,
+    paddingHorizontal: Spacing.sm,
     position: "relative",
-    top: "-5%",
+    top: "-3%",
     width: "96%",
     zIndex: -1,
   },
   input: {
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
   },
   inputBox: {
-    marginVertical: 2,
-    position: "relative",
     zIndex: -1,
   },
-  inputLabel: {
-    fontSize: 16,
-    fontWeight: "bold",
-    marginVertical: 2,
-  },
   listSelect: {
+    fontSize: Typography.fontSizes.md,
+    height: screenHeight / 25,
     width: "100%",
-  },
-  submitButton: {
-    alignSelf: "center",
-    backgroundColor: colors.primary,
-    width: "75%",
-  },
-  submitButtonText: {
-    color: colors.white,
-    fontWeight: "bold",
-    textTransform: "uppercase",
   },
 });

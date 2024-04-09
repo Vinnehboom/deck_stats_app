@@ -1,68 +1,37 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "../utils/colors";
-import { screenHeight } from "./dimensions";
+import { Typography, Colors, Spacing, screenHeight } from "./variables";
 
 export const LandingScreenStyle = StyleSheet.create({
   activeDeck: {
     alignItems: "center",
     display: "flex",
-    fontSize: 16,
+    fontSize: Typography.fontSizes.md,
     justifyContent: "center",
-    marginVertical: 16,
-  },
-  activeDeckContainer: {
-    borderRadius: 10,
-    height: "auto",
-    marginHorizontal: "10%",
-    marginTop: 24,
-    maxWidth: "80%",
-    minWidth: "80%",
+    marginTop: Spacing.sm,
   },
   activeDeckLink: {
-    color: colors["primary-dark"],
-    fontSize: 16,
+    color: Colors["primary-dark"],
+    fontSize: Typography.fontSizes.md,
     fontWeight: "500",
-    paddingVertical: 5,
-    textAlign: "center",
+    marginVertical: Spacing.sm,
     textDecorationLine: "underline",
   },
   activeDeckName: {
-    fontSize: 16,
-    marginEnd: 16,
-  },
-  activeDeckTitle: {
-    fontSize: 22,
-    fontWeight: "bold",
-    paddingTop: 24,
-    textAlign: "center",
-  },
-  button: {
-    alignItems: "center",
-    alignSelf: "center",
-    backgroundColor: colors.red,
-    borderRadius: 10,
-    marginTop: 40,
-    padding: 15,
-    width: "60%",
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "700",
+    fontSize: Typography.fontSizes.lg,
+    marginEnd: Spacing.lg,
   },
   container: {
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
     flex: 1,
     maxHeight: screenHeight,
     minWidth: "100%",
-    paddingBottom: 12,
-    paddingTop: 12,
+    paddingVertical: Spacing.xs,
   },
   logo: {
     alignSelf: "center",
     height: screenHeight * 0.08,
-    marginTop: 24,
+    marginTop: Spacing.xl,
     resizeMode: "contain",
     width: 100,
   },
@@ -72,23 +41,19 @@ export const LandingScreenStyle = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
   },
-  recentRecordsTitle: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginVertical: 12,
-  },
   setActiveDeckLink: {
-    color: colors.darkBlue,
+    color: Colors.darkBlue,
     fontWeight: "bold",
     textDecorationLine: "underline",
   },
   setActiveDeckText: {
-    marginVertical: 16,
+    marginVertical: Spacing.md,
     textAlign: "center",
   },
   welcome: {
-    fontSize: 18,
-    paddingTop: 16,
+    fontSize: Typography.fontSizes.xl,
+    marginBottom: Spacing.xs,
+    paddingTop: Spacing.xs,
     textAlign: "center",
   },
 });

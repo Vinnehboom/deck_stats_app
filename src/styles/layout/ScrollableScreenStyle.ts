@@ -1,11 +1,10 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "../../utils/colors";
-import { screenHeight as height, screenWidth as width } from "../dimensions";
+import { Colors, screenHeight as height, screenWidth as width } from "../variables";
 
 export const ScrollableScreenStyle = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
     flex: 1,
     maxHeight: height - 6,
     minWidth: width - 6,
@@ -13,6 +12,6 @@ export const ScrollableScreenStyle = StyleSheet.create({
   scrollViewContainer: {
     maxHeight: height,
     paddingBottom: 36,
-    paddingVertical: 16,
+    paddingTop: 8,
   },
 });

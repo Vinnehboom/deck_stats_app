@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
 import { Text } from "../../components/layout/Text";
-import { colors } from "../../utils/colors";
+import { Colors, Typography } from "../../styles/variables";
 import { DeckMatchupsStyle } from "../../styles/decks/DeckMatchupsStyle";
 import { MatchupListItem } from "./MatchupListItem";
 import { ArchetypeBase, MatchRecord, MatchRecordDataType } from "../../types";
@@ -26,20 +26,30 @@ export const MatchupsList = ({
   const { t } = useTranslation();
   const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
   return (
-    <Box style={DeckMatchupsStyle.matchupContainer} width="100%">
-      <VStack space={2}>
-        <HStack>
-          <Text fontWeight="bold" fontSize={18} width="40%" textAlign="center">
+    <Box style={DeckMatchupsStyle.matchupContainer} width="95%">
+      <VStack space={3}>
+        <HStack marginBottom={1} paddingLeft={4} paddingRight={1}>
+          <Text fontWeight="bold" fontSize={Typography.fontSizes.xl} width="40%">
             {t("MATCHUP_LIST.ARCHETYPE")}
           </Text>
-          <Text fontWeight="bold" fontSize={18} width={viewable ? "20%" : "30%"} paddingRight={4} textAlign="center">
+          <Text
+            fontWeight="bold"
+            fontSize={Typography.fontSizes.xl}
+            width={viewable ? "20%" : "30%"}
+            paddingLeft={2}
+            textAlign="left">
             {t("MATCHUP_LIST.FIRST")}
           </Text>
-          <Text fontWeight="bold" fontSize={18} width={viewable ? "20%" : "30%"} textAlign="center">
+          <Text
+            fontWeight="bold"
+            fontSize={Typography.fontSizes.xl}
+            width={viewable ? "20%" : "30%"}
+            paddingLeft={3.5}
+            textAlign="left">
             {t("MATCHUP_LIST.SECOND")}
           </Text>
           {viewable ? (
-            <Text fontWeight="bold" fontSize={18} paddingLeft={3} width="20%" textAlign="center">
+            <Text fontWeight="bold" fontSize={Typography.fontSizes.xl} paddingLeft={3} width="20%" textAlign="center">
               {t("MATCHUP_NOTES.NOTES")}
             </Text>
           ) : null}
@@ -58,7 +68,7 @@ export const MatchupsList = ({
                 onPress={() =>
                   push("MatchupNotes", { matchupRecords: archetypeData.matchRecords, archetype: archetypeData.archetype })
                 }>
-                <Text fontWeight="bold" color={colors["primary-dark"]}>
+                <Text fontWeight="bold" color={Colors["primary-dark"]}>
                   View
                 </Text>
               </Button>

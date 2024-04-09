@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "../../utils/colors";
+import { Colors, Spacing, Typography } from "../variables";
 
 export const DeckItemStyle = StyleSheet.create({
   container: {
@@ -8,20 +8,20 @@ export const DeckItemStyle = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    margin: 5,
-    padding: 2,
+    margin: Spacing.xs,
+    padding: Spacing.xxs,
   },
   deckName: {
     alignItems: "center",
-    fontSize: 18,
-    paddingLeft: 15,
-    paddingTop: "3%",
+    fontSize: Typography.fontSizes.lg,
+    fontWeight: "500",
+    paddingLeft: Spacing.md,
+    paddingTop: Spacing.sm,
   },
   showLink: {
-    color: colors["primary-dark"],
-    fontSize: 16,
-    paddingLeft: 15,
-    paddingTop: "3%",
+    color: Colors["primary-dark"],
+    fontSize: Typography.fontSizes.lg,
+    paddingTop: Spacing.sm,
     textDecorationLine: "underline",
   },
 });

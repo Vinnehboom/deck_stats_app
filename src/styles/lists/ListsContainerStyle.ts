@@ -1,15 +1,15 @@
 import { StyleSheet } from "react-native";
 
-import { screenWidth as width, screenHeight as height } from "../dimensions";
+import { screenWidth as width, Spacing } from "../variables";
 
 export const ListContainerStyle = StyleSheet.create({
   listsContainer: {
     alignItems: "stretch",
     gap: width / 10,
     justifyContent: "center",
-    marginTop: height / 40,
+    marginTop: Spacing.md,
     minWidth: width,
-    paddingBottom: height / 40,
-    paddingHorizontal: width / 30,
+    paddingBottom: Spacing.md,
+    paddingHorizontal: Spacing.md,
   },
 });
