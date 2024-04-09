@@ -4,7 +4,7 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import { Text } from "../../components/layout/Text";
-import { colors } from "../../utils/colors";
+import { Colors } from "../../styles/variables";
 
 export const HeaderBackButton = () => {
   const { t } = useTranslation();
@@ -14,11 +14,11 @@ export const HeaderBackButton = () => {
       <Button
         right={3}
         colorScheme="white"
-        color={colors.white}
+        color={Colors.white}
         fontWeight="bold"
         onPress={() => pop()}
         startIcon={<ArrowBackIcon />}>
-        <Text color={colors.white}>{t("DECK.NAVIGATION.BACK")}</Text>
+        <Text color={Colors.white}>{t("DECK.NAVIGATION.BACK")}</Text>
       </Button>
     </HStack>
   );

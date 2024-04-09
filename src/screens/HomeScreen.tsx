@@ -10,11 +10,12 @@ import { faFolderOpen } from "@fortawesome/free-solid-svg-icons/faFolderOpen";
 
 import { AuthContext } from "../contexts/AuthContext";
 import { MainTabParamList, RootStackParamList } from "../types/RouteParams";
-import { colors } from "../utils/colors";
+import { Colors } from "../styles/variables";
 import { LandingScreen } from "./LandingScreen";
 import { DecksScreen } from "./decks/DecksScreen";
 import { TabIcon } from "../components/layout/TabIcon";
 import { TabBarStyle } from "../styles/layout/TabBarStyle";
+import { Typography } from "../styles/variables/typography";
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -50,15 +51,15 @@ export const HomeScreen = () => {
           headerShown: false,
           tabBarStyle: TabBarStyle.bar,
           tabBarItemStyle: TabBarStyle.item,
-          tabBarInactiveTintColor: colors["primary-dark"],
+          tabBarInactiveTintColor: Colors["primary-dark"],
           tabBarLabelStyle: TabBarStyle.label,
-          tabBarActiveTintColor: colors.white,
-          tabBarActiveBackgroundColor: colors.light,
+          tabBarActiveTintColor: Colors.white,
+          tabBarActiveBackgroundColor: Colors.light,
           headerTitle: t("HOME_SCREEN.HEADER_TITLE"),
-          headerStyle: { backgroundColor: colors["primary-dark"] },
+          headerStyle: { backgroundColor: Colors["primary-dark"] },
           headerTitleStyle: {
-            color: colors.white,
-            fontSize: 24,
+            color: Colors.white,
+            fontSize: Typography.fontSizes.xxxl,
             fontWeight: "bold",
           },
         }}>

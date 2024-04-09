@@ -1,15 +1,15 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "../../utils/colors";
-import { screenHeight } from "../dimensions";
+import { Colors, Spacing, Typography, screenHeight } from "../variables";
 
 export const ArchetypeSelectStyle = StyleSheet.create({
   selectContainer: {
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
     elevation: 50,
-    height: screenHeight / 5,
+    height: "auto",
+    maxHeight: screenHeight / 5,
     minWidth: "100%",
     position: "absolute",
     top: screenHeight / 20,
@@ -17,16 +17,16 @@ export const ArchetypeSelectStyle = StyleSheet.create({
     zIndex: 2,
   },
   selectField: {
-    backgroundColor: "white",
-    borderColor: colors.grey,
+    borderColor: Colors.grey,
+    borderEndWidth: 1,
     borderRadius: 3,
     borderWidth: 0.2,
-    fontSize: 14,
-    height: screenHeight / 30,
-    marginVertical: 10,
+    fontSize: Typography.fontSizes.md,
+    height: screenHeight / 25,
+    marginVertical: Spacing.xs,
     minWidth: "100%",
     paddingHorizontal: 5,
-    paddingVertical: 2,
+    paddingVertical: Spacing.xxs,
     position: "relative",
   },
 });

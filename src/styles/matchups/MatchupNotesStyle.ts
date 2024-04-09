@@ -1,24 +1,23 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "../../utils/colors";
-import { screenWidth as width, screenHeight as height } from "../dimensions";
+import { Colors, screenWidth as width, screenHeight as height, Spacing } from "../variables";
 
 export const MatchupNotesStyle = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
     flex: 1,
     maxHeight: height - 6,
     minWidth: width - 6,
   },
   header: {
-    marginVertical: height / 40,
+    marginVertical: Spacing.md,
   },
   noteContainer: {
-    borderBottomColor: colors["primary-dark"],
+    borderBottomColor: Colors["primary-dark"],
     borderBottomWidth: 1,
-    marginHorizontal: 12,
-    paddingBottom: 12,
-    padding: 10,
+    marginHorizontal: Spacing.sm,
+    paddingBottom: Spacing.xs,
+    padding: Spacing.xs,
   },
   scrollViewContainer: {
     maxHeight: height,

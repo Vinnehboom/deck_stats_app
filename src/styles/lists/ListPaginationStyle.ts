@@ -1,21 +1,21 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "../../utils/colors";
+import { Colors, Spacing } from "../variables";
 
 export const ListPaginationStyle = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "center",
-    marginBottom: 25,
+    marginBottom: Spacing.lg,
     position: "relative",
     width: "100%",
   },
   dot: {
     alignItems: "center",
-    backgroundColor: colors["primary-dark"],
+    backgroundColor: Colors["primary-dark"],
     borderRadius: 6,
     height: 12,
-    marginHorizontal: 3,
+    marginHorizontal: Spacing.xxs,
     width: 12,
   },
 });

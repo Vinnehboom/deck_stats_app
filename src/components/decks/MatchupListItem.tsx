@@ -5,7 +5,7 @@ import { Text } from "../../components/layout/Text";
 import { ArchetypeIcons } from "./ArchetypeIcons";
 import { ArchetypeBase } from "../../types";
 import { MatchRecordDataEntry } from "../../types/MatchRecord";
-import { colors } from "../../utils/colors";
+import { Colors } from "../../styles/variables";
 
 export const MatchupListItem = ({
   data,
@@ -19,19 +19,19 @@ export const MatchupListItem = ({
   const [showPercentage, setShowPercentage] = useState(true);
   const firstDataPresent = data.first.wins + data.first.losses !== 0;
   const secondDataPresent = data.second.wins + data.second.losses !== 0;
-  const { baseNegativeColorHue, basePositiveColorHue } = colors;
+  const { baseNegativeColorHue, basePositiveColorHue } = Colors;
   const baseFirstColor = data.first.wr > 50 ? basePositiveColorHue : baseNegativeColorHue;
   const baseSecondColor = data.second.wr > 50 ? basePositiveColorHue : baseNegativeColorHue;
   const firstColor = firstDataPresent
     ? `hsl(${baseFirstColor}, 100%, ${100 - Math.abs(100 - data.first.wr - 50)}%)`
-    : colors.grey;
+    : Colors.grey;
   const secondColor = secondDataPresent
     ? `hsl(${baseSecondColor}, 100%, ${100 - Math.abs(100 - data.second.wr - 50)}%)`
-    : colors.grey;
+    : Colors.grey;
 
   return (
     <HStack onTouchStart={() => setShowPercentage(!showPercentage)}>
-      <HStack paddingRight={1} paddingY={1} display="flex" justifyContent="flex-end" width="40%">
+      <HStack paddingRight={1} paddingY={1} display="flex" justifyContent="center" width="40%">
         <ArchetypeIcons archetype={archetype} />
       </HStack>
       <Box

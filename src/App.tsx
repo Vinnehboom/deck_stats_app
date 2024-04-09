@@ -7,7 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 import BootSplash from "react-native-bootsplash";
 
-import { colors } from "./utils/colors";
+import { Colors, Typography } from "./styles/variables";
 import { LoginScreen } from "./screens/LoginScreen";
 import { HomeScreen } from "./screens/HomeScreen";
 import { DeckHome } from "./screens/decks/deck/DeckHome";
@@ -38,7 +38,7 @@ export function App(): JSX.Element {
     <QueryClientProvider client={queryClient}>
       <NativeBaseProvider theme={theme}>
         <NavigationContainer>
-          <Stack.Navigator screenOptions={{ contentStyle: { backgroundColor: colors.white } }}>
+          <Stack.Navigator screenOptions={{ contentStyle: { backgroundColor: Colors.white } }}>
             <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
             <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
             <Stack.Screen name="DecklistHome" options={{ animation: "fade", headerShown: false }} component={DeckHome} />
@@ -49,8 +49,8 @@ export function App(): JSX.Element {
                 headerLeft: HeaderBackButton,
                 headerShown: true,
                 headerTitle: t("MATCHUP_NOTES.SCREEN_TITLE"),
-                headerTitleStyle: { color: colors.white, fontSize: 16, fontWeight: "bold" },
-                headerStyle: { backgroundColor: colors.primary },
+                headerTitleStyle: { color: Colors.white, fontSize: Typography.fontSizes.lg, fontWeight: "bold" },
+                headerStyle: { backgroundColor: Colors.primary },
                 headerShadowVisible: true,
               }}
               component={MatchupNotes}

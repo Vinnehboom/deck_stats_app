@@ -25,7 +25,7 @@ export const DeckItem = ({ deck }: DeckListPropTypes) => {
 
   return (
     <View style={DeckItemStyle.container}>
-      <HStack paddingX={3} flexDirection="row" width="full" justifyContent="space-between" space={4}>
+      <HStack paddingX={3} flexDirection="row" width="full" justifyContent="space-between" space={13}>
         <HStack flexDirection="row">
           <HStack display="flex" justifyContent="flex-end" minWidth="30%">
             <ArchetypeIcons archetype={deck?.archetype} />
