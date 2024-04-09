@@ -1,52 +1,43 @@
 import { StyleSheet } from "react-native";
 
-import { screenWidth, screenHeight as height } from "../dimensions";
-import { colors } from "../../utils/colors";
+import { Colors, Spacing, Typography, screenWidth, screenHeight as height } from "../variables";
 const width = screenWidth - 2 * (screenWidth / 20);
 
 export const ListItemStyle = StyleSheet.create({
   activateButton: {
     alignItems: "center",
-    backgroundColor: colors.primary,
+    backgroundColor: Colors.primary,
     borderRadius: 10,
-    padding: 10,
+    padding: Spacing.lg,
     width: "auto",
   },
   activateButtonText: {
     color: "white",
-    fontSize: 14,
+    fontSize: Typography.fontSizes.md,
     fontWeight: "700",
   },
 
   activeTabButton: {
-    backgroundColor: colors.light,
+    backgroundColor: Colors.light,
     borderBottomEndRadius: 0,
     borderBottomLeftRadius: 0,
-    borderColor: colors.light,
+    borderColor: Colors.light,
     justifyContent: "center",
-    shadowColor: colors.dark,
+    shadowColor: Colors.dark,
     shadowOffset: { width: 0, height: -3 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
   },
   activeTabButtonText: {
-    color: colors.dark,
-    fontSize: 14,
+    color: Colors.dark,
+    fontSize: Typography.fontSizes.md,
     fontWeight: "bold",
-    textShadowColor: colors.dark,
+    textShadowColor: Colors.dark,
     textShadowOffset: { width: 0, height: 2 },
-  },
-  button: {
-    alignItems: "center",
-    backgroundColor: colors.darkBlue,
-    borderRadius: 10,
-    marginTop: 20,
-    padding: 10,
-    width: "auto",
   },
   buttonText: {
     color: "white",
-    fontSize: 14,
+    fontSize: Typography.fontSizes.md,
     fontWeight: "700",
   },
   cardImage: {
@@ -54,19 +45,19 @@ export const ListItemStyle = StyleSheet.create({
     width: width / 5,
   },
   container: {
-    backgroundColor: colors.light,
+    backgroundColor: Colors.light,
     borderRadius: 10,
     elevation: 10,
     flex: 1,
     minWidth: width,
-    paddingBottom: height / 40,
+    paddingBottom: Spacing.lg,
     shadowColor: "#000000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
   },
   countCircle: {
-    backgroundColor: colors["primary-dark"],
+    backgroundColor: Colors["primary-dark"],
     bottom: height / 60,
     height: height / 40,
     position: "absolute",
@@ -74,41 +65,41 @@ export const ListItemStyle = StyleSheet.create({
     zIndex: 1,
   },
   countCircleCount: {
-    color: colors.white,
-    fontSize: 14,
+    color: Colors.white,
+    fontSize: Typography.fontSizes.md,
   },
   header: {
     display: "flex",
     justifyContent: "space-evenly",
-    padding: 12,
+    padding: Spacing.sm,
   },
   imageContainer: {
     alignSelf: "center",
     height: "auto",
   },
   inactiveTabButton: {
-    backgroundColor: colors["primary-dark"],
+    backgroundColor: Colors["primary-dark"],
     borderBottomEndRadius: 0,
     borderBottomLeftRadius: 0,
     justifyContent: "center",
   },
   inactiveTabButtonText: {
-    color: colors.white,
-    fontSize: 14,
+    color: Colors.white,
+    fontSize: Typography.fontSizes.md,
   },
   item: {
     height: "auto",
     justifyContent: "center",
-    paddingBottom: 5,
+    paddingBottom: Spacing.xs,
     width,
   },
   listLine: {
-    fontSize: 14,
-    marginVertical: 1.5,
+    fontSize: Typography.fontSizes.md,
+    marginVertical: Spacing.xxs,
     width,
   },
   listLineCount: {
-    paddingStart: width / 20,
+    paddingStart: Spacing.md,
     width: width / 5,
   },
   listLineName: {
@@ -119,7 +110,7 @@ export const ListItemStyle = StyleSheet.create({
   },
 
   title: {
-    fontSize: 16,
+    fontSize: Typography.fontSizes.lg,
     fontWeight: "bold",
   },
   titleActionBox: {

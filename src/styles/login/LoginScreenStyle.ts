@@ -1,7 +1,6 @@
 import { Platform, StyleSheet } from "react-native";
 
-import { screenWidth, screenHeight } from "../dimensions";
-import { colors } from "../../utils/colors";
+import { Colors, Typography, screenWidth, screenHeight, Spacing } from "../variables";
 export const LoginScreenStyle = StyleSheet.create({
   button: {
     borderRadius: 20,
@@ -15,12 +14,12 @@ export const LoginScreenStyle = StyleSheet.create({
   buttonContainer: {
     alignItems: "center",
     justifyContent: "center",
-    marginVertical: 12,
+    marginVertical: Spacing.md,
     width: "60%",
   },
   buttonText: {
     color: "white",
-    fontSize: 16,
+    fontSize: Typography.fontSizes.lg,
     fontWeight: "700",
   },
   content: {
@@ -33,13 +32,13 @@ export const LoginScreenStyle = StyleSheet.create({
   },
   formContainer: {
     alignItems: "center",
-    backgroundColor: colors.light,
+    backgroundColor: Colors.light,
     borderRadius: 10,
     elevation: 15,
     height: "auto",
-    marginHorizontal: "10%",
-    marginTop: screenHeight / 35,
-    padding: screenHeight / 60,
+    marginHorizontal: Spacing.lg,
+    marginTop: Spacing.md,
+    padding: Spacing.sm,
     shadowColor: "rgba(0,0,0,0.3)",
     shadowOffset: { width: 3, height: 3 },
     shadowOpacity: 1,
@@ -49,23 +48,23 @@ export const LoginScreenStyle = StyleSheet.create({
   formTitle: {
     alignItems: "center",
     fontFamily: "BungeeInline-Regular",
-    fontSize: 20,
+    fontSize: Typography.fontSizes.xxl,
     fontWeight: "bold",
-    marginVertical: 12,
+    marginVertical: Spacing.md,
     textAlign: "center",
   },
   input: {
     backgroundColor: "white",
-    borderColor: colors.grey,
+    borderColor: Colors.grey,
     borderRadius: Platform.OS === "ios" ? 10 : 2,
     borderWidth: 0.2,
-    fontSize: 14,
+    fontSize: Typography.fontSizes.md,
     height: screenHeight / 20,
-    marginTop: 5,
-    marginVertical: screenHeight / 70,
+    marginTop: Spacing.md,
+    marginVertical: Spacing.sm,
     minWidth: "90%",
     padding: 5,
-    paddingHorizontal: screenHeight / 70,
+    paddingHorizontal: Spacing.md,
     shadowColor: "rgba(0,0,0,0.5)",
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
@@ -76,8 +75,8 @@ export const LoginScreenStyle = StyleSheet.create({
     width: "95%",
   },
   title: {
-    paddingTop: screenHeight / 60,
+    paddingTop: Spacing.xxxl,
     position: "absolute",
-    top: screenHeight / 30,
+    top: Spacing.sm,
   },
 });

@@ -114,7 +114,7 @@
     "DECK_DETAILS": {
       "OPTIONS": { "TITLE": "Options"},
       "RECENT_RESULTS": "Recent results",
-      "RECORD_FORM": {"SHOW": "Add result", "HIDE": "Hide form", "TITLE": "Add result"},
+      "RECORD_FORM": {"SHOW": "Result", "HIDE": "Hide form", "TITLE": "Add result"},
       "DELETE": {
         "ALERT_TITLE": "Confirm deletion",
         "ALERT_MESSAGE": "Are you sure you want to delete this deck?",
@@ -134,8 +134,8 @@
     },
     "DECK_MATCHUPS": {
       "MATCHUP_DATA": "Matchup data",
-      "BEST_MATCHUPS": "Best matchups",
-      "WORST_MATCHUPS": "Worst matchups",
+      "BEST_MATCHUPS": "Best",
+      "WORST_MATCHUPS": "Worst",
       "LOADING": "Data loading...",
       "LIST": "View data for: ",
       "ALL_LISTS": "All lists",

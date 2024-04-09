@@ -3,7 +3,7 @@ import React from "react";
 
 import { ListPaginationStyle } from "../../styles/lists/ListPaginationStyle";
 import { List } from "../../types";
-import { screenWidth as width } from "../../styles/dimensions";
+import { screenWidth as width } from "../../styles/variables";
 
 export const ListPagination = ({ data, scrollX }: { data: List[]; scrollX: Animated.Value }) => {
   return (

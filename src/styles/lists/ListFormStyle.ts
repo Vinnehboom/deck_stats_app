@@ -1,46 +1,33 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "../../utils/colors";
-import { screenWidth } from "../dimensions";
+import { Colors, Typography, Spacing, screenWidth } from "../variables";
 
 export const ListFormStyle = StyleSheet.create({
   button: {
-    alignItems: "center",
-    backgroundColor: colors["primary-dark"],
-    borderRadius: 10,
-    marginTop: 20,
-    padding: 10,
-    width: "auto",
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 14,
-    fontWeight: "700",
+    marginTop: Spacing.md,
   },
   formField: {
-    backgroundColor: colors.light,
-    borderRadius: 5,
-    borderWidth: 0,
-    fontSize: 14,
+    backgroundColor: Colors.light,
   },
-  inputLabel: {
-    color: colors["primary-dark"],
-    fontSize: 16,
-    fontWeight: "bold",
-    marginVertical: 12,
+  limitlessLink: {
+    color: Colors["primary-dark"],
+    fontSize: Typography.fontSizes.md,
+    fontStyle: "italic",
+    fontWeight: "500",
+    marginTop: Spacing.md,
+    paddingTop: Spacing.sm,
   },
-  limitlessLink: { color: colors["primary-dark"], fontSize: 14, fontStyle: "italic", marginTop: 12 },
-  limitlessLinkIcon: { color: colors["primary-dark"], fontSize: 14, fontStyle: "italic", marginTop: 18 },
+  limitlessLinkIcon: {
+    color: Colors["primary-dark"],
+    fontSize: Typography.fontSizes.md,
+    fontStyle: "italic",
+    marginTop: Spacing.xxxl,
+    top: Spacing.xs,
+  },
 
   listForm: {
     alignItems: "center",
     minWidth: screenWidth - screenWidth / 10,
     paddingHorizontal: screenWidth / 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "600",
-    marginTop: "5%",
-    textAlign: "center",
   },
 });

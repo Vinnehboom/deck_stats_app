@@ -11,7 +11,7 @@ import { ANDROID_OAUTH_CLIENT_ID } from "@env";
 import auth from "@react-native-firebase/auth";
 
 import { authInstance } from "../firebase/firebaseconfig";
-import { colors } from "../utils/colors";
+import { Colors, Typography } from "../styles/variables";
 import { RootStackParamList } from "../types/RouteParams";
 import { LoginScreenContainer } from "../components/layout/LoginScreenContainer";
 import { LoginScreenStyle } from "../styles/login/LoginScreenStyle";
@@ -140,10 +140,10 @@ export const LoginScreen = () => {
         <Box style={LoginScreenStyle.title}>
           <StrokeText
             fontFamily="BungeeInline-Regular"
-            color={colors.light}
-            strokeColor={colors["primary-dark"]}
+            color={Colors.light}
+            strokeColor={Colors["primary-dark"]}
             strokeWidth={2}
-            fontSize={32}
+            fontSize={Typography.fontSizes.xxxxl}
             text={t("LOGIN_SCREEN.TITLE")}
           />
         </Box>
@@ -153,15 +153,15 @@ export const LoginScreen = () => {
               <StrokeText
                 fontFamily="BungeeInline-Regular"
                 color="#ffffff"
-                strokeColor={colors["primary-dark"]}
+                strokeColor={Colors["primary-dark"]}
                 strokeWidth={3}
-                fontSize={26}
+                fontSize={Typography.fontSizes.xxxl}
                 text={login ? t("LOGIN_SCREEN.FORM.LOGIN_TITLE") : t("LOGIN_SCREEN.FORM.REGISTER_TITLE")}
               />
             </Box>
             <TextInput
               placeholder={t("LOGIN_SCREEN.FORM.EMAIL")}
-              placeholderTextColor={colors["primary-dark"]}
+              placeholderTextColor={Colors["primary-dark"]}
               value={loginState.email}
               onChangeText={text => loginFormDispatch({ type: "SET_EMAIL", payload: text })}
               style={LoginScreenStyle.input}
@@ -169,7 +169,7 @@ export const LoginScreen = () => {
             <TextInput
               placeholder={t("LOGIN_SCREEN.FORM.PASSWORD")}
               value={loginState.password}
-              placeholderTextColor={colors["primary-dark"]}
+              placeholderTextColor={Colors["primary-dark"]}
               onChangeText={text => loginFormDispatch({ type: "SET_PASSWORD", payload: text })}
               style={LoginScreenStyle.input}
               secureTextEntry
@@ -177,7 +177,7 @@ export const LoginScreen = () => {
             {login ? null : (
               <TextInput
                 placeholder={t("LOGIN_SCREEN.FORM.PASSWORD_CONFIRMATION")}
-                placeholderTextColor={colors["primary-dark"]}
+                placeholderTextColor={Colors["primary-dark"]}
                 value={loginState.passwordConfirmation}
                 onChangeText={text => loginFormDispatch({ type: "SET_PASSWORD_CONFIRMATION", payload: text })}
                 style={LoginScreenStyle.input}
@@ -193,16 +193,16 @@ export const LoginScreen = () => {
                   <Text style={LoginScreenStyle.buttonText}> {t("LOGIN_SCREEN.FORM.SIGN_IN")} </Text>
                 </Button>
                 <Link marginTop={3} onPress={() => setLogin(!login)}>
-                  <Text color={colors["primary-dark"]}>{t("LOGIN_SCREEN.FORM.SIGN_UP")}</Text>
+                  <Text color={Colors["primary-dark"]}>{t("LOGIN_SCREEN.FORM.SIGN_UP")}</Text>
                 </Link>
               </>
             ) : (
               <>
-                <Button bgColor={colors["primary-dark"]} style={LoginScreenStyle.button} onPress={handleSignUp}>
+                <Button bgColor={Colors["primary-dark"]} style={LoginScreenStyle.button} onPress={handleSignUp}>
                   <Text style={LoginScreenStyle.buttonText}>{t("LOGIN_SCREEN.FORM.SIGN_UP")}</Text>
                 </Button>
                 <Link marginTop={3} onPress={() => setLogin(!login)}>
-                  <Text color={colors["primary-dark"]}>{t("LOGIN_SCREEN.FORM.SIGN_IN")}</Text>
+                  <Text color={Colors["primary-dark"]}>{t("LOGIN_SCREEN.FORM.SIGN_IN")}</Text>
                 </Link>
               </>
             )}

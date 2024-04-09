@@ -1,13 +1,15 @@
 import { StyleSheet } from "react-native";
 
+import { Typography, Spacing } from "../variables";
+
 export const MatchRecordListItemStyle = StyleSheet.create({
   listItem: {
     alignSelf: "center",
-    marginVertical: 4,
+    marginVertical: Spacing.xxs,
     width: "100%",
   },
-  litItemText: { alignSelf: "center", fontSize: 18, fontWeight: "bold" },
+  litItemText: { alignSelf: "center", fontSize: Typography.fontSizes.xl, fontWeight: "bold" },
   remarks: {
-    padding: 5,
+    padding: Spacing.xxs,
   },
 });

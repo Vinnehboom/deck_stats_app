@@ -1,17 +1,21 @@
-import { View, TouchableOpacity } from "react-native";
+import { View } from "react-native";
 import React, { useReducer } from "react";
 import { showMessage } from "react-native-flash-message";
 import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
-import { Input, TextArea, Checkbox, Box, HStack, Link } from "native-base";
+import { TextArea, Checkbox, Box, HStack, Link } from "native-base";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 import { Text } from "../../components/layout/Text";
+import { TextInput } from "../layout/forms/TextInput";
+import { Button } from "../layout/Button";
+import { InputLabel } from "../layout/forms/InputLabel";
 import { ListFormStyle } from "../../styles/lists/ListFormStyle";
 import { useListCreation } from "./_queries/useListCreation";
 import { Deck, List } from "../../types";
 import { transformList } from "../../helpers/decklists";
+import { Header } from "../layout/Header";
 
 type newListStateType = { listString: string; listName: string; activate: "0" | "1" };
 const listStringReducer = (
@@ -70,19 +74,20 @@ export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] })
   };
   return (
     <View style={ListFormStyle.listForm}>
-      <Text style={ListFormStyle.title}> {t("DECK.DECK_LISTS.LIST_FORM.TITLE")}</Text>
+      <Header header="h2">{t("DECK.DECK_LISTS.LIST_FORM.TITLE")}</Header>
       <Box width="100%">
-        <Text style={ListFormStyle.inputLabel}>{t("DECK.DECK_LISTS.LIST_FORM.NAME")}</Text>
-        <Input
-          value={newListObject.listName}
-          onChangeText={(text: string) => newListObjectDispatch({ type: "setListName", payload: text })}
-          style={ListFormStyle.formField}
-        />
+        <InputLabel>{t("DECK.DECK_LISTS.LIST_FORM.NAME")}</InputLabel>
+        <Box marginTop={-6}>
+          <TextInput
+            value={newListObject.listName}
+            onChangeText={(text: string) => newListObjectDispatch({ type: "setListName", payload: text })}
+            style={ListFormStyle.formField}
+          />
+        </Box>
       </Box>
-
       <Box width="100%">
-        <HStack justifyContent="space-between">
-          <Text style={ListFormStyle.inputLabel}>{t("DECK.DECK_LISTS.LIST_FORM.LIST_PLACEHOLDER")}</Text>
+        <HStack marginBottom={2} marginTop={-4} justifyContent="space-between">
+          <InputLabel>{t("DECK.DECK_LISTS.LIST_FORM.LIST_PLACEHOLDER")}</InputLabel>
           <Link href="https://limitlesstcg.com">
             <FontAwesomeIcon size={12} style={ListFormStyle.limitlessLinkIcon} icon={faArrowUpRightFromSquare} />
             <Text style={ListFormStyle.limitlessLink}> {t("DECK.DECK_LISTS.LIST_FORM.LIMITLESS")}</Text>
@@ -98,15 +103,13 @@ export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] })
       </Box>
 
       <Checkbox
-        marginTop={4}
+        marginY={3}
         value={newListObject.activate}
         isChecked={newListObject.activate === "1"}
         onChange={value => newListObjectDispatch({ type: "updateActivate", payload: value ? "1" : "0" })}>
         <Text> Set active </Text>
       </Checkbox>
-      <TouchableOpacity style={ListFormStyle.button} onPress={handleListSubmission}>
-        <Text style={ListFormStyle.buttonText}>{t("DECK.DECK_LISTS.LIST_FORM.SUBMIT")}</Text>
-      </TouchableOpacity>
+      <Button text={t("DECK.DECK_LISTS.LIST_FORM.SUBMIT")} style={ListFormStyle.button} onPress={handleListSubmission} />
     </View>
   );
 };

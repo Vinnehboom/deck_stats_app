@@ -1,17 +1,19 @@
-import { TextInput, TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { showMessage } from "react-native-flash-message";
-import { VStack, Box } from "native-base";
 import { useTranslation } from "react-i18next";
 
-import { Text } from "../../components/layout/Text";
+import { TextInput } from "../layout/forms/TextInput";
 import "react-native-get-random-values";
-import { colors } from "../../utils/colors";
+import { Colors } from "../../styles/variables";
 import { DeckCreationFormStyle } from "../../styles/decks/DeckCreationFormStyle";
 import { Deck, User, ArchetypeBase } from "../../types";
 import { ArchetypeSelect } from "../archetypes/ArchetypeSelect";
 import { useDeckCreation } from "./_queries/useDeckCreation";
+import { Button } from "../layout/Button";
+import { ElevatedContainer } from "../layout/ElevatedContainer";
+import { Header } from "../layout/Header";
 
 type DeckCreationFormPropsType = {
   user: User | null;
@@ -51,22 +53,18 @@ export const DeckCreationForm = ({ user }: DeckCreationFormPropsType) => {
   };
 
   return (
-    <VStack paddingTop={3} style={[DeckCreationFormStyle.container, { backgroundColor: colors.light }]}>
-      <Text style={DeckCreationFormStyle.formTitle}>{t("DECK.CREATION_FORM.TITLE")}</Text>
+    <ElevatedContainer paddingTop={3} style={{ backgroundColor: Colors.light }}>
+      <Header header="h2">{t("DECK.CREATION_FORM.TITLE")}</Header>
       <View style={DeckCreationFormStyle.deckForm}>
         <TextInput
           placeholder={t("DECK.CREATION_FORM.NAME")}
+          placeholderTextColor={Colors["primary-dark"]}
           value={deckName}
           onChangeText={text => setDeckName(text)}
-          style={DeckCreationFormStyle.deckformField}
         />
-        <Box width="80%">
-          <ArchetypeSelect setDeckArchetype={setDeckArchetype} selectedArchetype={deckArchetype} />
-        </Box>
-        <TouchableOpacity onPress={handleDeckCreation} style={DeckCreationFormStyle.button}>
-          <Text style={DeckCreationFormStyle.buttonText}> {t("DECK.CREATION_FORM.SUBMIT")} </Text>
-        </TouchableOpacity>
+        <ArchetypeSelect listContainerTop={95} setDeckArchetype={setDeckArchetype} selectedArchetype={deckArchetype} />
+        <Button marginY={3} onPress={handleDeckCreation} width="auto" text={t("DECK.CREATION_FORM.SUBMIT")} />
       </View>
-    </VStack>
+    </ElevatedContainer>
   );
 };

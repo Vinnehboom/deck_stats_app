@@ -1,8 +1,8 @@
-import { TextInput } from "react-native";
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
 import { Flex, Image, ScrollView, VStack, HStack } from "native-base";
 import { useDebounce } from "use-lodash-debounce";
 
+import { TextInput } from "../layout/forms/TextInput";
 import { Text } from "../../components/layout/Text";
 import { ArchetypeBase } from "../../types";
 import { transformArchetypes, transformIdentifier } from "../../helpers/archetypes";
@@ -10,6 +10,7 @@ import { Archetype } from "../../types";
 import { ArchetypeSelectStyle } from "../../styles/archetypes/ArchetypeSelectStyle";
 import { Spinner } from "../Spinner";
 import { useArchetypeQuery } from "././_queries/useArchetypeQuery";
+import { Colors } from "../../styles/variables";
 
 const ArchetypesList = ({
   archetypes,
@@ -90,12 +91,12 @@ export const ArchetypeSelect = ({
   if (!selectedArchetype)
     return (
       <>
-        <HStack maxWidth="75%">
+        <HStack marginY={-5} maxWidth="100%">
           <TextInput
             placeholder="Find archetype..."
+            placeholderTextColor={Colors["primary-dark"]}
             value={archetypeQuery}
             onChangeText={text => setArchetypeQuery(text)}
-            style={ArchetypeSelectStyle.selectField}
           />
         </HStack>
         <ArchetypesList
