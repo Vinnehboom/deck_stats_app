@@ -1,6 +1,7 @@
-import { HStack, Button, ChevronDownIcon, ChevronUpIcon } from "native-base";
+import { HStack, ChevronDownIcon, ChevronUpIcon, Box } from "native-base";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { TouchableOpacity } from "react-native";
 
 import { Text } from "../../components/layout/Text";
 import { MatchRecord } from "../../types";
@@ -18,7 +19,7 @@ export const MatchRecordListItem = ({
   const { t } = useTranslation();
   const [toggled, setToggled] = useState(false);
   return (
-    <>
+    <TouchableOpacity onPress={() => setToggled(!toggled)}>
       <HStack justifyContent="space-between" alignItems="center" style={MatchRecordListItemStyle.listItem}>
         <ArchetypeIcons archetype={matchRecord.deckArchetype} size={iconSize} />
         <Text style={MatchRecordListItemStyle.litItemText}>{matchRecord.result}</Text>
@@ -27,17 +28,17 @@ export const MatchRecordListItem = ({
         </Text>
         <ArchetypeIcons archetype={matchRecord.opponentArchetype} size={iconSize} />
         {view && (
-          <Button
-            onPress={() => setToggled(!toggled)}
-            rightIcon={toggled ? <ChevronUpIcon /> : <ChevronDownIcon />}
-            variant="link">
+          <HStack marginLeft={-2}>
             <Text>{t("MATCH_RECORD.REMARKS")}</Text>
-          </Button>
+            <Box paddingTop={1} paddingLeft={1}>
+              {toggled ? <ChevronUpIcon /> : <ChevronDownIcon />}
+            </Box>
+          </HStack>
         )}
       </HStack>
       <Text style={MatchRecordListItemStyle.remarks} display={toggled ? "flex" : "none"}>
         {matchRecord.remarks}
       </Text>
-    </>
+    </TouchableOpacity>
   );
 };
