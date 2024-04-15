@@ -22,7 +22,7 @@ export type MatchRecord = TimeStamped & {
   remarks: string;
 };
 
-export type MatchRecordDataResults = { wins: number; losses: number; ties: number; wr: number };
+export type MatchRecordDataResults = { wins: number; losses: number; ties: number; wr: number | null };
 
 export type MatchRecordDataEntry = {
   total?: number;
@@ -32,6 +32,4 @@ export type MatchRecordDataEntry = {
   matchRecords: MatchRecord[];
 };
 
-export type MatchRecordData = {
-  [a: string]: MatchRecordDataEntry;
-};
+export type MatchRecordDataCollection = Record<string, MatchRecordDataEntry>;

@@ -12,7 +12,7 @@ export const DeckMatchupsStyle = StyleSheet.create({
     padding: Spacing.xs,
   },
   highlightMatchupBlock: {
-    width: width * 0.655,
+    minWidth: width * 0.67,
   },
   highlightMatchupContainer: {
     backgroundColor: Colors.light,
@@ -20,11 +20,19 @@ export const DeckMatchupsStyle = StyleSheet.create({
     paddingBottom: 0,
     width: "90%",
   },
+  highlightMatchupText: {
+    fontSize: Typography.fontSizes.md,
+    maxWidth: "20%",
+    minWidth: "15%",
+    paddingTop: Spacing.sm,
+    textAlign: "center",
+  },
   highlightMatchupTitle: {
     fontSize: Typography.fontSizes.lg,
     fontWeight: "bold",
-    paddingHorizontal: Spacing.sm,
-    width: width * 0.2,
+    minWidth: "25%",
+
+    paddingTop: Spacing.sm,
   },
   listSelect: {
     marginBottom: Spacing.lg,
@@ -38,15 +46,16 @@ export const DeckMatchupsStyle = StyleSheet.create({
     paddingTop: Spacing.xxs,
   },
   matchupListEven: {
-    borderColor: Colors.light,
-    paddingHorizontal: Spacing.xxs,
+    borderBottomWidth: 2,
+    borderColor: Colors.white,
+    padding: Spacing.xxs,
+    width: "auto",
   },
   matchupListOdd: {
-    backgroundColor: Colors.white,
     borderBottomEndRadius: 10,
     borderBottomStartRadius: 10,
-
-    paddingHorizontal: Spacing.xxs,
+    padding: Spacing.xxs,
+    width: "auto",
   },
   matchupText: {
     alignItems: "center",
@@ -64,6 +73,6 @@ export const DeckMatchupsStyle = StyleSheet.create({
     fontWeight: "bold",
   },
   scrollViewContainer: {
-    maxHeight: height,
+    height: height,
   },
 });
