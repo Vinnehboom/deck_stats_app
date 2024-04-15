@@ -1,4 +1,4 @@
-import { MatchRecord, MatchRecordData } from "../types/MatchRecord";
+import { MatchRecord, MatchRecordData, MatchRecordDataCollection } from "../types/MatchRecord";
 
 export const matchWon = (record: MatchRecord): boolean => {
   return record.result === "W" ? true : false;
@@ -10,11 +10,11 @@ export const matchLost = (record: MatchRecord): boolean => {
 
 export const calculateWinRate = (winRateData: { wins: number; losses: number; ties: number }) => {
   const result = winRateData.wins / (winRateData.wins + winRateData.losses + winRateData.ties);
-  return isNaN(result) || result === Infinity ? 0 : result * 100;
+  return isNaN(result) || result === Infinity ? null : result * 100;
 };
 
-export const transformMatchRecordData = (records: MatchRecord[]) => {
-  const calculatedData = records?.reduce<MatchRecordData>((recordData, record: MatchRecord) => {
+export const transformMatchRecordData = (records: MatchRecord[]): MatchRecordDataCollection => {
+  const calculatedData: MatchRecordDataCollection = records?.reduce<MatchRecordData>((recordData, record: MatchRecord) => {
     const archetype = record.opponentArchetype;
     const archetypeData = recordData[archetype.identifier] || {
       first: { wins: 0, losses: 0, ties: 0, wr: 0 },

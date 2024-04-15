@@ -9,9 +9,13 @@
   },
   "LANDING_SCREEN": {
     "SIGN_OUT": "Sign out",
+    "WELCOME": "Welcome back, trainer!",
     "ACTIVE_DECK": {
       "TITLE": "Active deck",
       "DETAILS": "Details & matchups",
+      "NO_DECK": "Please add an active deck on",
+      "DECKS": "Decks",
+      "NO_DECK_2": "tab",
       "RECORD_FORM": {
         "LIST": "List",
         "OPP_ARCHETYPE": "Opponent archetype",

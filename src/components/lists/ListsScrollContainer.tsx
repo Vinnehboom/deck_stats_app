@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, ReactNode } from "react";
 import { FlatList, Animated, NativeSyntheticEvent, NativeScrollEvent } from "react-native";
 
 import { ListItem } from "./ListItem";
@@ -12,11 +12,15 @@ export const ListsScrollContainer = ({
   deck,
   activeList,
   loading,
+  header,
+  footer,
 }: {
   lists: List[];
   deck: Deck;
   activeList: List | undefined;
   loading?: boolean;
+  footer?: ReactNode;
+  header?: ReactNode;
 }) => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const sortedLists = useRef<List[]>(lists);
@@ -64,6 +68,8 @@ export const ListsScrollContainer = ({
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={ListContainerStyle.listsContainer}
         snapToAlignment="center"
+        ListHeaderComponent={header ? header : null}
+        ListFooterComponent={footer ? footer : null}
         onScroll={handleOnScroll}
         viewabilityConfig={viewabilityConfig}
         renderItem={({ item }: { item: List }) => <ListItem activeListId={activeList?.id ?? ""} deck={deck} list={item} />}

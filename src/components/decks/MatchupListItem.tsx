@@ -17,18 +17,15 @@ export const MatchupListItem = ({
   viewable: boolean;
 }) => {
   const [showPercentage, setShowPercentage] = useState(true);
-  const firstDataPresent = data.first.wins + data.first.losses !== 0;
-  const secondDataPresent = data.second.wins + data.second.losses !== 0;
   const { baseNegativeColorHue, basePositiveColorHue } = Colors;
-  const baseFirstColor = data.first.wr > 50 ? basePositiveColorHue : baseNegativeColorHue;
-  const baseSecondColor = data.second.wr > 50 ? basePositiveColorHue : baseNegativeColorHue;
-  const firstColor = firstDataPresent
+  const baseFirstColor = data.first.wr && data.first.wr > 50 ? basePositiveColorHue : baseNegativeColorHue;
+  const baseSecondColor = data.second.wr && data.second.wr > 50 ? basePositiveColorHue : baseNegativeColorHue;
+  const firstColor = data.first.wr
     ? `hsl(${baseFirstColor}, 100%, ${100 - Math.abs(100 - data.first.wr - 50)}%)`
-    : Colors.grey;
-  const secondColor = secondDataPresent
+    : Colors.lightGrey;
+  const secondColor = data.second.wr
     ? `hsl(${baseSecondColor}, 100%, ${100 - Math.abs(100 - data.second.wr - 50)}%)`
-    : Colors.grey;
-
+    : Colors.lightGrey;
   return (
     <HStack onTouchStart={() => setShowPercentage(!showPercentage)}>
       <HStack paddingRight={1} paddingY={1} display="flex" justifyContent="center" width="40%">
@@ -41,7 +38,7 @@ export const MatchupListItem = ({
         width={viewable ? "25%" : "30%"}
         paddingTop={3}>
         <Text textAlign="center">
-          {firstDataPresent
+          {data.first.wr
             ? showPercentage
               ? `${data.first.wr.toFixed(2)}%`
               : `${data.first.wins}/${data.first.losses}/${data.first.ties}`
@@ -55,7 +52,7 @@ export const MatchupListItem = ({
         borderTopRightRadius={5}
         borderBottomRightRadius={5}>
         <Text textAlign="center">
-          {secondDataPresent
+          {data.second.wr
             ? showPercentage
               ? `${data.second.wr.toFixed(2)}%`
               : `${data.second.wins}/${data.second.losses}/${data.second.ties}`
