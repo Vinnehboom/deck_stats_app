@@ -3,21 +3,26 @@ import { View, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { HStack } from "native-base";
-import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 import { Text } from "../components/layout/Text";
 import { Deck } from "../types";
 import { RootStackParamList } from "../types/RouteParams";
 import { ArchetypeIcons } from "./decks/ArchetypeIcons";
 import { DeckItemStyle } from "../styles/decks/DeckItemStyle";
+import { Colors } from "../styles/variables";
 
 type DeckListPropTypes = {
   deck: Deck;
 };
 
+const EyeIcon = () => {
+  return <FontAwesomeIcon style={DeckItemStyle.showLink} color={Colors.light} icon={faEye} />;
+};
+
 export const DeckItem = ({ deck }: DeckListPropTypes) => {
   const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
-  const { t } = useTranslation();
 
   const showPage = () => {
     push("DecklistHome", { deckId: deck.id });
@@ -25,17 +30,17 @@ export const DeckItem = ({ deck }: DeckListPropTypes) => {
 
   return (
     <View style={DeckItemStyle.container}>
-      <HStack paddingX={3} flexDirection="row" width="full" justifyContent="space-between" space={13}>
-        <HStack flexDirection="row">
-          <HStack display="flex" justifyContent="flex-end" minWidth="30%">
-            <ArchetypeIcons archetype={deck?.archetype} />
+      <TouchableOpacity onPress={showPage}>
+        <HStack paddingX={3} flexDirection="row" width="full" justifyContent="space-between" space={13}>
+          <HStack flexDirection="row">
+            <HStack display="flex" justifyContent="center" minWidth="30%">
+              <ArchetypeIcons archetype={deck?.archetype} />
+            </HStack>
+            <Text style={DeckItemStyle.deckName}>{deck.name}</Text>
           </HStack>
-          <Text style={DeckItemStyle.deckName}>{deck.name}</Text>
+          <EyeIcon />
         </HStack>
-        <TouchableOpacity onPress={showPage}>
-          <Text style={DeckItemStyle.showLink}>{t("DECK.LIST_ITEM.SHOW")}</Text>
-        </TouchableOpacity>
-      </HStack>
+      </TouchableOpacity>
     </View>
   );
 };
