@@ -11,7 +11,7 @@ import { faFolderOpen } from "@fortawesome/free-solid-svg-icons/faFolderOpen";
 import { AuthContext } from "../contexts/AuthContext";
 import { MainTabParamList, RootStackParamList } from "../types/RouteParams";
 import { Colors } from "../styles/variables";
-import { LandingScreen } from "./LandingScreen";
+import { LandingScreen } from "./Landing/LandingScreen";
 import { DecksScreen } from "./decks/DecksScreen";
 import { TabIcon } from "../components/layout/TabIcon";
 import { TabBarStyle } from "../styles/layout/TabBarStyle";
@@ -51,14 +51,14 @@ export const HomeScreen = () => {
           headerShown: false,
           tabBarStyle: TabBarStyle.bar,
           tabBarItemStyle: TabBarStyle.item,
-          tabBarInactiveTintColor: Colors["primary-dark"],
+          tabBarInactiveTintColor: Colors.white,
           tabBarLabelStyle: TabBarStyle.label,
-          tabBarActiveTintColor: Colors.white,
+          tabBarActiveTintColor: Colors["primary-dark"],
           tabBarActiveBackgroundColor: Colors.light,
           headerTitle: t("HOME_SCREEN.HEADER_TITLE"),
           headerStyle: { backgroundColor: Colors["primary-dark"] },
           headerTitleStyle: {
-            color: Colors.white,
+            color: Colors["primary-dark"],
             fontSize: Typography.fontSizes.xxxl,
             fontWeight: "bold",
           },

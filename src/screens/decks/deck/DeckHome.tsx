@@ -8,9 +8,9 @@ import { useTranslation } from "react-i18next";
 
 import { DeckListTabParamList, DeckListTabParamsType } from "../../../types/RouteParams";
 import { Colors, Typography } from "../../../styles/variables";
-import { DeckMatchups } from "./DeckMatchups";
+import { DeckMatchups } from "./matchups/DeckMatchups";
 import { DeckLists } from "./DeckLists";
-import { DeckDetails } from "./DeckDetails";
+import { DeckDetails } from "./Details/DeckDetails";
 import { Spinner } from "../../../components/Spinner";
 import { useGetDeck } from "../../../components/decks/_queries/useGetDeck";
 import { HeaderBackButton } from "../../../components/navigation/HeaderBackButton";
@@ -36,9 +36,9 @@ const DeckHome = () => {
         headerStyle: { backgroundColor: Colors.primary },
         tabBarStyle: TabBarStyle.bar,
         tabBarItemStyle: TabBarStyle.item,
-        tabBarInactiveTintColor: Colors["primary-dark"],
+        tabBarInactiveTintColor: Colors.white,
         tabBarLabelStyle: TabBarStyle.label,
-        tabBarActiveTintColor: Colors.white,
+        tabBarActiveTintColor: Colors["primary-dark"],
         tabBarActiveBackgroundColor: Colors.light,
         headerShadowVisible: true,
         headerLeftContainerStyle: { paddingStart: 15 },

@@ -3,12 +3,13 @@ import { VStack, HStack, Box, Button } from "native-base";
 import { useTranslation } from "react-i18next";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 import { Text } from "../../components/layout/Text";
 import { Colors, Typography } from "../../styles/variables";
-import { DeckMatchupsStyle } from "../../styles/decks/DeckMatchupsStyle";
 import { MatchupListItem } from "./MatchupListItem";
-import { ArchetypeBase, MatchRecord, MatchRecordDataType } from "../../types";
+import { ArchetypeBase, MatchRecord, MatchRecordDataCollection } from "../../types";
 import { RootStackParamList } from "../../types/RouteParams";
 import { MatchRecordDataEntry } from "../../types/MatchRecord";
 
@@ -18,7 +19,7 @@ export const MatchupsList = ({
   matchRecords,
 }: {
   archetypes: ArchetypeBase[];
-  data: MatchRecordDataType;
+  data: MatchRecordDataCollection;
   viewable?: boolean;
   iconSize?: string;
   matchRecords?: MatchRecord[];
@@ -26,7 +27,7 @@ export const MatchupsList = ({
   const { t } = useTranslation();
   const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
   return (
-    <Box style={DeckMatchupsStyle.matchupContainer} width="95%">
+    <Box width="95%">
       <VStack space={3}>
         <HStack marginBottom={1} paddingLeft={4} paddingRight={1}>
           <Text fontWeight="bold" fontSize={Typography.fontSizes.xl} width="40%">
@@ -63,14 +64,12 @@ export const MatchupsList = ({
             {viewable && matchRecords ? (
               <Button
                 width="16"
-                variant="outline"
+                variant="link"
                 right="6"
                 onPress={() =>
                   push("MatchupNotes", { matchupRecords: archetypeData.matchRecords, archetype: archetypeData.archetype })
                 }>
-                <Text fontWeight="bold" color={Colors["primary-dark"]}>
-                  View
-                </Text>
+                <FontAwesomeIcon color={Colors["primary-dark"]} icon={faEye} />
               </Button>
             ) : null}
           </HStack>
