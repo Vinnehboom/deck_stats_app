@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { faTable } from "@fortawesome/free-solid-svg-icons/faTable";
 import { faList } from "@fortawesome/free-solid-svg-icons/faList";
-import { useTranslation } from "react-i18next";
 
 import { DeckListTabParamList, DeckListTabParamsType } from "../../../types/RouteParams";
 import { Colors, Typography } from "../../../styles/variables";
@@ -17,13 +16,14 @@ import { HeaderBackButton } from "../../../components/navigation/HeaderBackButto
 import { DeckScreenTitle } from "../../../components/decks/DeckScreenTitle";
 import { TabBarStyle } from "../../../styles/layout/TabBarStyle";
 import { TabIcon } from "../../../components/layout/TabIcon";
+import { TranslationContext } from "../../../contexts/TranslationContext";
 const Tab = createBottomTabNavigator<DeckListTabParamList>();
 
 const DeckHome = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamsType, "Params">>();
   const { deckId } = params;
   const { queryResult: deck, isLoading } = useGetDeck(deckId);
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
 
   return isLoading ? (
     <Spinner />

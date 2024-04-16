@@ -1,6 +1,5 @@
-import React, { useReducer, SetStateAction } from "react";
+import React, { useReducer, SetStateAction, useContext } from "react";
 import { Box, Select, Radio, HStack, TextArea } from "native-base";
-import { useTranslation } from "react-i18next";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import { showMessage } from "react-native-flash-message";
@@ -18,6 +17,7 @@ import { Colors } from "../../styles/variables";
 import { useMatchRecordCreation } from "./_queries/useMatchRecordCreation";
 import { MatchRecordFormStyle } from "../../styles/matchRecords/MatchRecordFormStyle";
 import { RootStackParamList } from "../../types/RouteParams";
+import { TranslationContext } from "../../contexts/TranslationContext";
 
 interface RecordStateType extends MatchRecord {
   opponentArchetype: ArchetypeBase | undefined;
@@ -110,7 +110,7 @@ export const MatchRecordForm = ({
   if (coinFlip) initialMatchRecord.coinFlipWon = false;
   const resultOptions = bo1 ? bo1ResultOptions : allResultOptions;
 
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
   const [matchRecord, matchRecordDispatch] = useReducer(recordStateReducer, initialMatchRecord);
 

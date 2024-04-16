@@ -1,6 +1,5 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect, useContext } from "react";
 import { HStack, VStack, Box } from "native-base";
-import { useTranslation } from "react-i18next";
 
 import { Text } from "../../../../components/layout/Text";
 import { ArchetypeIcons } from "../../../../components/decks/ArchetypeIcons";
@@ -8,9 +7,10 @@ import { ElevatedContainer } from "../../../../components/layout/ElevatedContain
 import { DeckMatchupsStyle } from "../../../../styles/decks/DeckMatchupsStyle";
 import { ArchetypeBase, MatchRecordDataCollection } from "../../../../types";
 import { Spinner } from "../../../../components/Spinner";
+import { TranslationContext } from "../../../../contexts/TranslationContext";
 
 export const HighlightedMatchups = ({ data, archetypes }: { data: MatchRecordDataCollection; archetypes: ArchetypeBase[] }) => {
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   const [calculating, setCalculating] = useState(false);
   const [bestMuFirst, setBestMuFirst] = useState("");
   const [bestMuSecond, setBestMuSecond] = useState("");

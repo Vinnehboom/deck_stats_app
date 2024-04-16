@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { useTranslation } from "react-i18next";
 
 import { Text } from "../../components/layout/Text";
 import { LandingScreenStyle } from "../../styles/LandingScreenStyle";
 import { MainTabParamList } from "../../types/RouteParams";
+import { TranslationContext } from "../../contexts/TranslationContext";
 
 export const NoDeck = () => {
   const { navigate } = useNavigation<MainTabParamList>();
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
 
   return (
     <Text style={LandingScreenStyle.setActiveDeckText}>

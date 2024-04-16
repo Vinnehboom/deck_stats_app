@@ -15,11 +15,13 @@ import { RootStackParamList } from "./types/RouteParams";
 import { MatchupNotes } from "./screens/matchups/MatchupNotes";
 import { HeaderBackButton } from "./components/navigation/HeaderBackButton";
 import "./utils/i18n";
+import { TranslationContext } from "./contexts/TranslationContext";
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const queryClient = new QueryClient();
 
 export function App(): JSX.Element {
   const { t } = useTranslation();
+  const TranslationContextValue = { t };
   const theme = extendTheme({
     colors: {
       primary: {
@@ -36,29 +38,31 @@ export function App(): JSX.Element {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <NativeBaseProvider theme={theme}>
-        <NavigationContainer>
-          <Stack.Navigator screenOptions={{ contentStyle: { backgroundColor: Colors.white } }}>
-            <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
-            <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
-            <Stack.Screen name="DecklistHome" options={{ animation: "fade", headerShown: false }} component={DeckHome} />
-            <Stack.Screen
-              name="MatchupNotes"
-              options={{
-                animation: "fade",
-                headerLeft: HeaderBackButton,
-                headerShown: true,
-                headerTitle: t("MATCHUP_NOTES.SCREEN_TITLE"),
-                headerTitleStyle: { color: Colors.white, fontSize: Typography.fontSizes.lg, fontWeight: "bold" },
-                headerStyle: { backgroundColor: Colors.primary },
-                headerShadowVisible: true,
-              }}
-              component={MatchupNotes}
-            />
-          </Stack.Navigator>
-          <FlashMessage position="top" />
-        </NavigationContainer>
-      </NativeBaseProvider>
+      <TranslationContext.Provider value={TranslationContextValue}>
+        <NativeBaseProvider theme={theme}>
+          <NavigationContainer>
+            <Stack.Navigator screenOptions={{ contentStyle: { backgroundColor: Colors.white } }}>
+              <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
+              <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
+              <Stack.Screen name="DecklistHome" options={{ animation: "fade", headerShown: false }} component={DeckHome} />
+              <Stack.Screen
+                name="MatchupNotes"
+                options={{
+                  animation: "fade",
+                  headerLeft: HeaderBackButton,
+                  headerShown: true,
+                  headerTitle: t("MATCHUP_NOTES.SCREEN_TITLE"),
+                  headerTitleStyle: { color: Colors.white, fontSize: Typography.fontSizes.lg, fontWeight: "bold" },
+                  headerStyle: { backgroundColor: Colors.primary },
+                  headerShadowVisible: true,
+                }}
+                component={MatchupNotes}
+              />
+            </Stack.Navigator>
+            <FlashMessage position="top" />
+          </NavigationContainer>
+        </NativeBaseProvider>
+      </TranslationContext.Provider>
     </QueryClientProvider>
   );
 }

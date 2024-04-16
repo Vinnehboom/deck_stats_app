@@ -1,7 +1,6 @@
 import { View } from "react-native";
-import React, { useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 import { showMessage } from "react-native-flash-message";
-import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
 import { TextArea, Checkbox, Box, HStack, Link } from "native-base";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
@@ -16,6 +15,7 @@ import { useListCreation } from "./_queries/useListCreation";
 import { Deck, List } from "../../types";
 import { transformList } from "../../helpers/decklists";
 import { Header } from "../layout/Header";
+import { TranslationContext } from "../../contexts/TranslationContext";
 
 type newListStateType = { listString: string; listName: string; activate: "0" | "1" };
 const listStringReducer = (
@@ -40,7 +40,7 @@ const listStringReducer = (
 
 export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] }) => {
   const [newListObject, newListObjectDispatch] = useReducer(listStringReducer, { listString: "", listName: "", activate: "0" });
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
 
   const listCreationMutation = useListCreation(deck, (activated?: boolean) => {
     const flashMessage = activated
