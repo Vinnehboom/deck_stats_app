@@ -1,6 +1,5 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect, useContext } from "react";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import { useTranslation } from "react-i18next";
 import { FlatList, SafeAreaView } from "react-native";
 import { Box } from "native-base";
 
@@ -15,11 +14,12 @@ import { MatchupsList } from "../../../../components/decks/MatchupsList";
 import { useGetDeckLists } from "../../../../components/lists/_queries/useGetDeckLists";
 import { Header } from "../../../../components/layout/Header";
 import { MatchupsHeader } from "./MatchupsHeader";
+import { TranslationContext } from "../../../../contexts/TranslationContext";
 
 export const DeckMatchups = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamList, "DeckLists">>();
   const { deck } = params;
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   const { queryResult: records, isFetching, isLoading } = useGetDeckMatchRecords(deck);
   const { queryResult: lists, isFetching: listsFetching, isLoading: listsLoading } = useGetDeckLists(deck);
   const [data, setData] = useState<MatchRecordDataCollection>({});

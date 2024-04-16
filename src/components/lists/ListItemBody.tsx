@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { HStack, View, Box, Button, Center } from "native-base";
-import { useTranslation } from "react-i18next";
 
 import { Text } from "../../components/layout/Text";
 import { CardListImage } from "./cardLists/CardListImage";
 import { List, CardList, CardListItem } from "../../types";
 import { ListItemStyle } from "../../styles/lists/ListItemStyle";
+import { TranslationContext } from "../../contexts/TranslationContext";
 
 export const ListItemBody = ({ list }: { list: List }) => {
   const cards = list?.cards;
   const [display, setDisplay] = useState<"list" | "image">("list");
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
 
   const renderImages = ({ cardList, columnLength }: { cardList: CardList; columnLength: number }) => {
     let column: CardListItem[] = [];

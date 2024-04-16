@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, HStack } from "native-base";
-import { useTranslation } from "react-i18next";
 import { showMessage } from "react-native-flash-message";
 import { Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -12,9 +11,10 @@ import { MainTabParamList } from "../../../../types/RouteParams";
 import { ActiveDeck, Deck, User } from "../../../../types";
 import { useDeckDeletion } from "../../../../components/lists/_queries/useDeckDeletion";
 import { useSetActiveDeck } from "../../../../components/decks/_queries/useSetActiveDeck";
+import { TranslationContext } from "../../../../contexts/TranslationContext";
 
 export const DetailsHeader = ({ deck, activeDeck, user }: { deck: Deck; activeDeck: ActiveDeck; user: User }) => {
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   const { navigate } = useNavigation<MainTabParamList>();
 
   const deletionMutation = useDeckDeletion(deck, () => {

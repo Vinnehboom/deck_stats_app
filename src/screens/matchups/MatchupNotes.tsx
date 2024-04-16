@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useRoute, RouteProp } from "@react-navigation/native";
 import { Text, View, HStack, Box } from "native-base";
-import { useTranslation } from "react-i18next";
 import { FlatList } from "react-native";
 
 import { MatchupNotesStyle } from "../../styles/matchups/MatchupNotesStyle";
@@ -10,11 +9,12 @@ import { ArchetypeIcons } from "../../components/decks/ArchetypeIcons";
 import { Colors } from "../../styles/variables";
 import { Typography } from "../../styles/variables/typography";
 import { MatchRecord } from "../../types";
+import { TranslationContext } from "../../contexts/TranslationContext";
 export const MatchupNotes = () => {
   const { params } = useRoute<RouteProp<RootStackParamList, "MatchupNotes">>();
   const { matchupRecords, archetype: opponentArchetype } = params;
   const archetype = matchupRecords[0].deckArchetype;
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   return (
     <View style={MatchupNotesStyle.container}>
       <FlatList

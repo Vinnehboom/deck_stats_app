@@ -1,11 +1,11 @@
-import { useTranslation } from "react-i18next";
-import React from "react";
+import React, { useContext } from "react";
 import { Box } from "native-base";
 
 import { Header } from "../../../../components/layout/Header";
 import { ArchetypeBase, List, MatchRecordDataCollection } from "../../../../types";
 import { HighlightedMatchups } from "./HighlightedMatchups";
 import { ListSelect } from "./ListSelect";
+import { TranslationContext } from "../../../../contexts/TranslationContext";
 export const MatchupsHeader = ({
   data,
   archetypes,
@@ -19,7 +19,7 @@ export const MatchupsHeader = ({
   selectedList: string;
   setSelectedList: (l: string) => void;
 }) => {
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
 
   return (
     <Box paddingTop={5}>

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { MinusIcon, AddIcon, Box } from "native-base";
-import { useTranslation } from "react-i18next";
 
 import { Button } from "../../../../components/layout/Button";
 import { Colors } from "../../../../styles/variables";
@@ -8,8 +7,9 @@ import { ElevatedContainer } from "../../../../components/layout/ElevatedContain
 import { Header } from "../../../../components/layout/Header";
 import { MatchRecordForm } from "../../../../components/matchRecords/MatchRecordForm";
 import { Deck, List } from "../../../../types";
+import { TranslationContext } from "../../../../contexts/TranslationContext";
 export const DetailsFooter = ({ deck, lists }: { deck: Deck; lists: List[] }) => {
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   const [showForm, setshowForm] = useState(false);
 
   return (

@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 import { TextInput, View } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { showMessage } from "react-native-flash-message";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { useTranslation } from "react-i18next";
 import { Text, Box, Button, Link } from "native-base";
 import { StrokeText } from "@charmy.tech/react-native-stroke-text";
 import { GoogleSignin, GoogleSigninButton } from "@react-native-google-signin/google-signin";
@@ -16,6 +15,7 @@ import { RootStackParamList } from "../types/RouteParams";
 import { LoginScreenContainer } from "../components/layout/LoginScreenContainer";
 import { LoginScreenStyle } from "../styles/login/LoginScreenStyle";
 import { TermsAndConditions } from "../components/layout/TermsAndConditions";
+import { TranslationContext } from "../contexts/TranslationContext";
 
 GoogleSignin.configure({
   webClientId: ANDROID_OAUTH_CLIENT_ID,
@@ -53,7 +53,7 @@ export const LoginScreen = () => {
 
   const [login, setLogin] = useState(true);
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
 
   useEffect(() => {
     const unsubscribe = authInstance.onAuthStateChanged(user => {

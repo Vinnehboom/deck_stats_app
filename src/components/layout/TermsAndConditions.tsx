@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Center, Button, Modal, Image, Text, ScrollView } from "native-base";
-import { useTranslation } from "react-i18next";
 
 import { TandCStyle } from "../../styles/TandCStyle";
+import { TranslationContext } from "../../contexts/TranslationContext";
 
 export const TermsAndConditions = () => {
   const [showModal, setShowModal] = useState(false);
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
 
   return (
     <Center>

@@ -1,13 +1,13 @@
 import { Button, HStack, ArrowBackIcon } from "native-base";
-import { useTranslation } from "react-i18next";
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import { Text } from "../../components/layout/Text";
 import { Colors } from "../../styles/variables";
+import { TranslationContext } from "../../contexts/TranslationContext";
 
 export const HeaderBackButton = () => {
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   const { pop } = useNavigation();
   return (
     <HStack justifyContent="start">

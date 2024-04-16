@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FlatList } from "react-native";
-import { useTranslation } from "react-i18next";
 import { Box } from "native-base";
 import auth from "@react-native-firebase/auth";
 import { KeyboardAvoidingView } from "react-native";
@@ -16,11 +15,12 @@ import { LandingFooter } from "./LandingFooter";
 import { LandingHeader } from "./LandingHeader";
 import { NoDeck } from "./NoDeck";
 import { Spinner } from "../../components/Spinner";
+import { TranslationContext } from "../../contexts/TranslationContext";
 
 export const LandingScreen = () => {
   const { signOut } = useAuthContext();
   const user = auth().currentUser;
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
 
   const { queryResult: activeDeck } = useGetActiveDeck(user!);
   const deck = activeDeck?.deck as Deck;

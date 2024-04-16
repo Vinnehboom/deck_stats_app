@@ -1,11 +1,11 @@
-import { useTranslation } from "react-i18next";
-import React from "react";
+import React, { useContext } from "react";
 
 import { Header } from "../../components/layout/Header";
 import { DeckCreationForm } from "../../components/decks/DeckCreationForm";
 import { User } from "../../types";
+import { TranslationContext } from "../../contexts/TranslationContext";
 export const DecksHeader = ({ user }: { user: User }) => {
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
 
   return (
     <>

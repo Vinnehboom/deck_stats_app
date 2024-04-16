@@ -1,9 +1,9 @@
 import { VStack, HStack, Link } from "native-base";
-import React from "react";
-import { useTranslation } from "react-i18next";
+import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
+import { TranslationContext } from "../../contexts/TranslationContext";
 import { Text } from "../../components/layout/Text";
 import { MatchRecordForm } from "../matchRecords/MatchRecordForm";
 import { LandingScreenStyle } from "../../styles/LandingScreenStyle";
@@ -18,7 +18,7 @@ import { ElevatedContainer } from "../layout/ElevatedContainer";
 
 export const ActiveDeck = ({ deck }: { deck: Deck }) => {
   const { queryResult: lists, isFetching: listsFetching } = useGetDeckLists(deck!);
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   const { queryResult: activeList, isFetching: activeListFetching } = useGetActiveList(deck);
   const { navigate } = useNavigation<StackNavigationProp<RootStackParamList>>();
 
