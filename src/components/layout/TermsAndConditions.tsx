@@ -31,6 +31,15 @@ export const TermsAndConditions = () => {
           <Modal.Body>
             <ScrollView>
               <Text fontWeight="bold" marginY={4}>
+                COPYRIGHT & IP
+              </Text>
+              <Text textAlign="justify" marginY={2}>
+                The literal and graphical information presented in this app about the Pokémon Trading Card Game, including card
+                images and text, is copyright The Pokémon Company (Pokémon), Nintendo, Game Freak and/or Creatures. VS Log is not
+                produced by, endorsed by, supported by, or affiliated with Pokémon, Nintendo, Game Freak or Creatures. No
+                copyright infringement intended.
+              </Text>
+              <Text fontWeight="bold" marginY={4}>
                 PRIVACY
               </Text>
               <Text textAlign="justify" marginY={2}>
