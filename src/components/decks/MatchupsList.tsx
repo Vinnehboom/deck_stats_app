@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
 import { VStack, HStack, Box, Button } from "native-base";
-import { useTranslation } from "react-i18next";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
@@ -12,6 +11,7 @@ import { MatchupListItem } from "./MatchupListItem";
 import { ArchetypeBase, MatchRecord, MatchRecordDataCollection } from "../../types";
 import { RootStackParamList } from "../../types/RouteParams";
 import { MatchRecordDataEntry } from "../../types/MatchRecord";
+import { TranslationContext } from "../../contexts/TranslationContext";
 
 export const MatchupsList = ({
   data,
@@ -24,7 +24,7 @@ export const MatchupsList = ({
   iconSize?: string;
   matchRecords?: MatchRecord[];
 }) => {
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
   return (
     <Box width="95%">

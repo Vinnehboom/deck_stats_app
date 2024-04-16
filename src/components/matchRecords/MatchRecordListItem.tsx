@@ -1,12 +1,12 @@
 import { HStack, ChevronDownIcon, ChevronUpIcon, Box } from "native-base";
-import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import React, { useContext, useState } from "react";
 import { TouchableOpacity } from "react-native";
 
 import { Text } from "../../components/layout/Text";
 import { MatchRecord } from "../../types";
 import { ArchetypeIcons } from "../decks/ArchetypeIcons";
 import { MatchRecordListItemStyle } from "../../styles/matchRecords/MatchRecordListItemStyle";
+import { TranslationContext } from "../../contexts/TranslationContext";
 export const MatchRecordListItem = ({
   matchRecord,
   iconSize,
@@ -16,7 +16,7 @@ export const MatchRecordListItem = ({
   iconSize?: string;
   view?: boolean;
 }) => {
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   const [toggled, setToggled] = useState(false);
   return (
     <TouchableOpacity onPress={() => setToggled(!toggled)}>

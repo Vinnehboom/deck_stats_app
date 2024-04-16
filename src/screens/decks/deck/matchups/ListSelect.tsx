@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { HStack, Select } from "native-base";
-import { useTranslation } from "react-i18next";
 
 import { Text } from "../../../../components/layout/Text";
 import { DeckMatchupsStyle } from "../../../../styles/decks/DeckMatchupsStyle";
 import { Typography, Colors } from "../../../../styles/variables";
 import { List } from "../../../../types";
+import { TranslationContext } from "../../../../contexts/TranslationContext";
 export const ListSelect = ({
   lists,
   selectedList,
@@ -15,7 +15,7 @@ export const ListSelect = ({
   selectedList: string;
   setSelectedList: (l: string) => void;
 }) => {
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   return (
     <HStack style={DeckMatchupsStyle.listSelect}>
       <Text style={DeckMatchupsStyle.listSelectTitle}>{t("DECK.DECK_MATCHUPS.LIST")}</Text>

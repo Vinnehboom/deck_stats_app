@@ -1,8 +1,7 @@
 import { View } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { showMessage } from "react-native-flash-message";
-import { useTranslation } from "react-i18next";
 
 import { TextInput } from "../layout/forms/TextInput";
 import "react-native-get-random-values";
@@ -14,6 +13,7 @@ import { useDeckCreation } from "./_queries/useDeckCreation";
 import { Button } from "../layout/Button";
 import { ElevatedContainer } from "../layout/ElevatedContainer";
 import { Header } from "../layout/Header";
+import { TranslationContext } from "../../contexts/TranslationContext";
 
 type DeckCreationFormPropsType = {
   user: User | null;
@@ -21,7 +21,7 @@ type DeckCreationFormPropsType = {
 
 export const DeckCreationForm = ({ user }: DeckCreationFormPropsType) => {
   const [deckName, setDeckName] = useState<string>("");
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
 
   const deckCreationMutation = useDeckCreation(() => {
     showMessage({

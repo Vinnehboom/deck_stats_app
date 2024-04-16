@@ -1,10 +1,10 @@
-import { useTranslation } from "react-i18next";
-import React from "react";
+import React, { useContext } from "react";
 
 import { Button } from "../../components/layout/Button";
 import { Colors } from "../../styles/variables";
+import { TranslationContext } from "../../contexts/TranslationContext";
 export const LandingFooter = ({ signOut }: { signOut: () => void }) => {
-  const { t } = useTranslation();
+  const { t } = useContext(TranslationContext);
   return (
     <Button
       marginY={5}
