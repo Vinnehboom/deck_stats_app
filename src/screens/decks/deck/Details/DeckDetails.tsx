@@ -6,11 +6,9 @@ import auth from "@react-native-firebase/auth";
 
 import { DeckListTabParamList } from "../../../../types/RouteParams";
 import { useGetActiveDeck } from "../../../../components/decks/_queries/useGetActiveDeck";
-import { useGetDeckLists } from "../../../../components/lists/_queries/useGetDeckLists";
 import { DeckMatchHistory } from "../../../../components/decks/DeckMatchHistory";
 import { Header } from "../../../../components/layout/Header";
 import { DetailsHeader } from "./DetailsHeader";
-import { DetailsFooter } from "./DetailsFooter";
 import { Spinner } from "../../../../components/Spinner";
 import { TranslationContext } from "../../../../contexts/TranslationContext";
 import { DeckDetailsStyle } from "../../../../styles/decks/DeckDetailsStyle";
@@ -20,7 +18,6 @@ export const DeckDetails = () => {
   const { queryResult: activeDeck } = useGetActiveDeck(user!);
   const { params } = useRoute<RouteProp<DeckListTabParamList, "DeckDetails">>();
   const { deck } = params;
-  const { queryResult: lists } = useGetDeckLists(deck);
 
   const { t } = useContext(TranslationContext);
 
@@ -39,7 +36,6 @@ export const DeckDetails = () => {
         </Box>
       )}
       ListHeaderComponent={DetailsHeader({ activeDeck, deck, user: user! })}
-      ListFooterComponent={DetailsFooter({ deck, lists })}
     />
   ) : (
     <Spinner />

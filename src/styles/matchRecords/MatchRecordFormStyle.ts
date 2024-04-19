@@ -6,10 +6,19 @@ export const MatchRecordFormStyle = StyleSheet.create({
   container: {
     marginHorizontal: Spacing.md,
     paddingHorizontal: Spacing.sm,
+    paddingTop: Spacing.md,
     position: "relative",
     top: "-3%",
     width: "96%",
     zIndex: -1,
+  },
+  deckLink: {
+    color: Colors["primary-dark"],
+    fontSize: Typography.fontSizes.md,
+    fontWeight: "500",
+    marginBottom: "-" + Spacing.sm,
+    marginVertical: Spacing.sm,
+    textDecorationLine: "underline",
   },
   input: {
     backgroundColor: Colors.white,

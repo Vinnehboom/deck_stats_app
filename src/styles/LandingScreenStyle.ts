@@ -10,13 +10,7 @@ export const LandingScreenStyle = StyleSheet.create({
     justifyContent: "center",
     marginTop: Spacing.sm,
   },
-  activeDeckLink: {
-    color: Colors["primary-dark"],
-    fontSize: Typography.fontSizes.md,
-    fontWeight: "500",
-    marginVertical: Spacing.sm,
-    textDecorationLine: "underline",
-  },
+
   activeDeckName: {
     fontSize: Typography.fontSizes.lg,
     marginEnd: Spacing.lg,
@@ -27,6 +21,10 @@ export const LandingScreenStyle = StyleSheet.create({
     maxHeight: screenHeight,
     minWidth: "100%",
     paddingVertical: Spacing.xs,
+  },
+  formContainer: {
+    marginHorizontal: Spacing.lg,
+    marginTop: Spacing.sm,
   },
   logo: {
     alignSelf: "center",
