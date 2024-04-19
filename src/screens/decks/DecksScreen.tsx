@@ -11,7 +11,7 @@ import { Deck } from "../../types";
 import { DecksHeader } from "./DecksHeader";
 
 export const DecksScreen = () => {
-  const user = auth().currentUser;
+  const user = auth().currentUser!;
   const { queryResult: decks } = useGetDecks(user!);
 
   const renderItem = ({ item }: { item: Deck }) => <DeckItem deck={item} />;
@@ -21,7 +21,7 @@ export const DecksScreen = () => {
       <FlatList
         data={decks}
         ListEmptyComponent={<Spinner />}
-        ListHeaderComponent={DecksHeader}
+        ListHeaderComponent={DecksHeader({ user })}
         renderItem={renderItem}
         ListFooterComponent={<Box minH="100%" />}
         style={DecklistScreenStyle.decksList}

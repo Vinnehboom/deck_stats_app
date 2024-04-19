@@ -62,7 +62,7 @@ export const DeckCreationForm = ({ user }: DeckCreationFormPropsType) => {
           value={deckName}
           onChangeText={text => setDeckName(text)}
         />
-        <ArchetypeSelect listContainerTop={95} setDeckArchetype={setDeckArchetype} selectedArchetype={deckArchetype} />
+        <ArchetypeSelect listContainerTop={110} setDeckArchetype={setDeckArchetype} selectedArchetype={deckArchetype} />
         <Button marginY={3} onPress={handleDeckCreation} width="auto" text={t("DECK.CREATION_FORM.SUBMIT")} />
       </View>
     </ElevatedContainer>
