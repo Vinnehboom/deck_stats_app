@@ -22,11 +22,12 @@ export const LandingScreen = () => {
   const user = auth().currentUser;
   const { t } = useContext(TranslationContext);
 
-  const { queryResult: activeDeck } = useGetActiveDeck(user!);
+  const { queryResult: activeDeck, isLoading } = useGetActiveDeck(user!);
   const deck = activeDeck?.deck as Deck;
+  const data = deck !== undefined ? [deck] : [];
 
-  const renderItem = () =>
-    deck ? (
+  const renderItem = () => {
+    return (
       <KeyboardAvoidingView behavior="position" enabled={true}>
         <ActiveDeck deck={deck} />
         <Box style={LandingScreenStyle.recentRecordsContainer}>
@@ -34,13 +35,13 @@ export const LandingScreen = () => {
           <DeckMatchHistory deck={deck} limit={3} />
         </Box>
       </KeyboardAvoidingView>
-    ) : (
-      <Spinner />
     );
+  };
 
+  if (isLoading) return <Spinner />;
   return (
     <FlatList
-      data={[deck]}
+      data={data}
       ListEmptyComponent={NoDeck}
       style={LandingScreenStyle.container}
       renderItem={renderItem}

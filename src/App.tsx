@@ -16,6 +16,7 @@ import { MatchupNotes } from "./screens/matchups/MatchupNotes";
 import { HeaderBackButton } from "./components/navigation/HeaderBackButton";
 import "./utils/i18n";
 import { TranslationContext } from "./contexts/TranslationContext";
+import { MatchExport } from "./screens/exports/MatchExport";
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const queryClient = new QueryClient();
 
@@ -57,6 +58,19 @@ export function App(): JSX.Element {
                   headerShadowVisible: true,
                 }}
                 component={MatchupNotes}
+              />
+              <Stack.Screen
+                name="MatchExport"
+                options={{
+                  animation: "fade",
+                  headerLeft: HeaderBackButton,
+                  headerShown: true,
+                  headerTitle: t("MATCH_EXPORT.SCREEN_TITLE"),
+                  headerTitleStyle: { color: Colors.white, fontSize: Typography.fontSizes.lg, fontWeight: "bold" },
+                  headerStyle: { backgroundColor: Colors.primary },
+                  headerShadowVisible: true,
+                }}
+                component={MatchExport}
               />
             </Stack.Navigator>
             <FlashMessage position="top" />

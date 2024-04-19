@@ -33,7 +33,7 @@ export const DeckDetails = () => {
           <Header header="h2">{t("DECK.DECK_DETAILS.RECENT_RESULTS")}</Header>
           <Box style={DeckDetailsStyle.historyContainerWrapper}>
             <Box style={DeckDetailsStyle.historyContainer}>
-              <DeckMatchHistory paginated={true} deck={deck} limit={5} />
+              <DeckMatchHistory exportable={true} paginated={true} deck={deck} limit={5} />
             </Box>
           </Box>
         </Box>
