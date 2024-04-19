@@ -1,9 +1,9 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import firestore from "@react-native-firebase/firestore";
 
-import { Deck, MatchRecord } from "../../../types";
+import { MatchRecord } from "../../../types";
 
-export const useMatchRecordCreation = (deck: Deck, onSuccessCallback: () => void) => {
+export const useMatchRecordCreation = (onSuccessCallback: () => void) => {
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -14,7 +14,7 @@ export const useMatchRecordCreation = (deck: Deck, onSuccessCallback: () => void
         .set({ ...matchRecord, list: matchRecord.list || null, createdAt: firestore.FieldValue.serverTimestamp() });
     },
     onSuccess: async () => {
-      queryClient.invalidateQueries({ queryKey: ["MatchRecords", { deck: deck.id }] });
+      queryClient.invalidateQueries({ queryKey: ["MatchRecords"] });
       onSuccessCallback();
     },
   });

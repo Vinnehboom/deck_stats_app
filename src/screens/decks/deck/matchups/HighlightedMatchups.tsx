@@ -36,20 +36,20 @@ export const HighlightedMatchups = ({ data, archetypes }: { data: MatchRecordDat
   if (calculating) return <Spinner />;
   return (
     <ElevatedContainer style={DeckMatchupsStyle.highlightMatchupContainer}>
-      <HStack maxWidth="100">
+      <HStack>
         <Text style={DeckMatchupsStyle.highlightMatchupTitle}>{t("DECK.DECK_MATCHUPS.BEST_MATCHUPS")}</Text>
         <Box>
           <VStack style={DeckMatchupsStyle.highlightMatchupBlock}>
             <HStack style={DeckMatchupsStyle.matchupListEven} space={1}>
               <Text style={DeckMatchupsStyle.highlightMatchupText}>{t("DECK.DECK_MATCHUPS.FIRST")}</Text>
-              <Text style={DeckMatchupsStyle.highlightMatchupText}>{data[bestMuFirst]?.first.wr} %</Text>
+              <Text style={DeckMatchupsStyle.highlightMatchupPercentage}>{data[bestMuFirst]?.first?.wr?.toFixed(2)} %</Text>
               <HStack display="flex" marginLeft={2} justifyContent="flex-end" minWidth="20%">
                 <ArchetypeIcons archetype={archetypes.find(type => type.identifier === bestMuFirst)!} />
               </HStack>
             </HStack>
             <HStack style={DeckMatchupsStyle.matchupListOdd} space={1}>
               <Text style={DeckMatchupsStyle.highlightMatchupText}>{t("DECK.DECK_MATCHUPS.SECOND")}</Text>
-              <Text style={DeckMatchupsStyle.highlightMatchupText}>{data[bestMuSecond]?.second.wr} %</Text>
+              <Text style={DeckMatchupsStyle.highlightMatchupPercentage}>{data[bestMuSecond]?.second.wr.toFixed(2)} %</Text>
               <HStack display="flex" marginLeft={2} justifyContent="flex-end" minWidth="20%">
                 <ArchetypeIcons archetype={archetypes.find(type => type.identifier === bestMuSecond)!} />
               </HStack>
@@ -59,19 +59,19 @@ export const HighlightedMatchups = ({ data, archetypes }: { data: MatchRecordDat
       </HStack>
 
       <HStack marginTop={2} maxWidth="100%">
-        <Text style={DeckMatchupsStyle.highlightMatchupTitle}> {t("DECK.DECK_MATCHUPS.WORST_MATCHUPS")}</Text>
+        <Text style={DeckMatchupsStyle.highlightMatchupTitle}>{t("DECK.DECK_MATCHUPS.WORST_MATCHUPS")}</Text>
         <Box>
           <VStack style={DeckMatchupsStyle.highlightMatchupBlock} space={1}>
             <HStack style={DeckMatchupsStyle.matchupListEven}>
               <Text style={DeckMatchupsStyle.highlightMatchupText}>{t("DECK.DECK_MATCHUPS.FIRST")}</Text>
-              <Text style={DeckMatchupsStyle.highlightMatchupText}>{data[worstMuFirst]?.first.wr} %</Text>
+              <Text style={DeckMatchupsStyle.highlightMatchupPercentage}>{data[worstMuFirst]?.first.wr.toFixed(2)} %</Text>
               <HStack display="flex" marginLeft={2} justifyContent="flex-end" minWidth="20%">
                 <ArchetypeIcons archetype={archetypes.find(type => type.identifier === worstMuFirst)!} />
               </HStack>
             </HStack>
             <HStack style={DeckMatchupsStyle.matchupListOdd}>
               <Text style={DeckMatchupsStyle.highlightMatchupText}>{t("DECK.DECK_MATCHUPS.SECOND")}</Text>
-              <Text style={DeckMatchupsStyle.highlightMatchupText}>{data[worstMuSecond]?.second.wr} %</Text>
+              <Text style={DeckMatchupsStyle.highlightMatchupPercentage}>{data[worstMuSecond]?.second.wr.toFixed(2)} %</Text>
               <HStack display="flex" marginLeft={2} justifyContent="flex-end" minWidth="20%">
                 <ArchetypeIcons archetype={archetypes.find(type => type.identifier === worstMuSecond)!} />
               </HStack>

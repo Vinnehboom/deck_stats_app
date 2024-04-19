@@ -1,5 +1,5 @@
-import React, { useReducer, SetStateAction, useContext } from "react";
-import { Box, Select, Radio, HStack, TextArea } from "native-base";
+import React, { useReducer, SetStateAction, useContext, useEffect } from "react";
+import { Box, Select, Radio, HStack, TextArea, Link } from "native-base";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import { showMessage } from "react-native-flash-message";
@@ -10,7 +10,7 @@ import { Text } from "../../components/layout/Text";
 import { InputLabel } from "../layout/forms/InputLabel";
 import { Button } from "../layout/Button";
 import { ArchetypeSelect } from "../archetypes/ArchetypeSelect";
-import { ArchetypeBase, Archetype, Deck, List } from "../../types";
+import { ArchetypeBase, Archetype, Deck } from "../../types";
 import { MatchRecord, bo1ResultOptions, allResultOptions } from "../../types/MatchRecord";
 import { isArchetype, isResult } from "../../helpers/typeGuards";
 import { Colors } from "../../styles/variables";
@@ -18,13 +18,19 @@ import { useMatchRecordCreation } from "./_queries/useMatchRecordCreation";
 import { MatchRecordFormStyle } from "../../styles/matchRecords/MatchRecordFormStyle";
 import { RootStackParamList } from "../../types/RouteParams";
 import { TranslationContext } from "../../contexts/TranslationContext";
+import { useGetDeckLists } from "../lists/_queries/useGetDeckLists";
+import { useGetActiveList } from "../lists/_queries/useGetActiveList";
+import { Spinner } from "../Spinner";
+import { ArchetypeIcons } from "../decks/ArchetypeIcons";
 
 interface RecordStateType extends MatchRecord {
   opponentArchetype: ArchetypeBase | undefined;
+  deckArchetype: ArchetypeBase | undefined;
 }
 type RecordActionType = {
   type:
     | "UPDATE_DECK_ID"
+    | "UPDATE_DECK_ARCHETYPE"
     | "CLEAR"
     | "UPDATE_LIST_ID"
     | "UPDATE_COIN_FLIP"
@@ -32,13 +38,16 @@ type RecordActionType = {
     | "UPDATE_STARTED"
     | "UPDATE_OPPONENT_ARCHETYPE"
     | "UPDATE_REMARK";
-  payload?: unknown | ListPayloadtype;
+  payload?: unknown;
 };
 
 const recordStateReducer = (state: RecordStateType, action: RecordActionType): RecordStateType => {
   switch (action.type) {
     case "UPDATE_DECK_ID": {
       return typeof action.payload === "string" ? { ...state, deckId: action.payload } : { ...state };
+    }
+    case "UPDATE_DECK_ARCHETYPE": {
+      return isArchetype(action.payload) ? { ...state, deckArchetype: action.payload } : { ...state };
     }
     case "UPDATE_LIST_ID": {
       return typeof action.payload === "string" ? { ...state, listId: action.payload } : { ...state };
@@ -82,40 +91,50 @@ const recordStateReducer = (state: RecordStateType, action: RecordActionType): R
 };
 
 export const MatchRecordForm = ({
-  deck,
-  lists,
-  activeList,
+  decks,
+  activeDeck,
   coinFlip,
   started,
   bo1,
 }: {
-  deck: Deck;
-  lists: List[];
-  activeList?: List;
+  decks: Deck[];
+  activeDeck: Deck | undefined;
   coinFlip?: boolean;
   started?: boolean;
   bo1?: boolean;
 }) => {
   const initialMatchRecord: RecordStateType = {
     id: "",
-    deckId: deck.id,
-    deckArchetype: deck.archetype,
-    listId: activeList?.id || "",
-    list: activeList,
+    deckId: activeDeck?.id || "",
+    deckArchetype: activeDeck?.archetype,
+    listId: activeList?.list.id || "no-list",
+    list: activeList?.list,
     result: "",
     opponentArchetype: undefined,
     remarks: "",
   };
+  const [matchRecord, matchRecordDispatch] = useReducer(recordStateReducer, initialMatchRecord);
+  const selectedDeck = decks.find(deck => deck.id === matchRecord.deckId)!;
+
+  const { queryResult: lists, isFetching: listsFetching } = useGetDeckLists(selectedDeck);
+  const { queryResult: activeList, isFetching: activeListFetching } = useGetActiveList(selectedDeck);
+
+  useEffect(() => {
+    matchRecordDispatch({ type: "UPDATE_LIST_ID", payload: activeList?.list?.id || "no-list" });
+    matchRecordDispatch({ type: "UPDATE_DECK_ARCHETYPE", payload: selectedDeck.archetype });
+  }, [activeList, selectedDeck]);
+
   if (started) initialMatchRecord.started = true;
   if (coinFlip) initialMatchRecord.coinFlipWon = false;
   const resultOptions = bo1 ? bo1ResultOptions : allResultOptions;
 
   const { t } = useContext(TranslationContext);
-  const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
-  const [matchRecord, matchRecordDispatch] = useReducer(recordStateReducer, initialMatchRecord);
+  const { navigate } = useNavigation<StackNavigationProp<RootStackParamList>>();
 
-  const matchRecordCreationMutation = useMatchRecordCreation(deck, () => {
-    showMessage({ message: t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.SUCCESS"), type: "info" });
+  const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
+
+  const matchRecordCreationMutation = useMatchRecordCreation(() => {
+    showMessage({ message: t("MATCH_RECORD.FORM.SUCCESS"), type: "info" });
   });
 
   const handleRecordSubmission = () => {
@@ -130,20 +149,44 @@ export const MatchRecordForm = ({
       matchRecordCreationMutation.mutate({ ...record, list: list });
       matchRecordDispatch({ type: "CLEAR", payload: { started, coinFlip } });
     } else {
-      showMessage({ message: t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.FAILED"), type: "warning" });
+      showMessage({ message: t("MATCH_RECORD.FORM.FAILED"), type: "warning" });
     }
   };
+
+  if (listsFetching || activeListFetching) return <Spinner height={200} />;
 
   return (
     <Box style={MatchRecordFormStyle.container}>
       <Box>
-        <InputLabel>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.LIST")}</InputLabel>
+        <InputLabel>{t("MATCH_RECORD.FORM.DECK")}</InputLabel>
+        <Select
+          bgColor={Colors.white}
+          onValueChange={value => matchRecordDispatch({ type: "UPDATE_DECK_ID", payload: value })}
+          selectedValue={matchRecord.deckId}
+          style={MatchRecordFormStyle.listSelect}>
+          {decks &&
+            decks.map(deck => (
+              <Select.Item
+                minWidth="full"
+                key={`select-${deck.id}`}
+                leftIcon={<ArchetypeIcons archetype={deck.archetype} />}
+                label={deck.name}
+                value={deck.id}
+              />
+            ))}
+        </Select>
+        <Link alignSelf="flex-end" paddingRight={2} onPress={() => navigate("DecklistHome", { deckId: matchRecord.deckId })}>
+          <Text style={MatchRecordFormStyle.deckLink}>{t("MATCH_RECORD.FORM.DETAILS")}</Text>
+        </Link>
+      </Box>
+      <Box>
+        <InputLabel>{t("MATCH_RECORD.FORM.LIST")}</InputLabel>
         <Select
           bgColor={Colors.white}
           onValueChange={value => matchRecordDispatch({ type: "UPDATE_LIST_ID", payload: value })}
           selectedValue={matchRecord.listId}
           style={MatchRecordFormStyle.listSelect}>
-          <Select.Item minWidth="full" label={t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.NO_LIST")} value="" />
+          <Select.Item minWidth="full" label={t("MATCH_RECORD.FORM.NO_LIST")} value="no-list" />
           {lists &&
             lists.map(list => <Select.Item minWidth="full" key={`select-${list.id}`} label={list.name} value={list.id} />)}
           <Select.Item
@@ -155,7 +198,7 @@ export const MatchRecordForm = ({
         </Select>
       </Box>
       <Box>
-        <InputLabel>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.OPP_ARCHETYPE")}</InputLabel>
+        <InputLabel>{t("MATCH_RECORD.FORM.OPP_ARCHETYPE")}</InputLabel>
         <ArchetypeSelect
           listContainerTop={72}
           selectedArchetype={matchRecord.opponentArchetype}
@@ -166,7 +209,7 @@ export const MatchRecordForm = ({
       </Box>
       {coinFlip && (
         <Box style={MatchRecordFormStyle.inputBox}>
-          <InputLabel>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.COIN_FLIP")}</InputLabel>
+          <InputLabel>{t("MATCH_RECORD.FORM.COIN_FLIP")}</InputLabel>
           <Radio.Group
             justifyContent="space-around"
             name="myRadioGroup"
@@ -177,10 +220,10 @@ export const MatchRecordForm = ({
             }}>
             <HStack space={12}>
               <Radio value="1" my={1}>
-                <Text>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.WON")}</Text>
+                <Text>{t("MATCH_RECORD.FORM.WON")}</Text>
               </Radio>
               <Radio value="0" my={1}>
-                <Text>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.LOST")}</Text>
+                <Text>{t("MATCH_RECORD.FORM.LOST")}</Text>
               </Radio>
             </HStack>
           </Radio.Group>
@@ -189,7 +232,7 @@ export const MatchRecordForm = ({
 
       {started && (
         <Box style={MatchRecordFormStyle.inputBox}>
-          <InputLabel>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.STARTED")}</InputLabel>
+          <InputLabel>{t("MATCH_RECORD.FORM.STARTED")}</InputLabel>
           <Radio.Group
             justifyContent="space-around"
             name="StartedRadioGroup"
@@ -200,17 +243,17 @@ export const MatchRecordForm = ({
             }}>
             <HStack space={12}>
               <Radio value="1" my={1}>
-                <Text>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.FIRST")}</Text>
+                <Text>{t("MATCH_RECORD.FORM.FIRST")}</Text>
               </Radio>
               <Radio value="0" my={1}>
-                <Text>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.SECOND")}</Text>
+                <Text>{t("MATCH_RECORD.FORM.SECOND")}</Text>
               </Radio>
             </HStack>
           </Radio.Group>
         </Box>
       )}
       <Box style={MatchRecordFormStyle.inputBox}>
-        <InputLabel>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.RESULT")}</InputLabel>
+        <InputLabel>{t("MATCH_RECORD.FORM.RESULT")}</InputLabel>
         <Select
           bgColor={Colors.white}
           onValueChange={value => matchRecordDispatch({ type: "UPDATE_RESULT", payload: value })}
@@ -221,7 +264,7 @@ export const MatchRecordForm = ({
         </Select>
       </Box>
       <Box style={MatchRecordFormStyle.inputBox}>
-        <InputLabel>{t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.REMARKS")}</InputLabel>
+        <InputLabel>{t("MATCH_RECORD.FORM.REMARKS")}</InputLabel>
         <TextArea
           style={MatchRecordFormStyle.input}
           autoCompleteType
@@ -231,12 +274,7 @@ export const MatchRecordForm = ({
         />
       </Box>
       <Box marginTop={3}>
-        <Button
-          onPress={handleRecordSubmission}
-          width="auto"
-          alignSelf="center"
-          text={t("LANDING_SCREEN.ACTIVE_DECK.RECORD_FORM.SUBMIT")}
-        />
+        <Button onPress={handleRecordSubmission} width="auto" alignSelf="center" text={t("MATCH_RECORD.FORM.SUBMIT")} />
       </Box>
     </Box>
   );

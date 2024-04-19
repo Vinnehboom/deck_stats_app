@@ -1,9 +1,16 @@
-import { ArchetypeBase } from "../types";
+import { ArchetypeBase, Deck } from "../types";
 import { Result, allResultOptions as resultOptions } from "../types/MatchRecord";
 
 export const isArchetype = (obj: unknown): obj is ArchetypeBase => {
   if (obj) {
     return typeof obj === "object" && ["identifier", "name", "icons", "cards"].every(property => property in obj);
+  }
+  return false;
+};
+
+export const isDeck = (obj: unknown): obj is Deck => {
+  if (obj) {
+    return typeof obj === "object" && ["activeListId", "id", "name", "userId", "archetype"].every(property => property in obj);
   }
   return false;
 };
