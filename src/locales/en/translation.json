@@ -90,6 +90,15 @@
     "NOTES": "Notes",
     "LIST_NAME": "List:"
   },
+  "MATCH_EXPORT": {
+    "SCREEN_TITLE": "Match export",
+    "DOWNLOAD_SUCCESS": "Image saved successfully",
+    "DOWNLOAD_ERROR": "Image failed to download.",
+    "DOWNLOAD": "Save image",
+    "SHARE_ERROR": "Image failed to share",
+    "SHARE": "Share",
+    "WATERMARK": "Powered by VS Log"
+  },
   "DECK": {
     "LIST_ITEM": {
       "SHOW": "Show"
@@ -115,7 +124,7 @@
         "DECKS": "Decks"
       }
     },
-    "DECK_MATCH_HISTORY": {"LOADING": "Loading match history", "NO_DATA": "No data!"},
+    "DECK_MATCH_HISTORY": {"LOADING": "Loading match history", "NO_DATA": "No data!", "EXPORT": "Export..."},
     "DECK_DETAILS": {
       "OPTIONS": { "TITLE": "Options"},
       "RECENT_RESULTS": "Recent results",
@@ -162,6 +171,15 @@
         "LIST_PLACEHOLDER": "Deck string (Live/Limitless/...)",
         "SUBMIT": "Submit list"
       }
+    }
+  },
+  "PERMISSIONS": {
+    "CANCEL": "Cancel",
+    "OK": "Ok",
+    "IMAGE": {
+      "TITLE": "Image Download Permission",
+      "MESSAGE": "Your permission is required to save images to your device",
+      "ERROR": "Error asking for image permission"
     }
   }
 }
