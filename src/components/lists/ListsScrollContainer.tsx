@@ -12,8 +12,6 @@ export const ListsScrollContainer = ({
   deck,
   activeList,
   loading,
-  header,
-  footer,
 }: {
   lists: List[];
   deck: Deck;
@@ -68,8 +66,6 @@ export const ListsScrollContainer = ({
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={ListContainerStyle.listsContainer}
         snapToAlignment="center"
-        ListHeaderComponent={header ? header : null}
-        ListFooterComponent={footer ? footer : null}
         onScroll={handleOnScroll}
         viewabilityConfig={viewabilityConfig}
         renderItem={({ item }: { item: List }) => <ListItem activeListId={activeList?.id ?? ""} deck={deck} list={item} />}

@@ -20,9 +20,16 @@ export const DeckMatchupsStyle = StyleSheet.create({
     paddingBottom: 0,
     width: "90%",
   },
+  highlightMatchupPercentage: {
+    fontSize: Typography.fontSizes.md,
+    maxWidth: "30%",
+    minWidth: "15%",
+    paddingTop: Spacing.sm,
+    textAlign: "center",
+  },
   highlightMatchupText: {
     fontSize: Typography.fontSizes.md,
-    maxWidth: "20%",
+    maxWidth: "15%",
     minWidth: "15%",
     paddingTop: Spacing.sm,
     textAlign: "center",
@@ -30,8 +37,7 @@ export const DeckMatchupsStyle = StyleSheet.create({
   highlightMatchupTitle: {
     fontSize: Typography.fontSizes.lg,
     fontWeight: "bold",
-    minWidth: "25%",
-
+    minWidth: "20%",
     paddingTop: Spacing.sm,
   },
   listSelect: {

@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import { Colors } from "../variables";
+import { Colors, Typography } from "../variables";
 
 export const DecklistScreenStyle = StyleSheet.create({
   container: {
@@ -15,5 +15,9 @@ export const DecklistScreenStyle = StyleSheet.create({
     minWidth: "80%",
     paddingHorizontal: 24,
     zIndex: -1,
+  },
+  noDecks: {
+    alignSelf: "center",
+    fontSize: Typography.fontSizes.lg,
   },
 });
