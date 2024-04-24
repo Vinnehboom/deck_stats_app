@@ -8,18 +8,20 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { Text } from "../../components/layout/Text";
 import { Colors, Typography } from "../../styles/variables";
 import { MatchupListItem } from "./MatchupListItem";
-import { ArchetypeBase, MatchRecord, MatchRecordDataCollection } from "../../types";
+import { ArchetypeBase, Deck, MatchRecord, MatchRecordDataCollection } from "../../types";
 import { RootStackParamList } from "../../types/RouteParams";
 import { MatchRecordDataEntry } from "../../types/MatchRecord";
 import { TranslationContext } from "../../contexts/TranslationContext";
 
 export const MatchupsList = ({
   data,
+  deck,
   viewable,
   matchRecords,
 }: {
   archetypes: ArchetypeBase[];
   data: MatchRecordDataCollection;
+  deck: Deck;
   viewable?: boolean;
   iconSize?: string;
   matchRecords?: MatchRecord[];
@@ -66,9 +68,7 @@ export const MatchupsList = ({
                 width="16"
                 variant="link"
                 right="6"
-                onPress={() =>
-                  push("MatchupNotes", { matchupRecords: archetypeData.matchRecords, archetype: archetypeData.archetype })
-                }>
+                onPress={() => push("MatchupNotes", { deck: deck, archetype: archetypeData.archetype })}>
                 <FontAwesomeIcon color={Colors["primary-dark"]} icon={faEye} />
               </Button>
             ) : null}

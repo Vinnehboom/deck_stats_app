@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useRoute, RouteProp } from "@react-navigation/native";
-import { Text, View, HStack, Box } from "native-base";
+import { Text, View, HStack, Box, VStack } from "native-base";
 import { FlatList } from "react-native";
 
 import { MatchupNotesStyle } from "../../styles/matchups/MatchupNotesStyle";
@@ -10,11 +10,18 @@ import { Colors } from "../../styles/variables";
 import { Typography } from "../../styles/variables/typography";
 import { MatchRecord } from "../../types";
 import { TranslationContext } from "../../contexts/TranslationContext";
+import { useGetDeckMatchupRecords } from "../../components/matchRecords/_queries/useGetDeckMatchupRecords";
+import { Spinner } from "../../components/Spinner";
+
 export const MatchupNotes = () => {
   const { params } = useRoute<RouteProp<RootStackParamList, "MatchupNotes">>();
-  const { matchupRecords, archetype: opponentArchetype } = params;
-  const archetype = matchupRecords[0].deckArchetype;
+  const { deck, archetype: opponentArchetype } = params;
+  const archetype = deck.archetype;
+  const { queryResult: matchupRecords } = useGetDeckMatchupRecords({ deck, opponentArchetype });
   const { t } = useContext(TranslationContext);
+
+  if (!matchupRecords) return <Spinner />;
+
   return (
     <View style={MatchupNotesStyle.container}>
       <FlatList
@@ -25,25 +32,31 @@ export const MatchupNotes = () => {
                 <Text paddingLeft={3} width="12" justifyContent="center" fontSize={Typography.fontSizes.xl} fontWeight="black">
                   {record.result}
                 </Text>
-                <Text width="10" fontSize={Typography.fontSizes.xl} fontWeight="black">
-                  {record.started ? t("MATCHUP_NOTES.FIRST") : t("MATCHUP_NOTES.SECOND")}
-                </Text>
               </HStack>
-              <Text fontSize={Typography.fontSizes.md} textAlign="justify" marginLeft="2%" width="64">
+              <Text fontSize={Typography.fontSizes.md} style={MatchupNotesStyle.remarks}>
                 {record.remarks}
               </Text>
             </HStack>
             {record.list?.name ? (
-              <HStack display="flex" justifyContent="flex-end" width="100%">
-                <Text color={Colors["primary-dark"]} fontWeight="bold">
-                  {t("MATCHUP_NOTES.LIST_NAME")}
-                </Text>
-                <Text color={Colors["primary-dark"]}> {record.list.name}</Text>
+              <HStack display="flex" alignItems="flex-end" justifyContent="space-between" width="100%">
+                <VStack space={-1}>
+                  {record.result.split("").map((resultString, index) => (
+                    <Text key={`${record.id}+${index}`}>
+                      {resultString} {record.gamesStarted[index] ? t("MATCH_RECORD.FIRST") : t("MATCH_RECORD.SECOND")}
+                    </Text>
+                  ))}
+                </VStack>
+                <HStack>
+                  <Text color={Colors["primary-dark"]} fontWeight="bold">
+                    {t("MATCHUP_NOTES.LIST_NAME")}
+                  </Text>
+                  <Text color={Colors["primary-dark"]}> {record.list.name}</Text>
+                </HStack>
               </HStack>
             ) : null}
           </Box>
         )}
-        data={matchupRecords}
+        data={matchupRecords.filter(record => record.remarks.length > 1)}
         ListHeaderComponent={
           <HStack
             width="60%"
