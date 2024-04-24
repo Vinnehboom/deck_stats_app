@@ -9,7 +9,7 @@ export type RootStackParamList = {
   Home: undefined;
   Login: undefined;
   DecklistHome: { deckId: Deck["id"]; screen?: keyof DeckListTabParamList };
-  MatchupNotes: { matchupRecords: MatchRecord[]; archetype: ArchetypeBase };
+  MatchupNotes: { deck: Deck; archetype: ArchetypeBase };
   MatchExport: { matchupRecords: MatchRecord[] };
 };
 
