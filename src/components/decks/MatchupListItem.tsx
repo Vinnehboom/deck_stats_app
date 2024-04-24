@@ -38,7 +38,7 @@ export const MatchupListItem = ({
         width={viewable ? "25%" : "30%"}
         paddingTop={3}>
         <Text textAlign="center">
-          {data.first.wr
+          {data.first.wr !== null
             ? showPercentage
               ? `${data.first.wr.toFixed(2)}%`
               : `${data.first.wins}/${data.first.losses}/${data.first.ties}`
@@ -52,7 +52,7 @@ export const MatchupListItem = ({
         borderTopRightRadius={5}
         borderBottomRightRadius={5}>
         <Text textAlign="center">
-          {data.second.wr
+          {data.second.wr !== null
             ? showPercentage
               ? `${data.second.wr.toFixed(2)}%`
               : `${data.second.wins}/${data.second.losses}/${data.second.ties}`
