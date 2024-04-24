@@ -24,6 +24,7 @@ export const MatchRecordFormStyle = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   inputBox: {
+    marginTop: "-" + Spacing.xxs,
     zIndex: -1,
   },
   listSelect: {

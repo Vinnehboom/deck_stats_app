@@ -10,15 +10,12 @@ export const LandingScreenStyle = StyleSheet.create({
     justifyContent: "center",
     marginTop: Spacing.sm,
   },
-
   activeDeckName: {
     fontSize: Typography.fontSizes.lg,
     marginEnd: Spacing.lg,
   },
   container: {
     backgroundColor: Colors.white,
-    flex: 1,
-    maxHeight: screenHeight,
     minWidth: "100%",
     paddingVertical: Spacing.xs,
   },
@@ -28,7 +25,7 @@ export const LandingScreenStyle = StyleSheet.create({
   },
   logo: {
     alignSelf: "center",
-    height: screenHeight * 0.08,
+    height: screenHeight * 0.07,
     marginTop: Spacing.xl,
     resizeMode: "contain",
     width: 100,
@@ -49,8 +46,8 @@ export const LandingScreenStyle = StyleSheet.create({
     textAlign: "center",
   },
   welcome: {
-    fontSize: Typography.fontSizes.xl,
-    marginBottom: Spacing.xs,
+    fontSize: Typography.fontSizes.lg,
+    marginBottom: Spacing.xxs,
     paddingTop: Spacing.xs,
     textAlign: "center",
   },
