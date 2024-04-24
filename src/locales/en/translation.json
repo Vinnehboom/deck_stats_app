@@ -64,6 +64,7 @@
       "WON": "Won",
       "LOST": "Lost",
       "STARTED": "Started",
+      "NO_RESULT_SELECTED": "Select a result to continue",
       "NO_LIST": "No list",
       "DETAILS": "Details & matchups",
       "FIRST": "1st",

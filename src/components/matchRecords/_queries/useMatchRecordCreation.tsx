@@ -8,10 +8,13 @@ export const useMatchRecordCreation = (onSuccessCallback: () => void) => {
 
   return useMutation({
     mutationFn: async (matchRecord: MatchRecord) => {
-      firestore()
+      return firestore()
         .collection("MatchRecords")
         .doc(matchRecord.id)
-        .set({ ...matchRecord, list: matchRecord.list || null, createdAt: firestore.FieldValue.serverTimestamp() });
+        .set({ ...matchRecord, list: matchRecord.list || null, createdAt: firestore.FieldValue.serverTimestamp() })
+        .then(() => {
+          matchRecord.games.forEach(game => firestore().collection("Games").doc(game.id).set(game));
+        });
     },
     onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: ["MatchRecords"] });

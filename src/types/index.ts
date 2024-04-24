@@ -4,11 +4,12 @@ import { Archetype, ArchetypeBase } from "./Archetype";
 import { List, CardList, CardListItem, ActiveList } from "./List";
 import { Card } from "./Card";
 import { User } from "./User";
-import { MatchRecord, MatchRecordData, MatchRecordDataCollection } from "./MatchRecord";
+import { MatchRecord, Game, MatchRecordData, MatchRecordDataCollection } from "./MatchRecord";
 
 export type {
   MatchRecord,
   MatchRecordData,
+  Game,
   MatchRecordDataCollection,
   ActiveDeck,
   Deck,

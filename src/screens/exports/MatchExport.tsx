@@ -7,7 +7,7 @@ import { captureRef } from "react-native-view-shot";
 import { CameraRoll } from "@react-native-camera-roll/camera-roll";
 import Share from "react-native-share";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faDownload, faShare } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faDownload, faShare, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import { RootStackParamList } from "../../types/RouteParams";
 import { ArchetypeIcons } from "../../components/decks/ArchetypeIcons";
@@ -160,6 +160,12 @@ export const MatchExport = () => {
             <HStack space={3} style={MatchExportStyle.opponentArchetype}>
               <ArchetypeIcons archetype={item.opponentArchetype} />
             </HStack>
+            {item.bo3 ? (
+              <HStack alignItems="center">
+                <Image style={MatchExportStyle.coinflip} alt="coin-flip" source={require("../../assets/images/coin-icon.png")} />
+                <FontAwesomeIcon icon={item.coinFlipWon ? faCheck : faXmark} />
+              </HStack>
+            ) : null}
             <Text style={MatchExportStyle.score}>{scores[index]}</Text>
           </HStack>
         ))}

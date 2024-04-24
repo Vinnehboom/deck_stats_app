@@ -1,6 +1,8 @@
-import { HStack, ChevronDownIcon, ChevronUpIcon, Box, Checkbox } from "native-base";
+import { HStack, ChevronDownIcon, ChevronUpIcon, Box, Checkbox, VStack, Image } from "native-base";
 import React, { useContext, useRef, useState } from "react";
 import { TouchableOpacity } from "react-native";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import { Text } from "../../components/layout/Text";
 import { MatchRecord } from "../../types";
@@ -54,22 +56,47 @@ export const MatchRecordListItem = ({
         <HStack justifyContent="space-between" alignItems="center" style={MatchRecordListItemStyle.listItem}>
           <ArchetypeIcons archetype={matchRecord.deckArchetype} size={iconSize} />
           <Text style={MatchRecordListItemStyle.litItemText}>{matchRecord.result}</Text>
-          <Text style={MatchRecordListItemStyle.litItemText}>
-            {matchRecord.started ? t("MATCH_RECORD.FIRST") : t("MATCH_RECORD.SECOND")}
-          </Text>
+
+          {matchRecord.bo3 ? (
+            <HStack space={1} alignItems="center">
+              <Image
+                style={MatchRecordListItemStyle.coinflip}
+                alt="coin-flip"
+                source={require("../../assets/images/coin-icon.png")}
+              />
+              <FontAwesomeIcon icon={matchRecord.coinFlipWon ? faCheck : faXmark} />
+            </HStack>
+          ) : (
+            <Text style={MatchRecordListItemStyle.litItemText}>
+              {matchRecord?.games[0]?.started ? t("MATCH_RECORD.FIRST") : t("MATCH_RECORD.SECOND")}
+            </Text>
+          )}
           <ArchetypeIcons archetype={matchRecord.opponentArchetype} size={iconSize} />
           {view && (
             <HStack marginLeft={-2}>
-              <Text>{t("MATCH_RECORD.REMARKS")}</Text>
               <Box paddingTop={1} paddingLeft={1}>
                 {toggled ? <ChevronUpIcon /> : <ChevronDownIcon />}
               </Box>
             </HStack>
           )}
         </HStack>
-        <Text style={MatchRecordListItemStyle.remarks} display={toggled ? "flex" : "none"}>
-          {matchRecord.remarks}
-        </Text>
+        <VStack style={MatchRecordListItemStyle.remarks} display={toggled ? "flex" : "none"}>
+          {matchRecord.bo3 ? (
+            <HStack space={2}>
+              {matchRecord.result.split("").map((resultString, index) => (
+                <Text key={`${matchRecord.id}+${index}`}>
+                  {resultString} {matchRecord.gamesStarted[index] ? t("MATCH_RECORD.FIRST") : t("MATCH_RECORD.SECOND")}
+                </Text>
+              ))}
+            </HStack>
+          ) : null}
+          {matchRecord.remarks.length > 1 ? (
+            <HStack>
+              <Text fontWeight="bold">{t("MATCH_RECORD.REMARKS")} :</Text>
+              <Text>{matchRecord.remarks}</Text>
+            </HStack>
+          ) : null}
+        </VStack>
       </TouchableOpacity>
     </HStack>
   );

@@ -3,6 +3,12 @@ import { StyleSheet } from "react-native";
 import { Colors, Spacing, Typography, screenWidth as width, screenHeight as height } from "../variables";
 
 export const MatchExportStyle = StyleSheet.create({
+  coinflip: {
+    alignSelf: "center",
+    height: 30,
+    resizeMode: "contain",
+    width: 30,
+  },
   container: {
     backgroundColor: Colors.white,
     flex: 1,
