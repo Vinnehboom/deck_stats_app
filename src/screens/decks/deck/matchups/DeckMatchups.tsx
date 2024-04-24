@@ -20,8 +20,8 @@ export const DeckMatchups = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamList, "DeckLists">>();
   const { deck } = params;
   const { t } = useContext(TranslationContext);
-  const { queryResult: records, isFetching, isLoading } = useGetDeckMatchRecords(deck);
-  const { queryResult: lists, isFetching: listsFetching, isLoading: listsLoading } = useGetDeckLists(deck);
+  const { queryResult: records, isLoading } = useGetDeckMatchRecords(deck);
+  const { queryResult: lists, isLoading: listsLoading } = useGetDeckLists(deck);
   const [data, setData] = useState<MatchRecordDataCollection>({});
   const [calculating, setCalculating] = useState(false);
   const [archetypes, setArchetypes] = useState<ArchetypeBase[]>([]);
@@ -38,9 +38,9 @@ export const DeckMatchups = () => {
     const calculatedData = transformMatchRecordData(matchRecords);
     setData(calculatedData);
     setCalculating(false);
-  }, [isFetching, isLoading, records, selectedList]);
+  }, [isLoading, records, selectedList]);
 
-  return isFetching || calculating || isLoading || !data || listsFetching || listsLoading ? (
+  return calculating || isLoading || !data || listsLoading ? (
     <Spinner description={t("DECK.DECK_MATCHUPS.LOADING")} />
   ) : (
     <SafeAreaView style={DeckMatchupsStyle.container}>
@@ -48,7 +48,7 @@ export const DeckMatchups = () => {
         renderItem={() => (
           <Box marginBottom={2} marginX={1} marginRight={1}>
             <Header header="h3">{t("DECK.DECK_MATCHUPS.WIN_RATES")}</Header>
-            <MatchupsList iconSize="xs" matchRecords={records} archetypes={archetypes} data={data} viewable={true} />
+            <MatchupsList deck={deck} iconSize="xs" matchRecords={records} archetypes={archetypes} data={data} viewable={true} />
           </Box>
         )}
         data={[deck]}
