@@ -79,7 +79,9 @@
   "MATCHUP_LIST":{
     "ARCHETYPE": "Archetype",
     "FIRST": "1st",
-    "SECOND":"2nd"
+    "SECOND":"2nd",
+    "COINFLIP_WON": "Won",
+    "COINFLIP_LOST": "Lost"
   },
   "MATCHUP_NOTES": {
     "SCREEN_TITLE": "Matchup notes",
@@ -154,6 +156,8 @@
       "WIN_RATES": "Win rates",
       "FIRST": "1st",
       "SECOND": "2nd",
+      "NO_DATA": "No data!",
+      "FORMAT": "Format:"
     },
     "DECK_LISTS": {
       "LIST_CREATION": {
