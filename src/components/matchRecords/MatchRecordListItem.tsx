@@ -1,8 +1,6 @@
-import { HStack, ChevronDownIcon, ChevronUpIcon, Box, Checkbox, VStack, Image } from "native-base";
+import { HStack, ChevronDownIcon, ChevronUpIcon, Box, Checkbox, VStack } from "native-base";
 import React, { useContext, useRef, useState } from "react";
 import { TouchableOpacity } from "react-native";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import { Text } from "../../components/layout/Text";
 import { MatchRecord } from "../../types";
@@ -10,6 +8,7 @@ import { ArchetypeIcons } from "../decks/ArchetypeIcons";
 import { MatchRecordListItemStyle } from "../../styles/matchRecords/MatchRecordListItemStyle";
 import { TranslationContext } from "../../contexts/TranslationContext";
 import { ExportRecordsContext } from "../../contexts/decks/ExportRecordsContext";
+import { Coinflip } from "./Coinflip";
 
 export const MatchRecordListItem = ({
   matchRecord,
@@ -58,14 +57,7 @@ export const MatchRecordListItem = ({
           <Text style={MatchRecordListItemStyle.litItemText}>{matchRecord.result}</Text>
 
           {matchRecord.bo3 ? (
-            <HStack space={1} alignItems="center">
-              <Image
-                style={MatchRecordListItemStyle.coinflip}
-                alt="coin-flip"
-                source={require("../../assets/images/coin-icon.png")}
-              />
-              <FontAwesomeIcon icon={matchRecord.coinFlipWon ? faCheck : faXmark} />
-            </HStack>
+            <Coinflip won={matchRecord.coinFlipWon || false} />
           ) : (
             <Text style={MatchRecordListItemStyle.litItemText}>
               {matchRecord?.games[0]?.started ? t("MATCH_RECORD.FIRST") : t("MATCH_RECORD.SECOND")}

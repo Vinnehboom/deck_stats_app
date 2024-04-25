@@ -15,6 +15,7 @@ import { useGetDeckLists } from "../../../../components/lists/_queries/useGetDec
 import { Header } from "../../../../components/layout/Header";
 import { MatchupsHeader } from "./MatchupsHeader";
 import { TranslationContext } from "../../../../contexts/TranslationContext";
+import { MatchupsContext } from "../../../../contexts/decks/MatchupsContext";
 
 export const DeckMatchups = () => {
   const { params } = useRoute<RouteProp<DeckListTabParamList, "DeckLists">>();
@@ -26,6 +27,7 @@ export const DeckMatchups = () => {
   const [calculating, setCalculating] = useState(false);
   const [archetypes, setArchetypes] = useState<ArchetypeBase[]>([]);
   const [selectedList, setSelectedList] = useState<List["id"]>("");
+  const [bo3, setBo3] = useState(false);
 
   useLayoutEffect(() => {
     if (!records) return;
@@ -35,34 +37,45 @@ export const DeckMatchups = () => {
 
     setArchetypes([...new Set(matchRecords?.map(record => record.opponentArchetype))]);
 
-    const calculatedData = transformMatchRecordData(matchRecords);
+    const calculatedData = transformMatchRecordData(matchRecords, bo3);
     setData(calculatedData);
     setCalculating(false);
-  }, [isLoading, records, selectedList]);
+  }, [isLoading, records, selectedList, bo3]);
 
-  return calculating || isLoading || !data || listsLoading ? (
-    <Spinner description={t("DECK.DECK_MATCHUPS.LOADING")} />
-  ) : (
+  const contextValue = {
+    bo3,
+    setBo3: setBo3,
+    data,
+    calculating,
+    lists,
+    selectedList,
+    archetypes,
+    setSelectedList: setSelectedList,
+  };
+
+  return (
     <SafeAreaView style={DeckMatchupsStyle.container}>
-      <FlatList
-        renderItem={() => (
-          <Box marginBottom={2} marginX={1} marginRight={1}>
-            <Header header="h3">{t("DECK.DECK_MATCHUPS.WIN_RATES")}</Header>
-            <MatchupsList deck={deck} iconSize="xs" matchRecords={records} archetypes={archetypes} data={data} viewable={true} />
-          </Box>
-        )}
-        data={[deck]}
-        ListHeaderComponent={
-          <MatchupsHeader
-            selectedList={selectedList}
-            setSelectedList={setSelectedList}
-            lists={lists}
-            data={data}
-            archetypes={archetypes}
+      {calculating || isLoading || !data || listsLoading ? (
+        <Spinner description={t("DECK.DECK_MATCHUPS.LOADING")} />
+      ) : (
+        <MatchupsContext.Provider value={contextValue}>
+          <FlatList
+            renderItem={() => (
+              <Box marginBottom={2} marginX={1} marginRight={1}>
+                <Header header="h3">{t("DECK.DECK_MATCHUPS.WIN_RATES")}</Header>
+                <MatchupsList deck={deck} iconSize="xs" matchRecords={records} viewable={true} />
+              </Box>
+            )}
+            data={[deck]}
+            ListHeaderComponent={
+              <>
+                <MatchupsHeader />
+              </>
+            }
+            ListEmptyComponent={<Text style={DeckMatchupsStyle.noData}>{t("DECK.DECK_MATCHUPS.NO_DATA")}</Text>}
           />
-        }
-        ListEmptyComponent={<Text style={DeckMatchupsStyle.noData}> No data! </Text>}
-      />
+        </MatchupsContext.Provider>
+      )}
     </SafeAreaView>
   );
 };

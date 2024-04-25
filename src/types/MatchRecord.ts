@@ -40,7 +40,7 @@ export type MatchRecord = TimeStamped & {
 
 export type MatchRecordDataResults = { wins: number; losses: number; ties: number; wr: number | null };
 
-export type MatchRecordDataEntry = {
+export type Bo1MatchRecordDataEntry = {
   total?: number;
   first: MatchRecordDataResults;
   second: MatchRecordDataResults;
@@ -48,4 +48,16 @@ export type MatchRecordDataEntry = {
   matchRecords: MatchRecord[];
 };
 
+export type Bo3MatchRecordDataEntry = {
+  total?: number;
+  coinFlipWon: MatchRecordDataResults;
+  coinFlipLost: MatchRecordDataResults;
+  archetype: ArchetypeBase;
+  matchRecords: MatchRecord[];
+};
+
+export type MatchRecordDataEntry = Bo1MatchRecordDataEntry & Bo3MatchRecordDataEntry;
+
 export type MatchRecordDataCollection = Record<string, MatchRecordDataEntry>;
+export type Bo1MatchRecordDataCollection = Record<string, Bo1MatchRecordDataEntry>;
+export type Bo3MatchRecordDataCollection = Record<string, Bo3MatchRecordDataEntry>;
