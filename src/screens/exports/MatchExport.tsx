@@ -7,7 +7,7 @@ import { captureRef } from "react-native-view-shot";
 import { CameraRoll } from "@react-native-camera-roll/camera-roll";
 import Share from "react-native-share";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faCheck, faDownload, faShare, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faDownload, faShare } from "@fortawesome/free-solid-svg-icons";
 
 import { RootStackParamList } from "../../types/RouteParams";
 import { ArchetypeIcons } from "../../components/decks/ArchetypeIcons";
@@ -18,6 +18,7 @@ import { Button } from "../../components/layout/Button";
 import { MatchExportStyle } from "../../styles/exports/MatchExportStyle";
 import { Typography } from "../../styles/variables";
 import { TranslationContext } from "../../contexts/TranslationContext";
+import { Coinflip } from "../../components/matchRecords/Coinflip";
 
 export const MatchExport = () => {
   const { params } = useRoute<RouteProp<RootStackParamList, "MatchExport">>();
@@ -160,12 +161,7 @@ export const MatchExport = () => {
             <HStack space={3} style={MatchExportStyle.opponentArchetype}>
               <ArchetypeIcons archetype={item.opponentArchetype} />
             </HStack>
-            {item.bo3 ? (
-              <HStack alignItems="center">
-                <Image style={MatchExportStyle.coinflip} alt="coin-flip" source={require("../../assets/images/coin-icon.png")} />
-                <FontAwesomeIcon icon={item.coinFlipWon ? faCheck : faXmark} />
-              </HStack>
-            ) : null}
+            {item.bo3 ? <Coinflip won={item.coinFlipWon || false} /> : null}
             <Text style={MatchExportStyle.score}>{scores[index]}</Text>
           </HStack>
         ))}

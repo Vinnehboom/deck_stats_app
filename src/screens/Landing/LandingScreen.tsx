@@ -33,7 +33,7 @@ export const LandingScreen = () => {
       decks.length > 0 ? (
         <KeyboardAvoidingView behavior="position" enabled={true}>
           <ElevatedContainer style={LandingScreenStyle.formContainer}>
-            <MatchRecordForm bo1={true} started decks={decks} activeDeck={activeDeck?.deck} />
+            <MatchRecordForm decks={decks} activeDeck={activeDeck?.deck} />
           </ElevatedContainer>
           <Box style={LandingScreenStyle.recentRecordsContainer}>
             <Header header="h2">{t("LANDING_SCREEN.RECENT_RECORDS")}</Header>
