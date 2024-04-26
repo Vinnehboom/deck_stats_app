@@ -1,6 +1,9 @@
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
 import { Flex, Image, ScrollView, VStack, HStack } from "native-base";
 import { useDebounce } from "use-lodash-debounce";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { TouchableOpacity } from "react-native";
 
 import { TextInput } from "../layout/forms/TextInput";
 import { Text } from "../../components/layout/Text";
@@ -11,6 +14,7 @@ import { ArchetypeSelectStyle } from "../../styles/archetypes/ArchetypeSelectSty
 import { Spinner } from "../Spinner";
 import { useArchetypeQuery } from "././_queries/useArchetypeQuery";
 import { Colors } from "../../styles/variables";
+import { ArchetypeIcons } from "../decks/ArchetypeIcons";
 
 const ArchetypesList = ({
   archetypes,
@@ -110,25 +114,15 @@ export const ArchetypeSelect = ({
 
   if (selectedArchetype)
     return (
-      <>
-        <Flex flexDirection="row">
-          <Text marginY={1} marginRight={2} onPress={() => setDeckArchetype(undefined)} fontSize="md">
-            Archetype: {selectedArchetype.name}
+      <TouchableOpacity onPress={() => setDeckArchetype(undefined)}>
+        <HStack flexDirection="row" alignItems="center" space={2}>
+          <Text marginY={1} maxW="80%" fontSize="md">
+            {selectedArchetype.name}
           </Text>
-          {selectedArchetype.icons?.length &&
-            selectedArchetype.icons.map((icon, index) => (
-              <Image
-                marginRight={2}
-                key={icon + index}
-                source={{
-                  uri: `https://limitlesstcg.s3.us-east-2.amazonaws.com/pokemon/gen9/${icon}.png`,
-                }}
-                alt={icon}
-                size="2xs"
-              />
-            ))}
-        </Flex>
-      </>
+          <ArchetypeIcons archetype={selectedArchetype} size="2xs" />
+          <FontAwesomeIcon size={20} icon={faXmark} color="red" />
+        </HStack>
+      </TouchableOpacity>
     );
   return <></>;
 };

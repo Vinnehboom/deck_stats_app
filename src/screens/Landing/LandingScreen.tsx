@@ -31,7 +31,7 @@ export const LandingScreen = () => {
   const renderItem = () => {
     return decks ? (
       decks.length > 0 ? (
-        <KeyboardAvoidingView behavior="position" enabled={true}>
+        <KeyboardAvoidingView keyboardVerticalOffset={150} behavior="height">
           <ElevatedContainer style={LandingScreenStyle.formContainer}>
             <MatchRecordForm decks={decks} activeDeck={activeDeck?.deck} />
           </ElevatedContainer>
