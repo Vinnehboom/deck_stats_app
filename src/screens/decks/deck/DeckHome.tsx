@@ -4,6 +4,7 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { faTable } from "@fortawesome/free-solid-svg-icons/faTable";
 import { faList } from "@fortawesome/free-solid-svg-icons/faList";
+import { Platform } from "react-native";
 
 import { DeckListTabParamList, DeckListTabParamsType } from "../../../types/RouteParams";
 import { Colors, Typography } from "../../../styles/variables";
@@ -41,6 +42,7 @@ const DeckHome = () => {
         tabBarActiveTintColor: Colors["primary-dark"],
         tabBarActiveBackgroundColor: Colors.light,
         headerShadowVisible: true,
+        tabBarIconStyle: { display: Platform.OS === "ios" ? "flex" : "none" },
         headerLeftContainerStyle: { paddingStart: 15 },
         headerTitleStyle: {
           color: Colors.white,

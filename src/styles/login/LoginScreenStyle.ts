@@ -58,6 +58,7 @@ export const LoginScreenStyle = StyleSheet.create({
     borderColor: Colors.grey,
     borderRadius: Platform.OS === "ios" ? 10 : 2,
     borderWidth: 0.2,
+    color: Colors["primary-dark"],
     fontSize: Typography.fontSizes.md,
     height: screenHeight / 20,
     marginTop: Spacing.md,

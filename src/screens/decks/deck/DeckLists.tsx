@@ -27,7 +27,7 @@ export const DeckLists = () => {
   return (
     <View style={ScrollableScreenStyle.container}>
       <ScrollView style={ScrollableScreenStyle.scrollViewContainer}>
-        <KeyboardAvoidingView behavior="position" enabled={true} keyboardVerticalOffset={50}>
+        <KeyboardAvoidingView behavior="height" enabled={true} keyboardVerticalOffset={50}>
           <ListCreationForm deck={deck} lists={lists} />
         </KeyboardAvoidingView>
         <Header header="h2">{t("DECK.DECK_LISTS.LISTS.TITLE")}</Header>

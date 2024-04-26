@@ -14,12 +14,14 @@ export const TabBarStyle = StyleSheet.create({
     marginHorizontal: Spacing.xs,
     marginVertical: 1,
     paddingHorizontal: Spacing.xxs,
-    paddingTop: Platform.OS === "ios" ? "1%" : "3%",
-    paddingVertical: Platform.OS === "ios" ? "1%" : "1%",
+    paddingVertical: Platform.OS === "ios" ? "1%" : "0%",
     shadowColor: "rgba(0,0,0,0.6)",
     shadowOffset: { height: 3, width: 0 },
     shadowOpacity: 0.5,
     shadowRadius: 0,
   },
-  label: { fontFamily: "BungeeInline-Regular", fontSize: Typography.fontSizes.md },
+  label: {
+    fontFamily: "BungeeInline-Regular",
+    fontSize: Platform.OS === "ios" ? Typography.fontSizes.md : Typography.fontSizes.xl,
+  },
 });

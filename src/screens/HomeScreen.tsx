@@ -6,6 +6,7 @@ import { showMessage } from "react-native-flash-message";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { faHouse } from "@fortawesome/free-solid-svg-icons/faHouse";
 import { faFolderOpen } from "@fortawesome/free-solid-svg-icons/faFolderOpen";
+import { Platform } from "react-native";
 
 import { AuthContext } from "../contexts/AuthContext";
 import { MainTabParamList, RootStackParamList } from "../types/RouteParams";
@@ -68,12 +69,17 @@ export const HomeScreen = () => {
           options={{
             tabBarIcon: ({ focused }) => TabIcon(focused, faHouse),
             title: t("DECK.NAVIGATION.HOME.LANDING"),
+            tabBarIconStyle: { display: Platform.OS === "ios" ? "flex" : "none" },
           }}
           component={LandingScreen}
         />
         <Tab.Screen
           name="Decks"
-          options={{ tabBarIcon: ({ focused }) => TabIcon(focused, faFolderOpen), title: t("DECK.NAVIGATION.HOME.DECKS") }}
+          options={{
+            tabBarIcon: ({ focused }) => TabIcon(focused, faFolderOpen),
+            title: t("DECK.NAVIGATION.HOME.DECKS"),
+            tabBarIconStyle: { display: Platform.OS === "ios" ? "flex" : "none" },
+          }}
           component={DecksScreen}
         />
       </Tab.Navigator>
