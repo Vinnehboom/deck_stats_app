@@ -5,7 +5,6 @@ import { View, HStack, Image, Box, ScrollView } from "native-base";
 import { Alert, PermissionsAndroid, Platform } from "react-native";
 import { captureRef } from "react-native-view-shot";
 import { CameraRoll } from "@react-native-camera-roll/camera-roll";
-import Share from "react-native-share";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faDownload, faShare } from "@fortawesome/free-solid-svg-icons";
 
@@ -19,6 +18,7 @@ import { MatchExportStyle } from "../../styles/exports/MatchExportStyle";
 import { Typography } from "../../styles/variables";
 import { TranslationContext } from "../../contexts/TranslationContext";
 import { Coinflip } from "../../components/matchRecords/Coinflip";
+import { ShareImage } from "../../helpers/exports/ShareImage";
 
 export const MatchExport = () => {
   const { params } = useRoute<RouteProp<RootStackParamList, "MatchExport">>();
@@ -88,20 +88,6 @@ export const MatchExport = () => {
     }
   };
 
-  const shareImage = async () => {
-    try {
-      const uri = await captureRef(viewRef, {
-        format: "jpg",
-        quality: 0.8,
-        snapshotContentContainer: true,
-      });
-
-      await Share.open({ url: uri });
-    } catch (error) {
-      console.log("MATCH_EXPORT.SHARE_ERROR", error);
-    }
-  };
-
   return (
     <View style={MatchExportStyle.container}>
       <HStack alignSelf="center" space={4} paddingTop={2}>
@@ -115,7 +101,7 @@ export const MatchExport = () => {
           leftIcon={<FontAwesomeIcon color="white" icon={faShare} />}
           fontSize={Typography.fontSizes.sm}
           text={t("MATCH_EXPORT.SHARE")}
-          onPress={async () => await shareImage()}
+          onPress={async () => await ShareImage(viewRef)}
         />
       </HStack>
       <ScrollView ref={viewRef} style={MatchExportStyle.imageContainer}>
