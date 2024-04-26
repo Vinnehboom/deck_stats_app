@@ -30,6 +30,7 @@ export const LandingScreenStyle = StyleSheet.create({
     resizeMode: "contain",
     width: 100,
   },
+  logoContainer: { flex: 1 },
   recentRecordsContainer: {
     alignItems: "center",
     display: "flex",

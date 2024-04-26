@@ -13,7 +13,7 @@ import { ArchetypeSelect } from "../archetypes/ArchetypeSelect";
 import { ArchetypeBase, Archetype, Deck } from "../../types";
 import { MatchRecord, bo1ResultOptions, allResultOptions, GamesStarted } from "../../types/MatchRecord";
 import { isArchetype, isGamesStarted, isResult } from "../../helpers/typeGuards";
-import { Colors } from "../../styles/variables";
+import { Colors, Spacing } from "../../styles/variables";
 import { useMatchRecordCreation } from "./_queries/useMatchRecordCreation";
 import { MatchRecordFormStyle } from "../../styles/matchRecords/MatchRecordFormStyle";
 import { RootStackParamList } from "../../types/RouteParams";
@@ -120,7 +120,7 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
     remarks: "",
   };
   const [matchRecord, matchRecordDispatch] = useReducer(recordStateReducer, initialMatchRecord);
-  const selectedDeck = decks.find(deck => deck.id === matchRecord.deckId)!;
+  const selectedDeck = decks.find(deck => deck.id === matchRecord.deckId) || decks[0];
 
   const { queryResult: lists, isFetching: listsFetching } = useGetDeckLists(selectedDeck);
   const { queryResult: activeList, isFetching: activeListFetching } = useGetActiveList(selectedDeck);
@@ -139,8 +139,8 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
   const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   const matchRecordCreationMutation = useMatchRecordCreation(() => {
-    showMessage({ message: t("MATCH_RECORD.FORM.SUCCESS"), type: "info" });
     matchRecordDispatch({ type: "CLEAR", payload: { started: true } });
+    showMessage({ message: t("MATCH_RECORD.FORM.SUCCESS"), type: "info" });
   });
 
   const handleRecordSubmission = () => {
@@ -171,7 +171,7 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
         <Select
           bgColor={Colors.white}
           onValueChange={value => matchRecordDispatch({ type: "UPDATE_DECK_ID", payload: value })}
-          selectedValue={matchRecord.deckId}
+          selectedValue={selectedDeck.id}
           style={MatchRecordFormStyle.listSelect}>
           {decks &&
             decks.map(deck => (
@@ -201,7 +201,7 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
           <Select.Item
             minWidth="full"
             label="++ Add list ++"
-            onPress={() => push("DecklistHome", { deckId: deck.id, screen: "DeckLists" })}
+            onPress={() => push("DecklistHome", { deckId: selectedDeck.id, screen: "DeckLists" })}
             value="no"
           />
         </Select>
@@ -216,7 +216,7 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
           }
         />
       </Box>
-      <Box paddingTop={1} style={MatchRecordFormStyle.inputBox}>
+      <Box paddingTop={Spacing.xxs} style={MatchRecordFormStyle.inputBox}>
         <Radio.Group
           justifyContent="space-around"
           name="myRadioGroup"
