@@ -184,7 +184,7 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
               />
             ))}
         </Select>
-        <Link alignSelf="flex-end" paddingRight={2} onPress={() => navigate("DecklistHome", { deckId: matchRecord.deckId })}>
+        <Link alignSelf="flex-end" paddingRight={2} onPress={() => navigate("DecklistHome", { deckId: selectedDeck.id })}>
           <Text style={MatchRecordFormStyle.deckLink}>{t("MATCH_RECORD.FORM.DETAILS")}</Text>
         </Link>
       </Box>

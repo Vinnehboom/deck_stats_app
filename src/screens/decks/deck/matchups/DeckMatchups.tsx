@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useContext } from "react";
+import React, { useState, useLayoutEffect, useContext, useRef } from "react";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { FlatList, SafeAreaView } from "react-native";
 import { Box } from "native-base";
@@ -12,7 +12,6 @@ import { Spinner } from "../../../../components/Spinner";
 import { DeckMatchupsStyle } from "../../../../styles/decks/DeckMatchupsStyle";
 import { MatchupsList } from "../../../../components/decks/MatchupsList";
 import { useGetDeckLists } from "../../../../components/lists/_queries/useGetDeckLists";
-import { Header } from "../../../../components/layout/Header";
 import { MatchupsHeader } from "./MatchupsHeader";
 import { TranslationContext } from "../../../../contexts/TranslationContext";
 import { MatchupsContext } from "../../../../contexts/decks/MatchupsContext";
@@ -28,6 +27,7 @@ export const DeckMatchups = () => {
   const [archetypes, setArchetypes] = useState<ArchetypeBase[]>([]);
   const [selectedList, setSelectedList] = useState<List["id"]>("");
   const [bo3, setBo3] = useState(false);
+  const viewRef = useRef<FlatList>(null);
 
   useLayoutEffect(() => {
     if (!records) return;
@@ -60,16 +60,16 @@ export const DeckMatchups = () => {
       ) : (
         <MatchupsContext.Provider value={contextValue}>
           <FlatList
+            ref={viewRef}
             renderItem={() => (
               <Box marginBottom={2} marginX={1} marginRight={1}>
-                <Header header="h3">{t("DECK.DECK_MATCHUPS.WIN_RATES")}</Header>
                 <MatchupsList deck={deck} iconSize="xs" matchRecords={records} viewable={true} />
               </Box>
             )}
             data={[deck]}
             ListHeaderComponent={
               <>
-                <MatchupsHeader />
+                <MatchupsHeader exportRef={viewRef} />
               </>
             }
             ListEmptyComponent={<Text style={DeckMatchupsStyle.noData}>{t("DECK.DECK_MATCHUPS.NO_DATA")}</Text>}
