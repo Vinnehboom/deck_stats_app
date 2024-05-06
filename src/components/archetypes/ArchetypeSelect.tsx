@@ -29,7 +29,7 @@ const ArchetypesList = ({
 }) => {
   return archetypes.length && shown ? (
     <VStack space="xs" style={top ? [ArchetypeSelectStyle.selectContainer, { top }] : ArchetypeSelectStyle.selectContainer}>
-      <ScrollView minHeight="100%">
+      <ScrollView minHeight="100%" zIndex={9999}>
         {archetypes.map(archetype => (
           <Flex
             marginX={1}
