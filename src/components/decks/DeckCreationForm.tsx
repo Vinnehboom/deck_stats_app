@@ -53,7 +53,7 @@ export const DeckCreationForm = ({ user }: DeckCreationFormPropsType) => {
   };
 
   return (
-    <ElevatedContainer paddingTop={3} style={{ backgroundColor: Colors.light }}>
+    <ElevatedContainer paddingTop={2} style={{ backgroundColor: Colors.light }}>
       <Header header="h2">{t("DECK.CREATION_FORM.TITLE")}</Header>
       <View style={DeckCreationFormStyle.deckForm}>
         <TextInput
@@ -62,7 +62,7 @@ export const DeckCreationForm = ({ user }: DeckCreationFormPropsType) => {
           value={deckName}
           onChangeText={text => setDeckName(text)}
         />
-        <ArchetypeSelect listContainerTop={110} setDeckArchetype={setDeckArchetype} selectedArchetype={deckArchetype} />
+        <ArchetypeSelect listContainerTop="65%" setDeckArchetype={setDeckArchetype} selectedArchetype={deckArchetype} />
         <Button marginY={3} onPress={handleDeckCreation} width="auto" text={t("DECK.CREATION_FORM.SUBMIT")} />
       </View>
     </ElevatedContainer>
