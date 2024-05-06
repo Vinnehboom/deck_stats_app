@@ -8,12 +8,12 @@ import { Header } from "../../../../components/layout/Header";
 import { Button } from "../../../../components/layout/Button";
 import { DeckDetailsStyle } from "../../../../styles/decks/DeckDetailsStyle";
 import { MainTabParamList } from "../../../../types/RouteParams";
-import { ActiveDeck, Deck, User } from "../../../../types";
+import { Deck, User } from "../../../../types";
 import { useDeckDeletion } from "../../../../components/lists/_queries/useDeckDeletion";
 import { useSetActiveDeck } from "../../../../components/decks/_queries/useSetActiveDeck";
 import { TranslationContext } from "../../../../contexts/TranslationContext";
 
-export const DetailsHeader = ({ deck, activeDeck, user }: { deck: Deck; activeDeck: ActiveDeck; user: User }) => {
+export const DetailsHeader = ({ deck, user }: { deck: Deck; user: User }) => {
   const { t } = useContext(TranslationContext);
   const { navigate } = useNavigation<MainTabParamList>();
 
@@ -26,11 +26,7 @@ export const DetailsHeader = ({ deck, activeDeck, user }: { deck: Deck; activeDe
   });
 
   const handleDeletion = () => {
-    if (deck.id === activeDeck?.deck.id) {
-      Alert.alert("You cannot delete your active deck. Please select a new active deck before continuing.");
-    } else {
-      deletionMutation.mutate();
-    }
+    deletionMutation.mutate();
   };
 
   const activateDeckMutation = useSetActiveDeck(deck, user!, () => {
