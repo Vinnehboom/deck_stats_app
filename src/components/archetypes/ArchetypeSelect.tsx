@@ -29,7 +29,7 @@ const ArchetypesList = ({
 }) => {
   return archetypes.length && shown ? (
     <VStack space="xs" style={top ? [ArchetypeSelectStyle.selectContainer, { top }] : ArchetypeSelectStyle.selectContainer}>
-      <ScrollView minHeight="100%" zIndex={9999}>
+      <ScrollView minHeight="100%" zIndex={9999} nestedScrollEnabled>
         {archetypes.map(archetype => (
           <Flex
             marginX={1}
@@ -38,7 +38,8 @@ const ArchetypesList = ({
             key={archetype.identifier}
             borderBottomWidth={0.2}
             padding={2}
-            minWidth="75%">
+            minWidth="75%"
+            zIndex={9999}>
             <Text onPress={() => handleArchetypeSelection(archetype)}>{transformIdentifier(archetype.identifier)}</Text>
             <Flex flexDirection="row">
               {archetype.icons?.length &&

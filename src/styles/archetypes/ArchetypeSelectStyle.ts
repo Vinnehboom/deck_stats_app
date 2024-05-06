@@ -7,7 +7,7 @@ export const ArchetypeSelectStyle = StyleSheet.create({
     backgroundColor: Colors.white,
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
-    elevation: 10,
+    elevation: 50,
     height: "auto",
     maxHeight: screenHeight / 6.5,
     minWidth: "100%",
