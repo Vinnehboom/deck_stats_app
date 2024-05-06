@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FlatList } from "react-native";
+import { FlatList, Platform } from "react-native";
 import { Box } from "native-base";
 import auth from "@react-native-firebase/auth";
 import { KeyboardAvoidingView } from "react-native";
@@ -8,7 +8,6 @@ import { useGetActiveDeck } from "../../components/decks/_queries/useGetActiveDe
 import { useAuthContext } from "../../contexts/useAuthContext";
 import { LandingScreenStyle } from "../../styles/LandingScreenStyle";
 import { Header } from "../../components/layout/Header";
-import { LandingFooter } from "./LandingFooter";
 import { LandingHeader } from "./LandingHeader";
 import { NoDeck } from "./NoDeck";
 import { Spinner } from "../../components/Spinner";
@@ -31,7 +30,9 @@ export const LandingScreen = () => {
   const renderItem = () => {
     return decks ? (
       decks.length > 0 ? (
-        <KeyboardAvoidingView keyboardVerticalOffset={150} behavior="height">
+        <KeyboardAvoidingView
+          keyboardVerticalOffset={Platform.OS === "ios" ? 200 : 0}
+          behavior={Platform.OS === "ios" ? "height" : "position"}>
           <ElevatedContainer style={LandingScreenStyle.formContainer}>
             <MatchRecordForm decks={decks} activeDeck={activeDeck?.deck} />
           </ElevatedContainer>
@@ -54,8 +55,8 @@ export const LandingScreen = () => {
       ListEmptyComponent={NoDeck}
       style={LandingScreenStyle.container}
       renderItem={renderItem}
-      ListFooterComponent={LandingFooter({ signOut: signOut! })}
-      ListHeaderComponent={LandingHeader}
+      ListHeaderComponent={LandingHeader({ signOut: signOut! })}
+      ListFooterComponent={<Box paddingBottom={25} />}
       keyExtractor={() => "1"}
     />
   );
