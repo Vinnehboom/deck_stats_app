@@ -9,7 +9,6 @@ export const Button = (props: ButtonProps) => {
   return (
     <NativeButton {...props} style={Inputs.button} bgColor={props.color}>
       <Text fontSize={props.fontSize} style={Inputs.buttonText}>
-        {" "}
         {props.text}
       </Text>
     </NativeButton>

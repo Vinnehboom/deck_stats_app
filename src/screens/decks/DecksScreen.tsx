@@ -25,8 +25,12 @@ export const DecksScreen = () => {
     <SafeAreaView style={DecklistScreenStyle.container}>
       <FlatList
         data={decks}
-        ListEmptyComponent={<Text style={DecklistScreenStyle.noDecks}>{t("DECKS_SCREEN.NO_DECKS")}</Text>}
-        ListHeaderComponent={DecksHeader({ user })}
+        ListEmptyComponent={
+          <Text zIndex={-9999} style={DecklistScreenStyle.noDecks}>
+            {t("DECKS_SCREEN.NO_DECKS")}
+          </Text>
+        }
+        ListHeaderComponent={<DecksHeader user={user} />}
         renderItem={renderItem}
         ListFooterComponent={<Box minH="100%" />}
         style={DecklistScreenStyle.decksList}

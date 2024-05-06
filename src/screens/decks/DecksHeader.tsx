@@ -10,7 +10,7 @@ export const DecksHeader = ({ user }: { user: User }) => {
   return (
     <>
       <DeckCreationForm user={user} />
-      <Header zIndex={-1} header="h2">
+      <Header zIndex={-9999} paddingY={6} header="h2">
         {t("DECKS_SCREEN.SUB_TITLE")}
       </Header>
     </>
