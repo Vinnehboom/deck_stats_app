@@ -120,6 +120,7 @@ export const setTranslations: { [key: string]: string } = {
   SW: "dp3",
   TEU: "sm9",
   TM: "hgss4",
+  MEW: "sv3pt5",
   TR: "base5",
   TRR: "ex7",
   UD: "hgss3",
