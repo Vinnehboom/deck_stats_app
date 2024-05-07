@@ -18,7 +18,14 @@ import "./utils/i18n";
 import { TranslationContext } from "./contexts/TranslationContext";
 import { MatchExport } from "./screens/exports/MatchExport";
 const Stack = createNativeStackNavigator<RootStackParamList>();
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+      gcTime: 10 * 10 * 6000,
+    },
+  },
+});
 
 export function App(): JSX.Element {
   const { t } = useTranslation();
