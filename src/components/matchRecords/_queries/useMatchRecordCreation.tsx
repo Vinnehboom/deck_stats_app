@@ -8,7 +8,7 @@ export const useMatchRecordCreation = (onSuccessCallback: () => void) => {
 
   return useMutation({
     mutationFn: async (matchRecord: MatchRecord) => {
-      return firestore()
+      firestore()
         .collection("MatchRecords")
         .doc(matchRecord.id)
         .set({ ...matchRecord, list: matchRecord.list || null, createdAt: firestore.FieldValue.serverTimestamp() })
