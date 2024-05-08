@@ -51,6 +51,8 @@ export const DeckMatchHistory = ({
         page === i + 1 && pageData.length !== limit ? (allowNext.current = false) : null;
         return (
           <Box key={i} display={i + 1 === page ? "block" : "none"}>
+            {exportable ? <Text style={DeckMatchHistoryStyle.exportText}>{t("DECK.DECK_MATCH_HISTORY.EXPORT_TEXT")}</Text> : null}
+
             <MatchRecordList exportable={exportable} matchRecords={pageData} viewableItems />
           </Box>
         );

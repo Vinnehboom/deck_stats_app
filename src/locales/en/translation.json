@@ -125,7 +125,9 @@
         "DECKS": "Decks"
       }
     },
-    "DECK_MATCH_HISTORY": {"LOADING": "Loading match history", "NO_DATA": "No data!", "EXPORT": "Export..."},
+    "DECK_MATCH_HISTORY": {"LOADING": "Loading match history",
+    "EXPORT_TEXT": "Select items to export as image",
+    "NO_DATA": "No data!", "EXPORT": "Export..."},
     "DECK_DETAILS": {
       "OPTIONS": { "TITLE": "Options"},
       "RECENT_RESULTS": "Recent results",
