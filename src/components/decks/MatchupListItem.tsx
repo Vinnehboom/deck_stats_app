@@ -28,16 +28,22 @@ export const MatchupListItem = ({
     rightColumnAttr.current = bo3 ? "coinFlipLost" : "second";
   }, [bo3]);
 
-  const baseFirstColor =
-    data[leftColumnAttr.current]?.wr && data[leftColumnAttr.current].wr > 50 ? basePositiveColorHue : baseNegativeColorHue;
-  const baseSecondColor =
-    data[rightColumnAttr.current]?.wr && data[rightColumnAttr.current].wr > 50 ? basePositiveColorHue : baseNegativeColorHue;
-  const firstColor = data[leftColumnAttr.current].wr
-    ? `hsl(${baseFirstColor}, 100%, ${100 - Math.abs(100 - data[leftColumnAttr.current].wr - 50)}%)`
-    : Colors.lightGrey;
-  const secondColor = data[rightColumnAttr.current].wr
-    ? `hsl(${baseSecondColor}, 100%, ${100 - Math.abs(100 - data[rightColumnAttr.current].wr - 50)}%)`
-    : Colors.lightGrey;
+  const rightWinrate = data[rightColumnAttr.current]?.wr;
+  const leftWinrate = data[leftColumnAttr.current]?.wr;
+
+  const baseFirstColor = typeof leftWinrate === "number" && leftWinrate > 50 ? basePositiveColorHue : baseNegativeColorHue;
+  const baseSecondColor = typeof rightWinrate === "number" && rightWinrate > 50 ? basePositiveColorHue : baseNegativeColorHue;
+
+  const firstColor =
+    typeof leftWinrate === "number"
+      ? `hsl(${baseFirstColor}, 100%, ${100 - Math.abs(100 - leftWinrate - 50)}%)`
+      : Colors.lightGrey;
+  const secondColor =
+    typeof rightWinrate === "number"
+      ? `hsl(${baseSecondColor}, 100%, ${100 - Math.abs(100 - rightWinrate - 50)}%)`
+      : Colors.lightGrey;
+
+  console.log();
   return (
     <HStack onTouchStart={() => setShowPercentage(!showPercentage)}>
       <HStack paddingRight={1} paddingY={1} display="flex" justifyContent="center" width="40%">
@@ -50,9 +56,9 @@ export const MatchupListItem = ({
         width={viewable ? "25%" : "30%"}
         paddingTop={3}>
         <Text textAlign="center">
-          {data[leftColumnAttr.current].wr !== null
+          {typeof leftWinrate === "number"
             ? showPercentage
-              ? `${data[leftColumnAttr.current].wr.toFixed(2)}%`
+              ? `${leftWinrate.toFixed(2)}%`
               : `${data[leftColumnAttr.current].wins}/${data[leftColumnAttr.current].losses}/${data[leftColumnAttr.current].ties}`
             : "/"}
         </Text>
@@ -64,9 +70,9 @@ export const MatchupListItem = ({
         borderTopRightRadius={5}
         borderBottomRightRadius={5}>
         <Text textAlign="center">
-          {data[rightColumnAttr.current].wr !== null
+          {typeof rightWinrate === "number"
             ? showPercentage
-              ? `${data[rightColumnAttr.current].wr.toFixed(2)}%`
+              ? `${rightWinrate.toFixed(2)}%`
               : `${data[rightColumnAttr.current].wins}/${data[rightColumnAttr.current].losses}/${
                   data[rightColumnAttr.current].ties
                 }`
