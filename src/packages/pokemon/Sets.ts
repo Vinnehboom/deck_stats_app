@@ -116,6 +116,7 @@ export const setTranslations: { [key: string]: string } = {
   STS: "xy11",
   SUM: "sm1",
   SV: "pl3",
+  SVE: "sve",
   SVI: "sv1",
   SW: "dp3",
   TEU: "sm9",

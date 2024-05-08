@@ -11,4 +11,9 @@ export const DeckMatchHistoryStyle = StyleSheet.create({
     paddingTop: Spacing.sm,
     textDecorationLine: "underline",
   },
+  exportText: {
+    fontStyle: "italic",
+    marginBottom: Spacing.sm,
+    textAlign: "center",
+  },
 });
