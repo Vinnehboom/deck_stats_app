@@ -85,7 +85,7 @@ export const MatchRecordListItem = ({
           {matchRecord.remarks.length > 1 ? (
             <HStack>
               <Text fontWeight="bold">{t("MATCH_RECORD.REMARKS")} :</Text>
-              <Text>{matchRecord.remarks}</Text>
+              <Text maxWidth="80%">{matchRecord.remarks}</Text>
             </HStack>
           ) : null}
         </VStack>
