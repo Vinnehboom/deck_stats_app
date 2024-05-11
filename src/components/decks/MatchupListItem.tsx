@@ -43,7 +43,6 @@ export const MatchupListItem = ({
       ? `hsl(${baseSecondColor}, 100%, ${100 - Math.abs(100 - rightWinrate - 50)}%)`
       : Colors.lightGrey;
 
-  console.log();
   return (
     <HStack onTouchStart={() => setShowPercentage(!showPercentage)}>
       <HStack paddingRight={1} paddingY={1} display="flex" justifyContent="center" width="40%">
