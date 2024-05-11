@@ -14,6 +14,7 @@ import { Button } from "../layout/Button";
 import { ElevatedContainer } from "../layout/ElevatedContainer";
 import { Header } from "../layout/Header";
 import { TranslationContext } from "../../contexts/TranslationContext";
+import { UnknownArchetype } from "../../types/Archetype";
 
 type DeckCreationFormPropsType = {
   user: User | null;
@@ -32,7 +33,7 @@ export const DeckCreationForm = ({ user }: DeckCreationFormPropsType) => {
     setDeckArchetype(undefined);
   });
 
-  const [deckArchetype, setDeckArchetype] = useState<ArchetypeBase>();
+  const [deckArchetype, setDeckArchetype] = useState<ArchetypeBase | UnknownArchetype>();
 
   const handleDeckCreation = () => {
     if (deckName.length > 0 && deckArchetype) {

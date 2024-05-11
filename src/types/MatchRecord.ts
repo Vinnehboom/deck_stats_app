@@ -1,4 +1,4 @@
-import { ArchetypeBase } from "./Archetype";
+import { ArchetypeBase, UnknownArchetype } from "./Archetype";
 import { Deck } from "./Deck";
 import { TimeStamped } from "./TimeStamped";
 import { List } from "./List";
@@ -17,8 +17,8 @@ export type Game = {
   started?: boolean;
   result: Result;
   list?: List;
-  deckArchetype: ArchetypeBase;
-  opponentArchetype: ArchetypeBase;
+  deckArchetype: ArchetypeBase | UnknownArchetype;
+  opponentArchetype: ArchetypeBase | UnknownArchetype;
 };
 
 export type GamesStarted = { [index: number]: boolean };
@@ -29,7 +29,7 @@ export type MatchRecord = TimeStamped & {
   listId: List["id"];
   list?: List | null;
   deckArchetype: ArchetypeBase;
-  opponentArchetype: ArchetypeBase;
+  opponentArchetype: ArchetypeBase | UnknownArchetype;
   coinFlipWon?: boolean;
   games: Game[];
   bo3: boolean;

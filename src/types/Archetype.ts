@@ -9,6 +9,8 @@ export type ArchetypeBase = {
   }[];
 };
 
+export type UnknownArchetype = "other";
+
 export type Archetype = ArchetypeBase & {
   variants: (ArchetypeBase & { icon: string })[];
   generation: number;
