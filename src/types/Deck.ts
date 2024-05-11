@@ -1,12 +1,12 @@
 import { List } from "./List";
-import { ArchetypeBase } from "./Archetype";
+import { ArchetypeBase, UnknownArchetype } from "./Archetype";
 
 export type Deck = {
   activeListId?: string;
   id: string;
   name: string;
   userId: string;
-  archetype: ArchetypeBase;
+  archetype: ArchetypeBase | UnknownArchetype;
 };
 
 export type DeckWithLists = Deck & {

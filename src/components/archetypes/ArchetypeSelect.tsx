@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
+import React, { useEffect, useState, Dispatch, SetStateAction, useContext } from "react";
 import { Flex, Image, ScrollView, VStack, HStack } from "native-base";
 import { useDebounce } from "use-lodash-debounce";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
@@ -15,6 +15,8 @@ import { Spinner } from "../Spinner";
 import { useArchetypeQuery } from "././_queries/useArchetypeQuery";
 import { Colors } from "../../styles/variables";
 import { ArchetypeIcons } from "../decks/ArchetypeIcons";
+import { UnknownArchetype } from "../../types/MatchRecord";
+import { TranslationContext } from "../../contexts/TranslationContext";
 
 const ArchetypesList = ({
   archetypes,
@@ -25,9 +27,10 @@ const ArchetypesList = ({
   archetypes: (ArchetypeBase | Archetype)[];
   shown: boolean;
   top?: number;
-  handleArchetypeSelection: (archetype: ArchetypeBase | Archetype) => void;
+  handleArchetypeSelection: (archetype: ArchetypeBase | Archetype | UnknownArchetype) => void;
 }) => {
-  return archetypes.length && shown ? (
+  const { t } = useContext(TranslationContext);
+  return shown ? (
     <VStack space="xs" style={top ? [ArchetypeSelectStyle.selectContainer, { top }] : ArchetypeSelectStyle.selectContainer}>
       <ScrollView minHeight="100%" zIndex={9999} nestedScrollEnabled>
         {archetypes.map(archetype => (
@@ -58,6 +61,29 @@ const ArchetypesList = ({
             </Flex>
           </Flex>
         ))}
+        {archetypes.length < 1 ? (
+          <Flex
+            marginX={1}
+            flexDirection="row"
+            justifyContent="space-between"
+            key="other"
+            borderBottomWidth={0.2}
+            padding={2}
+            minWidth="75%"
+            zIndex={9999}>
+            <Text onPress={() => handleArchetypeSelection("other")}>{t("MATCH_RECORD.OTHER")}</Text>
+            <Flex flexDirection="row">
+              <Image
+                marginRight={2}
+                key={1}
+                source={require("../../assets/images/substitute.png")}
+                resizeMode="stretch"
+                alt="substitute"
+                size="2xs"
+              />
+            </Flex>
+          </Flex>
+        ) : null}
       </ScrollView>
     </VStack>
   ) : (
@@ -70,7 +96,7 @@ export const ArchetypeSelect = ({
   listContainerTop,
   selectedArchetype,
 }: {
-  setDeckArchetype: Dispatch<SetStateAction<ArchetypeBase | Archetype | undefined>>;
+  setDeckArchetype: Dispatch<SetStateAction<ArchetypeBase | Archetype | UnknownArchetype | undefined>>;
   selectedArchetype: ArchetypeBase | Archetype | undefined;
   listContainerTop?: number;
 }) => {
@@ -86,10 +112,12 @@ export const ArchetypeSelect = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedArchetypeQuery]);
 
-  const handleArchetypeSelection = (archetype: ArchetypeBase | Archetype) => {
+  const handleArchetypeSelection = (archetype: ArchetypeBase | Archetype | UnknownArchetype) => {
     setDeckArchetype(archetype);
     setArchetypeQuery("");
   };
+
+  const { t } = useContext(TranslationContext);
 
   if (isLoading) return <Spinner />;
 
@@ -118,7 +146,7 @@ export const ArchetypeSelect = ({
       <TouchableOpacity onPress={() => setDeckArchetype(undefined)}>
         <HStack flexDirection="row" alignItems="center" space={2}>
           <Text marginY={1} maxW="80%" fontSize="md">
-            {selectedArchetype.name}
+            {selectedArchetype?.name || t("MATCH_RECORD.OTHER")}
           </Text>
           <ArchetypeIcons archetype={selectedArchetype} size="2xs" />
           <FontAwesomeIcon size={20} icon={faXmark} color="red" />

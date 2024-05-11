@@ -4,7 +4,7 @@ import React from "react";
 import { Archetype, ArchetypeBase } from "../../types";
 
 export const ArchetypeIcons = ({ archetype, size }: { archetype: Archetype | ArchetypeBase; size?: string }) => {
-  if (archetype?.icons?.length)
+  if (archetype?.icons?.length) {
     return archetype.icons.map((icon, index) => (
       <Image
         marginRight={1}
@@ -18,4 +18,16 @@ export const ArchetypeIcons = ({ archetype, size }: { archetype: Archetype | Arc
         size={size || "xs"}
       />
     ));
+  } else if (archetype) {
+    return (
+      <Image
+        marginRight={1}
+        source={require("../../assets/images/substitute.png")}
+        maxHeight="100%"
+        resizeMode="contain"
+        alt="substitute"
+        size={size || "xs"}
+      />
+    );
+  }
 };
