@@ -22,8 +22,6 @@ export const useArchetypeQuery = () => {
   } = useQuery({
     queryKey: ["archetypes"],
     queryFn: fetchArchetypes,
-    gcTime: 0,
-    staleTime: 0,
   });
   return isLoading ? {} : { archetypes: archetypes, isLoading: isLoading, isError: isError, error: error };
 };

@@ -3,7 +3,9 @@ import { GamesStarted, MatchRecord, Result, allResultOptions as resultOptions } 
 
 export const isArchetype = (obj: unknown): obj is ArchetypeBase => {
   if (obj) {
-    return typeof obj === "object" && ["identifier", "name", "icons", "cards"].every(property => property in obj);
+    return (
+      obj === "other" || (typeof obj === "object" && ["identifier", "name", "icons", "cards"].every(property => property in obj))
+    );
   }
   return false;
 };

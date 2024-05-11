@@ -28,7 +28,7 @@
     },
     "FORM": {
       "LOGIN_TITLE": "Log in",
-      "REGISTER_TITLE": "Creat account",
+      "REGISTER_TITLE": "Create account",
       "PASSWORD": "Password",
       "PASSWORD_CONFIRMATION": "Password confirmation",
       "EMAIL": "Email",
@@ -56,6 +56,7 @@
     "FIRST": "1st",
     "SECOND": "2nd",
     "REMARKS": "Remarks",
+    "OTHER": "Other",
     "FORM": {
       "DECK": "Deck",
       "LIST": "List",
