@@ -48,12 +48,12 @@ export const MatchExportStyle = StyleSheet.create({
     paddingTop: Spacing.sm,
   },
   opponentArchetype: {
-    paddingLeft: Spacing.lg,
+    paddingLeft: Spacing.md,
   },
   result: {
     fontSize: Typography.fontSizes.xxl,
     fontWeight: "bold",
-    paddingLeft: Spacing.md,
+    paddingLeft: Spacing.sm,
   },
   roundNumber: { fontSize: Typography.fontSizes.xxl, fontWeight: "bold" },
   score: {
