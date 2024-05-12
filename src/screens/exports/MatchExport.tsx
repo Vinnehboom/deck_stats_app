@@ -147,7 +147,13 @@ export const MatchExport = () => {
             <HStack space={3} style={MatchExportStyle.opponentArchetype}>
               <ArchetypeIcons archetype={item.opponentArchetype} />
             </HStack>
-            {item.bo3 ? <Coinflip won={item.coinFlipWon || false} /> : null}
+            {item.bo3 ? (
+              <Coinflip won={item.coinFlipWon || false} />
+            ) : (
+              <Text style={MatchExportStyle.result}>
+                {item.gamesStarted[0] ? t("MATCH_RECORD.FIRST") : t("MATCH_RECORD.SECOND")}
+              </Text>
+            )}
             <Text style={MatchExportStyle.score}>{scores[index]}</Text>
           </HStack>
         ))}
