@@ -2,10 +2,31 @@ import { Image } from "native-base";
 import React from "react";
 
 import { Archetype, ArchetypeBase } from "../../types";
+import { UnknownArchetype } from "../../types/Archetype";
 
-export const ArchetypeIcons = ({ archetype, size }: { archetype: Archetype | ArchetypeBase; size?: string }) => {
-  if (archetype?.icons?.length) {
-    return archetype.icons.map((icon, index) => (
+export const ArchetypeIcons = ({
+  archetype,
+  size,
+}: {
+  archetype: Archetype | ArchetypeBase | UnknownArchetype;
+  size?: string;
+}) => {
+  const unknown = typeof archetype === "string";
+  const threeIcons = !unknown && archetype?.icons?.length > 2;
+  if (!archetype) {
+    return;
+  }
+  return unknown ? (
+    <Image
+      marginRight={1}
+      source={require("../../assets/images/substitute.png")}
+      maxHeight="100%"
+      resizeMode="contain"
+      alt="substitute"
+      size={size || "xs"}
+    />
+  ) : (
+    archetype.icons.map((icon, index) => (
       <Image
         marginRight={1}
         key={icon + index}
@@ -15,19 +36,10 @@ export const ArchetypeIcons = ({ archetype, size }: { archetype: Archetype | Arc
         maxHeight="100%"
         resizeMode="contain"
         alt={icon}
-        size={size || "xs"}
+        top={threeIcons ? -1 : 0}
+        marginY={threeIcons ? 2 : "0"}
+        size={size || (threeIcons ? "2xs" : "xs")}
       />
-    ));
-  } else if (archetype) {
-    return (
-      <Image
-        marginRight={1}
-        source={require("../../assets/images/substitute.png")}
-        maxHeight="100%"
-        resizeMode="contain"
-        alt="substitute"
-        size={size || "xs"}
-      />
-    );
-  }
+    ))
+  );
 };
