@@ -102,6 +102,10 @@
       "sha1": "5a640bdb1181d2a5913eed5691dc05e681de9bba"
     },
     {
+      "path": "src/assets/images/coin_icon.png",
+      "sha1": "03020ab762281d4b1e131efc3cbadd97f82cb048"
+    },
+    {
       "path": "src/assets/images/dots.png",
       "sha1": "73734540a9c925ba762fc63a0d91dc2983ae6e81"
     },
@@ -120,6 +124,10 @@
     {
       "path": "src/assets/images/screw.png",
       "sha1": "799e8c71dc8b73850209c0c8b5a3948afcd4b0a4"
+    },
+    {
+      "path": "src/assets/images/substitute.png",
+      "sha1": "4ab330f657054f65a4cc64df6e7198170829b87d"
     },
     {
       "path": "src/assets/images/triangle_top_left_icon.svg",

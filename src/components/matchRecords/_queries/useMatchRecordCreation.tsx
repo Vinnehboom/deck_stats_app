@@ -11,12 +11,12 @@ export const useMatchRecordCreation = (onSuccessCallback: () => void) => {
       firestore()
         .collection("MatchRecords")
         .doc(matchRecord.id)
-        .set({ ...matchRecord, list: matchRecord.list || null, createdAt: firestore.FieldValue.serverTimestamp() })
+        .set({ ...matchRecord, list: matchRecord.list || null })
         .then(() => {
           matchRecord.games.forEach(game => firestore().collection("Games").doc(game.id).set(game));
         });
     },
-    onSuccess: async () => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["MatchRecords"] });
       onSuccessCallback();
     },
