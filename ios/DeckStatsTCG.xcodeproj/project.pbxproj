@@ -18,6 +18,7 @@
 		17F7A41912A740C69B8044E7 /* Halcom-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D7AA1EC0CCB4A418433C20E /* Halcom-Thin.otf */; };
 		1E991F2951CE46C79F6507B7 /* Halcom-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B7BCC71DAF64FD2826959BE /* Halcom-Black.otf */; };
 		20CF83ABEC2442C0B29E36FD /* Halcom-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 163F3E9B92664480B4137A81 /* Halcom-Medium.otf */; };
+		230A444D49E141F080D1293E /* substitute.png in Resources */ = {isa = PBXBuildFile; fileRef = DF8D18D2E8C4494FADDB9C15 /* substitute.png */; };
 		256483022A3143D9970F58C8 /* bootsplash_logo_1,5x.png in Resources */ = {isa = PBXBuildFile; fileRef = 102479D0844A4FB9B846DB28 /* bootsplash_logo_1,5x.png */; };
 		26AA2D17750C41C89792C8AC /* Halcom-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4EE378479B1460A94A4934F /* Halcom-BookItalic.otf */; };
 		30A2359A2C374AEAA3F78462 /* Halcom-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB9DAC2ED5EB4332BF5E6930 /* Halcom-Light.otf */; };
@@ -46,6 +47,7 @@
 		F2A980B4B29E0B42153CB0AF /* Pods_DeckStatsTCG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25A954D3A34386608D1DD98 /* Pods_DeckStatsTCG.framework */; };
 		F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEBDB8A096E84AA2B6A5B6F3 /* Halcom-Book.otf */; };
 		FC0D60792BBF4BC6B078E41C /* bootsplash_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */; };
+		F352F5FEA15C498393D8606E /* coin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 282683D1CA6244789CF33539 /* coin_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,7 @@
 		D6CF6C0035F4759C9D973D70 /* Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; path = "Target Support Files/Pods-DeckStatsTCG-DeckStatsTCGTests/Pods-DeckStatsTCG-DeckStatsTCGTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7BAB57814294E8EB15F43C5 /* bootsplash_logo_4x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo_4x.png; path = ../src/assets/bootsplash_logo_4x.png; sourceTree = "<group>"; };
 		D985B758034842E4887AB8B9 /* button_blue.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = button_blue.png; path = ../src/assets/images/button_blue.png; sourceTree = "<group>"; };
+		DF8D18D2E8C4494FADDB9C15 /* substitute.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = substitute.png; path = ../src/assets/images/substitute.png; sourceTree = "<group>"; };
 		E4EE378479B1460A94A4934F /* Halcom-BookItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-BookItalic.otf"; path = "../src/assets/fonts/Halcom-BookItalic.otf"; sourceTree = "<group>"; };
 		E7AC36586367477BBA4C8F91 /* pokemon_dp.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pokemon_dp.otf; path = ../src/assets/fonts/pokemon_dp.otf; sourceTree = "<group>"; };
 		E8C1402E65AD4E32864D211C /* Halcom-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-ExtraBold.otf"; path = "../src/assets/fonts/Halcom-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7B36423B2964CE8ACF48999 /* bootsplash_logo_3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo_3x.png; path = ../src/assets/bootsplash_logo_3x.png; sourceTree = "<group>"; };
+		282683D1CA6244789CF33539 /* coin_icon.png */ = {isa = PBXFileReference; name = "coin_icon.png"; path = "../src/assets/images/coin_icon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,8 @@
 				990C63F554C24334A266CCA1 /* bootsplash_logo_2x.png */,
 				F7B36423B2964CE8ACF48999 /* bootsplash_logo_3x.png */,
 				D7BAB57814294E8EB15F43C5 /* bootsplash_logo_4x.png */,
+				DF8D18D2E8C4494FADDB9C15 /* substitute.png */,
+				282683D1CA6244789CF33539 /* coin_icon.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -381,6 +387,8 @@
 				66246C6723D84F25A26355D0 /* bootsplash_logo_2x.png in Resources */,
 				0655A12B9655471D96CFDEE8 /* bootsplash_logo_3x.png in Resources */,
 				6674EF666F784213982B8CE1 /* bootsplash_logo_4x.png in Resources */,
+				230A444D49E141F080D1293E /* substitute.png in Resources */,
+				F352F5FEA15C498393D8606E /* coin_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +637,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.966;
+				MARKETING_VERSION = 0.968;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -657,7 +665,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.966;
+				MARKETING_VERSION = 0.968;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

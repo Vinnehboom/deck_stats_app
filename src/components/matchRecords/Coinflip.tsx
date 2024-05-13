@@ -10,7 +10,7 @@ MatchRecordListItemStyle;
 export const Coinflip = ({ won, paddingTop }: { won: boolean; paddingTop?: DimensionValue }) => {
   return (
     <HStack space={1} alignItems="center" paddingTop={paddingTop}>
-      <Image style={MatchRecordListItemStyle.coinflip} alt="coin-flip" source={require("../../assets/images/coin-icon.png")} />
+      <Image style={MatchRecordListItemStyle.coinflip} alt="coin-flip" source={require("../../assets/images/coin_icon.png")} />
       <FontAwesomeIcon icon={won ? faCheck : faXmark} />
     </HStack>
   );
