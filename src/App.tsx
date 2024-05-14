@@ -13,6 +13,7 @@ import { HomeScreen } from "./screens/HomeScreen";
 import { DeckHome } from "./screens/decks/deck/DeckHome";
 import { RootStackParamList } from "./types/RouteParams";
 import { MatchupNotes } from "./screens/matchups/MatchupNotes";
+import { Account } from "./screens/users/Account";
 import { HeaderBackButton } from "./components/navigation/HeaderBackButton";
 import "./utils/i18n";
 import { TranslationContext } from "./contexts/TranslationContext";
@@ -78,6 +79,19 @@ export function App(): JSX.Element {
                   headerShadowVisible: true,
                 }}
                 component={MatchExport}
+              />
+              <Stack.Screen
+                name="Account"
+                options={{
+                  animation: "fade",
+                  headerLeft: HeaderBackButton,
+                  headerShown: true,
+                  headerTitle: t("ACCOUNT.SCREEN_TITLE"),
+                  headerTitleStyle: { color: Colors.white, fontSize: Typography.fontSizes.lg, fontWeight: "bold" },
+                  headerStyle: { backgroundColor: Colors.primary },
+                  headerShadowVisible: true,
+                }}
+                component={Account}
               />
             </Stack.Navigator>
             <FlashMessage position="top" />

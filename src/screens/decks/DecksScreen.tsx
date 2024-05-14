@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { FlatList, SafeAreaView } from "react-native";
 import { Box } from "native-base";
+import auth from "@react-native-firebase/auth";
 
 import { DeckItem } from "../../components/DeckItem";
 import { Spinner } from "../../components/Spinner";
@@ -10,10 +11,9 @@ import { Deck } from "../../types";
 import { DecksHeader } from "./DecksHeader";
 import { Text } from "../../components/layout/Text";
 import { TranslationContext } from "../../contexts/TranslationContext";
-import { useAuthContext } from "../../contexts/useAuthContext";
 
 export const DecksScreen = () => {
-  const { user } = useAuthContext();
+  const user = auth().currentUser;
   const { queryResult: decks } = useGetDecks(user!);
   const { t } = useContext(TranslationContext);
 

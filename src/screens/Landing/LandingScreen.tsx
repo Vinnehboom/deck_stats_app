@@ -5,7 +5,6 @@ import auth from "@react-native-firebase/auth";
 import { KeyboardAvoidingView } from "react-native";
 
 import { useGetActiveDeck } from "../../components/decks/_queries/useGetActiveDeck";
-import { useAuthContext } from "../../contexts/useAuthContext";
 import { LandingScreenStyle } from "../../styles/LandingScreenStyle";
 import { Header } from "../../components/layout/Header";
 import { LandingHeader } from "./LandingHeader";
@@ -19,7 +18,6 @@ import { useGetUserMatchHistory } from "../../components/matchRecords/_queries/u
 import { MatchRecordList } from "../../components/matchRecords/MatchRecordList";
 
 export const LandingScreen = () => {
-  const { signOut } = useAuthContext();
   const user = auth().currentUser;
   const { t } = useContext(TranslationContext);
 
@@ -55,7 +53,7 @@ export const LandingScreen = () => {
       ListEmptyComponent={NoDeck}
       style={LandingScreenStyle.container}
       renderItem={renderItem}
-      ListHeaderComponent={LandingHeader({ signOut: signOut! })}
+      ListHeaderComponent={LandingHeader}
       ListFooterComponent={<Box paddingBottom={25} />}
       keyExtractor={() => "1"}
     />
