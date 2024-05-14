@@ -115,7 +115,7 @@ export const LoginScreen = () => {
       })
       .catch(error => {
         showMessage({
-          message: error,
+          message: `${error.message}`,
           type: "warning",
         });
       });

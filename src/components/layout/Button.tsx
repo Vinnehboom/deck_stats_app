@@ -7,7 +7,7 @@ type ButtonProps = IButtonProps & { text: string; color?: string };
 
 export const Button = (props: ButtonProps) => {
   return (
-    <NativeButton {...props} style={Inputs.button} bgColor={props.color}>
+    <NativeButton {...props} style={props.style ? [Inputs.button, props.style] : Inputs.button} bgColor={props.color}>
       <Text fontSize={props.fontSize} style={Inputs.buttonText}>
         {props.text}
       </Text>
