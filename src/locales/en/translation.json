@@ -13,7 +13,7 @@
     "RECENT_RECORDS": "Recent results",
     "NO_DECK": "Please add a deck on",
     "DECKS": "Decks",
-    "NO_DECK_2": "tab",
+    "NO_DECK_2": "tab"
   },
   "LOGIN_SCREEN": {
     "T&C": "Terms and conditions",
@@ -100,6 +100,23 @@
     "SHARE_ERROR": "Image failed to share",
     "SHARE": "Share",
     "WATERMARK": "Powered by VS Log"
+  },
+  "ACCOUNT": {
+    "SCREEN_TITLE": "Account",
+    "SIGN_OUT": "Sign out",
+    "DETAILS": "Details",
+    "EMAIL": "Email",
+    "SIGNED_OUT": "Successfully signed out!",
+    "DELETE_ACCOUNT": "Delete account",
+    "EMAIL_DISCLAIMER": "Your email is hidden from other users.",
+    "USER_DELETE": {
+      "BUTTON": "DELETION", 
+      "MESSAGE": "Are you sure you want to delete your account? This action is irreversible.",
+      "TITLE": "Delete account",
+      "CONFIRM": "Delete my account",
+      "CANCEL": "Cancel",
+      "SUCCESS": "Account deleted! Thank you for taking part."
+    }
   },
   "DECK": {
     "LIST_ITEM": {

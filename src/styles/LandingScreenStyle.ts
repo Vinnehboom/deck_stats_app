@@ -23,7 +23,7 @@ export const LandingScreenStyle = StyleSheet.create({
     marginHorizontal: Spacing.lg,
     marginTop: Spacing.sm,
   },
-  logOutButton: { position: "absolute", right: "10%", top: "47%" },
+  logOutButton: { position: "absolute", right: "8%", top: "45%" },
   logo: {
     alignSelf: "center",
     height: screenHeight * 0.07,

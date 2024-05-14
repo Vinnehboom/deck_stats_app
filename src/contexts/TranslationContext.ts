@@ -8,7 +8,7 @@ export const TranslationContext = createContext<TranslationContextType>({
   t: () => {
     throw {
       name: "NotImplementedError",
-      message: `signOut() should be overridden by a useState setter or similar in the component that uses the Auth Provider.`,
+      message: `t() should be overridden by a useState setter or similar in the component that uses the Auth Provider.`,
     };
   },
 });
