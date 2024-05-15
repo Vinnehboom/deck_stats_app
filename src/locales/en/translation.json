@@ -28,6 +28,7 @@
     },
     "FORM": {
       "LOGIN_TITLE": "Log in",
+      "EMAIL_DISCLAIMER": "will remain hidden from other users.",
       "REGISTER_TITLE": "Create account",
       "PASSWORD": "Password",
       "PASSWORD_CONFIRMATION": "Password confirmation",

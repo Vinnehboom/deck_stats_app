@@ -166,6 +166,7 @@ export const LoginScreen = () => {
               onChangeText={text => loginFormDispatch({ type: "SET_EMAIL", payload: text })}
               style={LoginScreenStyle.input}
             />
+            {login ? null : <Text style={LoginScreenStyle.emailDislaimer}>{t("LOGIN_SCREEN.FORM.EMAIL_DISCLAIMER")}</Text>}
             <TextInput
               placeholder={t("LOGIN_SCREEN.FORM.PASSWORD")}
               value={loginState.password}
