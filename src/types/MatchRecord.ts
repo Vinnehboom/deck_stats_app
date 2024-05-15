@@ -33,6 +33,7 @@ export type MatchRecord = TimeStamped & {
   coinFlipWon?: boolean;
   games: Game[];
   bo3: boolean;
+  favorite?: boolean;
   gamesStarted: GamesStarted;
   result: Result;
   remarks: string;
