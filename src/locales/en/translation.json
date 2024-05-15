@@ -93,7 +93,11 @@
     "FIRST":"1st",
     "SECOND":"2nd",
     "NOTES": "Notes",
-    "LIST_NAME": "List:"
+    "LIST_NAME": "List:",
+    "FAVORITE": {
+      "FAVORITED": "Note favorited.",
+      "UNFAVORITED": "Note no longer favoited."
+    }
   },
   "MATCH_EXPORT": {
     "SCREEN_TITLE": "Match export",

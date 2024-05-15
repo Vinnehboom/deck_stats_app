@@ -19,5 +19,6 @@ export const MatchupNotesStyle = StyleSheet.create({
     paddingBottom: Spacing.xs,
     padding: Spacing.xs,
   },
-  remarks: { marginLeft: Spacing.md, paddingTop: Spacing.xxs, textAlign: "justify" },
+  remarks: { marginLeft: Spacing.md, maxWidth: "75%", paddingTop: Spacing.xxs, textAlign: "justify" },
+  starIcon: { marginStart: "auto" },
 });
