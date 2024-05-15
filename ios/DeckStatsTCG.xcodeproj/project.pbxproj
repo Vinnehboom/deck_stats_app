@@ -45,9 +45,9 @@
 		DA120F15CE01417CB11526FC /* Halcom-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8C1402E65AD4E32864D211C /* Halcom-ExtraBold.otf */; };
 		EEE39C582BB1916100BEFCB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */; };
 		F2A980B4B29E0B42153CB0AF /* Pods_DeckStatsTCG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25A954D3A34386608D1DD98 /* Pods_DeckStatsTCG.framework */; };
+		F352F5FEA15C498393D8606E /* coin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 282683D1CA6244789CF33539 /* coin_icon.png */; };
 		F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEBDB8A096E84AA2B6A5B6F3 /* Halcom-Book.otf */; };
 		FC0D60792BBF4BC6B078E41C /* bootsplash_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */; };
-		F352F5FEA15C498393D8606E /* coin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 282683D1CA6244789CF33539 /* coin_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +75,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = DeckStatsTCG/main.m; sourceTree = "<group>"; };
 		163F3E9B92664480B4137A81 /* Halcom-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Medium.otf"; path = "../src/assets/fonts/Halcom-Medium.otf"; sourceTree = "<group>"; };
 		1991682AF24443DBBE4C0D24 /* dots.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = dots.png; path = ../src/assets/images/dots.png; sourceTree = "<group>"; };
+		282683D1CA6244789CF33539 /* coin_icon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = coin_icon.png; path = ../src/assets/images/coin_icon.png; sourceTree = "<group>"; };
 		2E04A17F957E4E3CA2F6D25F /* screw.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = screw.png; path = ../src/assets/images/screw.png; sourceTree = "<group>"; };
 		334EC7CC339E408C9EB73501 /* Halcom-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Italic.otf"; path = "../src/assets/fonts/Halcom-Italic.otf"; sourceTree = "<group>"; };
 		37095120181146FD9914DDA3 /* Halcom-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Halcom-Regular.otf"; path = "../src/assets/fonts/Halcom-Regular.otf"; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7B36423B2964CE8ACF48999 /* bootsplash_logo_3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo_3x.png; path = ../src/assets/bootsplash_logo_3x.png; sourceTree = "<group>"; };
-		282683D1CA6244789CF33539 /* coin_icon.png */ = {isa = PBXFileReference; name = "coin_icon.png"; path = "../src/assets/images/coin_icon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -637,7 +637,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.968;
+				MARKETING_VERSION = 0.97;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -665,7 +665,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.968;
+				MARKETING_VERSION = 0.97;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
