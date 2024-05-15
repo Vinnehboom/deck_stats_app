@@ -30,6 +30,12 @@ export const LoginScreenStyle = StyleSheet.create({
     justifyContent: "center",
     width: screenWidth - 60,
   },
+  emailDislaimer: {
+    alignSelf: "center",
+    color: Colors["primary-dark"],
+    fontSize: Typography.fontSizes.sm,
+    fontStyle: "italic",
+  },
   formContainer: {
     alignItems: "center",
     backgroundColor: Colors.light,
