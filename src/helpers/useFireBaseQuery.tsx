@@ -27,5 +27,6 @@ export function useFirebaseQuery<T>(keys: [keyof QueryKeys, ...QueryKeysType], q
     },
   });
   const { data } = result;
+  if (data?.error) console.log(data.error);
   return { queryResult: data as T, ...result };
 }
