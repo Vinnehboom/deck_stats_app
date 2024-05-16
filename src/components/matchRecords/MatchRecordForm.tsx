@@ -127,7 +127,8 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
 
   useEffect(() => {
     matchRecordDispatch({ type: "UPDATE_LIST_ID", payload: activeList?.list?.id || "no-list" });
-    matchRecordDispatch({ type: "UPDATE_DECK_ARCHETYPE", payload: selectedDeck.archetype });
+    matchRecordDispatch({ type: "UPDATE_DECK_ARCHETYPE", payload: selectedDeck?.archetype });
+    matchRecordDispatch({ type: "UPDATE_DECK_ID", payload: selectedDeck?.id });
     coinFlip.current = matchRecord.bo3;
   }, [activeList, selectedDeck, matchRecord.bo3]);
 
