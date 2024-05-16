@@ -52,12 +52,13 @@ const calculateBo3Data = (matchRecords: MatchRecord[]): Bo3MatchRecordDataCollec
     (gameData, matchRecord: MatchRecord) => {
       const archetype = matchRecord.opponentArchetype;
       const archetypeData = gameData[archetype.identifier] || {
-        coinFlipWon: { wins: 0, losses: 0, ties: 0, wr: 0 },
-        coinFlipLost: { wins: 0, losses: 0, ties: 0, wr: 0 },
+        coinFlipWon: { wins: 0, losses: 0, ties: 0, wr: 0, total: 0 },
+        coinFlipLost: { wins: 0, losses: 0, ties: 0, wr: 0, total: 0 },
         archetype: archetype,
         matchRecords: [],
       };
       const coinFlipWon = matchRecord.coinFlipWon;
+      coinFlipWon ? archetypeData.coinFlipWon.total++ : archetypeData.coinFlipLost.total++;
       if (matchWon(matchRecord)) {
         coinFlipWon
           ? (archetypeData.coinFlipWon.wins = archetypeData.coinFlipWon.wins + 1)
@@ -92,16 +93,15 @@ const calculateBo1Data = (games: Game[]) => {
   const calculatedData: Bo1MatchRecordDataCollection = games?.reduce<MatchRecordData>((gameData, game: Game) => {
     const archetype = game.opponentArchetype;
     const archetypeData = gameData[archetype.identifier] || {
-      first: { wins: 0, losses: 0, ties: 0, wr: 0 },
-      second: { wins: 0, losses: 0, ties: 0, wr: 0 },
+      first: { wins: 0, losses: 0, ties: 0, wr: 0, total: 0 },
+      second: { wins: 0, losses: 0, ties: 0, wr: 0, total: 0 },
       archetype: archetype,
       matchRecords: [],
     };
     const started = game.started;
+    started ? archetypeData.first.total++ : archetypeData.second.total++;
     if (matchWon(game)) {
-      started
-        ? (archetypeData.first.wins = archetypeData.first.wins + 1)
-        : (archetypeData.second.wins = archetypeData.second.wins + 1);
+      started ? archetypeData.first.wins++ : archetypeData.second.wins++;
     } else if (matchLost(game)) {
       started
         ? (archetypeData.first.losses = archetypeData.first.losses + 1)

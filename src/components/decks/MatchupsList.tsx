@@ -26,7 +26,7 @@ export const MatchupsList = ({
   matchRecords?: MatchRecord[];
 }) => {
   const { t } = useContext(TranslationContext);
-  const { data, bo3 } = useContext(MatchupsContext);
+  const { data, globalData, global, bo3 } = useContext(MatchupsContext);
   const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
   return (
     <Box width="95%">
@@ -60,8 +60,8 @@ export const MatchupsList = ({
           ) : null}
         </HStack>
       </VStack>
-      {Object.keys(data).map((identifier, idx) => {
-        const archetypeData: MatchRecordDataEntry = data[identifier];
+      {Object.keys(global ? globalData : data).map((identifier, idx) => {
+        const archetypeData: MatchRecordDataEntry = global ? globalData[identifier] : data[identifier];
         return (
           <HStack key={identifier + idx}>
             <MatchupListItem viewable={viewable || false} archetype={archetypeData.archetype} data={archetypeData} />

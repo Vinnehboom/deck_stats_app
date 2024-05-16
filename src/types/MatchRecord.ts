@@ -39,7 +39,7 @@ export type MatchRecord = TimeStamped & {
   remarks: string;
 };
 
-export type MatchRecordDataResults = { wins: number; losses: number; ties: number; wr: number | null };
+export type MatchRecordDataResults = { wins: number; losses: number; ties: number; wr: number | null; total: number };
 
 export type Bo1MatchRecordDataEntry = {
   total?: number;

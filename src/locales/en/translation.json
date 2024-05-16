@@ -201,6 +201,9 @@
       "WIN_RATES": "Win rates",
       "FIRST": "1st",
       "SECOND": "2nd",
+      "GLOBAL": "Global",
+      "GLOBAL_DESCRIPTION": "Show global matchup data from the past 14 days.",
+      "GLOBAL_LOADING": "Global data loading...", 
       "NO_DATA": "No data!",
       "FORMAT": "Format:"
     },
