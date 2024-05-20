@@ -10,7 +10,7 @@ export const useSetActiveList = (deck: Deck, onSuccessCallback: () => void) => {
       firestore().collection("ActiveLists").doc(deck.id).set({ list: list });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["ActiveList", { deck }] });
+      queryClient.invalidateQueries({ queryKey: ["ActiveList", { deck: deck.id }] });
       queryClient.invalidateQueries({ queryKey: ["ActiveDeck"] });
       queryClient.invalidateQueries({ queryKey: ["Lists", { deck: deck.id }] });
       onSuccessCallback();

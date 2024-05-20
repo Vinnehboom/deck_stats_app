@@ -184,8 +184,21 @@
       "LIST_CREATION": {
         "SUCCESS": "List added!",
         "SUCCESS_AND_ACTIVATED": "List added. It was also set as the current active list for this deck.",
-        "ERROR": "Some errors were encountered during list submission:"
+        "NO_NAME": "List needs a name",
+        "ERROR": "Some errors were encountered during list submission:",
       },
+      "SET_ACTIVE": "Set active",
+      "ACTIVE_LIST": "Active list",
+      "LIST_DELETION": {"DELETE_ALERT": {
+        "TITLE": "Confirm list deletion",
+        "MESSAGE": "Are you sure you want to delete this list?",
+      },
+    "RECORDS_ALERT": {
+      "TITLE": "Related data deletion", 
+      "MESSAGE": "Do you want to delete the related match records as well?",
+      "CONFIRM": "Delete with match data",
+      "LIST_ONLY": "Only delete the list"
+    }},
       "LISTS":{"TITLE": "Lists", "LOADING": "Lists loading..."},
       "LIST_FORM": {
         "TITLE": "Import list",
@@ -204,5 +217,9 @@
       "MESSAGE": "Your permission is required to save images to your device",
       "ERROR": "Error asking for image permission"
     }
+  },
+  "ALERTS": {
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel"
   }
 }
