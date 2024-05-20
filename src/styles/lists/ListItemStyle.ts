@@ -16,7 +16,6 @@ export const ListItemStyle = StyleSheet.create({
     fontSize: Typography.fontSizes.md,
     fontWeight: "700",
   },
-
   activeTabButton: {
     backgroundColor: Colors.light,
     borderBottomEndRadius: 0,
@@ -68,6 +67,7 @@ export const ListItemStyle = StyleSheet.create({
     color: Colors.white,
     fontSize: Typography.fontSizes.md,
   },
+  deleteIcon: { marginEnd: Spacing.sm, marginStart: "auto" },
   header: {
     display: "flex",
     justifyContent: "space-evenly",

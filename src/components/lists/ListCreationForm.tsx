@@ -61,6 +61,7 @@ export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] })
       deckId: deck.id,
       cards: cardList,
     };
+    if (newListObject.listName.length < 1) errors.push(t("DECK.DECK_LISTS.LIST_CREATION.NO_NAME"));
     if (errors.length > 0) {
       const errorString = errors.join(", ");
       showMessage({
