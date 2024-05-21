@@ -2,7 +2,9 @@ import React, { useState, useRef, useContext } from "react";
 import { Box, HStack, Link } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faFileExport } from "@fortawesome/free-solid-svg-icons";
+import { faFileExport, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { showMessage } from "react-native-flash-message";
+import { Alert } from "react-native";
 
 import { Spinner } from "../Spinner";
 import { MatchRecordList } from "../matchRecords/MatchRecordList";
@@ -15,6 +17,7 @@ import { useGetDeckMatchHistory } from "../matchRecords/_queries/useGetDeckMatch
 import { RootStackParamList } from "../../types/RouteParams";
 import { DeckMatchHistoryStyle } from "../../styles/decks/DeckMatchHistoryStyle";
 import { ExportRecordsContext } from "../../contexts/decks/ExportRecordsContext";
+import { useMatchRecordDeletion } from "../matchRecords/_queries/useMatchRecordDeletion";
 
 export const DeckMatchHistory = ({
   deck,
@@ -41,6 +44,25 @@ export const DeckMatchHistory = ({
     setSelectedItems,
   };
 
+  const recordDeletionMutation = useMatchRecordDeletion(deck, () => {
+    showMessage({ message: t("DECK.DECK_MATCH_HISTORY.DELETION.DELETED") });
+    setSelectedItems([]);
+  });
+
+  const handleRecordDeletion = () => {
+    Alert.alert(t("DECK.DECK_MATCH_HISTORY.DELETION.TITLE"), t("DECK.DECK_MATCH_HISTORY.DELETION.MESSAGE"), [
+      {
+        text: t("ALERTS.CANCEL"),
+        onPress: () => {},
+        style: "cancel",
+      },
+      {
+        text: t("ALERTS.CONFIRM"),
+        onPress: () => recordDeletionMutation.mutate({ matchRecords: selectedItems }),
+      },
+    ]);
+  };
+
   const { isFetching, data, fetchNextPage } = useGetDeckMatchHistory(deck, limit, paginated);
   if (isFetching) return <Spinner height={140} description={t("DECK.DECK_MATCH_HISTORY.LOADING")} />;
 
@@ -59,12 +81,21 @@ export const DeckMatchHistory = ({
       })}
       {paginated ? Pagination({ page, setPage, allowNext: allowNext.current, fetchNextPage }) : null}
       {selectedItems.length > 0 ? (
-        <HStack justifyContent="center">
-          <Link onPress={() => push("MatchExport", { matchupRecords: selectedItems })}>
-            <Text style={DeckMatchHistoryStyle.exportLink}> {t("DECK.DECK_MATCH_HISTORY.EXPORT")}.</Text>
-            <FontAwesomeIcon style={DeckMatchHistoryStyle.exportIcon} icon={faFileExport} />
-          </Link>
-        </HStack>
+        <>
+          <Text alignSelf="center" fontStyle="italic">
+            {t("DECK.DECK_MATCH_HISTORY.SELECTED_COUNT")} {selectedItems.length}
+          </Text>
+          <HStack justifyContent="space-evenly">
+            <Link onPress={handleRecordDeletion}>
+              <Text style={DeckMatchHistoryStyle.deleteLink}> {t("DECK.DECK_MATCH_HISTORY.DELETE")}.</Text>
+              <FontAwesomeIcon style={DeckMatchHistoryStyle.deleteIcon} icon={faTrash} />
+            </Link>
+            <Link onPress={() => push("MatchExport", { matchupRecords: selectedItems })}>
+              <Text style={DeckMatchHistoryStyle.exportLink}> {t("DECK.DECK_MATCH_HISTORY.EXPORT")}.</Text>
+              <FontAwesomeIcon style={DeckMatchHistoryStyle.exportIcon} icon={faFileExport} />
+            </Link>
+          </HStack>
+        </>
       ) : null}
     </ExportRecordsContext.Provider>
   ) : (

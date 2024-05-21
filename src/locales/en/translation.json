@@ -145,8 +145,17 @@
       }
     },
     "DECK_MATCH_HISTORY": {"LOADING": "Loading match history",
-    "EXPORT_TEXT": "Select items to export as image",
-    "NO_DATA": "No data!", "EXPORT": "Export..."},
+    "EXPORT_TEXT": "Select items to export or delete...",
+    "SELECTED_COUNT": "Records selected:",
+    "NO_DATA": "No data!", 
+    "EXPORT": "Export...",
+    "DELETE": "Delete records",
+    "DELETION": {
+      "TITLE": "Delete records",
+      "MESSAGE": "Are you sure you want to delete these records?",
+      "DELETED": "Records successfully deleted"
+    }
+  },
     "DECK_DETAILS": {
       "OPTIONS": { "TITLE": "Options"},
       "RECENT_RESULTS": "Recent results",

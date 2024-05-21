@@ -16,7 +16,7 @@ export const useMatchRecordCreation = (onSuccessCallback: () => void) => {
           matchRecord.games.forEach(game => firestore().collection("Games").doc(game.id).set(game));
         });
     },
-    onSuccess: () => {
+    onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ["MatchRecords"] });
       onSuccessCallback();
     },
