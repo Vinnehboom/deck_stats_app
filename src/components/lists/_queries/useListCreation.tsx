@@ -16,6 +16,8 @@ export const useListCreation = (deck: Deck, onSuccessCallback: (listActivated?: 
       if (setActive) {
         activeListMutation.mutate(list);
       }
+    },
+    onSettled: (_data, _error, { setActive }) => {
       queryClient.invalidateQueries({ queryKey: ["Lists", { deck: deck.id }] });
       onSuccessCallback(setActive);
     },
