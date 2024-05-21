@@ -5,9 +5,7 @@ import { List } from "../../../types";
 
 export const useListDeletion = (list: List, onSuccessCallback: (recordsDeleted: boolean) => void) => {
   const invalidateRecordQueries = ({ deleteRecords }: { deleteRecords: boolean }) => {
-    queryClient.invalidateQueries({ queryKey: ["Lists", { deck: list.deckId }] });
-    queryClient.invalidateQueries({ queryKey: ["ActiveList", { deck: list.deckId }] });
-    if (deleteRecords) queryClient.invalidateQueries({ queryKey: ["MatchRecords", { deck: list.deckId }] });
+    if (deleteRecords) queryClient.invalidateQueries({ queryKey: ["MatchRecords"] });
   };
 
   const queryClient = useQueryClient();
@@ -39,10 +37,11 @@ export const useListDeletion = (list: List, onSuccessCallback: (recordsDeleted: 
         query = query.then(() => firestore().collection("ActiveLists").doc(list.deckId).delete());
       }
 
-      return await query;
+      return query;
     },
-    onSuccess(_data, { deleteRecords }) {
-      invalidateRecordQueries({ deleteRecords });
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["Lists", { deck: list.deckId }] });
+      queryClient.invalidateQueries({ queryKey: ["ActiveList", { deck: list.deckId }] });
     },
     onSettled: (_data, _errors, { deleteRecords }) => {
       onSuccessCallback(deleteRecords);
