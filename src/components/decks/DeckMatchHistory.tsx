@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import { Box, HStack, Link } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
@@ -63,7 +63,12 @@ export const DeckMatchHistory = ({
     ]);
   };
 
-  const { isFetching, data, fetchNextPage } = useGetDeckMatchHistory(deck, limit, paginated);
+  const { isFetching, refetch, data, fetchNextPage } = useGetDeckMatchHistory(deck, limit, paginated);
+
+  useEffect(() => {
+    refetch();
+  }, [limit, refetch]);
+
   if (isFetching) return <Spinner height={140} description={t("DECK.DECK_MATCH_HISTORY.LOADING")} />;
 
   return data?.pages[0] && data?.pages[0].docs[0] ? (

@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useLayoutEffect, useState } from "react";
 import { FlatList } from "react-native";
-import { Box } from "native-base";
+import { Box, HStack, Select } from "native-base";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import auth from "@react-native-firebase/auth";
 
@@ -10,13 +10,17 @@ import { Header } from "../../../../components/layout/Header";
 import { DetailsHeader } from "./DetailsHeader";
 import { TranslationContext } from "../../../../contexts/TranslationContext";
 import { DeckDetailsStyle } from "../../../../styles/decks/DeckDetailsStyle";
+import { Colors, Spacing } from "../../../../styles/variables";
 
 export const DeckDetails = () => {
   const user = auth().currentUser;
   const { params } = useRoute<RouteProp<DeckListTabParamList, "DeckDetails">>();
   const { deck } = params;
+  const [limit, setLimit] = useState(5);
 
   const { t } = useContext(TranslationContext);
+
+  useLayoutEffect(() => {}, [limit]);
 
   return (
     <FlatList
@@ -24,10 +28,26 @@ export const DeckDetails = () => {
       data={[deck]}
       renderItem={() => (
         <Box>
-          <Header header="h2">{t("DECK.DECK_DETAILS.RECENT_RESULTS")}</Header>
+          <HStack display="flex" alignItems="center">
+            <Box width="33%" />
+            <Header header="h2">{t("DECK.DECK_DETAILS.RECENT_RESULTS")}</Header>
+            <Box width="33%">
+              <Select
+                marginRight={Spacing.xxs}
+                minW="65%"
+                onValueChange={value => setLimit(Number(value))}
+                marginLeft="auto"
+                borderWidth={0}
+                selectedValue={`${limit}`}
+                bgColor={Colors.white}>
+                <Select.Item label="5" value="5" />
+                <Select.Item label="10" value="10" />
+              </Select>
+            </Box>
+          </HStack>
           <Box style={DeckDetailsStyle.historyContainerWrapper}>
             <Box style={DeckDetailsStyle.historyContainer}>
-              <DeckMatchHistory exportable={true} paginated={true} deck={deck} limit={5} />
+              <DeckMatchHistory exportable={true} paginated={true} deck={deck} limit={limit} />
             </Box>
           </Box>
         </Box>
