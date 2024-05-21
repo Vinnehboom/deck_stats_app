@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useRoute, RouteProp } from "@react-navigation/native";
 import { View, HStack, Image, Box, ScrollView } from "native-base";
-// eslint-disable-next-line react-native/split-platform-components
-import { Alert, PermissionsAndroid, Platform } from "react-native";
+import { Alert } from "react-native";
 import { captureRef } from "react-native-view-shot";
 import { CameraRoll } from "@react-native-camera-roll/camera-roll";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
@@ -45,25 +44,6 @@ export const MatchExport = () => {
     setResultString(`${wins}-${losses}-${ties}`);
   }, [matchupRecords, sortedMatchRecords]);
 
-  const getPermissionAndroid = async () => {
-    try {
-      const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE, {
-        title: t("PERMISSIONS.IMAGE.TITLE"),
-        message: t("PERMISSIONS.IMAGE.MESSAGE"),
-        buttonNegative: t("PERMISSIONS.CANCEL"),
-        buttonPositive: t("PERMISSIONS.OK"),
-      });
-      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        return true;
-      }
-      Alert.alert("", t("PERMISSIONS.IMAGE.MESSAGE"), [{ text: t("PERMISSIONS.OK"), onPress: () => {} }], {
-        cancelable: false,
-      });
-    } catch (err) {
-      console.log(t(t("PERMISSIONS.IMAGE.ERROR")), err);
-    }
-  };
-
   const downloadImage = async () => {
     try {
       const uri = await captureRef(viewRef, {
@@ -71,13 +51,6 @@ export const MatchExport = () => {
         quality: 0.8,
         snapshotContentContainer: true,
       });
-
-      if (Platform.OS === "android") {
-        const granted = await getPermissionAndroid();
-        if (!granted) {
-          return;
-        }
-      }
 
       const image = await CameraRoll.save(uri, "photo");
       if (image) {
