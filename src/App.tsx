@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import BootSplash from "react-native-bootsplash";
 
 import { Colors, Typography } from "./styles/variables";
-import { LoginScreen } from "./screens/LoginScreen";
+import { LoginScreen } from "./screens/login/LoginScreen";
 import { HomeScreen } from "./screens/HomeScreen";
 import { DeckHome } from "./screens/decks/deck/DeckHome";
 import { RootStackParamList } from "./types/RouteParams";

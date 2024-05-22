@@ -13,11 +13,14 @@ import { RootStackParamList } from "../../types/RouteParams";
 import { Header } from "../../components/layout/Header";
 import { Button } from "../../components/layout/Button";
 import { AccountStyle } from "../../styles/users/AccountStyle";
+import { vsLogUserEmailString } from "../../helpers/login";
 
 export const Account = () => {
   const { t } = useContext(TranslationContext);
   const user = auth().currentUser;
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
+  const username = user?.email?.includes(vsLogUserEmailString);
 
   const handleSignOut = () => {
     auth()
@@ -63,10 +66,10 @@ export const Account = () => {
           <Text>{t("ACCOUNT.DETAILS")}</Text>
         </Header>
         <HStack style={AccountStyle.details} space={3}>
-          <Text fontWeight="bold">{t("ACCOUNT.EMAIL")}:</Text>
-          <Text>{user?.email}</Text>
+          <Text fontWeight="bold">{username ? t("ACCOUNT.USERNAME") : t("ACCOUNT.EMAIL")}:</Text>
+          <Text>{username ? user?.email?.replace(vsLogUserEmailString, "") : user?.email}</Text>
         </HStack>
-        <Header header="h4" alignSelf="center">
+        <Header w="75%" header="h4" alignSelf="center">
           <Text fontWeight="bold">{t("ACCOUNT.EMAIL_DISCLAIMER")}</Text>
         </Header>
         <Button style={AccountStyle.signOutButton} text={t("ACCOUNT.SIGN_OUT")} colorScheme="warning" onPress={handleSignOut} />
