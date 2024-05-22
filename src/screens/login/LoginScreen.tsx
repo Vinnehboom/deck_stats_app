@@ -3,55 +3,29 @@ import { TextInput, View } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { showMessage } from "react-native-flash-message";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { Text, Box, Button, Link } from "native-base";
+import { Text, Box, Button, Link, Radio, HStack } from "native-base";
 import { StrokeText } from "@charmy.tech/react-native-stroke-text";
-import { GoogleSignin, GoogleSigninButton } from "@react-native-google-signin/google-signin";
-import { ANDROID_OAUTH_CLIENT_ID } from "@env";
-import auth from "@react-native-firebase/auth";
 
-import { authInstance } from "../firebase/firebaseconfig";
-import { Colors, Typography } from "../styles/variables";
-import { RootStackParamList } from "../types/RouteParams";
-import { LoginScreenContainer } from "../components/layout/LoginScreenContainer";
-import { LoginScreenStyle } from "../styles/login/LoginScreenStyle";
-import { TermsAndConditions } from "../components/layout/TermsAndConditions";
-import { TranslationContext } from "../contexts/TranslationContext";
-
-GoogleSignin.configure({
-  webClientId: ANDROID_OAUTH_CLIENT_ID,
-});
-
-type loginStateType = { email: string; password: string; passwordConfirmation: string };
-
-const loginFormReducer = (
-  state: loginStateType,
-  action: { type: "SET_EMAIL" | "SET_PASSWORD" | "SET_PASSWORD_CONFIRMATION" | "CLEAR"; payload?: string }
-): loginStateType => {
-  switch (action.type) {
-    case "SET_EMAIL": {
-      return typeof action.payload === "string" ? { ...state, email: action.payload } : { ...state };
-    }
-    case "SET_PASSWORD": {
-      return typeof action.payload === "string" ? { ...state, password: action.payload } : { ...state };
-    }
-
-    case "SET_PASSWORD_CONFIRMATION": {
-      return typeof action.payload === "string" ? { ...state, passwordConfirmation: action.payload } : { ...state };
-    }
-
-    case "SET_EMAIL": {
-      return typeof action.payload === "string" ? { ...state, email: action.payload } : { ...state };
-    }
-    case "CLEAR": {
-      return { email: "", password: "", passwordConfirmation: "" };
-    }
-  }
-};
+import { authInstance } from "../../firebase/firebaseconfig";
+import { Colors, Typography } from "../../styles/variables";
+import { RootStackParamList } from "../../types/RouteParams";
+import { LoginScreenContainer } from "../../components/layout/LoginScreenContainer";
+import { LoginScreenStyle } from "../../styles/login/LoginScreenStyle";
+import { TermsAndConditions } from "../../components/layout/TermsAndConditions";
+import { TranslationContext } from "../../contexts/TranslationContext";
+import { loginFormReducer } from "./loginReducer";
+import { GoogleSignInButton } from "../../components/login/GoogleSignInButton";
+import { authUsername, isEmail } from "../../helpers/login";
 
 export const LoginScreen = () => {
-  const [loginState, loginFormDispatch] = useReducer(loginFormReducer, { email: "", password: "", passwordConfirmation: "" });
+  const [loginState, loginFormDispatch] = useReducer(loginFormReducer, {
+    identifier: "",
+    password: "",
+    passwordConfirmation: "",
+  });
 
   const [login, setLogin] = useState(true);
+  const [identifier, setIdentifier] = useState<"email" | "username">("email");
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const { t } = useContext(TranslationContext);
 
@@ -66,7 +40,7 @@ export const LoginScreen = () => {
   }, [navigation]);
 
   const handleSignUp = () => {
-    if (loginState.email.trim().length < 1 || loginState.password.trim().length < 1) {
+    if (loginState.identifier.trim().length < 1 || loginState.password.trim().length < 1) {
       return showMessage({
         message: t("LOGIN_SCREEN.INCOMPLETE_FORM"),
         type: "warning",
@@ -80,8 +54,11 @@ export const LoginScreen = () => {
       });
     }
 
+    let userIdentifier = loginState.identifier;
+    if (identifier === "username") userIdentifier = authUsername(loginState.identifier);
+
     authInstance
-      .createUserWithEmailAndPassword(loginState.email, loginState.password)
+      .createUserWithEmailAndPassword(userIdentifier, loginState.password)
       .then(() => {
         showMessage({
           message: t("LOGIN_SCREEN.SIGN_UP.SUCCESS"),
@@ -89,15 +66,17 @@ export const LoginScreen = () => {
         });
       })
       .catch(error => {
+        let msg: string = error.message;
+        if (!isEmail(loginState.identifier) && identifier === "username") msg = msg.replace("email address", "username");
         showMessage({
-          message: `${error.message}`,
+          message: msg,
           type: "warning",
         });
       });
   };
 
   const handleLogin = () => {
-    if (loginState.email.trim().length < 1 || loginState.password.trim().length < 1) {
+    if (loginState.identifier.trim().length < 1 || loginState.password.trim().length < 1) {
       showMessage({
         message: t("LOGIN_SCREEN.INCOMPLETE_FORM"),
         type: "warning",
@@ -105,8 +84,11 @@ export const LoginScreen = () => {
       return;
     }
 
+    let userIdentifier = loginState.identifier;
+    if (!isEmail(loginState.identifier)) userIdentifier = authUsername(loginState.identifier);
+
     authInstance
-      .signInWithEmailAndPassword(loginState.email, loginState.password)
+      .signInWithEmailAndPassword(userIdentifier, loginState.password)
       .then(() => {
         showMessage({
           message: t("LOGIN_SCREEN.SIGN_IN.SUCCESS"),
@@ -120,19 +102,6 @@ export const LoginScreen = () => {
         });
       });
   };
-
-  async function onGoogleButtonPress() {
-    // Check if your device supports Google Play
-    await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
-    // Get the users ID token
-    const { idToken } = await GoogleSignin.signIn();
-
-    // Create a Google credential with the token
-    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
-    // Sign-in the user with the credential
-    return auth().signInWithCredential(googleCredential);
-  }
 
   return (
     <LoginScreenContainer>
@@ -159,14 +128,39 @@ export const LoginScreen = () => {
                 text={login ? t("LOGIN_SCREEN.FORM.LOGIN_TITLE") : t("LOGIN_SCREEN.FORM.REGISTER_TITLE")}
               />
             </Box>
+            {login ? null : (
+              <Radio.Group
+                justifyContent="space-around"
+                alignSelf="center"
+                name="myRadioGroup"
+                accessibilityLabel="user-identifier"
+                value={identifier}
+                onChange={nextValue => {
+                  setIdentifier(nextValue as "email" | "username");
+                }}>
+                <HStack space={12}>
+                  <Radio value="email" my={1}>
+                    <Text>{t("LOGIN_SCREEN.FORM.EMAIL")}</Text>
+                  </Radio>
+                  <Radio value="username" my={1}>
+                    <Text>{t("LOGIN_SCREEN.FORM.USERNAME")}</Text>
+                  </Radio>
+                </HStack>
+              </Radio.Group>
+            )}
             <TextInput
-              placeholder={t("LOGIN_SCREEN.FORM.EMAIL")}
+              placeholder={
+                login
+                  ? t("LOGIN_SCREEN.FORM.EMAIL_SIGN_IN")
+                  : identifier === "email"
+                  ? t("LOGIN_SCREEN.FORM.EMAIL")
+                  : t("LOGIN_SCREEN.FORM.USERNAME")
+              }
               placeholderTextColor={Colors["primary-dark"]}
-              value={loginState.email}
-              onChangeText={text => loginFormDispatch({ type: "SET_EMAIL", payload: text })}
+              value={loginState.identifier}
+              onChangeText={text => loginFormDispatch({ type: "SET_IDENTIFIER", payload: text })}
               style={LoginScreenStyle.input}
             />
-            {login ? null : <Text style={LoginScreenStyle.emailDislaimer}>{t("LOGIN_SCREEN.FORM.EMAIL_DISCLAIMER")}</Text>}
             <TextInput
               placeholder={t("LOGIN_SCREEN.FORM.PASSWORD")}
               value={loginState.password}
@@ -208,11 +202,7 @@ export const LoginScreen = () => {
               </>
             )}
           </View>
-          <GoogleSigninButton
-            onPress={async () => await onGoogleButtonPress()}
-            size={GoogleSigninButton.Size.Standard}
-            color={GoogleSigninButton.Color.Light}
-          />
+          <GoogleSignInButton />
         </Box>
         <Box position="absolute" bottom={5}>
           <TermsAndConditions />
