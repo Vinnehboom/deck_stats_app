@@ -82,6 +82,7 @@ export const setTranslations: { [key: string]: string } = {
   PAR: "sv4",
   PAF: "sv4pt5",
   TEF: "sv5",
+  TWM: "sv6",
   PAL: "sv2",
   PGO: "pgo",
   PHF: "xy4",
