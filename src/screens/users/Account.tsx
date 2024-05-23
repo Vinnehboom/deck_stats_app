@@ -5,6 +5,7 @@ import { showMessage } from "react-native-flash-message";
 import auth from "@react-native-firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
+import { appleAuth } from "@invertase/react-native-apple-authentication";
 
 import { Text } from "../../components/layout/Text";
 import { TranslationContext } from "../../contexts/TranslationContext";
@@ -14,6 +15,18 @@ import { Header } from "../../components/layout/Header";
 import { Button } from "../../components/layout/Button";
 import { AccountStyle } from "../../styles/users/AccountStyle";
 import { vsLogUserEmailString } from "../../helpers/login";
+
+async function revokeSignInWithAppleToken() {
+  const { authorizationCode } = await appleAuth.performRequest({
+    requestedOperation: appleAuth.Operation.REFRESH,
+  });
+  if (!authorizationCode) {
+    console.error("Apple Revocation failed - no authorizationCode returned");
+    return;
+  }
+
+  return auth().revokeToken(authorizationCode);
+}
 
 export const Account = () => {
   const { t } = useContext(TranslationContext);
@@ -39,6 +52,7 @@ export const Account = () => {
         });
       });
   };
+
   const handleUserDelete = (targetUser: User) => {
     Alert.alert(t("ACCOUNT.USER_DELETE.TITLE"), t("ACCOUNT.USER_DELETE.MESSAGE"), [
       {
@@ -49,7 +63,11 @@ export const Account = () => {
       {
         text: t("ACCOUNT.USER_DELETE.CONFIRM"),
         onPress: () => {
-          targetUser.delete().then(() => {
+          const promise =
+            targetUser.providerData[0].providerId === "apple.com"
+              ? revokeSignInWithAppleToken().then(() => targetUser.delete())
+              : targetUser.delete();
+          promise.then(() => {
             showMessage({
               message: t("ACCOUNT.USER_DELETE.SUCCESS"),
             });
