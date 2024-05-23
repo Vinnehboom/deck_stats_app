@@ -22,12 +22,10 @@ export const DeckItemStyle = StyleSheet.create({
     fontSize: Typography.fontSizes.lg,
     fontWeight: "500",
     paddingLeft: Spacing.md,
-    paddingTop: Spacing.sm,
   },
   showLink: {
     fontSize: Typography.fontSizes.lg,
-    marginTop: Spacing.sm,
+    maxWidth: "15%",
     textDecorationLine: "underline",
-    top: Spacing.xxs,
   },
 });
