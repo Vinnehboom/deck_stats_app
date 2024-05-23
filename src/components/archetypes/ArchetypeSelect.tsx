@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Dispatch, SetStateAction, useContext } from "react";
-import { Flex, Image, ScrollView, VStack, HStack } from "native-base";
+import { Flex, Image, ScrollView, VStack, HStack, Link } from "native-base";
 import { useDebounce } from "use-lodash-debounce";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +13,7 @@ import { Archetype } from "../../types";
 import { ArchetypeSelectStyle } from "../../styles/archetypes/ArchetypeSelectStyle";
 import { Spinner } from "../Spinner";
 import { useArchetypeQuery } from "././_queries/useArchetypeQuery";
-import { Colors } from "../../styles/variables";
+import { Colors, Spacing } from "../../styles/variables";
 import { ArchetypeIcons } from "../decks/ArchetypeIcons";
 import { UnknownArchetype } from "../../types/MatchRecord";
 import { TranslationContext } from "../../contexts/TranslationContext";
@@ -43,22 +43,24 @@ const ArchetypesList = ({
             padding={2}
             minWidth="75%"
             zIndex={9999}>
-            <Text onPress={() => handleArchetypeSelection(archetype)}>{transformIdentifier(archetype.identifier)}</Text>
-            <Flex flexDirection="row">
-              {archetype.icons?.length &&
-                archetype.icons.map((icon, index) => (
-                  <Image
-                    marginRight={2}
-                    key={icon + index}
-                    source={{
-                      uri: `https://limitlesstcg.s3.us-east-2.amazonaws.com/pokemon/gen9/${icon}.png`,
-                    }}
-                    resizeMode="stretch"
-                    alt={icon}
-                    size="2xs"
-                  />
-                ))}
-            </Flex>
+            <Link display="flex" width="100%" onPress={() => handleArchetypeSelection(archetype)}>
+              <Text marginRight={Spacing.md}>{transformIdentifier(archetype.identifier)}</Text>
+              <Flex flexDirection="row">
+                {archetype.icons?.length &&
+                  archetype.icons.map((icon, index) => (
+                    <Image
+                      marginRight={2}
+                      key={icon + index}
+                      source={{
+                        uri: `https://limitlesstcg.s3.us-east-2.amazonaws.com/pokemon/gen9/${icon}.png`,
+                      }}
+                      resizeMode="stretch"
+                      alt={icon}
+                      size="2xs"
+                    />
+                  ))}
+              </Flex>
+            </Link>
           </Flex>
         ))}
         {archetypes.length < 1 ? (
