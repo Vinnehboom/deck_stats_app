@@ -33,7 +33,7 @@ export const DeckDetails = () => {
             <Header header="h2">{t("DECK.DECK_DETAILS.RECENT_RESULTS")}</Header>
             <Box width="33%">
               <Select
-                marginRight={Spacing.xxs}
+                marginRight={Spacing.sm}
                 minW="65%"
                 onValueChange={value => setLimit(Number(value))}
                 marginLeft="auto"
