@@ -31,12 +31,21 @@ export const DeckItem = ({ deck }: DeckListPropTypes) => {
   return (
     <View style={DeckItemStyle.container}>
       <TouchableOpacity onPress={showPage}>
-        <HStack paddingX={3} flexDirection="row" width="full" justifyContent="space-between" space={13}>
-          <HStack flexDirection="row">
+        <HStack
+          paddingX={3}
+          flexDirection="row"
+          width="full"
+          alignItems="center"
+          maxW="100%"
+          justifyContent="space-between"
+          space={13}>
+          <HStack alignItems="center" flexDirection="row">
             <HStack display="flex" justifyContent="center" minWidth="30%">
               <ArchetypeIcons archetype={deck?.archetype} />
             </HStack>
-            <Text style={DeckItemStyle.deckName}>{deck.name}</Text>
+            <Text width="55%" style={DeckItemStyle.deckName}>
+              {deck.name}
+            </Text>
           </HStack>
           <EyeIcon />
         </HStack>
