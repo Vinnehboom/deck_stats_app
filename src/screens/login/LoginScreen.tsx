@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useReducer, useContext } from "react";
-import { TextInput, View } from "react-native";
+import { Platform, TextInput, View } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { showMessage } from "react-native-flash-message";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -16,6 +16,7 @@ import { TranslationContext } from "../../contexts/TranslationContext";
 import { loginFormReducer } from "./loginReducer";
 import { GoogleSignInButton } from "../../components/login/GoogleSignInButton";
 import { authUsername, isEmail } from "../../helpers/login";
+import { AppleSignInButton } from "../../components/login/AppleSignInButton";
 
 export const LoginScreen = () => {
   const [loginState, loginFormDispatch] = useReducer(loginFormReducer, {
@@ -203,6 +204,7 @@ export const LoginScreen = () => {
             )}
           </View>
           <GoogleSignInButton />
+          {Platform.OS === "ios" ? <AppleSignInButton /> : null}
         </Box>
         <Box position="absolute" bottom={5}>
           <TermsAndConditions />

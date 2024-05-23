@@ -2,6 +2,11 @@ import { Platform, StyleSheet } from "react-native";
 
 import { Colors, Typography, screenWidth, screenHeight, Spacing } from "../variables";
 export const LoginScreenStyle = StyleSheet.create({
+  appleSignInButton: {
+    height: 40,
+    marginTop: Spacing.sm,
+    width: "85%",
+  },
   button: {
     borderRadius: 20,
     elevation: 15,
