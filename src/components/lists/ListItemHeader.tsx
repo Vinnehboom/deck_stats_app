@@ -12,6 +12,7 @@ import { Deck, List } from "../../types";
 import { TranslationContext } from "../../contexts/TranslationContext";
 import { useListDeletion } from "./_queries/useListDeletion";
 import { Colors } from "../../styles/variables";
+import { truncate } from "../../helpers/helpers";
 
 export const ListItemHeader = ({ list, deck, activeListId }: { list: List; deck: Deck; activeListId: List["id"] }) => {
   const { t } = useContext(TranslationContext);
@@ -55,7 +56,7 @@ export const ListItemHeader = ({ list, deck, activeListId }: { list: List; deck:
   };
 
   return (
-    <HStack style={ListItemStyle.header}>
+    <HStack w="100%" style={ListItemStyle.header}>
       <Box style={ListItemStyle.titleActionBox}>
         {activeListId === list.id ? (
           <Text>{t("DECK.DECK_LISTS.ACTIVE_LIST")}</Text>
@@ -70,7 +71,7 @@ export const ListItemHeader = ({ list, deck, activeListId }: { list: List; deck:
         )}
       </Box>
       <Box style={ListItemStyle.titleBox}>
-        <Text style={ListItemStyle.title}>{list.name}</Text>
+        <Text style={ListItemStyle.title}>{truncate(list.name)}</Text>
       </Box>
       <Box style={ListItemStyle.titlePaddingBox}>
         <TouchableOpacity onPress={handleListDeletion}>

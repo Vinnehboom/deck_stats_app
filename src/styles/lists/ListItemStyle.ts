@@ -9,7 +9,7 @@ export const ListItemStyle = StyleSheet.create({
     backgroundColor: Colors.primary,
     borderRadius: 10,
     padding: Spacing.lg,
-    width: "auto",
+    width: "100%",
   },
   activateButtonText: {
     color: "white",
@@ -69,6 +69,7 @@ export const ListItemStyle = StyleSheet.create({
   },
   deleteIcon: { marginEnd: Spacing.sm, marginStart: "auto" },
   header: {
+    alignItems: "center",
     display: "flex",
     justifyContent: "space-evenly",
     padding: Spacing.sm,
@@ -116,15 +117,16 @@ export const ListItemStyle = StyleSheet.create({
   titleActionBox: {
     margin: 0,
     padding: 0,
-    width: "33%",
+    width: "30%",
   },
   titleBox: {
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
-    width: "33%",
+    width: "50%",
   },
   titlePaddingBox: {
-    width: "33%",
+    alignItems: "flex-end",
+    width: "20%",
   },
 });

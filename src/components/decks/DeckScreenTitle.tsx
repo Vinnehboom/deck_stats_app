@@ -10,7 +10,14 @@ export const DeckScreenTitle = ({ deck }: { deck: Deck }) => {
   return (
     <HStack>
       <ArchetypeIcons archetype={deck.archetype} />
-      <Text fontWeight="bold" color={Colors.white} fontSize={Typography.fontSizes.xl} marginLeft={1} padding={2}>
+      <Text
+        maxWidth="80%"
+        flexWrap="wrap"
+        fontWeight="bold"
+        color={Colors.white}
+        fontSize={Typography.fontSizes.xl}
+        marginLeft={1}
+        padding={2}>
         {deck.name}
       </Text>
     </HStack>
