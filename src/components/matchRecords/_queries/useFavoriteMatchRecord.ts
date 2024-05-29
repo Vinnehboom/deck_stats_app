@@ -13,10 +13,13 @@ export const useFavoriteMatchRecord = (onSuccessCallback: (favorite: boolean) =>
         .doc(matchRecord.id)
         .set({ ...matchRecord, favorite });
     },
-    onSuccess: (_data, variables) => {
-      const { matchRecord, favorite } = variables;
-      queryClient.invalidateQueries({ queryKey: ["MatchRecords", { deck: matchRecord.deckId }] });
+    onSuccess: (_data, { favorite }) => {
       onSuccessCallback(favorite);
+    },
+    onSettled: (_data, _error, { matchRecord }) => {
+      queryClient.invalidateQueries({
+        queryKey: ["MatchRecords", { deck: matchRecord.deckId }, { matchup: matchRecord.opponentArchetype }],
+      });
     },
   });
 };
