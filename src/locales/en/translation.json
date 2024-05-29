@@ -94,9 +94,12 @@
     "SECOND":"2nd",
     "NOTES": "Notes",
     "LIST_NAME": "List:",
+    "NO_DATA": "No data!",
     "FAVORITE": {
       "FAVORITED": "Note favorited.",
-      "UNFAVORITED": "Note no longer favoited."
+      "UNFAVORITED": "Note no longer favorited.",
+      "FAVORITES": "Favorites",
+      "OTHER": "Other notes"
     }
   },
   "MATCH_EXPORT": {
