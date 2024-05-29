@@ -82,8 +82,8 @@ android {
         applicationId "com.deckstatstcg"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10
-        versionName "0.981"
+        versionCode 11
+        versionName "0.985"
     }
     signingConfigs {
         release {
