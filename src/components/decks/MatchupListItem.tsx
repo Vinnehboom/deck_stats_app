@@ -75,7 +75,7 @@ export const MatchupListItem = ({
               : `${data[rightColumnAttr.current].wins}/${data[rightColumnAttr.current].losses}/${
                   data[rightColumnAttr.current].ties
                 }`
-            : "/"}{" "}
+            : "/"}
         </Text>
       </Box>
     </HStack>

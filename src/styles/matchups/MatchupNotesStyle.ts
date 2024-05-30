@@ -17,8 +17,9 @@ export const MatchupNotesStyle = StyleSheet.create({
     borderBottomWidth: 1,
     marginHorizontal: Spacing.sm,
     paddingBottom: Spacing.xs,
-    padding: Spacing.xs,
+    padding: Spacing.xxs,
   },
-  remarks: { marginLeft: Spacing.md, maxWidth: "75%", paddingTop: Spacing.xxs, textAlign: "justify" },
-  starIcon: { marginStart: "auto" },
+  remarks: { marginBottom: Spacing.md, marginLeft: Spacing.md, maxWidth: "70%", paddingTop: Spacing.xxs, textAlign: "justify" },
+  starIcon: { marginStart: "auto", paddingTop: Spacing.md },
+  trashIcon: { marginStart: "auto", paddingTop: Spacing.xs },
 });
