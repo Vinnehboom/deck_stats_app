@@ -21,7 +21,7 @@ export const NotesScrollList = ({
   opponentArchetype: ArchetypeBase;
   favorite?: boolean;
 }) => {
-  const { data, onEndReached, isFetchingNextPage, isFetching, hasNextPage } = useInfiniteDeckMatchUpRecords({
+  const { data, onEndReached, isFetching, hasNextPage } = useInfiniteDeckMatchUpRecords({
     deck,
     opponentArchetype,
     limit: 2,
@@ -30,8 +30,8 @@ export const NotesScrollList = ({
 
   const parseData = (records: MatchRecord[]) => {
     return favorite
-      ? records?.filter(record => record.remarks.length > 1)
-      : records?.filter(record => record.remarks.length > 1 && !record?.favorite);
+      ? records?.filter(record => record.remarks.length > 0)
+      : records?.filter(record => record.remarks.length > 0 && !record?.favorite);
   };
 
   return (
@@ -45,7 +45,7 @@ export const NotesScrollList = ({
         removeClippedSubviews={true}
         data={parseData(data)}
         ListFooterComponent={
-          isFetchingNextPage ? (
+          parseData(data).length > 0 && isFetching ? (
             <Spinner height={100} />
           ) : hasNextPage ? (
             <Box alignSelf="center">

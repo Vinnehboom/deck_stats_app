@@ -95,6 +95,11 @@
     "NOTES": "Notes",
     "LIST_NAME": "List:",
     "NO_DATA": "No data!",
+    "REMOVE": {
+      "REMOVED": "Note removed.",
+      "TITLE": "Remove note",
+      "MESSAGE": "Are you sure you want to remove this note? The match data will still be included in your matchups."
+    },
     "FAVORITE": {
       "FAVORITED": "Note favorited.",
       "UNFAVORITED": "Note no longer favorited.",
