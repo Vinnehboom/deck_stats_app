@@ -8,7 +8,7 @@ import { MatchupNote } from "./MatchupNote";
 import { Header } from "../layout/Header";
 import { ArchetypeBase, Deck, MatchRecord } from "../../types";
 import { useInfiniteDeckMatchUpRecords } from "./_queries/useInfiniteDeckMatchUpRecords";
-import { Spacing } from "../../styles/variables";
+import { Spacing, Colors } from "../../styles/variables";
 
 export const NotesScrollList = ({
   title,
@@ -35,7 +35,10 @@ export const NotesScrollList = ({
   };
 
   return (
-    <Box style={NotesScrollListStyle.container}>
+    <Box
+      style={
+        favorite ? [NotesScrollListStyle.container, NotesScrollListStyle.favoriteBackground] : NotesScrollListStyle.container
+      }>
       <Header header="h2">{title}</Header>
       <FlatList
         renderItem={({ item: record }: { item: MatchRecord }) => <MatchupNote record={record} />}
@@ -61,4 +64,12 @@ export const NotesScrollList = ({
 
 export const NotesScrollListStyle = StyleSheet.create({
   container: { height: "43%", paddingBottom: Spacing.md },
+  favoriteBackground: {
+    backgroundColor: Colors.light,
+    borderColor: "#000000",
+    shadowColor: Colors["primary-dark"],
+    shadowOffset: { height: 0, width: 0 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+  },
 });
