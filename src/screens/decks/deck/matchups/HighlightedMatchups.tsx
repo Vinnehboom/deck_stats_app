@@ -10,6 +10,8 @@ import { TranslationContext } from "../../../../contexts/TranslationContext";
 import { MatchupsContext } from "../../../../contexts/decks/MatchupsContext";
 import { Coinflip } from "../../../../components/matchRecords/Coinflip";
 
+console.log("new");
+
 export const HighlightedMatchups = () => {
   const { t } = useContext(TranslationContext);
   const { data, bo3, archetypes, selectedList } = useContext(MatchupsContext);
@@ -44,6 +46,7 @@ export const HighlightedMatchups = () => {
     setCalculating(false);
   }, [data, bestMuFirst, bo3, selectedList]);
 
+  console.log(archetypes.find(type => type.identifier === bestMuFirst)!);
   if (calculating) return <Spinner />;
   return (
     <ElevatedContainer style={DeckMatchupsStyle.highlightMatchupContainer}>
@@ -59,7 +62,9 @@ export const HighlightedMatchups = () => {
                 {data[bestMuFirst]?.[topAttribute.current]?.wr?.toFixed(2)} %
               </Text>
               <HStack display="flex" marginLeft={2} justifyContent="flex-end" minWidth="20%">
-                <ArchetypeIcons archetype={archetypes.find(type => type.identifier === bestMuFirst)!} />
+                {bestMuFirst ? (
+                  <ArchetypeIcons archetype={archetypes.find(type => type.identifier === bestMuFirst) || "other"} />
+                ) : null}
               </HStack>
             </HStack>
             <HStack style={DeckMatchupsStyle.matchupListOdd} space={1}>
@@ -70,7 +75,9 @@ export const HighlightedMatchups = () => {
                 {data[bestMuSecond]?.[bottomAttribute.current]?.wr?.toFixed(2)} %
               </Text>
               <HStack display="flex" marginLeft={2} justifyContent="flex-end" minWidth="20%">
-                <ArchetypeIcons archetype={archetypes.find(type => type.identifier === bestMuSecond)!} />
+                {bestMuSecond ? (
+                  <ArchetypeIcons archetype={archetypes.find(type => type.identifier === bestMuSecond) || "other"} />
+                ) : null}
               </HStack>
             </HStack>
           </VStack>
@@ -89,7 +96,9 @@ export const HighlightedMatchups = () => {
                 {data[worstMuFirst]?.[topAttribute.current]?.wr?.toFixed(2)} %
               </Text>
               <HStack display="flex" marginLeft={2} justifyContent="flex-end" minWidth="20%">
-                <ArchetypeIcons archetype={archetypes.find(type => type.identifier === worstMuFirst)!} />
+                {worstMuFirst ? (
+                  <ArchetypeIcons archetype={archetypes.find(type => type.identifier === worstMuFirst) || "other"} />
+                ) : null}
               </HStack>
             </HStack>
             <HStack style={DeckMatchupsStyle.matchupListOdd}>
@@ -100,7 +109,9 @@ export const HighlightedMatchups = () => {
                 {data[worstMuSecond]?.[bottomAttribute.current]?.wr?.toFixed(2)} %
               </Text>
               <HStack display="flex" marginLeft={2} justifyContent="flex-end" minWidth="20%">
-                <ArchetypeIcons archetype={archetypes.find(type => type.identifier === worstMuSecond)!} />
+                {worstMuSecond ? (
+                  <ArchetypeIcons archetype={archetypes.find(type => type.identifier === worstMuSecond) || "other"} />
+                ) : null}
               </HStack>
             </HStack>
           </VStack>
