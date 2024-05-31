@@ -16,7 +16,7 @@ export const TermsAndConditions = () => {
         <Image
           alt="poke-ball-terms-and-privacy"
           style={TandCStyle.image}
-          source={require("../../assets/images/pokeball_bit.png")}
+          source={require("../../assets/images/logo_light_no_bg_500.png")}
         />
         <Text>{t("LOGIN_SCREEN.T&C")}</Text>
       </Button>
