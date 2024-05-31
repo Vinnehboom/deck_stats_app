@@ -48,6 +48,7 @@
 		F352F5FEA15C498393D8606E /* coin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 282683D1CA6244789CF33539 /* coin_icon.png */; };
 		F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEBDB8A096E84AA2B6A5B6F3 /* Halcom-Book.otf */; };
 		FC0D60792BBF4BC6B078E41C /* bootsplash_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */; };
+		61905A9F9D7B48ED92C03B6C /* logo_dark_no_bg_500.png in Resources */ = {isa = PBXBuildFile; fileRef = 079B2B89D33F4721A71FE54C /* logo_dark_no_bg_500.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		EE597BF82BFF553C00AF15FA /* DeckStatsTCG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = DeckStatsTCG.entitlements; path = DeckStatsTCG/DeckStatsTCG.entitlements; sourceTree = "<group>"; };
 		EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7B36423B2964CE8ACF48999 /* bootsplash_logo_3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo_3x.png; path = ../src/assets/bootsplash_logo_3x.png; sourceTree = "<group>"; };
+		079B2B89D33F4721A71FE54C /* logo_dark_no_bg_500.png */ = {isa = PBXFileReference; name = "logo_dark_no_bg_500.png"; path = "../src/assets/images/logo_dark_no_bg_500.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				D7BAB57814294E8EB15F43C5 /* bootsplash_logo_4x.png */,
 				DF8D18D2E8C4494FADDB9C15 /* substitute.png */,
 				282683D1CA6244789CF33539 /* coin_icon.png */,
+				079B2B89D33F4721A71FE54C /* logo_dark_no_bg_500.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				6674EF666F784213982B8CE1 /* bootsplash_logo_4x.png in Resources */,
 				230A444D49E141F080D1293E /* substitute.png in Resources */,
 				F352F5FEA15C498393D8606E /* coin_icon.png in Resources */,
+				61905A9F9D7B48ED92C03B6C /* logo_dark_no_bg_500.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
