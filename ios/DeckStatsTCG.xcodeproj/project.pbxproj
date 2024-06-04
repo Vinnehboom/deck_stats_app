@@ -27,6 +27,7 @@
 		44FE65F62DA940E8BE3F8715 /* Halcom-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E14AB487DE442E805899BF /* Halcom-MediumItalic.otf */; };
 		453D5C0188FB491A9A93C96B /* Halcom-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 334EC7CC339E408C9EB73501 /* Halcom-Italic.otf */; };
 		4F968A6FBF9A4A7DA3BE17CD /* logo_light_no_bg_500.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA7721FCB94F33BBE6F24F /* logo_light_no_bg_500.png */; };
+		61905A9F9D7B48ED92C03B6C /* logo_dark_no_bg_500.png in Resources */ = {isa = PBXBuildFile; fileRef = 079B2B89D33F4721A71FE54C /* logo_dark_no_bg_500.png */; };
 		66246C6723D84F25A26355D0 /* bootsplash_logo_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 990C63F554C24334A266CCA1 /* bootsplash_logo_2x.png */; };
 		6674EF666F784213982B8CE1 /* bootsplash_logo_4x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7BAB57814294E8EB15F43C5 /* bootsplash_logo_4x.png */; };
 		6EE320CB07DB43FEBDB6D357 /* Halcom-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82876B1A42364D22BE45AB72 /* Halcom-BoldItalic.otf */; };
@@ -48,7 +49,6 @@
 		F352F5FEA15C498393D8606E /* coin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 282683D1CA6244789CF33539 /* coin_icon.png */; };
 		F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEBDB8A096E84AA2B6A5B6F3 /* Halcom-Book.otf */; };
 		FC0D60792BBF4BC6B078E41C /* bootsplash_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */; };
-		61905A9F9D7B48ED92C03B6C /* logo_dark_no_bg_500.png in Resources */ = {isa = PBXBuildFile; fileRef = 079B2B89D33F4721A71FE54C /* logo_dark_no_bg_500.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +66,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* DeckStatsTCGTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckStatsTCGTests.m; sourceTree = "<group>"; };
 		06577A8AAA3B4ADB9CED0122 /* pokeball_bit.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pokeball_bit.png; path = ../src/assets/images/pokeball_bit.png; sourceTree = "<group>"; };
+		079B2B89D33F4721A71FE54C /* logo_dark_no_bg_500.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = logo_dark_no_bg_500.png; path = ../src/assets/images/logo_dark_no_bg_500.png; sourceTree = "<group>"; };
 		0D8A0023A74140D0BC35CFFF /* bootsplash_logo.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo.png; path = ../src/assets/bootsplash_logo.png; sourceTree = "<group>"; };
 		102479D0844A4FB9B846DB28 /* bootsplash_logo_1,5x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "bootsplash_logo_1,5x.png"; path = "../src/assets/bootsplash_logo_1,5x.png"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* DeckStatsTCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckStatsTCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +115,6 @@
 		EE597BF82BFF553C00AF15FA /* DeckStatsTCG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = DeckStatsTCG.entitlements; path = DeckStatsTCG/DeckStatsTCG.entitlements; sourceTree = "<group>"; };
 		EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7B36423B2964CE8ACF48999 /* bootsplash_logo_3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo_3x.png; path = ../src/assets/bootsplash_logo_3x.png; sourceTree = "<group>"; };
-		079B2B89D33F4721A71FE54C /* logo_dark_no_bg_500.png */ = {isa = PBXFileReference; name = "logo_dark_no_bg_500.png"; path = "../src/assets/images/logo_dark_no_bg_500.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -635,7 +635,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DeckStatsTCG/DeckStatsTCG.entitlements;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HL5QP24CVY;
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -644,7 +644,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.985;
+				MARKETING_VERSION = 0.990;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -665,7 +665,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DeckStatsTCG/DeckStatsTCG.entitlements;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HL5QP24CVY;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = DeckStatsTCG/Info.plist;
@@ -673,7 +673,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.985;
+				MARKETING_VERSION = 0.990;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -767,10 +767,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -850,10 +847,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
