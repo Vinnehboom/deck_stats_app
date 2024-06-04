@@ -61,6 +61,7 @@ export const MatchExportStyle = StyleSheet.create({
     marginLeft: "auto",
     paddingLeft: Spacing.md,
   },
+  scrollContainer: { flex: 1 },
   tie: {
     backgroundColor: Colors.yellow,
     color: Colors.orange,
