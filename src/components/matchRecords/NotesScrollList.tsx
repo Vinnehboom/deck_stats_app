@@ -1,6 +1,6 @@
-import React from "react";
-import { FlatList, StyleSheet } from "react-native";
-import { Box, Spinner } from "native-base";
+import React, { useContext } from "react";
+import { FlatList, Platform, StyleSheet } from "react-native";
+import { Box, Button, Spinner } from "native-base";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,6 +9,7 @@ import { Header } from "../layout/Header";
 import { ArchetypeBase, Deck, MatchRecord } from "../../types";
 import { useInfiniteDeckMatchUpRecords } from "./_queries/useInfiniteDeckMatchUpRecords";
 import { Spacing, Colors } from "../../styles/variables";
+import { TranslationContext } from "../../contexts/TranslationContext";
 
 export const NotesScrollList = ({
   title,
@@ -27,6 +28,8 @@ export const NotesScrollList = ({
     limit: 2,
     favorite,
   });
+
+  const { t } = useContext(TranslationContext);
 
   const parseData = (records: MatchRecord[]) => {
     return favorite
@@ -52,7 +55,13 @@ export const NotesScrollList = ({
             <Spinner height={100} />
           ) : hasNextPage ? (
             <Box alignSelf="center">
-              <FontAwesomeIcon icon={faCaretDown} size={16} />
+              {Platform.OS === "android" ? (
+                <Button variant="link" fontWeight="bold" onPress={onEndReached}>
+                  {t("MATCHUP_NOTES.REMOVE.REMOVED")}
+                </Button>
+              ) : (
+                <FontAwesomeIcon icon={faCaretDown} size={16} />
+              )}
             </Box>
           ) : null
         }
@@ -63,7 +72,7 @@ export const NotesScrollList = ({
 };
 
 export const NotesScrollListStyle = StyleSheet.create({
-  container: { height: "43%", paddingBottom: Spacing.md },
+  container: { flex: 1, height: "43%", paddingBottom: Spacing.md },
   favoriteBackground: {
     backgroundColor: Colors.light,
     borderColor: "#000000",
