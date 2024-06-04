@@ -49,7 +49,6 @@ export const MatchExport = () => {
       const uri = await captureRef(viewRef, {
         format: "jpg",
         quality: 0.8,
-        snapshotContentContainer: true,
       });
 
       const image = await CameraRoll.save(uri, "photo");
@@ -77,59 +76,61 @@ export const MatchExport = () => {
           onPress={async () => await ShareImage(viewRef)}
         />
       </HStack>
-      <ScrollView ref={viewRef} style={MatchExportStyle.imageContainer}>
-        <Box>
-          <Image
-            style={MatchExportStyle.logo}
-            alt="VS Log Logo"
-            source={require("../../assets/images/logo_light_no_bg_500.png")}
-          />
-          <Text style={MatchExportStyle.waterMark}>{t("MATCH_EXPORT.WATERMARK")}</Text>
-          <HStack
-            width="60%"
-            alignSelf="center"
-            alignItems="center"
-            style={MatchExportStyle.header}
-            justifyContent="space-around">
+      <ScrollView style={MatchExportStyle.scrollContainer}>
+        <View collapsable={false} style={MatchExportStyle.imageContainer} ref={viewRef}>
+          <Box>
+            <Image
+              style={MatchExportStyle.logo}
+              alt="VS Log Logo"
+              source={require("../../assets/images/logo_light_no_bg_500.png")}
+            />
+            <Text style={MatchExportStyle.waterMark}>{t("MATCH_EXPORT.WATERMARK")}</Text>
             <HStack
               width="60%"
               alignSelf="center"
               alignItems="center"
               style={MatchExportStyle.header}
               justifyContent="space-around">
-              <ArchetypeIcons archetype={archetype} />
-              <Text style={MatchExportStyle.number}>{resultString}</Text>
+              <HStack
+                width="60%"
+                alignSelf="center"
+                alignItems="center"
+                style={MatchExportStyle.header}
+                justifyContent="space-around">
+                <ArchetypeIcons archetype={archetype} />
+                <Text style={MatchExportStyle.number}>{resultString}</Text>
+              </HStack>
             </HStack>
-          </HStack>
-        </Box>
-        {sortedMatchRecords.reverse().map((item: MatchRecord, index: number) => (
-          <HStack
-            key={`item ${index}`}
-            style={[
-              MatchExportStyle.matchupContainer,
-              matchWon(item) ? MatchExportStyle.win : matchLost(item) ? MatchExportStyle.loss : MatchExportStyle.tie,
-            ]}>
-            <Text style={MatchExportStyle.roundNumber}>{total - index}</Text>
-            <Text
+          </Box>
+          {sortedMatchRecords.reverse().map((item: MatchRecord, index: number) => (
+            <HStack
+              key={`item ${index}`}
               style={[
-                MatchExportStyle.result,
+                MatchExportStyle.matchupContainer,
                 matchWon(item) ? MatchExportStyle.win : matchLost(item) ? MatchExportStyle.loss : MatchExportStyle.tie,
               ]}>
-              {item.result}
-            </Text>
-            <HStack space={3} style={MatchExportStyle.opponentArchetype}>
-              <ArchetypeIcons archetype={item.opponentArchetype} />
-            </HStack>
-            {item.bo3 ? (
-              <Coinflip won={item.coinFlipWon || false} />
-            ) : (
-              <Text style={MatchExportStyle.result}>
-                {item.gamesStarted[0] ? t("MATCH_RECORD.FIRST") : t("MATCH_RECORD.SECOND")}
+              <Text style={MatchExportStyle.roundNumber}>{total - index}</Text>
+              <Text
+                style={[
+                  MatchExportStyle.result,
+                  matchWon(item) ? MatchExportStyle.win : matchLost(item) ? MatchExportStyle.loss : MatchExportStyle.tie,
+                ]}>
+                {item.result}
               </Text>
-            )}
-            <Text style={MatchExportStyle.score}>{scores[index]}</Text>
-          </HStack>
-        ))}
+              <HStack space={3} style={MatchExportStyle.opponentArchetype}>
+                <ArchetypeIcons archetype={item.opponentArchetype} />
+              </HStack>
+              {item.bo3 ? (
+                <Coinflip won={item.coinFlipWon || false} />
+              ) : (
+                <Text style={MatchExportStyle.result}>
+                  {item.gamesStarted[0] ? t("MATCH_RECORD.FIRST") : t("MATCH_RECORD.SECOND")}
+                </Text>
+              )}
+              <Text style={MatchExportStyle.score}>{scores[index]}</Text>
+            </HStack>
+          ))}
+        </View>
       </ScrollView>
     </View>
   );
