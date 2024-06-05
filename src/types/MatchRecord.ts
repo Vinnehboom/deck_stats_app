@@ -2,14 +2,14 @@ import { ArchetypeBase, UnknownArchetype } from "./Archetype";
 import { Deck } from "./Deck";
 import { TimeStamped } from "./TimeStamped";
 import { List } from "./List";
-export const bo1ResultOptions = ["W", "L", "T"];
+export const bo1ResultOptions = ["W", "L", "T", "ID"];
 export const allResultOptions = [...bo1ResultOptions, "WL", "LW", "WW", "LL", "WLL", "LWW", "LWL", "WLW"];
 
 // TODO: look into cleaner options
 
 export type Bo1Result = "W" | "L" | "T" | string;
 export type Bo3Result = "WL" | "LW" | "WW" | "WLL" | "WLW" | "LL" | "LWW" | "LWL" | string;
-export type Result = Bo1Result | Bo3Result;
+export type Result = Bo1Result | Bo3Result | "ID";
 
 export type Game = {
   id: string;
