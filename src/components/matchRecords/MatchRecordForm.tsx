@@ -22,7 +22,7 @@ import { useGetDeckLists } from "../lists/_queries/useGetDeckLists";
 import { useGetActiveList } from "../lists/_queries/useGetActiveList";
 import { Spinner } from "../Spinner";
 import { ArchetypeIcons } from "../decks/ArchetypeIcons";
-import { setGames } from "../../helpers/matchRecords";
+import { isId, setGames } from "../../helpers/matchRecords";
 
 interface RecordStateType extends MatchRecord {
   opponentArchetype: ArchetypeBase | undefined;
@@ -239,7 +239,7 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
           </HStack>
         </Radio.Group>
       </Box>
-      {coinFlip.current && (
+      {coinFlip.current && !isId(matchRecord as MatchRecord) && (
         <Box style={MatchRecordFormStyle.inputBox}>
           <InputLabel>{t("MATCH_RECORD.FORM.COIN_FLIP")}</InputLabel>
           <Radio.Group
@@ -273,36 +273,38 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
         </Select>
       </Box>
 
-      <Box style={MatchRecordFormStyle.inputBox}>
-        <InputLabel>{t("MATCH_RECORD.FORM.STARTED")}</InputLabel>
-        {matchRecord.result !== "" ? (
-          matchRecord.result.split("").map((result, index) => (
-            <Radio.Group
-              key={result + index}
-              justifyContent="space-around"
-              name="StartedRadioGroup"
-              accessibilityLabel="Started"
-              value={matchRecord.gamesStarted[index] ? "1" : "0"}
-              onChange={nextValue => {
-                matchRecordDispatch({ type: "UPDATE_STARTED", payload: { [index]: nextValue === "1" } });
-              }}>
-              <HStack space={12}>
-                <Text width="5%" fontWeight="bold" paddingTop={1}>
-                  {result}
-                </Text>
-                <Radio value="1" my={1}>
-                  <Text>{t("MATCH_RECORD.FORM.FIRST")}</Text>
-                </Radio>
-                <Radio value="0" my={1}>
-                  <Text>{t("MATCH_RECORD.FORM.SECOND")}</Text>
-                </Radio>
-              </HStack>
-            </Radio.Group>
-          ))
-        ) : (
-          <Text>{t("MATCH_RECORD.FORM.NO_RESULT_SELECTED")}</Text>
-        )}
-      </Box>
+      {!isId(matchRecord as MatchRecord) && (
+        <Box style={MatchRecordFormStyle.inputBox}>
+          <InputLabel>{t("MATCH_RECORD.FORM.STARTED")}</InputLabel>
+          {matchRecord.result !== "" ? (
+            matchRecord.result.split("").map((result, index) => (
+              <Radio.Group
+                key={result + index}
+                justifyContent="space-around"
+                name="StartedRadioGroup"
+                accessibilityLabel="Started"
+                value={matchRecord.gamesStarted[index] ? "1" : "0"}
+                onChange={nextValue => {
+                  matchRecordDispatch({ type: "UPDATE_STARTED", payload: { [index]: nextValue === "1" } });
+                }}>
+                <HStack space={12}>
+                  <Text width="5%" fontWeight="bold" paddingTop={1}>
+                    {result}
+                  </Text>
+                  <Radio value="1" my={1}>
+                    <Text>{t("MATCH_RECORD.FORM.FIRST")}</Text>
+                  </Radio>
+                  <Radio value="0" my={1}>
+                    <Text>{t("MATCH_RECORD.FORM.SECOND")}</Text>
+                  </Radio>
+                </HStack>
+              </Radio.Group>
+            ))
+          ) : (
+            <Text>{t("MATCH_RECORD.FORM.NO_RESULT_SELECTED")}</Text>
+          )}
+        </Box>
+      )}
 
       <Box style={MatchRecordFormStyle.inputBox}>
         <InputLabel>{t("MATCH_RECORD.FORM.REMARKS")}</InputLabel>
