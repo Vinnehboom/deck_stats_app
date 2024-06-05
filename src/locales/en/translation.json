@@ -181,7 +181,7 @@
         "CONFIRM": "Confirm",
         "CANCEL": "Cancel",
         "SUCCESS": "Deck deleted!",
-        "DELETE_BUTTON": "Delete"
+        "DELETE_BUTTON": "Delete deck"
       },
       "ACTIVE_DECK": {
         "ALERT_TITLE": "Activate deck",
