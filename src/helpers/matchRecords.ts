@@ -20,7 +20,12 @@ export const matchLost = (record: MatchRecord | Game): boolean => {
   return ["L", "LL", "WLL", "LWL"].includes(record.result) ? true : false;
 };
 
+export const isId = (matchRecord: MatchRecord) => {
+  return matchRecord.result === "ID";
+};
+
 export const setGames = (record: MatchRecord): MatchRecord => {
+  if (isId(record)) return record;
   record.result.split("").forEach((resultString: Bo1Result, index) => {
     const game: Game = {
       id: uuidv4(),
@@ -47,7 +52,7 @@ export const transformMatchRecordData = (records: MatchRecord[], bo3 = false): M
 };
 
 const calculateBo3Data = (matchRecords: MatchRecord[]): Bo3MatchRecordDataCollection => {
-  const bo3Records = matchRecords.filter(record => record.bo3);
+  const bo3Records = matchRecords.filter(record => record.bo3 && !isId(record));
   const calculatedData: Bo3MatchRecordDataCollection = bo3Records?.reduce<Bo3MatchRecordDataCollection>(
     (gameData, matchRecord: MatchRecord) => {
       const archetype = matchRecord.opponentArchetype;

@@ -10,8 +10,6 @@ import { TranslationContext } from "../../../../contexts/TranslationContext";
 import { MatchupsContext } from "../../../../contexts/decks/MatchupsContext";
 import { Coinflip } from "../../../../components/matchRecords/Coinflip";
 
-console.log("new");
-
 export const HighlightedMatchups = () => {
   const { t } = useContext(TranslationContext);
   const { data, bo3, archetypes, selectedList } = useContext(MatchupsContext);
@@ -46,7 +44,6 @@ export const HighlightedMatchups = () => {
     setCalculating(false);
   }, [data, bestMuFirst, bo3, selectedList]);
 
-  console.log(archetypes.find(type => type.identifier === bestMuFirst)!);
   if (calculating) return <Spinner />;
   return (
     <ElevatedContainer style={DeckMatchupsStyle.highlightMatchupContainer}>

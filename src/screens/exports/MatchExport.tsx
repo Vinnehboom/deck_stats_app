@@ -11,7 +11,7 @@ import { RootStackParamList } from "../../types/RouteParams";
 import { ArchetypeIcons } from "../../components/decks/ArchetypeIcons";
 import { MatchRecord } from "../../types";
 import { Text } from "../../components/layout/Text";
-import { matchLost, matchWon } from "../../helpers/matchRecords";
+import { isId, matchLost, matchWon } from "../../helpers/matchRecords";
 import { Button } from "../../components/layout/Button";
 import { MatchExportStyle } from "../../styles/exports/MatchExportStyle";
 import { Typography } from "../../styles/variables";
@@ -120,13 +120,15 @@ export const MatchExport = () => {
               <HStack space={3} style={MatchExportStyle.opponentArchetype}>
                 <ArchetypeIcons archetype={item.opponentArchetype} />
               </HStack>
-              {item.bo3 ? (
-                <Coinflip won={item.coinFlipWon || false} />
-              ) : (
-                <Text style={MatchExportStyle.result}>
-                  {item.gamesStarted[0] ? t("MATCH_RECORD.FIRST") : t("MATCH_RECORD.SECOND")}
-                </Text>
-              )}
+              {!isId(item) ? (
+                item.bo3 ? (
+                  <Coinflip won={item.coinFlipWon || false} />
+                ) : (
+                  <Text style={MatchExportStyle.result}>
+                    {item.gamesStarted[0] ? t("MATCH_RECORD.FIRST") : t("MATCH_RECORD.SECOND")}
+                  </Text>
+                )
+              ) : null}
               <Text style={MatchExportStyle.score}>{scores[index]}</Text>
             </HStack>
           ))}
