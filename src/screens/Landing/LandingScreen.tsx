@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FlatList, Platform } from "react-native";
+import { FlatList } from "react-native";
 import { Box } from "native-base";
 import auth from "@react-native-firebase/auth";
 import { KeyboardAvoidingView } from "react-native";
@@ -16,6 +16,7 @@ import { ElevatedContainer } from "../../components/layout/ElevatedContainer";
 import { MatchRecordForm } from "../../components/matchRecords/MatchRecordForm";
 import { useGetUserMatchHistory } from "../../components/matchRecords/_queries/useGetUserMatchHistory";
 import { MatchRecordList } from "../../components/matchRecords/MatchRecordList";
+import { screenHeight } from "../../styles/variables";
 
 export const LandingScreen = () => {
   const user = auth().currentUser;
@@ -28,9 +29,7 @@ export const LandingScreen = () => {
   const renderItem = () => {
     return decks ? (
       decks.length > 0 ? (
-        <KeyboardAvoidingView
-          keyboardVerticalOffset={Platform.OS === "ios" ? 200 : 0}
-          behavior={Platform.OS === "ios" ? "height" : "position"}>
+        <KeyboardAvoidingView keyboardVerticalOffset={-screenHeight * 0.15} behavior="position">
           <ElevatedContainer style={LandingScreenStyle.formContainer}>
             <MatchRecordForm decks={decks} activeDeck={activeDeck?.deck} />
           </ElevatedContainer>
