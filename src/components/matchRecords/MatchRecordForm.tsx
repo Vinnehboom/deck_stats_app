@@ -90,7 +90,6 @@ const recordStateReducer = (state: RecordStateType, action: RecordActionType): R
         id: "",
         result: "",
         games: [],
-        bo3: false,
         gamesStarted: {},
         opponentArchetype: undefined,
         remarks: "",
