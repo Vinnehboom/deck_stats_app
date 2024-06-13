@@ -1,16 +1,17 @@
 import React, { useContext, useLayoutEffect, useState } from "react";
 import { FlatList } from "react-native";
 import { Box, HStack, Select } from "native-base";
-import { RouteProp, useRoute } from "@react-navigation/native";
+import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import auth from "@react-native-firebase/auth";
 
-import { DeckListTabParamList } from "../../../../types/RouteParams";
+import { DeckListTabParamList, MainTabParamList } from "../../../../types/RouteParams";
 import { DeckMatchHistory } from "../../../../components/decks/DeckMatchHistory";
 import { Header } from "../../../../components/layout/Header";
 import { DetailsHeader } from "./DetailsHeader";
 import { TranslationContext } from "../../../../contexts/TranslationContext";
 import { DeckDetailsStyle } from "../../../../styles/decks/DeckDetailsStyle";
 import { Colors, Spacing } from "../../../../styles/variables";
+import { Button } from "../../../../components/layout/Button";
 
 export const DeckDetails = () => {
   const user = auth().currentUser;
@@ -19,6 +20,7 @@ export const DeckDetails = () => {
   const [limit, setLimit] = useState(5);
 
   const { t } = useContext(TranslationContext);
+  const { navigate } = useNavigation<MainTabParamList>();
 
   useLayoutEffect(() => {}, [limit]);
 
@@ -47,12 +49,22 @@ export const DeckDetails = () => {
           </HStack>
           <Box style={DeckDetailsStyle.historyContainerWrapper}>
             <Box style={DeckDetailsStyle.historyContainer}>
-              <DeckMatchHistory exportable={true} paginated={true} deck={deck} limit={limit} />
+              <DeckMatchHistory exportable paginated deck={deck} limit={limit} />
             </Box>
           </Box>
         </Box>
       )}
       ListHeaderComponent={DetailsHeader({ deck, user: user! })}
+      ListFooterComponent={
+        <Box style={DeckDetailsStyle.formButtonContainer} marginX="auto">
+          <Button
+            text={t("DECK.DECK_DETAILS.ACTIVE_DECK.ADD_RESULT")}
+            colorScheme="secondary"
+            style={DeckDetailsStyle.formButton}
+            onPress={() => navigate("Landing", { selectedDeck: deck })}
+          />
+        </Box>
+      }
     />
   );
 };
