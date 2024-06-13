@@ -26,6 +26,6 @@ export const DeckDetailsStyle = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "space-around",
     paddingBottom: Spacing.md,
-    width: "75%",
+    width: "100%",
   },
 });

@@ -3,6 +3,7 @@ import { FlatList } from "react-native";
 import { Box } from "native-base";
 import auth from "@react-native-firebase/auth";
 import { KeyboardAvoidingView } from "react-native";
+import { useRoute } from "@react-navigation/native";
 
 import { useGetActiveDeck } from "../../components/decks/_queries/useGetActiveDeck";
 import { LandingScreenStyle } from "../../styles/LandingScreenStyle";
@@ -20,6 +21,9 @@ import { screenHeight } from "../../styles/variables";
 
 export const LandingScreen = () => {
   const user = auth().currentUser;
+  const route = useRoute();
+  const selectedDeck = route.params?.selectedDeck;
+  console.log("selectedDeck", selectedDeck);
   const { t } = useContext(TranslationContext);
 
   const { queryResult: activeDeck } = useGetActiveDeck(user!);
@@ -31,7 +35,7 @@ export const LandingScreen = () => {
       decks.length > 0 ? (
         <KeyboardAvoidingView keyboardVerticalOffset={-screenHeight * 0.15} behavior="position">
           <ElevatedContainer style={LandingScreenStyle.formContainer}>
-            <MatchRecordForm decks={decks} activeDeck={activeDeck?.deck} />
+            <MatchRecordForm decks={decks} activeDeck={selectedDeck ? selectedDeck : activeDeck?.deck} />
           </ElevatedContainer>
           <Box style={LandingScreenStyle.recentRecordsContainer}>
             <Header header="h2">{t("LANDING_SCREEN.RECENT_RECORDS")}</Header>

@@ -47,7 +47,7 @@ export const DeckDetails = () => {
           </HStack>
           <Box style={DeckDetailsStyle.historyContainerWrapper}>
             <Box style={DeckDetailsStyle.historyContainer}>
-              <DeckMatchHistory exportable={true} paginated={true} deck={deck} limit={limit} />
+              <DeckMatchHistory exportable paginated deck={deck} limit={limit} />
             </Box>
           </Box>
         </Box>

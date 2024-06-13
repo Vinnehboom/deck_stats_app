@@ -1,4 +1,4 @@
-import React, { useReducer, SetStateAction, useContext, useEffect, useRef } from "react";
+import React, { useReducer, SetStateAction, useContext, useEffect, useRef, useState } from "react";
 import { Box, Select, Radio, HStack, TextArea, Link } from "native-base";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
@@ -105,6 +105,7 @@ const recordStateReducer = (state: RecordStateType, action: RecordActionType): R
 
 export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDeck: Deck | undefined }) => {
   const coinFlip = useRef<boolean>();
+  const [sd, setSelectedDeck] = useState<Deck | null>(activeDeck || null);
   const initialMatchRecord: RecordStateType = {
     id: "",
     deckId: activeDeck?.id || "",
@@ -163,6 +164,11 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
     }
   };
 
+  useEffect(() => {
+    const updatedSelectedDeck = decks.find(deck => deck.id === activeDeck?.id) || decks[0];
+    matchRecordDispatch({ type: "UPDATE_DECK_ID", payload: updatedSelectedDeck?.id });
+  }, [activeDeck, decks]);
+
   if (listsFetching || activeListFetching) return <Spinner height={200} />;
 
   return (
@@ -171,8 +177,12 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
         <InputLabel>{t("MATCH_RECORD.FORM.DECK")}</InputLabel>
         <Select
           bgColor={Colors.white}
-          onValueChange={value => matchRecordDispatch({ type: "UPDATE_DECK_ID", payload: value })}
-          selectedValue={selectedDeck.id}
+          onValueChange={value => {
+            const updatedSelectedDeck = decks.find(deck => deck.id === value);
+            setSelectedDeck(updatedSelectedDeck || null);
+            matchRecordDispatch({ type: "UPDATE_DECK_ID", payload: value });
+          }}
+          selectedValue={selectedDeck?.id} // Use optional chaining here
           style={MatchRecordFormStyle.listSelect}>
           {decks &&
             decks.map(deck => (

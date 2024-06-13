@@ -55,19 +55,25 @@ export const DetailsHeader = ({ deck, user }: { deck: Deck; user: User }) => {
         onPress: () => {},
         style: "cancel",
       },
-      { text: t("DECK.DECK_DETAILS.ACTIVE_DECK.CONFIRM"), onPress: activateDeckMutation.mutate },
+      { text: t("DECK.DECK_DETAILS.ACTIVE_DECK.CONFIRM"), onPress: () => activateDeckMutation.mutate },
     ]);
   };
 
   return (
     <Box style={DeckDetailsStyle.optionsContainer}>
       <Header header="h2">{t("DECK.DECK_DETAILS.OPTIONS.TITLE")}</Header>
-      <HStack justifyContent="space-evenly" width="90%" marginX="auto" paddingTop={4}>
+      <HStack justifyContent="space-between" width="90%" marginX="auto">
         <Button
           text={t("DECK.DECK_DETAILS.ACTIVE_DECK.ACTIVATE_BUTTON")}
           style={DeckDetailsStyle.optionButton}
           colorScheme="primary"
           onPress={handleDeckActivation}
+        />
+        <Button
+          text={t("DECK.DECK_DETAILS.ACTIVE_DECK.FORM")}
+          style={DeckDetailsStyle.optionButton}
+          colorScheme="secondary"
+          onPress={() => navigate("Landing", { selectedDeck: deck })}
         />
         <Button
           text={t("DECK.DECK_DETAILS.DELETE.DELETE_BUTTON")}
