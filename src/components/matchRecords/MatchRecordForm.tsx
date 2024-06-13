@@ -163,6 +163,11 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
     }
   };
 
+  useEffect(() => {
+    const updatedSelectedDeck = decks.find(deck => deck.id === activeDeck?.id) || decks[0];
+    matchRecordDispatch({ type: "UPDATE_DECK_ID", payload: updatedSelectedDeck?.id });
+  }, [activeDeck, decks]);
+
   if (listsFetching || activeListFetching) return <Spinner height={200} />;
 
   return (
@@ -171,8 +176,10 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
         <InputLabel>{t("MATCH_RECORD.FORM.DECK")}</InputLabel>
         <Select
           bgColor={Colors.white}
-          onValueChange={value => matchRecordDispatch({ type: "UPDATE_DECK_ID", payload: value })}
-          selectedValue={selectedDeck.id}
+          onValueChange={value => {
+            matchRecordDispatch({ type: "UPDATE_DECK_ID", payload: value });
+          }}
+          selectedValue={selectedDeck?.id} // Use optional chaining here
           style={MatchRecordFormStyle.listSelect}>
           {decks &&
             decks.map(deck => (
