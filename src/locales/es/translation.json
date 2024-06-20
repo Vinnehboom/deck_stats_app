@@ -1,0 +1,251 @@
+{
+  "TYPES": {
+    "USER": {
+      "EMAIL": "Email"
+    }
+  },
+  "HOME_SCREEN": {
+    "HEADER_TITLE": "VS Log"
+  },
+  "LANDING_SCREEN": {
+    "SIGN_OUT": "Cerrar sesión",
+    "WELCOME": "¡Bienvenido de vuelta, gamer!",
+    "RECENT_RECORDS": "Resultados recientes",
+    "NO_DECK": "Por favor añada un mazo en la pestaña",
+    "DECKS": "Mazos",
+    "NO_DECK_2": ""
+  },
+  "LOGIN_SCREEN": {
+    "T&C": "Términos y condiciones",
+    "TITLE": "VS Log",
+    "INCOMPLETE_FORM": "El Email o la contraseña no pueden estar vacíos",
+    "PASSWORD_MISMATCH": "Las contraseñas no coinciden",
+    "SIGN_UP": {
+      "SUCCESS": "Registrado correctamente!"
+    },
+    "SIGN_IN": {
+      "SUCCESS": "¡Sesión iniciada correctamente!"
+    },
+    "FORM": {
+      "LOGIN_TITLE": "Iniciar sesión",
+      "EMAIL_DISCLAIMER": "permanecerá oculto para los demás usuarios.",
+      "REGISTER_TITLE": "Crear cuenta",
+      "PASSWORD": "Contraseña",
+      "PASSWORD_CONFIRMATION": "Confirmar contraseña",
+      "EMAIL_SIGN_IN": "Email o usuario",
+      "EMAIL": "Email",
+      "USERNAME": "Usuario",
+      "SIGN_IN": "Iniciar sesión",
+      "SIGN_UP": "Registrarse"
+    }
+  },
+  "DECKS_SCREEN": {
+    "TITLE": "Mazos",
+    "SUB_TITLE": "Mis mazos",
+    "NO_DECKS": "¡Añada un mazo para encontrarlo aquí!"
+  },
+  "PAGINATION": {
+    "PREVIOUS": "Anterior",
+    "NEXT": "Siguiente"
+  },
+  "LIST": {
+    "ITEM": {
+      "SHOW": "Mostrar",
+      "IMAGES": "IMAGEN",
+      "LIST": "LISTA"
+    }
+  },
+  "MATCH_RECORD": {
+    "FIRST": "1.ˣ",
+    "SECOND": "2.ˣ",
+    "REMARKS": "Notas",
+    "OTHER": "Otros",
+    "FORM": {
+      "DECK": "Mazo",
+      "LIST": "Lista",
+      "OPP_ARCHETYPE": "Arquetipo oponente",
+      "COIN_FLIP": "Lanzamiento de moneda",
+      "WON": "Victoria",
+      "FIND_ARCHETYPE": "Buscar arquetipo...",
+      "LOST": "Derrota",
+      "STARTED": "Iniciado",
+      "NO_RESULT_SELECTED": "Seleccione un resultado para continuar",
+      "NO_LIST": "Sin lista",
+      "DETAILS": "Detalles y enfrentamientos",
+      "FIRST": "1.ˣ",
+      "SECOND": "2.ˣ",
+      "RESULT": "Resultado",
+      "REMARKS": "Notas",
+      "SUBMIT": "Guardar",
+      "SUCCESS": "¡Registro añadido correctamente!",
+      "FAILED": "El registro no pudo guardarse. Por favor valide todos los campos requeridos y vuelva a intentar.",
+    }
+  },
+  "MATCHUP_LIST":{
+    "ARCHETYPE": "Arquetipo",
+    "FIRST": "1.ˣ",
+    "SECOND": "2.ˣ",
+    "COINFLIP_WON": "Victoria",
+    "COINFLIP_LOST": "Derrota"
+  },
+  "MATCHUP_NOTES": {
+    "SCREEN_TITLE": "Notas del enfrentamiento",
+    "VS": "VS",
+    "FIRST": "1.ˣ",
+    "SECOND": "2.ˣ",
+    "NOTES": "Notas",
+    "LIST_NAME": "Lista:",
+    "NO_DATA": "¡Sin datos!",
+    "LOAD_MORE": "Cargar más...",
+    "REMOVE": {
+      "REMOVED": "Nota eliminada.",
+      "TITLE": "Eliminar note",
+      "MESSAGE": "Seguro que desea eliminar esta nota? Los datos de la partida seguirán en tus enfrentamientos."
+    },
+    "FAVORITE": {
+      "FAVORITED": "Nota seleccionada como favorita.",
+      "UNFAVORITED": "La nota ya no se encuentra en favoritos.",
+      "FAVORITES": "Favoritos",
+      "OTHER": "Otras notas"
+    }
+  },
+  "MATCH_EXPORT": {
+    "SCREEN_TITLE": "Exportar enfrentamientos",
+    "DOWNLOAD_SUCCESS": "Imagen guardada con éxito",
+    "DOWNLOAD_ERROR": "Error al descargar la imagen.",
+    "DOWNLOAD": "Guardar imagen",
+    "SHARE_ERROR": "Error al compartir la imagen",
+    "SHARE": "Compartir",
+    "WATERMARK": "Powered by VS Log"
+  },
+  "ACCOUNT": {
+    "SCREEN_TITLE": "Cuenta",
+    "SIGN_OUT": "Cerrar sesión",
+    "DETAILS": "Detalles",
+    "EMAIL": "Email",
+    "USERNAME": "Usuario",
+    "SIGNED_OUT": "Sesión cerrada con éxito!",
+    "DELETE_ACCOUNT": "Eliminar cuenta",
+    "EMAIL_DISCLAIMER": "Su email o usuario está oculto para los otros usuarios.",
+    "USER_DELETE": {
+      "BUTTON": "ELIMINACIÓN", 
+      "MESSAGE": "Está seguro de que quiere eliminar su cuenta? Esta acción es irreversible.",
+      "TITLE": "Eliminar cuenta",
+      "CONFIRM": "Eliminar mi cuenta",
+      "CANCEL": "Cancelar",
+      "SUCCESS": "Cuenta eliminada! Gracias por formar parte de esto."
+    }
+  },
+  "DECK": {
+    "LIST_ITEM": {
+      "SHOW": "Mostrar"
+    },
+    "CREATION_FORM": {
+      "TITLE": "Añadir mazo",
+      "NAME": "Nombre del mazo",
+      "INCOMPLETE_FORM": "Por favor, rellene todos los campos antes de guardar.",
+      "CREATION": {
+        "SUCCESS": "Mazo añadido!"
+      },
+      "SUBMIT": "Añadir mazo"
+    },
+    "NAVIGATION": {
+      "BACK": "Atrás",
+      "DECKS": {
+        "DETAILS": "Detalles",
+        "LISTS": "Listas",
+        "MATCHUPS": "Enfrentamientos"
+      },
+      "HOME": {
+        "LANDING": "Principal",
+        "DECKS": "Mazos"
+      }
+    },
+    "DECK_MATCH_HISTORY": {"LOADING": "Cargando historial de partidas",
+    "EXPORT_TEXT": "Seleccione los registros para exportar o eliminar...",
+    "SELECTED_COUNT": "Registros seleccionados:",
+    "NO_DATA": "Sin datos!", 
+    "EXPORT": "Exportar...",
+    "DELETE": "Eliminar registros",
+    "DELETION": {
+      "TITLE": "Eliminar registros",
+      "MESSAGE": "Está seguro de que quiere eliminar esos registros?",
+      "DELETED": "Registros eliminados correctamente"
+    }
+  },
+    "DECK_DETAILS": {
+      "OPTIONS": { "TITLE": "Opciones"},
+      "RECENT_RESULTS": "Resultados recientes",
+      "DELETE": {
+        "ALERT_TITLE": "Confirmar eliminación",
+        "ALERT_MESSAGE": "Está seguro de que desea eliminar este mazo?",
+        "CONFIRM": "Confirmar",
+        "CANCEL": "Cancelar",
+        "SUCCESS": "Mazo eliminado!",
+        "DELETE_BUTTON": "Eliminar mazo"
+      },
+      "ACTIVE_DECK": {
+        "ALERT_TITLE": "Activar mazo",
+        "ALERT_MESSAGE": "Seleccionar este mazo como tu mazo activo?",
+        "CONFIRM": "Confirmar",
+        "CANCEL": "Cancelar",
+        "SUCCESS": "Mazo activo actualizado correctamente!",
+        "ACTIVATE_BUTTON": "Activar"
+      }
+    },
+    "DECK_MATCHUPS": {
+      "MATCHUP_DATA": "Datos de los enfrentamientos",
+      "BEST_MATCHUPS": "Mejores",
+      "WORST_MATCHUPS": "Peores",
+      "LOADING": "Cargando datos...",
+      "LIST": "Ver datos de: ",
+      "ALL_LISTS": "Todas las listas",
+      "WIN_RATES": "Porcentaje de victorias",
+      "FIRST": "1.ˣ",
+      "SECOND": "2.ˣ",
+      "NO_DATA": "Sin datos!",
+      "FORMAT": "Formato:"
+    },
+    "DECK_LISTS": {
+      "LIST_CREATION": {
+        "SUCCESS": "Lista añadida!",
+        "SUCCESS_AND_ACTIVATED": "Lista añadida. También se seleccionó como la lista activa para este mazo.",
+        "NO_NAME": "La lista necesita un nombre",
+        "ERROR": "Algunos errores fueron encontrados mientras se guardaba la lista:",
+      },
+      "SET_ACTIVE": "Activar",
+      "ACTIVE_LIST": "Lista activa",
+      "LIST_DELETION": {"DELETE_ALERT": {
+        "TITLE": "Eliminar lista",
+        "MESSAGE": "Está seguro de que desea eliminar esta lista?",
+      },
+    "RECORDS_ALERT": {
+      "TITLE": "Related data deletion", 
+      "MESSAGE": "Desea eliminar también el historial de partidas asociado?",
+      "CONFIRM": "Eliminar con el historial de partidas",
+      "LIST_ONLY": "Eliminar solo la lista"
+    }},
+      "LISTS":{"TITLE": "Listas", "LOADING": "Cargando listas..."},
+      "LIST_FORM": {
+        "TITLE": "Importar lista",
+        "NAME": "Nombre",
+        "LIMITLESS": "Limitless",
+        "LIST_PLACEHOLDER": "Código del mazo (Live/Limitless/...)",
+        "SUBMIT": "Publicar lista"
+      }
+    }
+  },
+  "PERMISSIONS": {
+    "CANCEL": "Cancelar",
+    "OK": "Ok",
+    "IMAGE": {
+      "TITLE": "Permiso para descargar imagenes",
+      "MESSAGE": "Se requiere su permiso para guardar imagenes en su dispositivo",
+      "ERROR": "Error pidiendo permiso para guardar imagenes"
+    }
+  },
+  "ALERTS": {
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar"
+  }
+}

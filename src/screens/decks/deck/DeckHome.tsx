@@ -18,6 +18,7 @@ import { DeckScreenTitle } from "../../../components/decks/DeckScreenTitle";
 import { TabBarStyle } from "../../../styles/layout/TabBarStyle";
 import { TabIcon } from "../../../components/layout/TabIcon";
 import { TranslationContext } from "../../../contexts/TranslationContext";
+import { TabLabel } from "../../../components/layout/TabLabel";
 const Tab = createBottomTabNavigator<DeckListTabParamList>();
 
 const DeckHome = () => {
@@ -38,7 +39,7 @@ const DeckHome = () => {
         tabBarStyle: TabBarStyle.bar,
         tabBarItemStyle: TabBarStyle.item,
         tabBarInactiveTintColor: Colors.white,
-        tabBarLabelStyle: TabBarStyle.label,
+        tabBarLabel: TabLabel,
         tabBarActiveTintColor: Colors["primary-dark"],
         tabBarActiveBackgroundColor: Colors.light,
         headerShadowVisible: true,
