@@ -6,6 +6,8 @@ export const DeckDetailsStyle = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
   },
+  formButton: { borderRadius: 5 },
+  formButtonContainer: { display: "flex", justifyContent: "center", marginTop: Spacing.sm },
   historyContainer: {
     backgroundColor: Colors.light,
     borderColor: "#000000",
@@ -26,6 +28,6 @@ export const DeckDetailsStyle = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "space-around",
     paddingBottom: Spacing.md,
-    width: "100%",
+    width: "75%",
   },
 });

@@ -2,12 +2,10 @@ import React, { useContext } from "react";
 import { Box, HStack } from "native-base";
 import { showMessage } from "react-native-flash-message";
 import { Alert } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import { Header } from "../../../../components/layout/Header";
 import { Button } from "../../../../components/layout/Button";
 import { DeckDetailsStyle } from "../../../../styles/decks/DeckDetailsStyle";
-import { MainTabParamList } from "../../../../types/RouteParams";
 import { Deck, User } from "../../../../types";
 import { useDeckDeletion } from "../../../../components/lists/_queries/useDeckDeletion";
 import { useSetActiveDeck } from "../../../../components/decks/_queries/useSetActiveDeck";
@@ -15,7 +13,6 @@ import { TranslationContext } from "../../../../contexts/TranslationContext";
 
 export const DetailsHeader = ({ deck, user }: { deck: Deck; user: User }) => {
   const { t } = useContext(TranslationContext);
-  const { navigate } = useNavigation<MainTabParamList>();
 
   const deletionMutation = useDeckDeletion(deck, () => {
     navigate("Decks", undefined);
@@ -68,12 +65,6 @@ export const DetailsHeader = ({ deck, user }: { deck: Deck; user: User }) => {
           style={DeckDetailsStyle.optionButton}
           colorScheme="primary"
           onPress={handleDeckActivation}
-        />
-        <Button
-          text={t("DECK.DECK_DETAILS.ACTIVE_DECK.FORM")}
-          style={DeckDetailsStyle.optionButton}
-          colorScheme="secondary"
-          onPress={() => navigate("Landing", { selectedDeck: deck })}
         />
         <Button
           text={t("DECK.DECK_DETAILS.DELETE.DELETE_BUTTON")}

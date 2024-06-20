@@ -191,7 +191,7 @@
         "CANCEL": "Cancel",
         "SUCCESS": "Active deck successfully updated!",
         "ACTIVATE_BUTTON": "Set active",
-        "FORM": "Go to form"
+        "ADD_RESULT": "Add result"
       }
     },
     "DECK_MATCHUPS": {
