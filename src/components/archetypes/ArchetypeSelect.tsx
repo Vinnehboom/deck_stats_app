@@ -34,16 +34,8 @@ const ArchetypesList = ({
     <VStack space="xs" style={top ? [ArchetypeSelectStyle.selectContainer, { top }] : ArchetypeSelectStyle.selectContainer}>
       <ScrollView minHeight="100%" zIndex={9999} nestedScrollEnabled>
         {archetypes.map((archetype, i) => (
-          <Flex
-            marginX={1}
-            flexDirection="row"
-            justifyContent="space-between"
-            key={archetype.identifier + i}
-            borderBottomWidth={0.2}
-            padding={2}
-            minWidth="75%"
-            zIndex={9999}>
-            <Link display="flex" width="100%" onPress={() => handleArchetypeSelection(archetype)}>
+          <Flex style={ArchetypeSelectStyle.selectItem} key={archetype.identifier + i}>
+            <Link style={ArchetypeSelectStyle.selectLink} onPress={() => handleArchetypeSelection(archetype)}>
               <Text marginRight={Spacing.md}>{transformIdentifier(archetype.identifier)}</Text>
               <Flex flexDirection="row">
                 {archetype.icons?.length &&
@@ -64,26 +56,19 @@ const ArchetypesList = ({
           </Flex>
         ))}
         {archetypes.length < 1 ? (
-          <Flex
-            marginX={1}
-            flexDirection="row"
-            justifyContent="space-between"
-            key="other"
-            borderBottomWidth={0.2}
-            padding={2}
-            minWidth="75%"
-            zIndex={9999}>
-            <Text onPress={() => handleArchetypeSelection("other")}>{t("MATCH_RECORD.OTHER")}</Text>
-            <Flex flexDirection="row">
-              <Image
-                marginRight={2}
-                key={1}
-                source={require("../../assets/images/substitute.png")}
-                resizeMode="stretch"
-                alt="substitute"
-                size="2xs"
-              />
-            </Flex>
+          <Flex style={ArchetypeSelectStyle.selectItem} key="other">
+            <Link style={ArchetypeSelectStyle.selectLink} onPress={() => handleArchetypeSelection("other")}>
+              <Text marginRight={Spacing.md}>{t("MATCH_RECORD.OTHER")}</Text>
+              <Flex flexDirection="row">
+                <Image
+                  key={1}
+                  source={require("../../assets/images/substitute.png")}
+                  resizeMode="stretch"
+                  alt="substitute"
+                  size="2xs"
+                />
+              </Flex>
+            </Link>
           </Flex>
         ) : null}
       </ScrollView>
