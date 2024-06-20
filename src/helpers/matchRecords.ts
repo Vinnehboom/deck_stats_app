@@ -43,7 +43,7 @@ export const setGames = (record: MatchRecord): MatchRecord => {
 };
 
 export const calculateWinRate = (winRateData: { wins: number; losses: number; ties: number }) => {
-  const result = winRateData.wins / (winRateData.wins + winRateData.losses + winRateData.ties);
+  const result = (winRateData.wins + winRateData.ties / 3) / (winRateData.wins + winRateData.losses + winRateData.ties);
   return isNaN(result) || result === Infinity ? null : result * 100;
 };
 
