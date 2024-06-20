@@ -128,7 +128,7 @@ export const ArchetypeSelect = ({
       <>
         <HStack marginY={-5} maxWidth="100%">
           <TextInput
-            placeholder="Find archetype..."
+            placeholder={t("MATCH_RECORD.FORM.FIND_ARCHETYPE")}
             placeholderTextColor={Colors["primary-dark"]}
             value={archetypeQuery}
             onChangeText={text => setArchetypeQuery(text)}

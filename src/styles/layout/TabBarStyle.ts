@@ -3,6 +3,7 @@ import { Platform, StyleSheet } from "react-native";
 import { Colors, Typography, Spacing } from "../variables";
 
 export const TabBarStyle = StyleSheet.create({
+  active: { color: Colors["primary-dark"] },
   bar: { backgroundColor: Colors.white, borderTopWidth: 0, paddingVertical: Spacing.xxs },
   item: {
     alignSelf: "center",
@@ -21,7 +22,10 @@ export const TabBarStyle = StyleSheet.create({
     shadowRadius: 0,
   },
   label: {
+    color: Colors.white,
     fontFamily: "BungeeInline-Regular",
     fontSize: Platform.OS === "ios" ? Typography.fontSizes.md : Typography.fontSizes.xl,
+    height: Platform.OS === "android" ? "90%" : "auto",
+    verticalAlign: "middle",
   },
 });

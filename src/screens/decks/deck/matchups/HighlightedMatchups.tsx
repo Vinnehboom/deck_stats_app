@@ -52,7 +52,7 @@ export const HighlightedMatchups = () => {
         <Box>
           <VStack style={DeckMatchupsStyle.highlightMatchupBlock}>
             <HStack style={DeckMatchupsStyle.matchupListEven} space={1}>
-              <Text style={DeckMatchupsStyle.highlightMatchupText}>
+              <Text adjustsFontSizeToFit numberOfLines={1} style={DeckMatchupsStyle.highlightMatchupText}>
                 {bo3 ? <Coinflip paddingTop={2} won /> : t("DECK.DECK_MATCHUPS.FIRST")}
               </Text>
               <Text style={DeckMatchupsStyle.highlightMatchupPercentage}>
@@ -65,7 +65,7 @@ export const HighlightedMatchups = () => {
               </HStack>
             </HStack>
             <HStack style={DeckMatchupsStyle.matchupListOdd} space={1}>
-              <Text style={DeckMatchupsStyle.highlightMatchupText}>
+              <Text adjustsFontSizeToFit numberOfLines={1} style={DeckMatchupsStyle.highlightMatchupText}>
                 {bo3 ? <Coinflip paddingTop={2} won={false} /> : t("DECK.DECK_MATCHUPS.SECOND")}
               </Text>
               <Text style={DeckMatchupsStyle.highlightMatchupPercentage}>
@@ -86,7 +86,7 @@ export const HighlightedMatchups = () => {
         <Box>
           <VStack style={DeckMatchupsStyle.highlightMatchupBlock} space={1}>
             <HStack style={DeckMatchupsStyle.matchupListEven}>
-              <Text style={DeckMatchupsStyle.highlightMatchupText}>
+              <Text adjustsFontSizeToFit numberOfLines={1} style={DeckMatchupsStyle.highlightMatchupText}>
                 {bo3 ? <Coinflip paddingTop={2} won /> : t("DECK.DECK_MATCHUPS.FIRST")}
               </Text>
               <Text style={DeckMatchupsStyle.highlightMatchupPercentage}>
@@ -99,7 +99,7 @@ export const HighlightedMatchups = () => {
               </HStack>
             </HStack>
             <HStack style={DeckMatchupsStyle.matchupListOdd}>
-              <Text style={DeckMatchupsStyle.highlightMatchupText}>
+              <Text adjustsFontSizeToFit numberOfLines={1} style={DeckMatchupsStyle.highlightMatchupText}>
                 {bo3 ? <Coinflip paddingTop={2} won={false} /> : t("DECK.DECK_MATCHUPS.SECOND")}
               </Text>
               <Text style={DeckMatchupsStyle.highlightMatchupPercentage}>
