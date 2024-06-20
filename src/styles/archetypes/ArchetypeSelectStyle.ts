@@ -33,4 +33,14 @@ export const ArchetypeSelectStyle = StyleSheet.create({
     paddingVertical: Spacing.xxs,
     position: "relative",
   },
+  selectItem: {
+    borderBottomWidth: 0.2,
+    display: "flex",
+    justifyContent: "center",
+    marginHorizontal: Spacing.xs,
+    minWidth: "75%",
+    padding: Spacing.sm,
+    zIndex: 9999,
+  },
+  selectLink: { display: "flex", width: "100%" },
 });
