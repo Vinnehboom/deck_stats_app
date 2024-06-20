@@ -68,6 +68,7 @@
       "WON": "Won",
       "LOST": "Lost",
       "STARTED": "Started",
+      "FIND_ARCHETYPE": "Find archetype...",
       "NO_RESULT_SELECTED": "Select a result to continue",
       "NO_LIST": "No list",
       "DETAILS": "Details & matchups",

@@ -6,6 +6,7 @@ import FlashMessage from "react-native-flash-message";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 import BootSplash from "react-native-bootsplash";
+import { changeLanguage } from "i18next";
 
 import { Colors, Typography } from "./styles/variables";
 import { LoginScreen } from "./screens/login/LoginScreen";
@@ -18,6 +19,8 @@ import { HeaderBackButton } from "./components/navigation/HeaderBackButton";
 import "./utils/i18n";
 import { TranslationContext } from "./contexts/TranslationContext";
 import { MatchExport } from "./screens/exports/MatchExport";
+import { getDeviceLanguage } from "./helpers/locales";
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,6 +32,11 @@ const queryClient = new QueryClient({
 });
 
 export function App(): JSX.Element {
+  const deviceLanguage = getDeviceLanguage();
+
+  useEffect(() => {
+    changeLanguage(deviceLanguage);
+  }, [deviceLanguage]);
   const { t } = useTranslation();
   const TranslationContextValue = { t };
   const theme = extendTheme({
