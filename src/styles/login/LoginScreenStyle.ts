@@ -10,17 +10,17 @@ export const LoginScreenStyle = StyleSheet.create({
   button: {
     borderRadius: 20,
     elevation: 15,
+    minWidth: "75%",
     shadowColor: "rgba(0,0,0,0.3)",
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
     shadowRadius: 0,
-    width: "75%",
   },
   buttonContainer: {
     alignItems: "center",
     justifyContent: "center",
     marginVertical: Spacing.md,
-    width: "60%",
+    maxWidth: "80%",
   },
   buttonText: {
     color: "white",

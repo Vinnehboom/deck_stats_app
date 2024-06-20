@@ -12,6 +12,7 @@ import { TabIcon } from "../components/layout/TabIcon";
 import { TabBarStyle } from "../styles/layout/TabBarStyle";
 import { Typography } from "../styles/variables/typography";
 import { TranslationContext } from "../contexts/TranslationContext";
+import { TabLabel } from "../components/layout/TabLabel";
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -27,6 +28,7 @@ export const HomeScreen = () => {
         tabBarItemStyle: TabBarStyle.item,
         tabBarInactiveTintColor: Colors.white,
         tabBarLabelStyle: TabBarStyle.label,
+        tabBarLabel: TabLabel,
         tabBarActiveTintColor: Colors["primary-dark"],
         tabBarActiveBackgroundColor: Colors.light,
         headerTitle: t("HOME_SCREEN.HEADER_TITLE"),

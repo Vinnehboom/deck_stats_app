@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 import { Text } from "../../components/layout/Text";
-import { Colors, Typography } from "../../styles/variables";
+import { Colors } from "../../styles/variables";
 import { MatchupListItem } from "./MatchupListItem";
 import { Deck, MatchRecord } from "../../types";
 import { RootStackParamList } from "../../types/RouteParams";
@@ -14,6 +14,7 @@ import { MatchRecordDataEntry } from "../../types/MatchRecord";
 import { TranslationContext } from "../../contexts/TranslationContext";
 import { MatchupsContext } from "../../contexts/decks/MatchupsContext";
 import { Coinflip } from "../matchRecords/Coinflip";
+import { MatchupListStyle } from "../../styles/decks/MatchupListStyle";
 
 export const MatchupsList = ({
   deck,
@@ -31,30 +32,18 @@ export const MatchupsList = ({
   return (
     <Box width="95%">
       <VStack space={3}>
-        <HStack marginBottom={1} paddingLeft={4} paddingRight={1}>
-          <Text fontWeight="bold" fontSize={Typography.fontSizes.xl} width="40%">
+        <HStack marginBottom={1}>
+          <Text style={MatchupListStyle.text} width="40%">
             {t("MATCHUP_LIST.ARCHETYPE")}
           </Text>
-
-          <Text
-            fontWeight="bold"
-            fontSize={Typography.fontSizes.xl}
-            width={viewable ? "20%" : "30%"}
-            paddingLeft={2}
-            textAlign="left">
+          <Text style={MatchupListStyle.text} width={viewable ? "20%" : "30%"}>
             {bo3 ? <Coinflip won={true} /> : t("MATCHUP_LIST.FIRST")}
           </Text>
-          <Text
-            fontWeight="bold"
-            fontSize={Typography.fontSizes.xl}
-            width={viewable ? "20%" : "30%"}
-            paddingLeft={3.5}
-            textAlign="left">
+          <Text style={MatchupListStyle.text} width={viewable ? "20%" : "30%"}>
             {bo3 ? <Coinflip won={false} /> : t("MATCHUP_LIST.SECOND")}
           </Text>
-
           {viewable ? (
-            <Text fontWeight="bold" fontSize={Typography.fontSizes.xl} paddingLeft={3} width="20%" textAlign="center">
+            <Text style={MatchupListStyle.text} paddingLeft={3} width="20%">
               {t("MATCHUP_NOTES.NOTES")}
             </Text>
           ) : null}
