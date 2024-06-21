@@ -7,7 +7,7 @@ export const ListContainerStyle = StyleSheet.create({
     alignItems: "stretch",
     gap: width / 10,
     justifyContent: "center",
-    marginTop: Spacing.md,
+    marginTop: Spacing.xxs,
     minWidth: width,
     paddingBottom: Spacing.md,
     paddingHorizontal: Spacing.md,

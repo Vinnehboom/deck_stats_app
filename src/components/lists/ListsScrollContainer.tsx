@@ -59,6 +59,7 @@ export const ListsScrollContainer = ({
 
   return (
     <>
+      <ListPagination data={sortedLists.current} scrollX={scrollX} />
       <FlatList
         data={sortedLists.current}
         horizontal
