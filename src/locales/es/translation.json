@@ -194,7 +194,7 @@
       }
     },
     "DECK_MATCHUPS": {
-      "MATCHUP_DATA": "Datos de los enfrentamientos",
+      "MATCHUP_DATA": "Datos de enfrentamientos",
       "BEST_MATCHUPS": "Mejores",
       "WORST_MATCHUPS": "Peores",
       "LOADING": "Cargando datos...",

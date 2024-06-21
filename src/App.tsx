@@ -37,8 +37,9 @@ export function App(): JSX.Element {
   useEffect(() => {
     changeLanguage(deviceLanguage);
   }, [deviceLanguage]);
-  const { t } = useTranslation();
-  const TranslationContextValue = { t };
+  const { t, i18n } = useTranslation();
+
+  const TranslationContextValue = { t, locale: i18n.language };
   const theme = extendTheme({
     colors: {
       primary: {
