@@ -11,3 +11,7 @@ export const getDeviceLanguage = () => {
     ? NativeModules.SettingsManager.settings.AppleLocale || NativeModules.SettingsManager.settings.AppleLanguages[0] // iOS 13
     : NativeModules.I18nManager.localeIdentifier;
 };
+
+export const getSelectedLocale = (locale: string) => {
+  return availableLocales().find(l => locale.includes(l));
+};
