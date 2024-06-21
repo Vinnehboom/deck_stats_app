@@ -6,7 +6,7 @@ export const ListPaginationStyle = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "center",
-    marginBottom: Spacing.lg,
+    marginBottom: Spacing.md,
     position: "relative",
     width: "100%",
   },
