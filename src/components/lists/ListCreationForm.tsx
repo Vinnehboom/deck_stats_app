@@ -108,7 +108,7 @@ export const ListCreationForm = ({ deck, lists }: { deck: Deck; lists: List[] })
         value={newListObject.activate}
         isChecked={newListObject.activate === "1"}
         onChange={value => newListObjectDispatch({ type: "updateActivate", payload: value ? "1" : "0" })}>
-        <Text> Set active </Text>
+        <Text> {t("DECK.DECK_LISTS.SET_ACTIVE")} </Text>
       </Checkbox>
       <Button text={t("DECK.DECK_LISTS.LIST_FORM.SUBMIT")} style={ListFormStyle.button} onPress={handleListSubmission} />
     </View>

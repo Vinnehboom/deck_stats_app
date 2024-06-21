@@ -1,23 +1,37 @@
 import React, { useContext } from "react";
-import { Box, Image } from "native-base";
+import { Box, Image, Select } from "native-base";
 import { TouchableOpacity } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
+import { changeLanguage } from "i18next";
 
 import { Text } from "../../components/layout/Text";
 import { LandingScreenStyle } from "../../styles/LandingScreenStyle";
 import { TranslationContext } from "../../contexts/TranslationContext";
 import { Colors } from "../../styles/variables";
 import { RootStackParamList } from "../../types/RouteParams";
+import { getSelectedLocale, defaultLocale } from "../../helpers/locales";
 
 export const LandingHeader = () => {
-  const { t } = useContext(TranslationContext);
+  const { t, locale } = useContext(TranslationContext);
   const { push } = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const selectedLocale = getSelectedLocale(locale);
 
   return (
     <Box style={LandingScreenStyle.logoContainer}>
+      <Box style={LandingScreenStyle.languagePickerContainer}>
+        <Select
+          borderWidth={0}
+          style={LandingScreenStyle.languagePicker}
+          selectedValue={selectedLocale || defaultLocale}
+          dropdownIcon={<FontAwesomeIcon icon={faGlobe} color={Colors["primary-dark"]} />}
+          onValueChange={value => changeLanguage(value)}>
+          <Select.Item label="En" value="en" />
+          <Select.Item label="Es" value="es" />
+        </Select>
+      </Box>
       <Box style={LandingScreenStyle.logOutButton}>
         <TouchableOpacity onPress={() => push("Account")}>
           <FontAwesomeIcon color={Colors["primary-dark"]} size={32} icon={faCircleUser} />
