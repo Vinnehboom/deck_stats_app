@@ -32,4 +32,8 @@ export const MatchRecordFormStyle = StyleSheet.create({
     height: screenHeight / 25,
     width: "100%",
   },
+  remarkCount: {
+    fontSize: Typography.fontSizes.sm,
+    marginTop: Spacing.md,
+  },
 });
