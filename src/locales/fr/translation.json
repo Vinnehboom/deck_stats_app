@@ -1,0 +1,253 @@
+{
+  "TYPES": {
+    "USER": {
+      "EMAIL": "E-mail"
+    }
+  },
+  "HOME_SCREEN": {
+    "HEADER_TITLE": "VS Log"
+  },
+  "LANDING_SCREEN": {
+    "SIGN_OUT": "Déconnexion",
+    "WELCOME": "Bienvenue, joueur!",
+    "RECENT_RECORDS": "Résultats récents",
+    "NO_DECK": "Veuillez ajouter un deck sur l'onglet",
+    "DECKS": "Decks",
+    "NO_DECK_2": ""
+  },
+  "LOGIN_SCREEN": {
+    "T&C": "Termes et conditions",
+    "TITLE": "VS Log",
+    "INCOMPLETE_FORM": "L'e-mail ou le mot de passe ne peut pas être vide",
+    "PASSWORD_MISMATCH": "Les mots de passe ne correspondent pas",
+    "SIGN_UP": {
+      "SUCCESS": "Inscription réussie!"
+    },
+    "SIGN_IN": {
+      "SUCCESS": "Connexion réussie!"
+    },
+    "FORM": {
+      "LOGIN_TITLE": "Connexion",
+      "EMAIL_DISCLAIMER": "restera masqué aux autres utilisateurs.",
+      "REGISTER_TITLE": "Créer un compte",
+      "PASSWORD": "Mot de passe",
+      "PASSWORD_CONFIRMATION": "Confirmation du mot de passe",
+      "EMAIL_SIGN_IN": "E-mail ou nom d'utilisateur",
+      "EMAIL": "E-mail",
+      "USERNAME": "Nom d'utilisateur",
+      "SIGN_IN": "Connexion",
+      "SIGN_UP": "S'inscrire"
+    }
+    },
+    "DECKS_SCREEN": {
+      "TITLE": "Decks",
+      "SUB_TITLE": "Mes decks",
+      "NO_DECKS": "Ajoutez un deck pour le trouver ici !"
+    },
+  "PAGINATION": {
+    "PREVIOUS": "Précédent",
+    "NEXT": "Suivant"
+  },
+  "LIST": {
+    "ITEM": {
+      "SHOW": "Montre",
+      "IMAGES": "IMAGES",
+      "LIST": "LISTE"
+    }
+  },
+  "MATCH_RECORD": {
+      "FIRST": "1er",
+      "SECOND": "2ème",
+      "REMARKS": "Remarques",
+      "AUTRE": "Autre",
+      "FORM": {
+      "DECK": "Deck",
+      "LIST": "Liste",
+      "OPP_ARCHETYPE": "Archétype de l'adversaire",
+      "COIN_FLIP": "Pile ou face",
+      "WON": "Gagné",
+      "LOST": "Perdu",
+      "STARTED": "Commencé",
+      "FIND_ARCHETYPE": "Trouver archétype...",
+      "NO_RESULT_SELECTED": "Sélectionnez un résultat pour continuer",
+      "NO_LIST": "Aucune liste",
+      "DETAILS": "Détails & matchups",
+      "FIRST": "1er",
+      "SECOND": "2ème",
+      "RESULT": "Résultat",
+      "REMARKS": "Remarques",
+      "SUBMIT": "Soumettre",
+      "SUCCESS": "Résultat ajouté avec succès!",
+      "FAILED": "Le résultat n'a pas pu être sauvegardé. Veuillez valider tous les champs obligatoires et réessayer."
+    }
+},
+  "MATCHUP_LIST":{
+    "ARCHETYPE": "Archétype",
+    "FIRST": "1er",
+    "SECOND":"2ème",
+    "COINFLIP_WON": "Gagné",
+    "COINFLIP_LOST": "Perdu"
+  },
+  "MATCHUP_NOTES": {
+    "SCREEN_TITLE": "Remarques",
+    "VS": "VS",
+    "FIRST":"1er",
+    "SECOND":"2ème",
+    "NOTES": "Rmq.",
+    "LIST_NAME": "Liste:",
+    "NO_DATA": "Aucune donnée!",
+    "LOAD_MORE": "Charger plus...",
+    "REMOVE": {
+      "REMOVED": "Remarque supprimée",
+      "TITLE": "Supprimer la remarque",
+      "MESSAGE": "Êtes-vous sûr de vouloir supprimer cette remarque ? Les données de match seront toujours incluses dans vos confrontations."
+    },
+    "FAVORITE": {
+      "FAVORITED": "Remarque préférée.",
+      "UNFAVORITED": "La remarque n'est plus préférée.",
+      "FAVORITES": "Remarques preferées",
+      "OTHER": "Autres remarques"
+    }
+  },
+  "MATCH_EXPORT": {
+    "SCREEN_TITLE": "Export de résultats",
+    "DOWNLOAD_SUCCESS": "Image téléchargée avec succès",
+    "DOWNLOAD_ERROR": "L'image n'a pas pu être téléchargée.",
+    "DOWNLOAD": "Télécharger image",
+    "SHARE_ERROR": "L'image n'a pas pu être partagée",
+    "SHARE": "Partager",
+    "WATERMARK": "Powered by VS Log"
+  },
+  "ACCOUNT": {
+    "SCREEN_TITLE": "Compte",
+    "SIGN_OUT": "Déconnexion",
+    "DETAILS": "Détails",
+    "EMAIL": "E-mail",
+    "USERNAME": "Nom d'utilisateur",
+    "SIGNED_OUT": "Déconnexion réussie !",
+    "DELETE_ACCOUNT": "Supprimer le compte",
+    "EMAIL_DISCLAIMER": "Votre email ou nom d'utilisateur est masqué aux autres utilisateurs.",
+    "USER_DELETE": {
+    "BUTTON": "SUPPRESSION",
+    "MESSAGE": "Etes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.",
+    "TITLE": "Supprimer le compte",
+    "CONFIRM": "Supprimer mon compte",
+    "CANCEL": "Annuler",
+    "SUCCESS": "Compte supprimé ! Merci d'avoir participé."
+    }
+    },
+    "DECK": {
+      "LIST_ITEM": {
+      "SHOW": "Montre"
+      },
+      "CREATION_FORM": {
+      "TITLE": "Ajouter un deck",
+      "NAME": "Titre du deck",
+      "INCOMPLETE_FORM": "Veuillez remplir tous les champs avant de soumettre.",
+      "CREATION": {
+      "SUCCESS": "Deck ajouté !"
+      },
+      "SUBMIT": "Ajouter un deck"
+      },
+      "NAVIGATION": {
+      "BACK": "Retour",
+      "DECKS": {
+      "DETAILS": "Détails",
+      "LISTS": "Listes",
+      "MATCHUPS": "Matchups"
+      },
+      "HOME": {
+      "LANDING": "Landing",
+      "DECKS": "Decks"
+      }
+    },
+    "DECK_MATCH_HISTORY": 
+    {
+      "LOADING": "Chargement de l'historique des résultats",
+      "EXPORT_TEXT": "Sélectionner les éléments à exporter ou supprimer...",
+      "SELECTED_COUNT": "Etes sélectionnés:",
+      "NO_DATA": "Aucune donnée !",
+      "EXPORT": "Exporter...",
+      "DELETE": "Supprimer les résultats",
+      "DELETION": {
+        "TITLE": "Supprimer les résultats",
+      "MESSAGE": "Etes-vous sûr de vouloir supprimer ces résultats ?",
+      "DELETED": "Résultats supprimés avec succès"
+    }
+    },
+    "DECK_DETAILS": {
+      "OPTIONS": { "TITRE": "Options"},
+      "RECENT_RESULTS": "Résultats récents",
+      "DELETE": {
+      "ALERT_TITLE": "Confirmer la suppression",
+      "ALERT_MESSAGE": "Etes-vous sûr de vouloir supprimer ce deck ?",
+      "CONFIRM": "Confirmer",
+      "CANCEL": "Annuler",
+      "SUCCESS": "Deck supprimé !",
+      "DELETE_BUTTON": "Supprimer le deck"
+      },
+      "ACTIVE_DECK": {
+        "ALERT_TITLE": "Activer le deck",
+        "ALERT_MESSAGE": "Définir ce deck comme votre deck actif actuel ?",
+        "CONFIRM": "Confirmer",
+        "CANCEL": "Annuler",
+        "SUCCESS": "Deck actif mis à jour avec succès !",
+        "ACTIVATE_BUTTON": "Activer"
+        }
+        },
+    "DECK_MATCHUPS": {
+      "MATCHUP_DATA": "Données de matchups",
+      "BEST_MATCHUPS": "Meilleur",
+      "WORST_MATCHUPS": "Pire",
+      "LOADING": "Chargement des données...",
+      "LIST": "Données pour : ",
+      "ALL_LISTS": "Toutes les listes",
+      "WIN_RATES": "Taux de victoire",
+      "PREMIER": "1er",
+      "DEUXIÈME": "2ème",
+      "NO_DATA": "Aucune donnée !",
+      "FORMAT": "Format :"
+    },
+    "DECK_LISTS": {
+      "LIST_CREATION": {
+        "SUCCESS": "Liste ajoutée !",
+        "SUCCESS_AND_ACTIVATED": "Liste ajoutée. Elle a également été définie comme liste active actuelle pour ce deck.",
+        "NO_NAME": "La liste a besoin d'un nom",
+        "ERROR": "Des erreurs ont été rencontrées lors de la soumission de la liste :",
+        },
+      "SET_ACTIVE": "Activer",
+      "ACTIVE_LIST": "Liste active",
+      "LIST_DELETION": {"DELETE_ALERT": {
+        "TITLE": "Confirmer la suppression de la liste",
+        "MESSAGE": "Etes-vous sûr de vouloir supprimer cette liste ?"
+        },
+      "RECORDS_ALERT": {
+        "TITLE": "Suppression des données associées",
+        "MESSAGE": "Voulez-vous également supprimer les résultats associés ?",
+        "CONFIRM": "Supprimer avec les résultats associés",
+        "LIST_ONLY": "Supprimer uniquement la liste"
+        }},
+      "LISTS":{"TITLE": "Listes", "LOADING": "Listes en cours de chargement..."},
+      "LIST_FORM": {
+        "TITLE": "Importer la liste",
+        "NAME": "Nom",
+        "LIMITLESS": "Limitless",
+        "LIST_PLACEHOLDER": "Deck string (Live/Limitless/...)",
+        "SUBMIT": "Soumettre"
+      }
+    }
+  },
+  "PERMISSIONS": {
+    "CANCEL": "Annuler",
+    "OK": "Ok",
+    "IMAGE": {
+      "TITLE": "Autorisation de téléchargement d'image",
+      "MESSAGE": "Votre autorisation est requise pour enregistrer des images sur votre appareil",
+      "ERROR": "Erreur lors de la demande d'autorisation d'image"
+    }
+  },
+  "ALERTS": {
+    "CONFIRM": "Confirmer",
+    "CANCEL": "Annuler"
+  }
+}
