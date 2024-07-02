@@ -106,8 +106,40 @@
       "sha1": "03020ab762281d4b1e131efc3cbadd97f82cb048"
     },
     {
+      "path": "src/assets/images/colorless.png",
+      "sha1": "0e2d5be11b2b11142835a6497ce8ef5ed80e5f8f"
+    },
+    {
+      "path": "src/assets/images/dark.png",
+      "sha1": "f4e7606d7f5f0673ae71f1b6f04d66fe504333ab"
+    },
+    {
       "path": "src/assets/images/dots.png",
       "sha1": "73734540a9c925ba762fc63a0d91dc2983ae6e81"
+    },
+    {
+      "path": "src/assets/images/dragon.png",
+      "sha1": "3376bddc9100371d5f5bf065a2847a2c6947a7c7"
+    },
+    {
+      "path": "src/assets/images/fairy.png",
+      "sha1": "3b018cf70fd7171b288bb3b6a57fab7ae29332d8"
+    },
+    {
+      "path": "src/assets/images/fighting.png",
+      "sha1": "99da77d83173fffba2a0debb154bdb6fb699d091"
+    },
+    {
+      "path": "src/assets/images/fire.png",
+      "sha1": "9a545030c020e3ebe82294510751d7b2658da19e"
+    },
+    {
+      "path": "src/assets/images/grass.png",
+      "sha1": "49c1e11ebaf8f48fe7b4be46e9f085e3dd59faed"
+    },
+    {
+      "path": "src/assets/images/lightning.png",
+      "sha1": "a61a021e0aa6a7169f0b11208dabe68af6e96da1"
     },
     {
       "path": "src/assets/images/logo_dark_no_bg_500.png",
@@ -122,8 +154,16 @@
       "sha1": "89692063baa638371b675d5603fd8b2f2b8dad89"
     },
     {
+      "path": "src/assets/images/metal.png",
+      "sha1": "6631dfbd7fff5ac43accba4dca42dc9f58773324"
+    },
+    {
       "path": "src/assets/images/pokeball_bit.png",
       "sha1": "b94b9a69051575be13bad7373df84e076dd0ed28"
+    },
+    {
+      "path": "src/assets/images/psychic.png",
+      "sha1": "b05feed0701de95a476bc2ba6d05f06e78aad064"
     },
     {
       "path": "src/assets/images/screw.png",
@@ -136,6 +176,10 @@
     {
       "path": "src/assets/images/triangle_top_left_icon.svg",
       "sha1": "e64aa426d159730ba088ee05af1b9049055537ea"
+    },
+    {
+      "path": "src/assets/images/water.png",
+      "sha1": "48d9553aa590a9f3d66b634afc0eb5abf13b656b"
     }
   ]
 }
