@@ -23,6 +23,7 @@ import { useGetActiveList } from "../lists/_queries/useGetActiveList";
 import { Spinner } from "../Spinner";
 import { ArchetypeIcons } from "../decks/ArchetypeIcons";
 import { isId, setGames } from "../../helpers/matchRecords";
+import { remarksLength } from "../../helpers/defaults";
 
 interface RecordStateType extends MatchRecord {
   opponentArchetype: ArchetypeBase | undefined;
@@ -147,6 +148,7 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
   const handleRecordSubmission = () => {
     const record = { ...matchRecord, id: uuidv4() } as MatchRecord;
     const matchRecordValid: boolean =
+      record.remarks.length <= remarksLength &&
       [record.result].every(property => property?.length > 0) &&
       record.opponentArchetype !== undefined &&
       isArchetype(record.opponentArchetype);
@@ -307,8 +309,14 @@ export const MatchRecordForm = ({ decks, activeDeck }: { decks: Deck[]; activeDe
       )}
 
       <Box style={MatchRecordFormStyle.inputBox}>
-        <InputLabel>{t("MATCH_RECORD.FORM.REMARKS")}</InputLabel>
+        <HStack justifyContent="space-between">
+          <InputLabel>{t("MATCH_RECORD.FORM.REMARKS")}</InputLabel>
+          <Text style={MatchRecordFormStyle.remarkCount}>
+            {matchRecord.remarks.length}/{remarksLength}
+          </Text>
+        </HStack>
         <TextArea
+          maxLength={remarksLength}
           style={MatchRecordFormStyle.input}
           autoCompleteType
           h={60}
