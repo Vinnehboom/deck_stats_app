@@ -3,6 +3,7 @@ import React from "react";
 
 import { Archetype, ArchetypeBase } from "../../types";
 import { UnknownArchetype } from "../../types/Archetype";
+import { glcTypeIcons } from "../../helpers/images";
 
 export const ArchetypeIcons = ({
   archetype,
@@ -30,9 +31,11 @@ export const ArchetypeIcons = ({
       <Image
         marginRight={1}
         key={icon + index}
-        source={{
-          uri: `https://limitlesstcg.s3.us-east-2.amazonaws.com/pokemon/gen9/${icon}.png`,
-        }}
+        source={
+          glcTypeIcons[icon] || {
+            uri: `https://limitlesstcg.s3.us-east-2.amazonaws.com/pokemon/gen9/${icon}.png`,
+          }
+        }
         maxHeight="100%"
         resizeMode="contain"
         alt={icon}

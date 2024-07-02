@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { LIMITLESS_API_KEY } from "@env";
+import { useMemo } from "react";
 
 import { Archetype } from "../../../types";
+import { glcArchetypes } from "../../../helpers/archetypes";
 
 const fetchArchetypes = (): Promise<Archetype[]> => {
   return axios
@@ -23,5 +25,7 @@ export const useArchetypeQuery = () => {
     queryKey: ["archetypes"],
     queryFn: fetchArchetypes,
   });
-  return isLoading ? {} : { archetypes: archetypes, isLoading: isLoading, isError: isError, error: error };
+  const glcTypes = useMemo(() => glcArchetypes(), []);
+  const totalTypes = archetypes && archetypes?.concat(glcTypes);
+  return isLoading ? {} : { archetypes: totalTypes, isLoading: isLoading, isError: isError, error: error };
 };
