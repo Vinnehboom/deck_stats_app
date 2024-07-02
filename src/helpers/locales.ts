@@ -1,7 +1,7 @@
 import { Platform, NativeModules } from "react-native";
 
 export const availableLocales = () => {
-  return ["es", "en"];
+  return ["es", "en", "fr"];
 };
 
 export const defaultLocale = "en";
