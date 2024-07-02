@@ -78,21 +78,21 @@
       "REMARKS": "Notes",
       "SUBMIT": "Submit",
       "SUCCESS": "Record successfully added!",
-      "FAILED": "Record could not be saved. Please validate all required fields and try again.",
+      "FAILED": "Record could not be saved. Please validate all required fields and try again."
     }
   },
-  "MATCHUP_LIST":{
+  "MATCHUP_LIST": {
     "ARCHETYPE": "Archetype",
     "FIRST": "1st",
-    "SECOND":"2nd",
+    "SECOND": "2nd",
     "COINFLIP_WON": "Won",
     "COINFLIP_LOST": "Lost"
   },
   "MATCHUP_NOTES": {
     "SCREEN_TITLE": "Matchup notes",
     "VS": "VS",
-    "FIRST":"1st",
-    "SECOND":"2nd",
+    "FIRST": "1st",
+    "SECOND": "2nd",
     "NOTES": "Notes",
     "LIST_NAME": "List:",
     "NO_DATA": "No data!",
@@ -128,7 +128,7 @@
     "DELETE_ACCOUNT": "Delete account",
     "EMAIL_DISCLAIMER": "Your email or username is hidden from other users.",
     "USER_DELETE": {
-      "BUTTON": "DELETION", 
+      "BUTTON": "DELETION",
       "MESSAGE": "Are you sure you want to delete your account? This action is irreversible.",
       "TITLE": "Delete account",
       "CONFIRM": "Delete my account",
@@ -161,20 +161,21 @@
         "DECKS": "Decks"
       }
     },
-    "DECK_MATCH_HISTORY": {"LOADING": "Loading match history",
-    "EXPORT_TEXT": "Select items to export or delete...",
-    "SELECTED_COUNT": "Records selected:",
-    "NO_DATA": "No data!", 
-    "EXPORT": "Export...",
-    "DELETE": "Delete records",
-    "DELETION": {
-      "TITLE": "Delete records",
-      "MESSAGE": "Are you sure you want to delete these records?",
-      "DELETED": "Records successfully deleted"
-    }
-  },
+    "DECK_MATCH_HISTORY": {
+      "LOADING": "Loading match history",
+      "EXPORT_TEXT": "Select items to export or delete...",
+      "SELECTED_COUNT": "Records selected:",
+      "NO_DATA": "No data!",
+      "EXPORT": "Export...",
+      "DELETE": "Delete records",
+      "DELETION": {
+        "TITLE": "Delete records",
+        "MESSAGE": "Are you sure you want to delete these records?",
+        "DELETED": "Records successfully deleted"
+      }
+    },
     "DECK_DETAILS": {
-      "OPTIONS": { "TITLE": "Options"},
+      "OPTIONS": { "TITLE": "Options" },
       "RECENT_RESULTS": "Recent results",
       "DELETE": {
         "ALERT_TITLE": "Confirm deletion",
@@ -190,7 +191,8 @@
         "CONFIRM": "Confirm",
         "CANCEL": "Cancel",
         "SUCCESS": "Active deck successfully updated!",
-        "ACTIVATE_BUTTON": "Set active"
+        "ACTIVATE_BUTTON": "Set active",
+        "ADD_RESULT": "Add result"
       }
     },
     "DECK_MATCHUPS": {
@@ -211,21 +213,23 @@
         "SUCCESS": "List added!",
         "SUCCESS_AND_ACTIVATED": "List added. It was also set as the current active list for this deck.",
         "NO_NAME": "List needs a name",
-        "ERROR": "Some errors were encountered during list submission:",
+        "ERROR": "Some errors were encountered during list submission:"
       },
       "SET_ACTIVE": "Set active",
       "ACTIVE_LIST": "Active list",
-      "LIST_DELETION": {"DELETE_ALERT": {
-        "TITLE": "Confirm list deletion",
-        "MESSAGE": "Are you sure you want to delete this list?",
+      "LIST_DELETION": {
+        "DELETE_ALERT": {
+          "TITLE": "Confirm list deletion",
+          "MESSAGE": "Are you sure you want to delete this list?"
+        },
+        "RECORDS_ALERT": {
+          "TITLE": "Related data deletion",
+          "MESSAGE": "Do you want to delete the related match records as well?",
+          "CONFIRM": "Delete with match data",
+          "LIST_ONLY": "Only delete the list"
+        }
       },
-    "RECORDS_ALERT": {
-      "TITLE": "Related data deletion", 
-      "MESSAGE": "Do you want to delete the related match records as well?",
-      "CONFIRM": "Delete with match data",
-      "LIST_ONLY": "Only delete the list"
-    }},
-      "LISTS":{"TITLE": "Lists", "LOADING": "Lists loading..."},
+      "LISTS": { "TITLE": "Lists", "LOADING": "Lists loading..." },
       "LIST_FORM": {
         "TITLE": "Import list",
         "NAME": "Name",

@@ -2,12 +2,10 @@ import React, { useContext } from "react";
 import { Box, HStack } from "native-base";
 import { showMessage } from "react-native-flash-message";
 import { Alert } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import { Header } from "../../../../components/layout/Header";
 import { Button } from "../../../../components/layout/Button";
 import { DeckDetailsStyle } from "../../../../styles/decks/DeckDetailsStyle";
-import { MainTabParamList } from "../../../../types/RouteParams";
 import { Deck, User } from "../../../../types";
 import { useDeckDeletion } from "../../../../components/lists/_queries/useDeckDeletion";
 import { useSetActiveDeck } from "../../../../components/decks/_queries/useSetActiveDeck";
@@ -15,7 +13,6 @@ import { TranslationContext } from "../../../../contexts/TranslationContext";
 
 export const DetailsHeader = ({ deck, user }: { deck: Deck; user: User }) => {
   const { t } = useContext(TranslationContext);
-  const { navigate } = useNavigation<MainTabParamList>();
 
   const deletionMutation = useDeckDeletion(deck, () => {
     navigate("Decks", undefined);
@@ -55,14 +52,14 @@ export const DetailsHeader = ({ deck, user }: { deck: Deck; user: User }) => {
         onPress: () => {},
         style: "cancel",
       },
-      { text: t("DECK.DECK_DETAILS.ACTIVE_DECK.CONFIRM"), onPress: activateDeckMutation.mutate },
+      { text: t("DECK.DECK_DETAILS.ACTIVE_DECK.CONFIRM"), onPress: () => activateDeckMutation.mutate },
     ]);
   };
 
   return (
     <Box style={DeckDetailsStyle.optionsContainer}>
       <Header header="h2">{t("DECK.DECK_DETAILS.OPTIONS.TITLE")}</Header>
-      <HStack justifyContent="space-evenly" width="90%" marginX="auto" paddingTop={4}>
+      <HStack justifyContent="space-between" width="90%" marginX="auto">
         <Button
           text={t("DECK.DECK_DETAILS.ACTIVE_DECK.ACTIVATE_BUTTON")}
           style={DeckDetailsStyle.optionButton}

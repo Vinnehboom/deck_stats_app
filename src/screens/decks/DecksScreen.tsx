@@ -7,13 +7,13 @@ import { DeckItem } from "../../components/DeckItem";
 import { Spinner } from "../../components/Spinner";
 import { DecklistScreenStyle } from "../../styles/decks/DecklistScreenStyle";
 import { useGetDecks } from "../../components/decks/_queries/useGetDecks";
-import { Deck } from "../../types";
+import { Deck, User } from "../../types";
 import { DecksHeader } from "./DecksHeader";
 import { Text } from "../../components/layout/Text";
 import { TranslationContext } from "../../contexts/TranslationContext";
 
 export const DecksScreen = () => {
-  const user = auth().currentUser;
+  const user = auth().currentUser || ({} as User);
   const { queryResult: decks } = useGetDecks(user!);
   const { t } = useContext(TranslationContext);
 
