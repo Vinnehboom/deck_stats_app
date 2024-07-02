@@ -49,6 +49,17 @@
 		F352F5FEA15C498393D8606E /* coin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 282683D1CA6244789CF33539 /* coin_icon.png */; };
 		F80C4045427D4B4488B94D7B /* Halcom-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEBDB8A096E84AA2B6A5B6F3 /* Halcom-Book.otf */; };
 		FC0D60792BBF4BC6B078E41C /* bootsplash_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E35963B0B2C4B248D03D9D0 /* bootsplash_manifest.json */; };
+		309589ECD58C472EA8E04D81 /* colorless.png in Resources */ = {isa = PBXBuildFile; fileRef = 434DC4C8D4D2416E97B6FF1C /* colorless.png */; };
+		C772252C588648C9BDD4A005 /* dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 355E91FC86CD4EB0832423D8 /* dark.png */; };
+		E01400BF37C04E129A1A03A1 /* dragon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E2B0A3D61B44B19FB92978 /* dragon.png */; };
+		D72E9544E92841329662C28C /* fairy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE29C52779B44A78AF140D3 /* fairy.png */; };
+		866EFEEF471346D9A9474676 /* fighting.png in Resources */ = {isa = PBXBuildFile; fileRef = 0538071515874B6C93205453 /* fighting.png */; };
+		E9B0C3D65A7D41968CBDD4EE /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1B9AEF9FFE473E8387A2AA /* fire.png */; };
+		257056E9915143968CEF5EDA /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC24AABAD545E2B30C873B /* grass.png */; };
+		E81B3C61D3824FFA884CB9B6 /* lightning.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EF117DCA4CD4A85894952D7 /* lightning.png */; };
+		468CFD7E42B94F9AAD30F0C7 /* metal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9916CEEC60674C55992F6F7A /* metal.png */; };
+		A52D43ECA9284D7789B69877 /* psychic.png in Resources */ = {isa = PBXBuildFile; fileRef = DA642EE640F94B6180BC79A2 /* psychic.png */; };
+		AB0EF4E29CFE448C820BAC36 /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = 571656D7479C41F4AB1098F3 /* water.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +126,17 @@
 		EE597BF82BFF553C00AF15FA /* DeckStatsTCG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = DeckStatsTCG.entitlements; path = DeckStatsTCG/DeckStatsTCG.entitlements; sourceTree = "<group>"; };
 		EEE39C572BB1916100BEFCB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7B36423B2964CE8ACF48999 /* bootsplash_logo_3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bootsplash_logo_3x.png; path = ../src/assets/bootsplash_logo_3x.png; sourceTree = "<group>"; };
+		434DC4C8D4D2416E97B6FF1C /* colorless.png */ = {isa = PBXFileReference; name = "colorless.png"; path = "../src/assets/images/colorless.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		355E91FC86CD4EB0832423D8 /* dark.png */ = {isa = PBXFileReference; name = "dark.png"; path = "../src/assets/images/dark.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F1E2B0A3D61B44B19FB92978 /* dragon.png */ = {isa = PBXFileReference; name = "dragon.png"; path = "../src/assets/images/dragon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1FE29C52779B44A78AF140D3 /* fairy.png */ = {isa = PBXFileReference; name = "fairy.png"; path = "../src/assets/images/fairy.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0538071515874B6C93205453 /* fighting.png */ = {isa = PBXFileReference; name = "fighting.png"; path = "../src/assets/images/fighting.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9F1B9AEF9FFE473E8387A2AA /* fire.png */ = {isa = PBXFileReference; name = "fire.png"; path = "../src/assets/images/fire.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6BBC24AABAD545E2B30C873B /* grass.png */ = {isa = PBXFileReference; name = "grass.png"; path = "../src/assets/images/grass.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8EF117DCA4CD4A85894952D7 /* lightning.png */ = {isa = PBXFileReference; name = "lightning.png"; path = "../src/assets/images/lightning.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9916CEEC60674C55992F6F7A /* metal.png */ = {isa = PBXFileReference; name = "metal.png"; path = "../src/assets/images/metal.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DA642EE640F94B6180BC79A2 /* psychic.png */ = {isa = PBXFileReference; name = "psychic.png"; path = "../src/assets/images/psychic.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		571656D7479C41F4AB1098F3 /* water.png */ = {isa = PBXFileReference; name = "water.png"; path = "../src/assets/images/water.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +237,17 @@
 				DF8D18D2E8C4494FADDB9C15 /* substitute.png */,
 				282683D1CA6244789CF33539 /* coin_icon.png */,
 				079B2B89D33F4721A71FE54C /* logo_dark_no_bg_500.png */,
+				434DC4C8D4D2416E97B6FF1C /* colorless.png */,
+				355E91FC86CD4EB0832423D8 /* dark.png */,
+				F1E2B0A3D61B44B19FB92978 /* dragon.png */,
+				1FE29C52779B44A78AF140D3 /* fairy.png */,
+				0538071515874B6C93205453 /* fighting.png */,
+				9F1B9AEF9FFE473E8387A2AA /* fire.png */,
+				6BBC24AABAD545E2B30C873B /* grass.png */,
+				8EF117DCA4CD4A85894952D7 /* lightning.png */,
+				9916CEEC60674C55992F6F7A /* metal.png */,
+				DA642EE640F94B6180BC79A2 /* psychic.png */,
+				571656D7479C41F4AB1098F3 /* water.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -395,6 +428,17 @@
 				230A444D49E141F080D1293E /* substitute.png in Resources */,
 				F352F5FEA15C498393D8606E /* coin_icon.png in Resources */,
 				61905A9F9D7B48ED92C03B6C /* logo_dark_no_bg_500.png in Resources */,
+				309589ECD58C472EA8E04D81 /* colorless.png in Resources */,
+				C772252C588648C9BDD4A005 /* dark.png in Resources */,
+				E01400BF37C04E129A1A03A1 /* dragon.png in Resources */,
+				D72E9544E92841329662C28C /* fairy.png in Resources */,
+				866EFEEF471346D9A9474676 /* fighting.png in Resources */,
+				E9B0C3D65A7D41968CBDD4EE /* fire.png in Resources */,
+				257056E9915143968CEF5EDA /* grass.png in Resources */,
+				E81B3C61D3824FFA884CB9B6 /* lightning.png in Resources */,
+				468CFD7E42B94F9AAD30F0C7 /* metal.png in Resources */,
+				A52D43ECA9284D7789B69877 /* psychic.png in Resources */,
+				AB0EF4E29CFE448C820BAC36 /* water.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

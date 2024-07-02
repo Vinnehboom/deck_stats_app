@@ -38,19 +38,7 @@ const ArchetypesList = ({
             <Link style={ArchetypeSelectStyle.selectLink} onPress={() => handleArchetypeSelection(archetype)}>
               <Text marginRight={Spacing.md}>{transformIdentifier(archetype.identifier)}</Text>
               <Flex flexDirection="row">
-                {archetype.icons?.length &&
-                  archetype.icons.map((icon, index) => (
-                    <Image
-                      marginRight={2}
-                      key={icon + index}
-                      source={{
-                        uri: `https://limitlesstcg.s3.us-east-2.amazonaws.com/pokemon/gen9/${icon}.png`,
-                      }}
-                      resizeMode="stretch"
-                      alt={icon}
-                      size="2xs"
-                    />
-                  ))}
+                <ArchetypeIcons archetype={archetype} size="2xs" />
               </Flex>
             </Link>
           </Flex>
