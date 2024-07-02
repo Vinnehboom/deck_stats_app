@@ -2,7 +2,7 @@ import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 
 // Import your language files here
-import { en, es } from "../locales/";
+import { en, es, fr } from "../locales/";
 
 // Set up i18next
 i18next.use(initReactI18next).init({
@@ -18,6 +18,9 @@ i18next.use(initReactI18next).init({
     },
     es: {
       translation: es,
+    },
+    fr: {
+      translation: fr,
     },
   },
 });

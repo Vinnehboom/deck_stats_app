@@ -30,6 +30,7 @@ export const LandingHeader = () => {
           onValueChange={value => changeLanguage(value)}>
           <Select.Item label="En" value="en" />
           <Select.Item label="Es" value="es" />
+          <Select.Item label="Fr" value="fr" />
         </Select>
       </Box>
       <Box style={LandingScreenStyle.logOutButton}>
