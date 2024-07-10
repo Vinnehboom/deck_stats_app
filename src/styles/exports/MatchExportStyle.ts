@@ -9,6 +9,11 @@ export const MatchExportStyle = StyleSheet.create({
     resizeMode: "contain",
     width: 30,
   },
+  coinflipFirst: {
+    fontSize: Typography.fontSizes.xl,
+    fontWeight: "bold",
+    marginEnd: Spacing.sm,
+  },
   container: {
     backgroundColor: Colors.white,
     flex: 1,
@@ -48,12 +53,13 @@ export const MatchExportStyle = StyleSheet.create({
     paddingTop: Spacing.sm,
   },
   opponentArchetype: {
-    paddingLeft: Spacing.md,
+    justifyContent: "space-between",
   },
   result: {
     fontSize: Typography.fontSizes.xxl,
     fontWeight: "bold",
     paddingLeft: Spacing.sm,
+    width: "19%",
   },
   roundNumber: { fontSize: Typography.fontSizes.xxl, fontWeight: "bold" },
   score: {
