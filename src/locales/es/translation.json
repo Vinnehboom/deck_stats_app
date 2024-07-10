@@ -190,7 +190,8 @@
         "CONFIRM": "Confirmar",
         "CANCEL": "Cancelar",
         "SUCCESS": "Mazo activo actualizado correctamente!",
-        "ACTIVATE_BUTTON": "Activar"
+        "ACTIVATE_BUTTON": "Activar",
+        "ADD_RESULT": "Añadir resultado"
       }
     },
     "DECK_MATCHUPS": {

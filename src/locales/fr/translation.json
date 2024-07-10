@@ -9,7 +9,7 @@
   },
   "LANDING_SCREEN": {
     "SIGN_OUT": "Déconnexion",
-    "WELCOME": "Bienvenue, joueur!",
+    "WELCOME": "Bienvenue, gamer!",
     "RECENT_RECORDS": "Résultats récents",
     "NO_DECK": "Veuillez ajouter un deck sur l'onglet",
     "DECKS": "Decks",
@@ -28,7 +28,7 @@
     },
     "FORM": {
       "LOGIN_TITLE": "Connexion",
-      "EMAIL_DISCLAIMER": "restera masqué aux autres utilisateurs.",
+      "EMAIL_DISCLAIMER": "restera caché aux autres utilisateurs.",
       "REGISTER_TITLE": "Créer un compte",
       "PASSWORD": "Mot de passe",
       "PASSWORD_CONFIRMATION": "Confirmation du mot de passe",
@@ -67,7 +67,7 @@
       "COIN_FLIP": "Pile ou face",
       "WON": "Gagné",
       "LOST": "Perdu",
-      "STARTED": "Commencé",
+      "STARTED": "Position",
       "FIND_ARCHETYPE": "Trouver archétype...",
       "NO_RESULT_SELECTED": "Sélectionnez un résultat pour continuer",
       "NO_LIST": "Aucune liste",
@@ -105,7 +105,7 @@
     "FAVORITE": {
       "FAVORITED": "Remarque préférée.",
       "UNFAVORITED": "La remarque n'est plus préférée.",
-      "FAVORITES": "Remarques preferées",
+      "FAVORITES": "Favoris",
       "OTHER": "Autres remarques"
     }
   },
@@ -126,7 +126,7 @@
     "USERNAME": "Nom d'utilisateur",
     "SIGNED_OUT": "Déconnexion réussie !",
     "DELETE_ACCOUNT": "Supprimer le compte",
-    "EMAIL_DISCLAIMER": "Votre email ou nom d'utilisateur est masqué aux autres utilisateurs.",
+    "EMAIL_DISCLAIMER": "Votre email ou nom d'utilisateur est caché aux autres utilisateurs.",
     "USER_DELETE": {
     "BUTTON": "SUPPRESSION",
     "MESSAGE": "Etes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.",
@@ -192,7 +192,8 @@
         "CONFIRM": "Confirmer",
         "CANCEL": "Annuler",
         "SUCCESS": "Deck actif mis à jour avec succès !",
-        "ACTIVATE_BUTTON": "Activer"
+        "ACTIVATE_BUTTON": "Activer",
+        "ADD_RESULT": "Ajouter résultat"
         }
         },
     "DECK_MATCHUPS": {

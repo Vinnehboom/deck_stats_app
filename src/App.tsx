@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NativeBaseProvider, extendTheme } from "native-base";
@@ -6,7 +6,7 @@ import FlashMessage from "react-native-flash-message";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 import BootSplash from "react-native-bootsplash";
-import { changeLanguage } from "i18next";
+import i18next, { changeLanguage } from "i18next";
 
 import { Colors, Typography } from "./styles/variables";
 import { LoginScreen } from "./screens/login/LoginScreen";
@@ -33,13 +33,18 @@ const queryClient = new QueryClient({
 
 export function App(): JSX.Element {
   const deviceLanguage = getDeviceLanguage();
+  const [locale, setLocale] = useState(deviceLanguage);
 
   useEffect(() => {
     changeLanguage(deviceLanguage);
   }, [deviceLanguage]);
   const { t, i18n } = useTranslation();
 
-  const TranslationContextValue = { t, locale: i18n.language };
+  i18next.on("languageChanged", () => {
+    setLocale(i18n.language);
+  });
+  const TranslationContextValue = { t, locale };
+
   const theme = extendTheme({
     colors: {
       primary: {

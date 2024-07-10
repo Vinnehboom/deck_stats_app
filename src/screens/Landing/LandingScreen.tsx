@@ -23,7 +23,6 @@ export const LandingScreen = () => {
   const user = auth().currentUser;
   const route = useRoute();
   const selectedDeck = route.params?.selectedDeck;
-  console.log("selectedDeck", selectedDeck);
   const { t } = useContext(TranslationContext);
 
   const { queryResult: activeDeck } = useGetActiveDeck(user!);
