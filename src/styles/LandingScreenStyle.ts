@@ -24,7 +24,7 @@ export const LandingScreenStyle = StyleSheet.create({
     marginTop: Spacing.sm,
   },
   languagePicker: { color: Colors["primary-dark"], fontSize: Typography.fontSizes.lg },
-  languagePickerContainer: { fontSize: Typography.fontSizes.xl, left: "8%", minWidth: "15%", position: "absolute", top: "45%" },
+  languagePickerContainer: { fontSize: Typography.fontSizes.xl, left: "8%", minWidth: "17%", position: "absolute", top: "45%" },
   logOutButton: { position: "absolute", right: "8%", top: "45%" },
   logo: {
     alignSelf: "center",

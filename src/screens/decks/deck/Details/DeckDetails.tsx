@@ -10,7 +10,7 @@ import { Header } from "../../../../components/layout/Header";
 import { DetailsHeader } from "./DetailsHeader";
 import { TranslationContext } from "../../../../contexts/TranslationContext";
 import { DeckDetailsStyle } from "../../../../styles/decks/DeckDetailsStyle";
-import { Colors, Spacing } from "../../../../styles/variables";
+import { Colors } from "../../../../styles/variables";
 import { Button } from "../../../../components/layout/Button";
 
 export const DeckDetails = () => {
@@ -32,10 +32,11 @@ export const DeckDetails = () => {
         <Box>
           <HStack display="flex" alignItems="center">
             <Box width="33%" />
-            <Header header="h2">{t("DECK.DECK_DETAILS.RECENT_RESULTS")}</Header>
+            <Header maxWidth="40%" minWidth="33%" header="h2">
+              {t("DECK.DECK_DETAILS.RECENT_RESULTS")}
+            </Header>
             <Box width="33%">
               <Select
-                marginRight={Spacing.sm}
                 minW="65%"
                 onValueChange={value => setLimit(Number(value))}
                 marginLeft="auto"
