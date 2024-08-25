@@ -71,3 +71,7 @@ yarn-error.log
 .flaskenv*
 !.env.project
 !.env.vault
+# Expo
+.expo
+dist/
+web-build/
